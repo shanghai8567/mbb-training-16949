@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>模块 5 — Analyze — 假设检验与根因 | 六西格玛黑带</title>
   <meta name="description" content="六西格玛黑带 BB-A-01 — Analyze — 假设检验与根因" />
-  <meta name="mbb-package-version" content="3.0.0-beta.1" />
+  <meta name="mbb-package-version" content="3.0.0-beta.2" />
   <script src="../js/theme-init.js"></script>
   <link rel="stylesheet" href="../css/theme.css" />
   <link rel="stylesheet" href="../css/style.css" />
@@ -161,8 +161,8 @@
     <div class="fs-panel" id="fs-panel-sigma" role="tabpanel" hidden>
       <p class="fs-sigma">**Analyze** 用缺陷矩阵链到四段工艺。报告须含：**前提**（独立批次？期望频数？）、**p 值**、**效应量**（比例差/OR）、**业务翻译**。切忌 HU FCT-03 混入 ADAS 故事。</p>
       <details class="fs-deep" open>
-      <summary>专业加深（P0 / P1）</summary>
-      <ul class="obj-list fs-deep-list"><li>**P0 · 效应量**：p&amp;lt;0.05 只说明「有证据」；Champion 看 **差多少** —— 例：错版批次 Eth 不良率差 7.8% + 95% CI。</li><li>**P0 · 前提**：列联表期望频数&amp;lt;5 时考虑 Fisher 精确检验；批次非独立则夸大显著性。</li><li>**P1 · SL→MP X-Ray**：Analyze 必须标注 **X-Ray 切换日**；切换前后空洞 Pareto 不可合并。</li></ul>
+      <summary>专业加深（P0 / P1 / P2）</summary>
+      <ul class="obj-list fs-deep-list"><li>**P0 · 效应量**：p&amp;lt;0.05 只说明「有证据」；Champion 看 **差多少** —— 例：错版批次 Eth 不良率差 7.8% + 95% CI。</li><li>**P0 · 前提**：列联表期望频数&amp;lt;5 时考虑 Fisher 精确检验；批次非独立则夸大显著性。</li><li>**P1 · SL→MP X-Ray**：Analyze 必须标注 **X-Ray 切换日**；切换前后空洞 Pareto 不可合并。</li><li>**P2 · 检验功效**：样本量过小会「检不出」错版效应 —— Analyze 前用功效分析定最小 n（与模块 06 DOE 功率分析同源）。</li><li>**P2 · 非正态空洞**：X-Ray 空洞% 非正态勿硬报 Cpk；用变换或 Weibull + 单边规格，并写明分布假设。</li></ul>
     </details>
       <div class="fs-prep"><strong>分析/评审前检查</strong><ul class="obj-list "><li>H0/H1 与检验匹配</li><li>报告有效应量或比例差</li><li>X-Ray 阶段已分层</li></ul></div>
       <div class="fs-tools"><span class="fs-tool-tag">Pareto</span><span class="fs-tool-tag">列联表/卡方</span><span class="fs-tool-tag">效应量/OR</span><span class="fs-tool-tag">5Why</span></div>
@@ -193,7 +193,7 @@
 
       <article class="card pro tip" id="sec-c2">
         <h2><span class="section-num">C2</span>专业软件实操 Lab（Minitab / JMP）</h2>
-        <p style="font-size:0.85rem;color:var(--muted)">包版本 3.0.0-beta.1 · 跟做后完成 F 节截图交付</p>
+        <p style="font-size:0.85rem;color:var(--muted)">包版本 3.0.0-beta.2 · 跟做后完成 F 节截图交付</p>
         <div class="c2-lab-card" id="c2-lab-d5">
     <p class="c2-lab-meta"><strong>主工具</strong> Minitab / JMP · <strong>版本</strong> Minitab 22
       · <a href="../tools/tutorials.html#minitab-ttest">完整教程 →</a></p>

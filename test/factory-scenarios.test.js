@@ -34,7 +34,8 @@ for (let d = 1; d <= 14; d++) {
   ok(!joined.match(/离线(?!烧录)/), `day ${d} no abbreviated 离线`);
 }
 
-ok(FACTORY_TOPICS.length === 6, "6 topic cards");
+ok(FACTORY_TOPICS.length === 7, "7 topic cards");
+ok(FACTORY_TOPICS.some((t) => t.id === "nonnormal-void"), "nonnormal topic");
 ok(renderFactoryTopicCards((x) => x).includes("ict-fct"), "topic hub html");
 
 console.log("---");

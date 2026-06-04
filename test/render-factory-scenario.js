@@ -32,10 +32,12 @@ function renderFactoryScenarioHtml(dayN, esc) {
     ? `<p class="fs-anchor"><strong>标准锚点</strong> ${esc(s.standardAnchor)}</p>`
     : "";
 
+  const hasP2 = (s.sigmaDeep || []).some((line) => /\*\*P2\s·/.test(line));
+  const depthLabel = hasP2 ? "P0 / P1 / P2" : "P0 / P1";
   const deep =
     s.sigmaDeep && s.sigmaDeep.length
       ? `<details class="fs-deep" open>
-      <summary>专业加深（P0 / P1）</summary>
+      <summary>专业加深（${depthLabel}）</summary>
       ${renderListItems(s.sigmaDeep, esc, "fs-deep-list")}
     </details>`
       : "";

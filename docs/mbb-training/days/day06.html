@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>模块 6 — 回归与 DOE 入门 | 六西格玛黑带</title>
   <meta name="description" content="六西格玛黑带 BB-A-02 — 回归与 DOE 入门" />
-  <meta name="mbb-package-version" content="3.0.0-beta.1" />
+  <meta name="mbb-package-version" content="3.0.0-beta.2" />
   <script src="../js/theme-init.js"></script>
   <link rel="stylesheet" href="../css/theme.css" />
   <link rel="stylesheet" href="../css/style.css" />
@@ -161,8 +161,8 @@
     <div class="fs-panel" id="fs-panel-sigma" role="tabpanel" hidden>
       <p class="fs-sigma">**DOE** 回答因子显著性、交互与稳健区。Improve 须 **Pilot + 确认运行**；实验日志写 Profile#、钢网 ID、炉次。</p>
       <details class="fs-deep" open>
-      <summary>专业加深（P0 / P1）</summary>
-      <ul class="obj-list fs-deep-list"><li>**P0 · 样本量**：2³ 全因子至少每格 2–3 次重复；功率分析避免「实验做完才发现检不出」。</li><li>**P0 · 随机化**：运行顺序随机/block，防炉温漂移混淆主效应。</li><li>**P1 · 噪声因子（可选）**：湿度/焊膏批次作噪声因子可找稳健区（模块 09 RSM 延伸）。</li></ul>
+      <summary>专业加深（P0 / P1 / P2）</summary>
+      <ul class="obj-list fs-deep-list"><li>**P0 · 样本量**：2³ 全因子至少每格 2–3 次重复；功率分析避免「实验做完才发现检不出」。</li><li>**P0 · 随机化**：运行顺序随机/block，防炉温漂移混淆主效应。</li><li>**P1 · 噪声因子（可选）**：湿度/焊膏批次作噪声因子可找稳健区（模块 09 RSM 延伸）。</li><li>**P2 · 功效门槛**：α=0.05、功效≥0.8 时反算 n；若 n 超产线试产能力，须 Champion 接受「检不出小效应」风险。</li></ul>
     </details>
       <div class="fs-prep"><strong>分析/评审前检查</strong><ul class="obj-list "><li>随机顺序已记录</li><li>响应为计量空洞% 且 MSA 合格</li></ul></div>
       <div class="fs-tools"><span class="fs-tool-tag">2^k 因子设计</span><span class="fs-tool-tag">主效应/交互</span><span class="fs-tool-tag">确认运行</span><span class="fs-tool-tag">功率分析</span></div>
@@ -193,7 +193,7 @@
 
       <article class="card pro tip" id="sec-c2">
         <h2><span class="section-num">C2</span>专业软件实操 Lab（Minitab / JMP）</h2>
-        <p style="font-size:0.85rem;color:var(--muted)">包版本 3.0.0-beta.1 · 跟做后完成 F 节截图交付</p>
+        <p style="font-size:0.85rem;color:var(--muted)">包版本 3.0.0-beta.2 · 跟做后完成 F 节截图交付</p>
         <div class="c2-lab-card" id="c2-lab-d6">
     <p class="c2-lab-meta"><strong>主工具</strong> Minitab / JMP · <strong>版本</strong> Minitab 22
       · <a href="../tools/tutorials.html#minitab-doe">完整教程 →</a></p>

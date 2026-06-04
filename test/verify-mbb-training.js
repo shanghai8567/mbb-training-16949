@@ -198,9 +198,13 @@ if (indexHtml.includes("eval-levels") && indexHtml.includes("L1") && indexHtml.i
   ok("index three-level evaluation banner");
 else bad("index missing L1/L2/L3 banner");
 const factoryHub = fs.readFileSync(path.join(ROOT, "reference/factory-floor-lab.html"), "utf8");
-if (factoryHub.includes("专题加深") && factoryHub.includes("ict-fct"))
+if (
+  factoryHub.includes("专题加深") &&
+  factoryHub.includes("ict-fct") &&
+  factoryHub.includes("nonnormal-void")
+)
   ok("factory-floor-lab topic supplements");
-else bad("factory-floor-lab missing P1 topics");
+else bad("factory-floor-lab missing P1/P2 topics");
 
 const { countPresetAnswersForDay } = require("./exercise-answers");
 for (let i = 1; i <= 14; i++) {

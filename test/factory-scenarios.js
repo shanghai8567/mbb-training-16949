@@ -76,6 +76,7 @@ const FACTORY_SCENARIOS = {
     sigmaDeep: [
       "**P0 · 抽样**：属性 p 图建议 np≥5·n·p̄；计量 Cpk 需稳定过程与子组 rational subgroup（按批次/炉次，非随意凑 25 点）。",
       "**P1 · ICT 预警**：ICT 短路漏检会抬高 FCT 不良 —— 数据计划应保留 ICT→FCT 串联追溯（见专题「ICT 漏检」）。",
+      "**P2 · 非正态 CTQ**：BGA 空洞% 右偏时 I-MR/Cpk 易失真；先正态性检验，再考虑 Box-Cox/Johnson（见 C2 Lab · 专题「空洞偏态」）。",
     ],
     prepCheck: ["每个 CTQ 已标计量/属性", "操作定义含工站号"],
     tools: ["数据类型判定", "抽样计划", "操作定义"],
@@ -132,6 +133,8 @@ const FACTORY_SCENARIOS = {
       "**P0 · 效应量**：p&lt;0.05 只说明「有证据」；Champion 看 **差多少** —— 例：错版批次 Eth 不良率差 7.8% + 95% CI。",
       "**P0 · 前提**：列联表期望频数&lt;5 时考虑 Fisher 精确检验；批次非独立则夸大显著性。",
       "**P1 · SL→MP X-Ray**：Analyze 必须标注 **X-Ray 切换日**；切换前后空洞 Pareto 不可合并。",
+      "**P2 · 检验功效**：样本量过小会「检不出」错版效应 —— Analyze 前用功效分析定最小 n（与模块 06 DOE 功率分析同源）。",
+      "**P2 · 非正态空洞**：X-Ray 空洞% 非正态勿硬报 Cpk；用变换或 Weibull + 单边规格，并写明分布假设。",
     ],
     prepCheck: ["H0/H1 与检验匹配", "报告有效应量或比例差", "X-Ray 阶段已分层"],
     tools: ["Pareto", "列联表/卡方", "效应量/OR", "5Why"],
@@ -158,6 +161,7 @@ const FACTORY_SCENARIOS = {
       "**P0 · 样本量**：2³ 全因子至少每格 2–3 次重复；功率分析避免「实验做完才发现检不出」。",
       "**P0 · 随机化**：运行顺序随机/block，防炉温漂移混淆主效应。",
       "**P1 · 噪声因子（可选）**：湿度/焊膏批次作噪声因子可找稳健区（模块 09 RSM 延伸）。",
+      "**P2 · 功效门槛**：α=0.05、功效≥0.8 时反算 n；若 n 超产线试产能力，须 Champion 接受「检不出小效应」风险。",
     ],
     prepCheck: ["随机顺序已记录", "响应为计量空洞% 且 MSA 合格"],
     tools: ["2^k 因子设计", "主效应/交互", "确认运行", "功率分析"],
@@ -437,6 +441,16 @@ const FACTORY_TOPICS = [
       "一套数据、一套版本追溯，两套表格同步更新。",
     ],
     link: { day: 2, hash: "sec-factory" },
+  },
+  {
+    id: "nonnormal-void",
+    title: "BGA 空洞偏态：别硬套正态 Cpk",
+    station: "X-Ray · SMT 质量室",
+    sigmaDeep: [
+      "空洞% 右偏常见 → 先做正态性检验，再选能力指数或数据变换。",
+      "MBB 审厂会问：Cpk 来自哪条分布假设？SL 全检期数据不可代表 MP。",
+    ],
+    link: { day: 5, hash: "sec-factory" },
   },
 ];
 

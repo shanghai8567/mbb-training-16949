@@ -1,8 +1,8 @@
 # MBB Training Package — 汽车电子六西格玛黑带培训体系
 
-[![version](https://img.shields.io/badge/release-3.0.0--beta.1-0078d4?style=flat-square)](docs/mbb-training/VERSION.md)
+[![version](https://img.shields.io/badge/release-3.0.0--beta.2-0078d4?style=flat-square)](docs/mbb-training/VERSION.md)
 [![modules](https://img.shields.io/badge/curriculum-14_modules-2ea043?style=flat-square)](docs/mbb-training/index.html)
-[![quality](https://img.shields.io/badge/quality_gate-50%2F50-1f883d?style=flat-square)](docs/mbb-training/UPGRADE-TODO.md)
+[![quality](https://img.shields.io/badge/quality_gate-58%2F58-1f883d?style=flat-square)](docs/mbb-training/UPGRADE-TODO.md)
 [![item_bank](https://img.shields.io/badge/item_bank-v2.2.0-8250df?style=flat-square)](docs/mbb-training/VERSION.md)
 [![delivery](https://img.shields.io/badge/delivery-static_HTML-e34c26?style=flat-square)](#技术架构)
 [![runtime](https://img.shields.io/badge/build-Node.js_≥18-339933?style=flat-square&logo=node.js&logoColor=white)](#开发与质量门禁)
@@ -16,9 +16,10 @@
 | 属性 | 说明 |
 |------|------|
 | **产品代号** | `mbb-training-16949` |
-| **教材版本** | `3.0.0-beta.1` |
+| **教材版本** | `3.0.0-beta.2` |
+| **工厂实景** | `1.2.0`（14 主线 + 7 专题 · P0/P1/P2） |
 | **考题库** | `2.2.0`（84 题：70 单选/纠错 + 14 情景多选） |
-| **质量门禁** | 七维度审核 50/50 项已完成（见 [UPGRADE-TODO.md](docs/mbb-training/UPGRADE-TODO.md)） |
+| **质量门禁** | 七维度 + 工厂实景 58/58 项已完成（见 [UPGRADE-TODO.md](docs/mbb-training/UPGRADE-TODO.md)） |
 | **部署形态** | 静态 HTML + 浏览器 `localStorage`（无需应用服务器） |
 
 > **合规声明**：完成本体系 L1 自动评价 **不构成** 任何第三方或企业内部的 MBB 资质认证。标准边界见 [mbb-certification-boundary.html](docs/mbb-training/reference/mbb-certification-boundary.html)。
@@ -68,6 +69,7 @@
 | 课程总览 | [`docs/mbb-training/index.html`](docs/mbb-training/index.html) |
 | 模块 01–14 | [`docs/mbb-training/days/day01.html`](docs/mbb-training/days/day01.html) … `day14.html` |
 | IATF 专节 | [`docs/mbb-training/reference/automotive-iatf.html`](docs/mbb-training/reference/automotive-iatf.html) |
+| 工厂实景实验室 | [`docs/mbb-training/reference/factory-floor-lab.html`](docs/mbb-training/reference/factory-floor-lab.html) |
 | AI 助教 Prompt | [`docs/mbb-training/PROMPT-MBB-TUTOR.md`](docs/mbb-training/PROMPT-MBB-TUTOR.md) |
 
 ---
@@ -83,7 +85,7 @@
 | **L1 学习仪表盘** | G25% + F35% + C215% + H5% + Cap20% 综合权重 |
 | **三级评价** | L1 自动摸底 · L2 AI `/review 作业` · L3 阶段门 + Capstone |
 | **结业报告** | 可打印 HTML 导出 |
-| **交互式体验** | 章节进度环 · G 节即时反馈 · **工厂实景三页签**（14 条产线故事） |
+| **交互式体验** | 章节进度环 · G 节即时反馈 · **工厂实景**（三页签 + P0/P1/P2 加深 + 7 专题实验室） |
 | **运维模板** | 试做记录、盲评、模拟门评审（`ops/`） |
 
 ---
@@ -173,7 +175,8 @@ node test/run-mbb-suite.js
 | `test/verify-mbb-training.js` | 课件结构、链接、嵌入数据完整性 |
 | `test/homework-grader.test.js` | 评分引擎（含多选 v2） |
 | `test/red-team-verify.js` | 红队清单 ≥23/25 |
-| `test/upgrade-status.js` | 升级项 50/50 完成度 |
+| `test/upgrade-status.js` | 升级项 58/58 完成度 |
+| `test/factory-scenarios.test.js` | 工厂实景 P0/P1/P2 + 7 专题 |
 | `test/learning-dashboard.test.js` | L1 权重计算 |
 | `test/self-assessment.test.js` | H 自评入库 |
 | `test/c2-checklist.test.js` | C2 按模块勾选 |
@@ -184,7 +187,8 @@ node test/run-mbb-suite.js
 
 | 组件 | 版本 | 说明 |
 |------|------|------|
-| 教材 HTML | `3.0.0-beta.1` | 14 模块 A–H + B+ |
+| 教材 HTML | `3.0.0-beta.2` | 14 模块 A–H + B+ |
+| 工厂实景 | `1.2.0` | 14 主线 + 7 专题 · P0/P1/P2 |
 | 考题库 | `2.2.0` | G 节 84 题 |
 | 解析库 | `2.1.0-author` | 精编 + `gq-explain-source` |
 | Rubric / 评分 | `2.1.0` | 55/45 模型 |

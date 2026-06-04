@@ -24,7 +24,7 @@ const {
   renderFactoryTopicCards,
 } = require("./render-factory-scenario");
 
-const PACKAGE_VERSION = "3.0.0-beta.1";
+const PACKAGE_VERSION = "3.0.0-beta.2";
 
 const THEME_HEAD = `  <script src="../js/theme-init.js"></script>
   <link rel="stylesheet" href="../css/theme.css" />`;
@@ -825,7 +825,7 @@ const hubHtml = `<!DOCTYPE html>
       <h2 class="fs-hub-section-title">14 模块主线场景</h2>
       <div class="fs-hub-grid">${renderFactoryHubCards(esc)}</div>
       <h2 class="fs-hub-section-title">专题加深（P0 / P1）</h2>
-      <p style="font-size:0.88rem;color:var(--muted)">ICT · 手插 · AOI Kappa · ECN · ASIL · 8D 对齐</p>
+      <p style="font-size:0.88rem;color:var(--muted)">ICT · 手插 · AOI Kappa · ECN · ASIL · 8D · 非正态空洞</p>
       <div class="fs-hub-grid">${renderFactoryTopicCards(esc)}</div>
     </div>
   </div>

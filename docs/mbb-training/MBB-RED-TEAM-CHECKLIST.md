@@ -27,5 +27,6 @@
 | 23 | L2 `/review` 指引 | F 节结果区 |
 | 24 | 打印讲义 | print-light.css |
 | 25 | 追溯矩阵 | CONTENT-TRACEABILITY.md |
+| 26 | 工厂实景 P0/P1/P2 | 14 模块 `#sec-factory` + 7 专题 + `factory-scenarios.test.js` |
 
-**执行**：逐项勾选后记录日期与负责人。
+**执行**：逐项勾选后记录日期与负责人。自动化：`node test/red-team-verify.js`（含 #27 工厂加深）。

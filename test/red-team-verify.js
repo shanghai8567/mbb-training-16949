@@ -148,6 +148,15 @@ if (dayHtml(1).includes("self-assessment-panel") && fs.existsSync(path.join(ROOT
   ok(26, "H panel + dashboard js");
 else bad(26, "H/dashboard");
 
+// Bonus: factory P0/P1/P2
+if (
+  dayHtml(5).includes("fs-deep") &&
+  dayHtml(5).includes("标准锚点") &&
+  fs.existsSync(path.join(__dirname, "factory-scenarios.js"))
+)
+  ok(27, "factory scenario P0/P1/P2");
+else bad(27, "factory depth");
+
 const cov = countAuthorCoverage();
 console.log(`\nAuthor coverage: lib=${cov.lib} template=${cov.template}`);
 

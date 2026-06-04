@@ -2,6 +2,8 @@
 
 > **v3.0 更新**：三级评价（L1 浏览器 / L2 `/review` / L3 抽审+Capstone）、G 节 **Q6 情景多选**、**精编解析库**（`test/mcq-author-notes.js`）、C2 菜单路径 Lab。
 
+> **工厂实景（v3.2）**：每模块 `#sec-factory` 三页签（现场故事 / 黑带解析 / 30 秒致用）；**P0/P1/P2 加深**含标准锚点、审厂检查清单；7 专题见 `reference/factory-floor-lab.html`。助教引导学员先读故事再对照 G 节 `quizLink`。
+
 > **v2.1 保留**：Minitab / JMP / SigmaXL / Excel **菜单路径级教程库**（§四）。
 
 > **专业性说明**：对齐 ISO 13053；**完成 14 模块 L1 ≠ 企业 MBB**。见 `reference/mbb-certification-boundary.html` 与 `VERSION.md`。

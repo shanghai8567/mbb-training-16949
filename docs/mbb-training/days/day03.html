@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>模块 3 — Measure — 概率与数据收集 | 六西格玛黑带</title>
   <meta name="description" content="六西格玛黑带 BB-M-01 — Measure — 概率与数据收集" />
-  <meta name="mbb-package-version" content="3.0.0-beta.1" />
+  <meta name="mbb-package-version" content="3.0.0-beta.2" />
   <script src="../js/theme-init.js"></script>
   <link rel="stylesheet" href="../css/theme.css" />
   <link rel="stylesheet" href="../css/style.css" />
@@ -161,8 +161,8 @@
     <div class="fs-panel" id="fs-panel-sigma" role="tabpanel" hidden>
       <p class="fs-sigma">**Measure** 先判定 **连续 vs 属性**：SPI 体积、BGA 空洞% 是计量；FCT pass/fail 是属性。抽样计划要写 **操作定义**（Profile#、Program_ID、工站号）。否则 Analyze 的检验选型从根上就错。</p>
       <details class="fs-deep" open>
-      <summary>专业加深（P0 / P1）</summary>
-      <ul class="obj-list fs-deep-list"><li>**P0 · 抽样**：属性 p 图建议 np≥5·n·p̄；计量 Cpk 需稳定过程与子组 rational subgroup（按批次/炉次，非随意凑 25 点）。</li><li>**P1 · ICT 预警**：ICT 短路漏检会抬高 FCT 不良 —— 数据计划应保留 ICT→FCT 串联追溯（见专题「ICT 漏检」）。</li></ul>
+      <summary>专业加深（P0 / P1 / P2）</summary>
+      <ul class="obj-list fs-deep-list"><li>**P0 · 抽样**：属性 p 图建议 np≥5·n·p̄；计量 Cpk 需稳定过程与子组 rational subgroup（按批次/炉次，非随意凑 25 点）。</li><li>**P1 · ICT 预警**：ICT 短路漏检会抬高 FCT 不良 —— 数据计划应保留 ICT→FCT 串联追溯（见专题「ICT 漏检」）。</li><li>**P2 · 非正态 CTQ**：BGA 空洞% 右偏时 I-MR/Cpk 易失真；先正态性检验，再考虑 Box-Cox/Johnson（见 C2 Lab · 专题「空洞偏态」）。</li></ul>
     </details>
       <div class="fs-prep"><strong>分析/评审前检查</strong><ul class="obj-list "><li>每个 CTQ 已标计量/属性</li><li>操作定义含工站号</li></ul></div>
       <div class="fs-tools"><span class="fs-tool-tag">数据类型判定</span><span class="fs-tool-tag">抽样计划</span><span class="fs-tool-tag">操作定义</span></div>
@@ -193,7 +193,7 @@
 
       <article class="card pro tip" id="sec-c2">
         <h2><span class="section-num">C2</span>专业软件实操 Lab（Minitab / JMP）</h2>
-        <p style="font-size:0.85rem;color:var(--muted)">包版本 3.0.0-beta.1 · 跟做后完成 F 节截图交付</p>
+        <p style="font-size:0.85rem;color:var(--muted)">包版本 3.0.0-beta.2 · 跟做后完成 F 节截图交付</p>
         <div class="c2-lab-card" id="c2-lab-d3">
     <p class="c2-lab-meta"><strong>主工具</strong> Minitab / JMP · <strong>版本</strong> Minitab 22
       · <a href="../tools/tutorials.html#minitab-capability">完整教程 →</a></p>

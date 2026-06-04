@@ -287,6 +287,8 @@
 | 2026-06-04 | `node test/upgrade-status.js` | 100% |
 | 2026-06-04 | `node test/run-mbb-suite.js` | 全套件 PASS |
 | 2026-06-04 | `node test/build-mbb-days.js` | 14 天 beta.1 |
+| 2026-06-04 | `factory-scenarios.test.js` | 101 PASS · P0/P1/P2 |
+| 2026-06-04 | `node test/upgrade-status.js` | 58/58 · 100% |
 
 
 
@@ -307,5 +309,20 @@
 
 ---
 
-*全部待办已完成 · 包版本 `3.0.0-beta.1`*
+## 阶段 v3.2 — 工厂实景（MBB 审厂加深）
+
+| ID | 任务 | 交付物 | 状态 |
+|----|------|--------|------|
+| F1-01 | P0 标准锚点 + sigmaDeep | `test/factory-scenarios.js` 14 模块 | ✅ |
+| F1-02 | P1 六专题实验室 | `FACTORY_TOPICS` + `factory-floor-lab.html` | ✅ |
+| F1-03 | 渲染加深块 + G 节联动 | `render-factory-scenario.js` · `quizLink` | ✅ |
+| F1-04 | 工厂场景测试 | `factory-scenarios.test.js` · verify | ✅ |
+| F2-01 | P2 非正态/功效/噪声 | 模块 03/05/06/09/12 sigmaDeep | ✅ |
+| F2-02 | P2 专题「空洞偏态」 | `nonnormal-void` 专题卡 | ✅ |
+| F2-03 | 版本与 README | `VERSION.md` · 根 `README.md` | ✅ |
+| F2-04 | PROMPT + 追溯 + 红队 #27 | `PROMPT` · `CONTENT-TRACEABILITY` · `red-team-verify` | ✅ |
+
+---
+
+*全部待办已完成 · 包版本 `3.0.0-beta.2`*
 
