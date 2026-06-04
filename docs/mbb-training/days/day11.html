@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>模块 11 — DFSS / DMADV 与 QFD | 六西格玛黑带</title>
+  <meta name="description" content="六西格玛黑带 BB-DFSS-01 — DFSS / DMADV 与 QFD" />
+  <meta name="mbb-package-version" content="3.0.0-beta.1" />
+  <script src="../js/theme-init.js"></script>
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/pro.css" />
+  <link rel="stylesheet" href="../css/automotive.css" />
+  <link rel="stylesheet" href="../css/homework-grader.css" />
+  <link rel="stylesheet" href="../css/brand.css" />
+  <link rel="stylesheet" href="../css/premium.css" />
+  <link rel="stylesheet" href="../css/print-light.css" media="print" />
+  <script src="../js/course.js" defer></script>
+  <script src="../js/theme.js" defer></script>
+  <script src="../js/brand.js" defer></script>
+</head>
+<body data-day="11">
+  <div class="page-bg"></div>
+  <header class="print-only print-header" aria-hidden="true">
+      <div class="print-header-logo">
+        <img src="../assets/enterprise-logo.svg" alt="" onerror="this.parentElement.innerHTML='<span style=font-size:10pt;color:#1e3a5f;font-weight:700">六西格玛黑带学院</span>'" />
+      </div>
+      <div class="print-header-meta">
+        <strong>六西格玛黑带学院</strong>
+        <span class="print-doc-title">模块 11 — DFSS / DMADV 与 QFD</span>
+        <span>打印日期：<span class="print-date"></span></span>
+      </div>
+    </header>
+  <header class="topbar">
+    <a class="brand" href="../index.html">
+      <span class="brand-logo-wrap" title="企业 Logo — 可替换 assets/enterprise-logo.svg">
+        <img class="brand-logo" src="../assets/enterprise-logo.svg" alt="企业 Logo" width="160" height="40"
+          onerror="this.style.display='none';this.parentElement.classList.add('logo-missing')" />
+      </span>
+      <span class="belt-mark fallback-mark">σ</span>
+      <span class="brand-text-wrap">
+        <span class="brand-org-name">六西格玛黑带学院</span>
+        <span class="brand-org-sub">汽车电子 EMS · MBB 培训</span>
+      </span>
+    </a>
+    <nav>
+      <a class="btn" href="../index.html">课程总览</a>
+      <a class="btn" href="../reference/tool-matrix.html">工具矩阵</a>
+      <a class="btn" href="../tools/tutorials.html">Minitab 教程</a>
+      <a class="btn" id="nav-prev" href="day10.html">← 上一模块</a>
+      <a class="btn btn-primary" id="nav-next" href="day12.html">下一模块 →</a>
+      <button type="button" class="btn" id="mark-complete">标记完成</button>
+      <div class="theme-switcher" role="group" aria-label="主题切换">
+      <button type="button" data-theme-pick="dark" title="深色主题"><span class="ico">🌙</span></button>
+      <button type="button" data-theme-pick="light" title="浅色主题"><span class="ico">☀</span></button>
+      <button type="button" data-theme-pick="system" title="跟随系统"><span class="ico">◐</span></button>
+    </div>
+    </nav>
+  </header>
+
+  <div class="layout-course">
+    <aside class="course-sidebar">
+      <div class="sb-title">模块 11 目录</div>
+      <a href="#sec-a">A 学习目标</a>
+      <a href="#sec-b">B 核心概念</a>
+      <a href="#sec-b2">B+ 生产线对齐</a>
+      <a href="#sec-c">C 工具与公式</a>
+      <a href="#sec-c2">C2 软件实操</a>
+      <a href="#sec-d">D 行业案例</a>
+      <a href="#sec-e">E 课堂练习</a>
+      <a href="#sec-f">F 课后作业</a>
+      <a href="#sec-g">G 客观自测</a>
+      <a href="#sec-h">H 能力自评</a>
+      <div class="sb-title" style="margin-top:1rem">参考资料</div>
+      <a href="../reference/glossary.html">术语表</a>
+      <a href="../reference/sigma-table.html">σ · DPMO</a>
+      <a href="../reference/automotive-iatf.html">汽车 IATF 专题</a>
+      <a href="../reference/homework-scores.html">我的作业成绩</a>
+    </aside>
+
+    <main class="course-main">
+      <header class="pro-header day-hero" style="border:none;padding:0">
+        <p class="module-id">模块 11 / 14 · BB-DFSS-01</p>
+        <h1>DFSS / DMADV 与 QFD</h1>
+        <div class="day-meta" style="margin-top:1rem">
+          <span class="dmaic-ribbon dfss">dfss</span>
+          <span class="belt-track">BB 能力域</span>
+          
+          <span class="tag gold">交付：简化 QFD 屋</span>
+        </div>
+        <div class="ref-box" style="margin-top:1rem">
+          <strong>标准对齐</strong> ISO 13053-2 新过程设计
+        </div>
+      </header>
+
+      <article class="card pro automotive" id="sec-auto">
+      <h2><span class="section-num">◎</span>汽车电子 EMS（五产品·离线/SMT/手插/装配）</h2>
+      <p><span class="tag auto">汽车制造</span> <strong>IATF：</strong>见 automotive-iatf.html</p>
+      
+      <p style="margin-top:0.75rem">新 ADAS 平台 NPI — QFD：感知融合、ASIL、启动时延→SOC BGA 设计→离线烧录→SMT Profile→FCT 用例。</p>
+      
+      <h3 style="margin-top:1rem;color:var(--bb-gold)">审核检查清单</h3>
+      <ul class="obj-list"></ul>
+      <div class="aiag-criteria">
+        <div class="ok"><strong>&lt;10%</strong>%GRR 可接受</div>
+        <div class="warn"><strong>10–30%</strong>边缘/改进</div>
+        <div class="no"><strong>&gt;30%</strong>不可接受</div>
+      </div>
+      <div class="auto-banner" style="margin-top:1rem"><strong>贵司现场配置</strong><ul class="obj-list"><li>全部离线烧录在 SMT 之前完成</li><li>BGA X-Ray：安全投产(Safe Launch) 100% 全检；量产后按 CSR 抽检</li><li>车身域控使用独立 FCT 工站 FCT-DCU-B-04（与座舱/ADAS 分机台）</li></ul><a class="btn btn-primary" href="../reference/site-config.html">1:1 配置页 →</a></div>
+      <p style="margin-top:0.75rem"><a class="btn" href="../reference/automotive-iatf.html">IATF × DMAIC 对照手册 →</a></p>
+    </article>
+
+      <article class="card pro" id="sec-a">
+        <h2><span class="section-num">A</span>学习目标（Learning Objectives）</h2>
+        <ul class="obj-list"><li>DMAIC vs DFSS 选型</li><li>DMADV 五阶段</li><li>质量屋构建</li></ul>
+        <p style="margin-top:0.75rem;font-size:0.88rem;color:var(--muted)">学完应能独立向 Champion 说明本模块对黑带项目的价值。</p>
+      </article>
+
+      <article class="card pro" id="sec-b">
+        <h2><span class="section-num">B</span>核心概念与理论框架</h2>
+        <p>修房用 DMAIC；盖新房用 DFSS。</p><p>【汽车电子 · DFSS — ADAS NPI】新 ADAS 平台：QFD 将感知时延、ASIL 需求转化为 SOC BGA 焊盘设计、镜像大小、散热、离线烧录容量与 FCT 场景库。</p>
+        <div class="analogy"><strong>专业类比</strong> — QFD 屋顶=工程特性打架关系。</div>
+        <p style="margin-top:1rem">1:10:100 设计阶段成本法则。</p>
+        
+        <p style="margin-top:1rem"><span class="tag auto">本课主线：DFSS — ADAS NPI</span></p>
+      </article>
+
+      <article class="card pro automotive-deep" id="sec-b2">
+    <h2><span class="section-num">B+</span>本课与生产线对齐 · DMADV × 四段工艺</h2>
+    <div class="process-pipeline" aria-label="工艺主线"><span class="step accent">离线@SMT前</span><span class="arrow">→</span><span class="step">SMT·SPI</span><span class="arrow">→</span><span class="step">回流·AOI</span><span class="arrow">→</span><span class="step">X-Ray</span><span class="arrow">→</span><span class="step">手插/波峰</span><span class="arrow">→</span><span class="step">ICT</span><span class="arrow">→</span><span class="step">FCT</span><span class="arrow">→</span><span class="step">装配/EOL</span></div>
+    <ul class="obj-list"><li>Define：OEM VOC+ASIL 边界</li><li>Measure：NPI Pilot SPI/BGA/FCT MSA</li><li>Verify：不可跳过离线镜像 CTQ</li></ul>
+    
+    <p class="exam-align-hint">▼ <strong>G 客观题</strong>与 <strong>F 作业</strong>仅考核本节要点（车身 FCT-04 / ADAS BGA·FCT-05）</p>
+  </article>
+
+      <article class="card pro" id="sec-c">
+        <h2><span class="section-num">C</span>工具清单与适用边界</h2>
+        <p>主平台：<strong>Excel QFD</strong> ·
+          <a href="../tools/tutorials.html#qfd">分步操作教程</a> ·
+          <a href="../reference/tool-matrix.html">DMAIC 工具矩阵</a></p>
+        <div class="table-wrap tool-matrix" style="margin-top:1rem">
+          <table><thead><tr><th>工具 / 方法</th><th>本模块用途</th></tr></thead><tbody><tr><td>DMADV</td><td>设计流程</td></tr><tr><td>QFD</td><td>质量屋</td></tr><tr><td>概念 Pugh</td><td>方案选择</td></tr></tbody></table>
+        </div>
+        <div class="pitfall"><strong>常见缺陷</strong> 跳过 Verify 测量</div><div class="pitfall"><strong>常见缺陷</strong> QFD 一人打分</div>
+      </article>
+
+      <article class="card pro tip" id="sec-c2">
+        <h2><span class="section-num">C2</span>专业软件实操 Lab（Excel QFD）</h2>
+        <p style="font-size:0.85rem;color:var(--muted)">包版本 3.0.0-beta.1 · 跟做后完成 F 节截图交付</p>
+        <div class="c2-lab-card" id="c2-lab-d11">
+    <p class="c2-lab-meta"><strong>主工具</strong> Excel QFD / JMP · <strong>版本</strong> Excel 365
+      · <a href="../tools/tutorials.html#qfd">完整教程 →</a></p>
+    <p class="c2-lab-meta"><strong>数据</strong> <a href="../templates/project-charter.csv" download>project-charter.csv</a> · <strong>列定义</strong> WHAT=客户需求；HOW=工艺/设计参数</p>
+    <h3 class="c2-lab-h3">跟做步骤（菜单路径）</h3>
+    <ol class="c2-lab-steps"><li><strong>1.</strong> <code>质量屋：OEM 时延/可靠 → SOC/镜像/Profile/FCT 用例</code></li><li><strong>2.</strong> <code>界定 EMS vs OEM 验证边界（ASIL）</code></li><li><strong>3.</strong> <code>DFSS Verify：Pilot SPI/BGA/FCT MSA 计划</code></li></ol>
+    <p class="c2-lab-read"><strong>输出解读</strong> 屋顶关系强度；冲突项与优先级。</p>
+    <h3 class="c2-lab-h3">课堂练习</h3>
+    <p>写 1 条 WHAT→HOW（启动时延→镜像/Profile）。</p>
+    <h3 class="c2-lab-h3" style="color:var(--bb-gold)">F 节建议截图交付</h3>
+    <ul class="obj-list c2-lab-deliver"><li>QFD 截图</li><li>ASIL 边界声明段落</li></ul>
+    <h3 class="c2-lab-h3" style="color:var(--bb-gold)">MBB 审计点</h3>
+    <ul class="obj-list"><li>镜像版本是 SMT 前 CTQ</li><li>EMS 不替代整车 ASIL 认证</li></ul>
+  </div>
+        
+      </article>
+
+      <article class="card pro" id="sec-d">
+        <h2><span class="section-num">D</span>行业迷你案例与 黑带教练追问</h2>
+        <p>新 ADAS 平台 — QFD：感知/ASIL/时延→SOC BGA→离线镜像→Profile→FCT 场景库。</p>
+        <h3>黑带教练追问</h3>
+        <ul class="obj-list"><li>概念 Pugh？</li><li>验证计划？</li><li>供应链 CTQ？</li></ul>
+      </article>
+
+      <article class="card pro" id="sec-e">
+        <h2><span class="section-num">E</span>课堂练习（先作答再对答案）</h2>
+        <ul class="obj-list"><li class="exercise-item">
+        <strong>E1.</strong> 质量屋 1 个 WHAT→HOW（如时延→镜像/Profile）
+        <details class="exercise-answer-ref">
+          <summary>参考答案</summary>
+          <p class="ex-ans-body"><strong>要点：</strong>WHAT→HOW：OEM 启动时延 → HOW：SOC 镜像版本 + Profile# + FCT 脚本；屋顶：镜像版本与 Profile 强正相关。</p>
+          <p class="ex-ans-explain">EMS 验证止于 FCT；整车时延 OEM 测。</p>
+        </details>
+      </li><li class="exercise-item">
+        <strong>E2.</strong> 界定 EMS vs OEM 验证边界
+        <details class="exercise-answer-ref">
+          <summary>参考答案</summary>
+          <p class="ex-ans-body"><strong>要点：</strong>EMS：SPI/FCT/Checksum/AXI；OEM：整车 Eth 路试、功能安全确认、OTA — 质量屋 HOW 不越界写 OEM 责任。</p>
+          <p class="ex-ans-explain">接口 CTQ 在合同中界定。</p>
+        </details>
+      </li><li class="exercise-item">
+        <strong>E3.</strong> 列 3 VOC
+        <details class="exercise-answer-ref">
+          <summary>参考答案</summary>
+          <p class="ex-ans-body"><strong>要点：</strong>VOC 原话 3 条：① Eth 丢包投诉 ② 启动&gt;8s ③ 夜间 CAN 休眠异常 — 转可测 CTQ。</p>
+          <p class="ex-ans-explain">勿直接写解决方案。</p>
+        </details>
+      </li><li class="exercise-item">
+        <strong>E4.</strong> 画屋顶一对相关
+        <details class="exercise-answer-ref">
+          <summary>参考答案</summary>
+          <p class="ex-ans-body"><strong>要点：</strong>屋顶：Profile# 与钢网厚度 ○ 正相关；冷却斜率与空洞% △ 负相关（示意一对即可）。</p>
+          <p class="ex-ans-explain">团队共识打分，非一人填。</p>
+        </details>
+      </li></ul>
+      </article>
+
+      <article class="card pro warn" id="sec-f">
+        <h2><span class="section-num">F</span>课后作业（可交付物）</h2>
+        <p><strong>交付要求：</strong>含 QFD 一级展开 + 四段工艺特殊特性草案</p>
+        <p class="c2-deliver-hint"><strong>C2 截图清单：</strong>QFD 截图、ASIL 边界声明段落</p>
+        <p class="c2-module-check"><label><input type="checkbox" id="c2-done-cb" data-day="11" /> 本模块 C2 Lab 跟做截图已交付（计入结业 15%）</label></p>
+        <div class="hw-submit-panel" id="hw-submit-panel">
+    <label for="hw-text" class="hw-label">粘贴或输入课后作业（须体现汽车电子现场）</label>
+    <p class="hw-hint"><strong>评分要点：</strong>含 QFD 一级展开 + 四段工艺特殊特性草案。建议字数 ≥ 150，含模块关键词（如 dfss、qfd、asil、npi、soc、verify…）。未达字数时文本分按比例封顶。</p>
+    <textarea id="hw-text" class="hw-textarea" rows="8" placeholder="例：ADAS 域控 / 车身域控 / 离线烧录@SMT前 / BGA U12 / X-Ray SL全检 / FCT-DCU-B-04 …"></textarea>
+    <div class="form-actions hw-actions">
+      <button type="button" class="btn btn-primary" id="hw-submit-btn">提交作业并自动评分</button>
+      <button type="button" class="btn" id="hw-save-draft">保存草稿</button>
+    </div>
+    <div id="hw-result" class="hw-result" aria-live="polite"></div>
+    <div id="hw-mcq-review" class="hw-mcq-review" aria-live="polite"></div>
+  </div>
+        <p style="margin-top:0.75rem;font-size:0.88rem;color:var(--muted)">自动评分后仍可提交 AI 深度批改：<code>/review 作业</code></p>
+      </article>
+
+      <article class="card pro quiz" id="sec-g">
+        <h2><span class="section-num">G</span>客观自测（自动判分 · 含纠错题）</h2>
+        <div class="gradable-quiz" id="gradable-quiz" data-day="11">
+    <p class="gq-intro">以下题目<strong>只考本模块 B+ 节与 ◎ 汽车电子专题</strong>所讲要点（离线/SMT·BGA/手插/装配/域控 FCT），请先学完再答。占综合分 <strong>45%</strong>（含 Q6 情景多选）。选项顺序已打乱，请勿猜测字母规律。</p>
+    <div class="gq-block" data-correct="d" data-qindex="1" data-qtype="single">
+        <p class="gq-title"><span class="gq-num">Q1</span>  新 ADAS 平台应用 DFSS 因？</p>
+        
+        <ul class="gq-opts"><li class="opt"><input type="radio" name="mcq-d11-q1" id="mcq-d11-q1-a" value="a" data-label="车身继电器" /><label for="mcq-d11-q1-a">车身继电器</label></li><li class="opt"><input type="radio" name="mcq-d11-q1" id="mcq-d11-q1-b" value="b" data-label="量产良率已稳定" /><label for="mcq-d11-q1-b">量产良率已稳定</label></li><li class="opt"><input type="radio" name="mcq-d11-q1" id="mcq-d11-q1-c" value="c" data-label="只改标签" /><label for="mcq-d11-q1-c">只改标签</label></li><li class="opt"><input type="radio" name="mcq-d11-q1" id="mcq-d11-q1-d" value="d" data-label="新 SOC BGA 设计+离线镜像+新 FCT 场景" /><label for="mcq-d11-q1-d">新 SOC BGA 设计+离线镜像+新 FCT 场景</label></li></ul>
+      </div><div class="gq-block" data-correct="d" data-qindex="2" data-qtype="single">
+        <p class="gq-title"><span class="gq-num">Q2</span>  QFD 将「启动时延」转化为？</p>
+        
+        <ul class="gq-opts"><li class="opt"><input type="radio" name="mcq-d11-q2" id="mcq-d11-q2-a" value="a" data-label="员工人数" /><label for="mcq-d11-q2-a">员工人数</label></li><li class="opt"><input type="radio" name="mcq-d11-q2" id="mcq-d11-q2-b" value="b" data-label="只改包装" /><label for="mcq-d11-q2-b">只改包装</label></li><li class="opt"><input type="radio" name="mcq-d11-q2" id="mcq-d11-q2-c" value="c" data-label="仓库位置" /><label for="mcq-d11-q2-c">仓库位置</label></li><li class="opt"><input type="radio" name="mcq-d11-q2" id="mcq-d11-q2-d" value="d" data-label="SOC 选型、镜像大小、SMT 散热与 FCT 用例" /><label for="mcq-d11-q2-d">SOC 选型、镜像大小、SMT 散热与 FCT 用例</label></li></ul>
+      </div><div class="gq-block" data-correct="b" data-qindex="3" data-qtype="single">
+        <p class="gq-title"><span class="gq-num">Q3</span>  功能安全 ASIL 项在 EMS？</p>
+        
+        <ul class="gq-opts"><li class="opt"><input type="radio" name="mcq-d11-q3" id="mcq-d11-q3-a" value="a" data-label="只写 PFMEA S=1" /><label for="mcq-d11-q3-a">只写 PFMEA S=1</label></li><li class="opt"><input type="radio" name="mcq-d11-q3" id="mcq-d11-q3-b" value="b" data-label="界定边界：EMS 负责工艺符合性，系统验证在 OEM" /><label for="mcq-d11-q3-b">界定边界：EMS 负责工艺符合性，系统验证在 OEM</label></li><li class="opt"><input type="radio" name="mcq-d11-q3" id="mcq-d11-q3-c" value="c" data-label="EMS 承担全部 ASIL 认证" /><label for="mcq-d11-q3-c">EMS 承担全部 ASIL 认证</label></li><li class="opt"><input type="radio" name="mcq-d11-q3" id="mcq-d11-q3-d" value="d" data-label="忽略" /><label for="mcq-d11-q3-d">忽略</label></li></ul>
+      </div><div class="gq-block" data-correct="a" data-qindex="4" data-qtype="single">
+        <p class="gq-title"><span class="gq-num">Q4</span>  DFSS Verify 段须？</p>
+        
+        <ul class="gq-opts"><li class="opt"><input type="radio" name="mcq-d11-q4" id="mcq-d11-q4-a" value="a" data-label="Pilot 测量：SPI/BGA/FCT 与 MSA" /><label for="mcq-d11-q4-a">Pilot 测量：SPI/BGA/FCT 与 MSA</label></li><li class="opt"><input type="radio" name="mcq-d11-q4" id="mcq-d11-q4-b" value="b" data-label="无数据" /><label for="mcq-d11-q4-b">无数据</label></li><li class="opt"><input type="radio" name="mcq-d11-q4" id="mcq-d11-q4-c" value="c" data-label="只改商标" /><label for="mcq-d11-q4-c">只改商标</label></li><li class="opt"><input type="radio" name="mcq-d11-q4" id="mcq-d11-q4-d" value="d" data-label="只访谈" /><label for="mcq-d11-q4-d">只访谈</label></li></ul>
+      </div><div class="gq-block" data-correct="b" data-qindex="5" data-qtype="single">
+        <p class="gq-title"><span class="gq-num">Q5</span>  【纠错】DFSS 可跳过离线烧录设计？</p>
+        
+        <ul class="gq-opts"><li class="opt"><input type="radio" name="mcq-d11-q5" id="mcq-d11-q5-a" value="a" data-label="是；只信 FCT" /><label for="mcq-d11-q5-a">是；只信 FCT</label></li><li class="opt"><input type="radio" name="mcq-d11-q5" id="mcq-d11-q5-b" value="b" data-label="否；镜像版本是 CTQ，须在 SMT 前锁定" /><label for="mcq-d11-q5-b">否；镜像版本是 CTQ，须在 SMT 前锁定</label></li><li class="opt"><input type="radio" name="mcq-d11-q5" id="mcq-d11-q5-c" value="c" data-label="否；不要 DFSS" /><label for="mcq-d11-q5-c">否；不要 DFSS</label></li><li class="opt"><input type="radio" name="mcq-d11-q5" id="mcq-d11-q5-d" value="d" data-label="是；上线再烧" /><label for="mcq-d11-q5-d">是；上线再烧</label></li></ul>
+      </div><div class="gq-block" data-correct-multi="c,d" data-qindex="6" data-qtype="multi">
+        <p class="gq-title"><span class="gq-num">Q6</span> <span class="gq-type-badge multi">多选</span> 质量屋错误有？（多选）</p>
+        <p class="gq-scenario">【情景】QFD 将 OEM 整车路试时延写入 EMS PFMEA 探测度，HU 与 DCU-C 共用同一 HOW。</p>
+        <ul class="gq-opts"><li class="opt"><input type="checkbox" name="mcq-d11-q6[]" id="mcq-d11-q6-a" value="a" data-label="WHAT→HOW 映射启动时延→镜像版本" /><label for="mcq-d11-q6-a">WHAT→HOW 映射启动时延→镜像版本</label></li><li class="opt"><input type="checkbox" name="mcq-d11-q6[]" id="mcq-d11-q6-b" value="b" data-label="屋顶标明 Profile 与钢网相关" /><label for="mcq-d11-q6-b">屋顶标明 Profile 与钢网相关</label></li><li class="opt"><input type="checkbox" name="mcq-d11-q6[]" id="mcq-d11-q6-c" value="c" data-label="EMS 承担 OEM 路试责任" /><label for="mcq-d11-q6-c">EMS 承担 OEM 路试责任</label></li><li class="opt"><input type="checkbox" name="mcq-d11-q6[]" id="mcq-d11-q6-d" value="d" data-label="HU 与 DCU-C HOW 混用" /><label for="mcq-d11-q6-d">HU 与 DCU-C HOW 混用</label></li></ul>
+      </div>
+  </div>
+  <details class="quiz-answers-ref" id="quiz-answers-ref"><summary>题库解析（提交后将自动展开）</summary><div class="gq-ref-wrap"><div class="gq-ref-item" data-qindex="1">
+    <h4 class="gq-ref-q">Q1 新 ADAS 平台应用 DFSS 因？</h4>
+    
+    <p class="gq-ref-ans"><span style="color:var(--accent)">✓ 新 SOC BGA 设计+离线镜像+新 FCT 场景</span></p>
+    <div class="gq-explain-block pass">
+    <span class="gq-explain-source author">精编解析</span>
+    <p class="gq-explain-focus"><strong>考点</strong> DFSS · 座舱域控 DCU-C 验证边界</p>
+    <p class="gq-explain-rationale"><strong>正解（D）</strong> DCU-C（MCU+Switch+eMMC）EMS 侧验证止于 FCT-DCU-C-03；整车以太时延由 OEM 路试，质量屋 HOW 不得越界。</p>
+    
+    <p class="gq-explain-distractor-title"><strong>误选简析</strong></p>
+    <ul class="gq-explain-distractor-list obj-list"><li><strong>A</strong> 车身继电器<br><span class="gq-explain-dim">见题干干扰项设计。</span></li><li><strong>B</strong> 量产良率已稳定<br><span class="gq-explain-dim">OEM 责任不能写入 EMS PFMEA 探测度。</span></li><li><strong>C</strong> 只改标签<br><span class="gq-explain-dim">HU 中控与 DCU-C 程序不同，不能合并 CTQ。</span></li></ul>
+    <p class="gq-explain-anchor">PRODUCTS.dcuC · 模块11 B+</p>
+  </div>
+  </div><div class="gq-ref-item" data-qindex="2">
+    <h4 class="gq-ref-q">Q2 QFD 将「启动时延」转化为？</h4>
+    
+    <p class="gq-ref-ans"><span style="color:var(--accent)">✓ SOC 选型、镜像大小、SMT 散热与 FCT 用例</span></p>
+    <div class="gq-explain-block pass">
+    <span class="gq-explain-source author">精编解析</span>
+    <p class="gq-explain-focus"><strong>考点</strong> DFSS · QFD · Q2</p>
+    <p class="gq-explain-rationale"><strong>正解（D）</strong> 正解：SOC 选型、镜像大小、SMT 散热与 FCT 用例。答题时写出工站号/Profile#/Program_ID 中至少一项。</p>
+    
+    <p class="gq-explain-distractor-title"><strong>误选简析</strong></p>
+    <ul class="gq-explain-distractor-list obj-list"><li><strong>A</strong> 员工人数<br><span class="gq-explain-dim">见题干干扰项设计。</span></li><li><strong>B</strong> 只改包装<br><span class="gq-explain-dim">「仓库位置」与模块 11 DFSS · QFD 证据要求冲突。</span></li><li><strong>C</strong> 仓库位置<br><span class="gq-explain-dim">「员工人数」与模块 11 DFSS · QFD 证据要求冲突。</span></li></ul>
+    <p class="gq-explain-anchor">教研精编 · 模块 11 B+ / C2 Lab</p>
+  </div>
+  </div><div class="gq-ref-item" data-qindex="3">
+    <h4 class="gq-ref-q">Q3 功能安全 ASIL 项在 EMS？</h4>
+    
+    <p class="gq-ref-ans"><span style="color:var(--accent)">✓ 界定边界：EMS 负责工艺符合性，系统验证在 OEM</span></p>
+    <div class="gq-explain-block pass">
+    <span class="gq-explain-source author">精编解析</span>
+    <p class="gq-explain-focus"><strong>考点</strong> DFSS · QFD · Q3</p>
+    <p class="gq-explain-rationale"><strong>正解（B）</strong> 正解：界定边界：EMS 负责工艺符合性，系统验证在 OEM。答题时写出工站号/Profile#/Program_ID 中至少一项。</p>
+    
+    <p class="gq-explain-distractor-title"><strong>误选简析</strong></p>
+    <ul class="gq-explain-distractor-list obj-list"><li><strong>A</strong> 只写 PFMEA S=1<br><span class="gq-explain-dim">见题干干扰项设计。</span></li><li><strong>C</strong> EMS 承担全部 ASIL 认证<br><span class="gq-explain-dim">「忽略」与模块 11 DFSS · QFD 证据要求冲突。</span></li><li><strong>D</strong> 忽略<br><span class="gq-explain-dim">「只写 PFMEA S=1」与模块 11 DFSS · QFD 证据要求冲突。</span></li></ul>
+    <p class="gq-explain-anchor">教研精编 · 模块 11 B+ / C2 Lab</p>
+  </div>
+  </div><div class="gq-ref-item" data-qindex="4">
+    <h4 class="gq-ref-q">Q4 DFSS Verify 段须？</h4>
+    
+    <p class="gq-ref-ans"><span style="color:var(--accent)">✓ Pilot 测量：SPI/BGA/FCT 与 MSA</span></p>
+    <div class="gq-explain-block pass">
+    <span class="gq-explain-source auto">规则解析</span>
+    <p class="gq-explain-focus"><strong>考点</strong> 考点（模块 11 · DFSS · QFD 与验证边界）— 现场判断</p>
+    <p class="gq-explain-rationale"><strong>正解（A）</strong> Pilot 测量：SPI/BGA/FCT 与 MSA。须能在离线/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。</p>
+    
+    <p class="gq-explain-distractor-title"><strong>误选简析</strong></p>
+    <ul class="gq-explain-distractor-list obj-list"><li><strong>B</strong> 无数据<br><span class="gq-explain-dim">「无数据」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。</span></li><li><strong>C</strong> 只改商标<br><span class="gq-explain-dim">「只访谈」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。</span></li><li><strong>D</strong> 只访谈<br><span class="gq-explain-dim">「只改商标」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。</span></li></ul>
+    <p class="gq-explain-anchor">对照本节 B+ 工艺表、F 作业 Rubric 与 G 题干关键词。</p>
+  </div>
+  </div><div class="gq-ref-item" data-qindex="5">
+    <h4 class="gq-ref-q">Q5 【纠错】DFSS 可跳过离线烧录设计？</h4>
+    
+    <p class="gq-ref-ans"><span style="color:var(--accent)">✓ 否；镜像版本是 CTQ，须在 SMT 前锁定</span></p>
+    <div class="gq-explain-block pass">
+    <span class="gq-explain-source author">精编解析</span>
+    <p class="gq-explain-focus"><strong>考点</strong> DFSS · QFD · 纠错辨析</p>
+    <p class="gq-explain-rationale"><strong>正解（B）</strong> 立场：否；镜像版本是 CTQ，须在 SMT 前锁定。题干已植入常见误区，须用工艺段证据反驳。</p>
+    
+    <p class="gq-explain-distractor-title"><strong>误选简析</strong></p>
+    <ul class="gq-explain-distractor-list obj-list"><li><strong>A</strong> 是；只信 FCT<br><span class="gq-explain-dim">见题干干扰项设计。</span></li><li><strong>C</strong> 否；不要 DFSS<br><span class="gq-explain-dim">「是；只信 FCT」与模块 11 DFSS · QFD 证据要求冲突。</span></li><li><strong>D</strong> 是；上线再烧<br><span class="gq-explain-dim">「否；不要 DFSS」与模块 11 DFSS · QFD 证据要求冲突。</span></li></ul>
+    <p class="gq-explain-anchor">教研精编 · 模块 11 B+ / C2 Lab</p>
+  </div>
+  </div><div class="gq-ref-item" data-qindex="6">
+    <h4 class="gq-ref-q">Q6 质量屋错误有？（多选）</h4>
+    <p class="gq-ref-scenario">【情景】QFD 将 OEM 整车路试时延写入 EMS PFMEA 探测度，HU 与 DCU-C 共用同一 HOW。</p>
+    <p class="gq-ref-ans"><span style="color:var(--accent)">✓ EMS 承担 OEM 路试责任；HU 与 DCU-C HOW 混用</span></p>
+    <div class="gq-explain-block pass">
+    <span class="gq-explain-source auto">规则解析</span>
+    <p class="gq-explain-focus"><strong>考点</strong> 考点（模块 11 · DFSS · QFD 与验证边界）— 现场判断</p>
+    <p class="gq-explain-rationale"><strong>正解（多选）（C+D）</strong> EMS 承担 OEM 路试责任。须能在离线/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。</p>
+    
+    <p class="gq-explain-distractor-title"><strong>误选简析</strong></p>
+    <ul class="gq-explain-distractor-list obj-list"><li><strong>A</strong> WHAT→HOW 映射启动时延→镜像版本<br><span class="gq-explain-dim">见题干干扰项设计。</span></li><li><strong>B</strong> 屋顶标明 Profile 与钢网相关<br><span class="gq-explain-dim">见题干干扰项设计。</span></li></ul>
+    <p class="gq-explain-anchor">对照本节 B+ 工艺表、F 作业 Rubric 与 G 题干关键词。</p>
+  </div>
+  </div></div></details>
+        <p class="quiz-submit-row" style="font-size:0.88rem;color:var(--muted)">客观题与 F 节作业一并计入综合分，请点击 F 节「提交作业并自动评分」。</p>
+      </article>
+
+      <article class="card pro" id="sec-h">
+        <h2><span class="section-num">H</span>能力自评（黑带认证口径 1–5）</h2>
+        <div class="self-assessment-panel" id="self-assessment-panel" data-day="11">
+    <p class="hw-hint">自评写入本机浏览器（占结业规划 <strong>5%</strong>），可在 <a href="../reference/homework-scores.html#dashboard">学习仪表盘</a> 汇总。</p>
+    <div class="sa-grid">
+      <label>概念 — 能正确教授 BB
+        <select id="sa-concept" class="sa-select" data-dim="concept">
+          <option value="">—</option>
+          <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+          <option value="4">4</option><option value="5">5</option>
+        </select>
+      </label>
+      <label>应用 — 能操作软件并判读
+        <select id="sa-apply" class="sa-select" data-dim="apply">
+          <option value="">—</option>
+          <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+          <option value="4">4</option><option value="5">5</option>
+        </select>
+      </label>
+      <label>分析 — 能链接商业决策
+        <select id="sa-teach" class="sa-select" data-dim="teach">
+          <option value="">—</option>
+          <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+          <option value="4">4</option><option value="5">5</option>
+        </select>
+      </label>
+    </div>
+    <label class="hw-label" for="sa-evidence">证据/备注（工站号、截图、困惑点）</label>
+    <textarea id="sa-evidence" class="hw-textarea sa-evidence" rows="3" placeholder="例：已完成 C2 SPI GRR 截图；尚不熟 Eth 分层…"></textarea>
+    <div class="form-actions hw-actions">
+      <button type="button" class="btn btn-primary" id="sa-save-btn">保存 H 节自评</button>
+      <span id="sa-status" class="sa-status" aria-live="polite"></span>
+    </div>
+    <p id="sa-warn" class="sa-warn" style="display:none;color:var(--coral)">任一项 &lt; 3：建议重修本模块 · <code>/day 11</code></p>
+  </div>
+        <p style="margin-top:0.75rem">任一项 &lt; 3：重修本模块；建议 <code>/day 11</code> 答疑。</p>
+        <div class="ref-box"><strong>延伸阅读</strong><ul class="obj-list"><li>DMADV / IDOV 企业标准</li></ul></div>
+      </article>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <strong>六西格玛黑带学院</strong> · 模块 11/14 · BB-DFSS-01 ·
+    <a href="../index.html">课程总览</a> ·
+    <a href="../reference/homework-scores.html">我的成绩</a> ·
+    <a href="javascript:window.print()">打印本模块（浅色版式）</a>
+    <span class="print-footer-line">— 机密文件 · 仅供内部培训 —</span>
+  </footer>
+  <script type="application/json" id="hw-rubric-data">{"day":11,"minChars":150,"passScore":70,"mcqWeight":45,"textWeight":55,"dayKeywords":["dfss","qfd","asil","npi","soc","verify","离线","smt","bga","fct","域控","装配","手插"],"evidenceFields":["工站","fct-","profile","program_id","checksum","x-ray","工艺段","离线","sipoc","分段","截图"],"dimensions":{"business":{"label":"商业对齐","weight":20,"keys":["ctq","voc","champion","效益","成本","sipoc","章程","问题陈述","dpmo","ppm","oem","adas","域控","dfss","qfd","asil","边界"],"forbids":["应该采用","建议使用 minitab","上 minitab"]},"measure":{"label":"测量严谨","weight":20,"keys":["msa","操作定义","抽样","基线","cpk","grr","%r&r","spi","checksum","x-ray","profile","探针"],"forbids":[]},"stats":{"label":"统计有效","weight":25,"keys":["显著","α","p值","假设","doe","效应量","anova","回归","卡方","缺陷矩阵","pareto"],"forbids":[]},"improve":{"label":"改进与控制","weight":25,"keys":["fmea","pfmea","控制计划","pilot","对策","8d","spc","p图","反应计划","u12","空洞","验证","镜像"],"forbids":[]},"mbb":{"label":"MBB 表达","weight":15,"keys":["champion","阶段门","复制","故事板","bb","mbb","教练","评审","工艺段"],"forbids":[]}},"mcq":[{"q":"新 ADAS 平台应用 DFSS 因？","options":[{"t":"车身继电器","correct":false,"v":"a"},{"t":"量产良率已稳定","correct":false,"v":"b"},{"t":"只改标签","correct":false,"v":"c"},{"t":"新 SOC BGA 设计+离线镜像+新 FCT 场景","correct":true,"v":"d"}],"explain":{"focus":"DFSS · 座舱域控 DCU-C 验证边界","rationale":"DCU-C（MCU+Switch+eMMC）EMS 侧验证止于 FCT-DCU-C-03；整车以太时延由 OEM 路试，质量屋 HOW 不得越界。","distractors":{"b":"OEM 责任不能写入 EMS PFMEA 探测度。","c":"HU 中控与 DCU-C 程序不同，不能合并 CTQ。","d":"跳过 Verify 仍须离线 Checksum 设计。"},"anchor":"PRODUCTS.dcuC · 模块11 B+","source":"author"},"type":"single","correctValue":"d"},{"q":"QFD 将「启动时延」转化为？","options":[{"t":"员工人数","correct":false,"v":"a"},{"t":"只改包装","correct":false,"v":"b"},{"t":"仓库位置","correct":false,"v":"c"},{"t":"SOC 选型、镜像大小、SMT 散热与 FCT 用例","correct":true,"v":"d"}],"explain":{"source":"author","focus":"DFSS · QFD · Q2","rationale":"正解：SOC 选型、镜像大小、SMT 散热与 FCT 用例。答题时写出工站号/Profile#/Program_ID 中至少一项。","distractors":{"b":"「仓库位置」与模块 11 DFSS · QFD 证据要求冲突。","c":"「员工人数」与模块 11 DFSS · QFD 证据要求冲突。","d":"「只改包装」与模块 11 DFSS · QFD 证据要求冲突。"},"anchor":"教研精编 · 模块 11 B+ / C2 Lab"},"type":"single","correctValue":"d"},{"q":"功能安全 ASIL 项在 EMS？","options":[{"t":"只写 PFMEA S=1","correct":false,"v":"a"},{"t":"界定边界：EMS 负责工艺符合性，系统验证在 OEM","correct":true,"v":"b"},{"t":"EMS 承担全部 ASIL 认证","correct":false,"v":"c"},{"t":"忽略","correct":false,"v":"d"}],"explain":{"source":"author","focus":"DFSS · QFD · Q3","rationale":"正解：界定边界：EMS 负责工艺符合性，系统验证在 OEM。答题时写出工站号/Profile#/Program_ID 中至少一项。","distractors":{"b":"「EMS 承担全部 ASIL 认证」与模块 11 DFSS · QFD 证据要求冲突。","c":"「忽略」与模块 11 DFSS · QFD 证据要求冲突。","d":"「只写 PFMEA S=1」与模块 11 DFSS · QFD 证据要求冲突。"},"anchor":"教研精编 · 模块 11 B+ / C2 Lab"},"type":"single","correctValue":"b"},{"q":"DFSS Verify 段须？","options":[{"t":"Pilot 测量：SPI/BGA/FCT 与 MSA","correct":true,"v":"a"},{"t":"无数据","correct":false,"v":"b"},{"t":"只改商标","correct":false,"v":"c"},{"t":"只访谈","correct":false,"v":"d"}],"explain":{"source":"auto","focus":"考点（模块 11 · DFSS · QFD 与验证边界）— 现场判断","rationale":"Pilot 测量：SPI/BGA/FCT 与 MSA。须能在离线/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。","distractors":{"b":"「无数据」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。","c":"「只访谈」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。","d":"「只改商标」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。"},"anchor":"对照本节 B+ 工艺表、F 作业 Rubric 与 G 题干关键词。"},"type":"single","correctValue":"a"},{"q":"【纠错】DFSS 可跳过离线烧录设计？","options":[{"t":"是；只信 FCT","correct":false,"v":"a"},{"t":"否；镜像版本是 CTQ，须在 SMT 前锁定","correct":true,"v":"b"},{"t":"否；不要 DFSS","correct":false,"v":"c"},{"t":"是；上线再烧","correct":false,"v":"d"}],"explain":{"source":"author","focus":"DFSS · QFD · 纠错辨析","rationale":"立场：否；镜像版本是 CTQ，须在 SMT 前锁定。题干已植入常见误区，须用工艺段证据反驳。","distractors":{"b":"「是；上线再烧」与模块 11 DFSS · QFD 证据要求冲突。","c":"「是；只信 FCT」与模块 11 DFSS · QFD 证据要求冲突。","d":"「否；不要 DFSS」与模块 11 DFSS · QFD 证据要求冲突。"},"anchor":"教研精编 · 模块 11 B+ / C2 Lab"},"type":"single","correctValue":"b"},{"type":"multi","bloom":"analyze","products":["DCU-C","HU"],"scenario":"【情景】QFD 将 OEM 整车路试时延写入 EMS PFMEA 探测度，HU 与 DCU-C 共用同一 HOW。","q":"质量屋错误有？（多选）","options":[{"t":"WHAT→HOW 映射启动时延→镜像版本","correct":false,"v":"a"},{"t":"屋顶标明 Profile 与钢网相关","correct":false,"v":"b"},{"t":"EMS 承担 OEM 路试责任","correct":true,"v":"c"},{"t":"HU 与 DCU-C HOW 混用","correct":true,"v":"d"}],"correctValues":["c","d"],"explain":{"source":"auto","focus":"考点（模块 11 · DFSS · QFD 与验证边界）— 现场判断","rationale":"EMS 承担 OEM 路试责任。须能在离线/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。","distractors":{"c":"「WHAT→HOW 映射启动时延→镜像版本」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。","d":"「屋顶标明 Profile 与钢网相关」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。"},"anchor":"对照本节 B+ 工艺表、F 作业 Rubric 与 G 题干关键词。"}}]}</script>
+  <script src="../js/homework-grader-core.js"></script>
+  <script src="../js/homework-grader.js" defer></script>
+  <script src="../js/self-assessment.js" defer></script>
+  <script src="../js/c2-module-checklist.js" defer></script>
+  <script src="../js/academy.js" defer></script>
+</body>
+</html>

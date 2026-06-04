@@ -1,0 +1,11 @@
+企业 Logo 配置说明
+====================
+1. 将贵司 Logo 文件覆盖本目录下任意一种（推荐 SVG 或 PNG 透明底）：
+   - enterprise-logo.svg  （默认占位，可直接替换）
+   - enterprise-logo.png  （若使用 PNG，请修改 css/brand.css 中 --brand-logo-file）
+
+2. 建议尺寸：宽 120–200px，高 32–48px，横向 Logo。
+
+3. 修改企业简称：编辑 css/brand.css 中的 --brand-org-name
+
+4. 打印时会自动在页眉显示 Logo + 模块标题（浅色主题见 css/print-light.css）

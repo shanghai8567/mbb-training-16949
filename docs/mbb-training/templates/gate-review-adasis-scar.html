@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ADAS SCAR 阶段门评审 — 模板</title>
+  <script src="../js/theme-init.js"></script>
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/pro.css" />
+  <link rel="stylesheet" href="../css/premium.css" />
+</head>
+<body>
+  <div class="page-bg"></div>
+  <header class="topbar"><a class="brand" href="../index.html">σ 六西格玛黑带学院</a></header>
+  <div class="wrap">
+    <div class="card pro">
+      <h1>ADAS SCAR 阶段门检查单</h1>
+      <p>项目：<input type="text" placeholder="如 Eth FCT 一次通过率下降" style="width:60%" /></p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>阶段门</th><th>必交证据</th><th>Go</th><th>打回理由</th></tr></thead>
+          <tbody>
+            <tr><td>Define</td><td>Charter、SIPOC、CTQ 操作定义、Champion 签字</td><td>☐</td><td></td></tr>
+            <tr><td>Measure</td><td>分段 MSA（SPI/烧录/BGA/FCT 探针）、基线 p 图、数据计划</td><td>☐</td><td></td></tr>
+            <tr><td>Analyze</td><td>缺陷-过程矩阵、SOC_FW 分层、X-Ray SL/MP 切换日</td><td>☐</td><td></td></tr>
+            <tr><td>Improve</td><td>PFMEA 更新、Pilot 数据、Profile# ECN</td><td>☐</td><td></td></tr>
+            <tr><td>Control</td><td>控制计划、SPC、Safe Launch 3 批、DCU-B 回归证明</td><td>☐</td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:1rem;color:var(--muted)">MBB 签字：________ 日期：________</p>
+    </div>
+  </div>
+  <script src="../js/theme.js" defer></script>
+</body>
+</html>

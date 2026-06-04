@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MinitabProject version="22" name="MBB-Day04-MSA-SPI">
+  <Description>交叉型 GRR — automotive-spi-msa.csv · 列：零件、操作员、体积%</Description>
+  <DataSource path="../automotive-spi-msa.csv" worksheet="SPI_MSA"/>
+  <Procedure>Stat &gt; Quality Tools &gt; Gage Study &gt; Crossed</Procedure>
+  <Deliverable>GRR 报告 %RR、ndc 截图</Deliverable>
+</MinitabProject>

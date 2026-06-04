@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>模块 13 — MBB 辅导、评审与组合管理 | 六西格玛黑带</title>
+  <meta name="description" content="六西格玛黑带 MBB-COACH-01 — MBB 辅导、评审与组合管理" />
+  <meta name="mbb-package-version" content="3.0.0-beta.1" />
+  <script src="../js/theme-init.js"></script>
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/pro.css" />
+  <link rel="stylesheet" href="../css/automotive.css" />
+  <link rel="stylesheet" href="../css/homework-grader.css" />
+  <link rel="stylesheet" href="../css/brand.css" />
+  <link rel="stylesheet" href="../css/premium.css" />
+  <link rel="stylesheet" href="../css/print-light.css" media="print" />
+  <script src="../js/course.js" defer></script>
+  <script src="../js/theme.js" defer></script>
+  <script src="../js/brand.js" defer></script>
+</head>
+<body data-day="13">
+  <div class="page-bg"></div>
+  <header class="print-only print-header" aria-hidden="true">
+      <div class="print-header-logo">
+        <img src="../assets/enterprise-logo.svg" alt="" onerror="this.parentElement.innerHTML='<span style=font-size:10pt;color:#1e3a5f;font-weight:700">六西格玛黑带学院</span>'" />
+      </div>
+      <div class="print-header-meta">
+        <strong>六西格玛黑带学院</strong>
+        <span class="print-doc-title">模块 13 — MBB 辅导、评审与组合管理</span>
+        <span>打印日期：<span class="print-date"></span></span>
+      </div>
+    </header>
+  <header class="topbar">
+    <a class="brand" href="../index.html">
+      <span class="brand-logo-wrap" title="企业 Logo — 可替换 assets/enterprise-logo.svg">
+        <img class="brand-logo" src="../assets/enterprise-logo.svg" alt="企业 Logo" width="160" height="40"
+          onerror="this.style.display='none';this.parentElement.classList.add('logo-missing')" />
+      </span>
+      <span class="belt-mark fallback-mark">σ</span>
+      <span class="brand-text-wrap">
+        <span class="brand-org-name">六西格玛黑带学院</span>
+        <span class="brand-org-sub">汽车电子 EMS · MBB 培训</span>
+      </span>
+    </a>
+    <nav>
+      <a class="btn" href="../index.html">课程总览</a>
+      <a class="btn" href="../reference/tool-matrix.html">工具矩阵</a>
+      <a class="btn" href="../tools/tutorials.html">Minitab 教程</a>
+      <a class="btn" id="nav-prev" href="day12.html">← 上一模块</a>
+      <a class="btn btn-primary" id="nav-next" href="day14.html">下一模块 →</a>
+      <button type="button" class="btn" id="mark-complete">标记完成</button>
+      <div class="theme-switcher" role="group" aria-label="主题切换">
+      <button type="button" data-theme-pick="dark" title="深色主题"><span class="ico">🌙</span></button>
+      <button type="button" data-theme-pick="light" title="浅色主题"><span class="ico">☀</span></button>
+      <button type="button" data-theme-pick="system" title="跟随系统"><span class="ico">◐</span></button>
+    </div>
+    </nav>
+  </header>
+
+  <div class="layout-course">
+    <aside class="course-sidebar">
+      <div class="sb-title">模块 13 目录</div>
+      <a href="#sec-a">A 学习目标</a>
+      <a href="#sec-b">B 核心概念</a>
+      <a href="#sec-b2">B+ 生产线对齐</a>
+      <a href="#sec-c">C 工具与公式</a>
+      <a href="#sec-c2">C2 软件实操</a>
+      <a href="#sec-d">D 行业案例</a>
+      <a href="#sec-e">E 课堂练习</a>
+      <a href="#sec-f">F 课后作业</a>
+      <a href="#sec-g">G 客观自测</a>
+      <a href="#sec-h">H 能力自评</a>
+      <div class="sb-title" style="margin-top:1rem">参考资料</div>
+      <a href="../reference/glossary.html">术语表</a>
+      <a href="../reference/sigma-table.html">σ · DPMO</a>
+      <a href="../reference/automotive-iatf.html">汽车 IATF 专题</a>
+      <a href="../reference/homework-scores.html">我的作业成绩</a>
+    </aside>
+
+    <main class="course-main">
+      <header class="pro-header day-hero" style="border:none;padding:0">
+        <p class="module-id">模块 13 / 14 · MBB-COACH-01</p>
+        <h1>MBB 辅导、评审与组合管理</h1>
+        <div class="day-meta" style="margin-top:1rem">
+          <span class="dmaic-ribbon leadership">leadership</span>
+          <span class="belt-track mbb">MBB 能力域</span>
+          
+          <span class="tag gold">交付：Rubric 评分 + 5 条反馈</span>
+        </div>
+        <div class="ref-box" style="margin-top:1rem">
+          <strong>标准对齐</strong> 黑带辅导与评审
+        </div>
+      </header>
+
+      <article class="card pro automotive" id="sec-auto">
+      <h2><span class="section-num">◎</span>汽车电子 EMS（五产品·离线/SMT/手插/装配）</h2>
+      <p><span class="tag auto">汽车制造</span> <strong>IATF：</strong>见 automotive-iatf.html</p>
+      
+      <p style="margin-top:0.75rem">BB 拟仅加 FCT 重测掩盖 BGA/烧录 — MBB 要求分工艺段证据链+不混淆三域控。</p>
+      
+      <h3 style="margin-top:1rem;color:var(--bb-gold)">审核检查清单</h3>
+      <ul class="obj-list"></ul>
+      <div class="aiag-criteria">
+        <div class="ok"><strong>&lt;10%</strong>%GRR 可接受</div>
+        <div class="warn"><strong>10–30%</strong>边缘/改进</div>
+        <div class="no"><strong>&gt;30%</strong>不可接受</div>
+      </div>
+      <div class="auto-banner" style="margin-top:1rem"><strong>贵司现场配置</strong><ul class="obj-list"><li>全部离线烧录在 SMT 之前完成</li><li>BGA X-Ray：安全投产(Safe Launch) 100% 全检；量产后按 CSR 抽检</li><li>车身域控使用独立 FCT 工站 FCT-DCU-B-04（与座舱/ADAS 分机台）</li></ul><a class="btn btn-primary" href="../reference/site-config.html">1:1 配置页 →</a></div>
+      <p style="margin-top:0.75rem"><a class="btn" href="../reference/automotive-iatf.html">IATF × DMAIC 对照手册 →</a></p>
+    </article>
+
+      <article class="card pro" id="sec-a">
+        <h2><span class="section-num">A</span>学习目标（Learning Objectives）</h2>
+        <ul class="obj-list"><li>使用 BB 项目 Rubric</li><li>GROW 辅导对话</li><li>组合看板</li></ul>
+        <p style="margin-top:0.75rem;font-size:0.88rem;color:var(--muted)">学完应能独立向 Champion 说明本模块对黑带项目的价值。</p>
+      </article>
+
+      <article class="card pro" id="sec-b">
+        <h2><span class="section-num">B</span>核心概念与理论框架</h2>
+        <p>MBB 提问代替给答案。</p><p>【汽车电子 · MBB 辅导】辅导场景：BB 用 FCT-05 数据讲车身问题 — MBB 要求换 FCT-04 序列；BB 只加 FCT 重测 — MBB 要求补离线/SMT 证据。</p>
+        <div class="analogy"><strong>专业类比</strong> — 裁判看规则也看动作规范，不替运动员打球。</div>
+        <p style="margin-top:1rem">红黄绿组合；效益已实现 vs 承诺。</p>
+        
+        <p style="margin-top:1rem"><span class="tag auto">本课主线：MBB 辅导</span></p>
+      </article>
+
+      <article class="card pro automotive-deep" id="sec-b2">
+    <h2><span class="section-num">B+</span>本课与生产线对齐 · MBB 辅导红线</h2>
+    <div class="process-pipeline" aria-label="工艺主线"><span class="step accent">离线@SMT前</span><span class="arrow">→</span><span class="step">SMT·SPI</span><span class="arrow">→</span><span class="step">回流·AOI</span><span class="arrow">→</span><span class="step">X-Ray</span><span class="arrow">→</span><span class="step">手插/波峰</span><span class="arrow">→</span><span class="step">ICT</span><span class="arrow">→</span><span class="step">FCT</span><span class="arrow">→</span><span class="step">装配/EOL</span></div>
+    <ul class="obj-list"><li>禁止混杂 DCU-A/B/C FCT</li><li>禁止 %RR&gt;30% 仍报 Cpk</li><li>要求工艺路由表贯穿批次</li></ul>
+    
+    <p class="exam-align-hint">▼ <strong>G 客观题</strong>与 <strong>F 作业</strong>仅考核本节要点（车身 FCT-04 / ADAS BGA·FCT-05）</p>
+  </article>
+
+      <article class="card pro" id="sec-c">
+        <h2><span class="section-num">C</span>工具清单与适用边界</h2>
+        <p>主平台：<strong>Excel Rubric</strong> ·
+          <a href="../tools/tutorials.html#rubric">分步操作教程</a> ·
+          <a href="../reference/tool-matrix.html">DMAIC 工具矩阵</a></p>
+        <div class="table-wrap tool-matrix" style="margin-top:1rem">
+          <table><thead><tr><th>工具 / 方法</th><th>本模块用途</th></tr></thead><tbody><tr><td>GROW</td><td>辅导</td></tr><tr><td>项目 Rubric</td><td>评分</td></tr><tr><td>组合看板</td><td>优先级</td></tr></tbody></table>
+        </div>
+        <div class="pitfall"><strong>常见缺陷</strong> MBB 代做统计分析</div><div class="pitfall"><strong>常见缺陷</strong> 反馈不可执行</div>
+      </article>
+
+      <article class="card pro tip" id="sec-c2">
+        <h2><span class="section-num">C2</span>专业软件实操 Lab（Excel Rubric）</h2>
+        <p style="font-size:0.85rem;color:var(--muted)">包版本 3.0.0-beta.1 · 跟做后完成 F 节截图交付</p>
+        <div class="c2-lab-card" id="c2-lab-d13">
+    <p class="c2-lab-meta"><strong>主工具</strong> Excel Rubric · <strong>版本</strong> Excel 365
+      · <a href="../tools/tutorials.html#excel-deploy">完整教程 →</a></p>
+    <p class="c2-lab-meta"><strong>数据</strong> <a href="../templates/bb-project-rubric.csv" download>bb-project-rubric.csv</a> · <strong>列定义</strong> 四维 1–5 分 + 可执行反馈</p>
+    <h3 class="c2-lab-h3">跟做步骤（菜单路径）</h3>
+    <ol class="c2-lab-steps"><li><strong>1.</strong> <code>打开 bb-project-rubric.csv — 对范例作业打四维分</code></li><li><strong>2.</strong> <code>GROW：Goal/Reality/Options/Will 各 1 问（ADAS BB）</code></li><li><strong>3.</strong> <code>记录：禁止替 BB 做 Minitab</code></li></ol>
+    <p class="c2-lab-read"><strong>输出解读</strong> 反馈句可执行（谁、何时、交付物）。</p>
+    <h3 class="c2-lab-h3">课堂练习</h3>
+    <p>写 3 条可执行反馈（范例 BB 作业）。</p>
+    <h3 class="c2-lab-h3" style="color:var(--bb-gold)">F 节建议截图交付</h3>
+    <ul class="obj-list c2-lab-deliver"><li>Rubric 打分表</li><li>GROW 记录</li></ul>
+    <h3 class="c2-lab-h3" style="color:var(--bb-gold)">MBB 审计点</h3>
+    <ul class="obj-list"><li>合并 FCT 数据须打回</li><li>Rubric 5 分须含工艺段证据</li></ul>
+  </div>
+        <p style="margin-top:1rem"><a class="btn btn-primary" href="../templates/bb-project-rubric.csv" download>↓ 下载实验数据（CSV）</a></p>
+      </article>
+
+      <article class="card pro" id="sec-d">
+        <h2><span class="section-num">D</span>行业迷你案例与 MBB / Champion</h2>
+        <p>BB 将车身域控 FCT 与 ADAS 工站数据合并 — MBB 打回；须用 FCT-DCU-B-04 独立序列。</p>
+        <h3>MBB / Champion</h3>
+        <ul class="obj-list"><li>下周 Will？</li><li>资源阻塞？</li><li>阶段门日期？</li></ul>
+      </article>
+
+      <article class="card pro" id="sec-e">
+        <h2><span class="section-num">E</span>课堂练习（先作答再对答案）</h2>
+        <ul class="obj-list"><li class="exercise-item">
+        <strong>E1.</strong> GROW 四问各写 1 句（针对 ADAS BB）
+        <details class="exercise-answer-ref">
+          <summary>参考答案</summary>
+          <p class="ex-ans-body"><strong>要点：</strong>GROW 示例：G-本周 Eth 通过率目标；R-缺 SOC 分层数据；O-补 Program_ID 字段或卡方；W-周五前导出 CSV 给 MBB。</p>
+          <p class="ex-ans-explain">各 1 句，针对 ADAS BB。</p>
+        </details>
+      </li><li class="exercise-item">
+        <strong>E2.</strong> Rubric 评 1 份作业 3 条反馈
+        <details class="exercise-answer-ref">
+          <summary>参考答案</summary>
+          <p class="ex-ans-body"><strong>要点：</strong>Rubric 1 分理由：无工艺段证据、合并五产品数据、问题陈述含对策 — 各 1 条可执行反馈。</p>
+          <p class="ex-ans-explain">另附 2 条改进建议即可凑 5 条。</p>
+        </details>
+      </li><li class="exercise-item">
+        <strong>E3.</strong> GROW 问 4 句
+        <details class="exercise-answer-ref">
+          <summary>参考答案</summary>
+          <p class="ex-ans-body"><strong>要点：</strong>G：本阶段门目标？R：卡方 p 显著但样本混杂？O：分层或补采？W：谁何时提交缺陷矩阵？</p>
+          <p class="ex-ans-explain">四问各 1 句。</p>
+        </details>
+      </li><li class="exercise-item">
+        <strong>E4.</strong> Rubric 打 1 分理由
+        <details class="exercise-answer-ref">
+          <summary>参考答案</summary>
+          <p class="ex-ans-body"><strong>要点：</strong>1 分：商业对齐 0 分（无 CTQ/OEM 语言）；统计 1 分（只报 p 无效应量）；证据 0 分（无 FCT 工站号）。</p>
+          <p class="ex-ans-explain">用 bb-project-rubric.csv 四维。</p>
+        </details>
+      </li></ul>
+      </article>
+
+      <article class="card pro warn" id="sec-f">
+        <h2><span class="section-num">F</span>课后作业（可交付物）</h2>
+        <p><strong>交付要求：</strong>含 Rubric 四维打分示例 + 5 条可执行反馈</p>
+        <p class="c2-deliver-hint"><strong>C2 截图清单：</strong>Rubric 打分表、GROW 记录</p>
+        <p class="c2-module-check"><label><input type="checkbox" id="c2-done-cb" data-day="13" /> 本模块 C2 Lab 跟做截图已交付（计入结业 15%）</label></p>
+        <div class="hw-submit-panel" id="hw-submit-panel">
+    <label for="hw-text" class="hw-label">粘贴或输入课后作业（须体现汽车电子现场）</label>
+    <p class="hw-hint"><strong>评分要点：</strong>含 Rubric 四维打分示例 + 5 条可执行反馈。建议字数 ≥ 150，含模块关键词（如 grow、rubric、辅导、混杂、fct-04、离线…）。未达字数时文本分按比例封顶。</p>
+    <textarea id="hw-text" class="hw-textarea" rows="8" placeholder="例：ADAS 域控 / 车身域控 / 离线烧录@SMT前 / BGA U12 / X-Ray SL全检 / FCT-DCU-B-04 …"></textarea>
+    <div class="form-actions hw-actions">
+      <button type="button" class="btn btn-primary" id="hw-submit-btn">提交作业并自动评分</button>
+      <button type="button" class="btn" id="hw-save-draft">保存草稿</button>
+    </div>
+    <div id="hw-result" class="hw-result" aria-live="polite"></div>
+    <div id="hw-mcq-review" class="hw-mcq-review" aria-live="polite"></div>
+  </div>
+        <p style="margin-top:0.75rem;font-size:0.88rem;color:var(--muted)">自动评分后仍可提交 AI 深度批改：<code>/review 作业</code></p>
+      </article>
+
+      <article class="card pro quiz" id="sec-g">
+        <h2><span class="section-num">G</span>客观自测（自动判分 · 含纠错题）</h2>
+        <div class="gradable-quiz" id="gradable-quiz" data-day="13">
+    <p class="gq-intro">以下题目<strong>只考本模块 B+ 节与 ◎ 汽车电子专题</strong>所讲要点（离线/SMT·BGA/手插/装配/域控 FCT），请先学完再答。占综合分 <strong>45%</strong>（含 Q6 情景多选）。选项顺序已打乱，请勿猜测字母规律。</p>
+    <div class="gq-block" data-correct="d" data-qindex="1" data-qtype="single">
+        <p class="gq-title"><span class="gq-num">Q1</span>  BB 合并 ADAS+车身 FCT 数据，MBB？</p>
+        
+        <ul class="gq-opts"><li class="opt"><input type="radio" name="mcq-d13-q1" id="mcq-d13-q1-a" value="a" data-label="表扬省时间" /><label for="mcq-d13-q1-a">表扬省时间</label></li><li class="opt"><input type="radio" name="mcq-d13-q1" id="mcq-d13-q1-b" value="b" data-label="忽略" /><label for="mcq-d13-q1-b">忽略</label></li><li class="opt"><input type="radio" name="mcq-d13-q1" id="mcq-d13-q1-c" value="c" data-label="帮合并" /><label for="mcq-d13-q1-c">帮合并</label></li><li class="opt"><input type="radio" name="mcq-d13-q1" id="mcq-d13-q1-d" value="d" data-label="打回；要求 FCT-04/05 分序列" /><label for="mcq-d13-q1-d">打回；要求 FCT-04/05 分序列</label></li></ul>
+      </div><div class="gq-block" data-correct="b" data-qindex="2" data-qtype="single">
+        <p class="gq-title"><span class="gq-num">Q2</span>  GROW 的 G 指？</p>
+        
+        <ul class="gq-opts"><li class="opt"><input type="radio" name="mcq-d13-q2" id="mcq-d13-q2-a" value="a" data-label="Gate" /><label for="mcq-d13-q2-a">Gate</label></li><li class="opt"><input type="radio" name="mcq-d13-q2" id="mcq-d13-q2-b" value="b" data-label="Goal 目标" /><label for="mcq-d13-q2-b">Goal 目标</label></li><li class="opt"><input type="radio" name="mcq-d13-q2" id="mcq-d13-q2-c" value="c" data-label="Gage" /><label for="mcq-d13-q2-c">Gage</label></li><li class="opt"><input type="radio" name="mcq-d13-q2" id="mcq-d13-q2-d" value="d" data-label="GRR" /><label for="mcq-d13-q2-d">GRR</label></li></ul>
+      </div><div class="gq-block" data-correct="a" data-qindex="3" data-qtype="single">
+        <p class="gq-title"><span class="gq-num">Q3</span>  MBB 辅导禁忌？</p>
+        
+        <ul class="gq-opts"><li class="opt"><input type="radio" name="mcq-d13-q3" id="mcq-d13-q3-a" value="a" data-label="替 BB 做 Minitab 分析" /><label for="mcq-d13-q3-a">替 BB 做 Minitab 分析</label></li><li class="opt"><input type="radio" name="mcq-d13-q3" id="mcq-d13-q3-b" value="b" data-label="挑战混杂" /><label for="mcq-d13-q3-b">挑战混杂</label></li><li class="opt"><input type="radio" name="mcq-d13-q3" id="mcq-d13-q3-c" value="c" data-label="问阶段门证据" /><label for="mcq-d13-q3-c">问阶段门证据</label></li><li class="opt"><input type="radio" name="mcq-d13-q3" id="mcq-d13-q3-d" value="d" data-label="要求故事板" /><label for="mcq-d13-q3-d">要求故事板</label></li></ul>
+      </div><div class="gq-block" data-correct="a" data-qindex="4" data-qtype="single">
+        <p class="gq-title"><span class="gq-num">Q4</span>  Rubric 5 分项目典型？</p>
+        
+        <ul class="gq-opts"><li class="opt"><input type="radio" name="mcq-d13-q4" id="mcq-d13-q4-a" value="a" data-label="可复制+文档全+分工艺段证据" /><label for="mcq-d13-q4-a">可复制+文档全+分工艺段证据</label></li><li class="opt"><input type="radio" name="mcq-d13-q4" id="mcq-d13-q4-b" value="b" data-label="只改 FCT 重测" /><label for="mcq-d13-q4-b">只改 FCT 重测</label></li><li class="opt"><input type="radio" name="mcq-d13-q4" id="mcq-d13-q4-c" value="c" data-label="无 Champion" /><label for="mcq-d13-q4-c">无 Champion</label></li><li class="opt"><input type="radio" name="mcq-d13-q4" id="mcq-d13-q4-d" value="d" data-label="只完成 ppt" /><label for="mcq-d13-q4-d">只完成 ppt</label></li></ul>
+      </div><div class="gq-block" data-correct="d" data-qindex="5" data-qtype="single">
+        <p class="gq-title"><span class="gq-num">Q5</span>  【纠错】MBB 只做技术？</p>
+        
+        <ul class="gq-opts"><li class="opt"><input type="radio" name="mcq-d13-q5" id="mcq-d13-q5-a" value="a" data-label="是；只审 Cpk" /><label for="mcq-d13-q5-a">是；只审 Cpk</label></li><li class="opt"><input type="radio" name="mcq-d13-q5" id="mcq-d13-q5-b" value="b" data-label="否；MBB 不做评审" /><label for="mcq-d13-q5-b">否；MBB 不做评审</label></li><li class="opt"><input type="radio" name="mcq-d13-q5" id="mcq-d13-q5-c" value="c" data-label="是；MBB=高级 BB" /><label for="mcq-d13-q5-c">是；MBB=高级 BB</label></li><li class="opt"><input type="radio" name="mcq-d13-q5" id="mcq-d13-q5-d" value="d" data-label="否；含部署、战略、辅导" /><label for="mcq-d13-q5-d">否；含部署、战略、辅导</label></li></ul>
+      </div><div class="gq-block" data-correct-multi="b,c" data-qindex="6" data-qtype="multi">
+        <p class="gq-title"><span class="gq-num">Q6</span> <span class="gq-type-badge multi">多选</span> 违反辅导原则的有？（多选）</p>
+        <p class="gq-scenario">【情景】MBB 代替 BB 完成 Minitab 并签署控制计划。</p>
+        <ul class="gq-opts"><li class="opt"><input type="checkbox" name="mcq-d13-q6[]" id="mcq-d13-q6-a" value="a" data-label="GROW 四问记录" /><label for="mcq-d13-q6-a">GROW 四问记录</label></li><li class="opt"><input type="checkbox" name="mcq-d13-q6[]" id="mcq-d13-q6-b" value="b" data-label="MBB 代做分析" /><label for="mcq-d13-q6-b">MBB 代做分析</label></li><li class="opt"><input type="checkbox" name="mcq-d13-q6[]" id="mcq-d13-q6-c" value="c" data-label="MBB 代签控制计划" /><label for="mcq-d13-q6-c">MBB 代签控制计划</label></li><li class="opt"><input type="checkbox" name="mcq-d13-q6[]" id="mcq-d13-q6-d" value="d" data-label="Rubric 可执行反馈" /><label for="mcq-d13-q6-d">Rubric 可执行反馈</label></li></ul>
+      </div>
+  </div>
+  <details class="quiz-answers-ref" id="quiz-answers-ref"><summary>题库解析（提交后将自动展开）</summary><div class="gq-ref-wrap"><div class="gq-ref-item" data-qindex="1">
+    <h4 class="gq-ref-q">Q1 BB 合并 ADAS+车身 FCT 数据，MBB？</h4>
+    
+    <p class="gq-ref-ans"><span style="color:var(--accent)">✓ 打回；要求 FCT-04/05 分序列</span></p>
+    <div class="gq-explain-block pass">
+    <span class="gq-explain-source author">精编解析</span>
+    <p class="gq-explain-focus"><strong>考点</strong> MBB · GROW/Rubric · Q1</p>
+    <p class="gq-explain-rationale"><strong>正解（D）</strong> 正解：打回；要求 FCT-04/05 分序列。答题时写出工站号/Profile#/Program_ID 中至少一项。</p>
+    
+    <p class="gq-explain-distractor-title"><strong>误选简析</strong></p>
+    <ul class="gq-explain-distractor-list obj-list"><li><strong>A</strong> 表扬省时间<br><span class="gq-explain-dim">见题干干扰项设计。</span></li><li><strong>B</strong> 忽略<br><span class="gq-explain-dim">车身 DCU-B：独立 FCT-04，CAN/LIN 与 ADAS Eth 分表。</span></li><li><strong>C</strong> 帮合并<br><span class="gq-explain-dim">车身 DCU-B：独立 FCT-04，CAN/LIN 与 ADAS Eth 分表。</span></li></ul>
+    <p class="gq-explain-anchor">教研精编 · 模块 13 B+ / C2 Lab</p>
+  </div>
+  </div><div class="gq-ref-item" data-qindex="2">
+    <h4 class="gq-ref-q">Q2 GROW 的 G 指？</h4>
+    
+    <p class="gq-ref-ans"><span style="color:var(--accent)">✓ Goal 目标</span></p>
+    <div class="gq-explain-block pass">
+    <span class="gq-explain-source author">精编解析</span>
+    <p class="gq-explain-focus"><strong>考点</strong> MBB · GROW/Rubric · Q2</p>
+    <p class="gq-explain-rationale"><strong>正解（B）</strong> 正解：Goal 目标。答题时写出工站号/Profile#/Program_ID 中至少一项。</p>
+    
+    <p class="gq-explain-distractor-title"><strong>误选简析</strong></p>
+    <ul class="gq-explain-distractor-list obj-list"><li><strong>A</strong> Gate<br><span class="gq-explain-dim">见题干干扰项设计。</span></li><li><strong>C</strong> Gage<br><span class="gq-explain-dim">「Gate」与模块 13 MBB · GROW/Rubric 证据要求冲突。</span></li><li><strong>D</strong> GRR<br><span class="gq-explain-dim">「Gage」与模块 13 MBB · GROW/Rubric 证据要求冲突。</span></li></ul>
+    <p class="gq-explain-anchor">教研精编 · 模块 13 B+ / C2 Lab</p>
+  </div>
+  </div><div class="gq-ref-item" data-qindex="3">
+    <h4 class="gq-ref-q">Q3 MBB 辅导禁忌？</h4>
+    
+    <p class="gq-ref-ans"><span style="color:var(--accent)">✓ 替 BB 做 Minitab 分析</span></p>
+    <div class="gq-explain-block pass">
+    <span class="gq-explain-source author">精编解析</span>
+    <p class="gq-explain-focus"><strong>考点</strong> MBB · GROW/Rubric · Q3</p>
+    <p class="gq-explain-rationale"><strong>正解（A）</strong> 正解：替 BB 做 Minitab 分析。答题时写出工站号/Profile#/Program_ID 中至少一项。</p>
+    
+    <p class="gq-explain-distractor-title"><strong>误选简析</strong></p>
+    <ul class="gq-explain-distractor-list obj-list"><li><strong>B</strong> 挑战混杂<br><span class="gq-explain-dim">「问阶段门证据」与模块 13 MBB · GROW/Rubric 证据要求冲突。</span></li><li><strong>C</strong> 问阶段门证据<br><span class="gq-explain-dim">五产品/工站须分层，MBB 评审一票否决合并统计。</span></li><li><strong>D</strong> 要求故事板<br><span class="gq-explain-dim">「要求故事板」与模块 13 MBB · GROW/Rubric 证据要求冲突。</span></li></ul>
+    <p class="gq-explain-anchor">教研精编 · 模块 13 B+ / C2 Lab</p>
+  </div>
+  </div><div class="gq-ref-item" data-qindex="4">
+    <h4 class="gq-ref-q">Q4 Rubric 5 分项目典型？</h4>
+    
+    <p class="gq-ref-ans"><span style="color:var(--accent)">✓ 可复制+文档全+分工艺段证据</span></p>
+    <div class="gq-explain-block pass">
+    <span class="gq-explain-source auto">规则解析</span>
+    <p class="gq-explain-focus"><strong>考点</strong> 考点（模块 13 · MBB 辅导 · GROW / Rubric）— 现场判断</p>
+    <p class="gq-explain-rationale"><strong>正解（A）</strong> 可复制+文档全+分工艺段证据。须能在离线/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。</p>
+    
+    <p class="gq-explain-distractor-title"><strong>误选简析</strong></p>
+    <ul class="gq-explain-distractor-list obj-list"><li><strong>B</strong> 只改 FCT 重测<br><span class="gq-explain-dim">「只完成 ppt」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。</span></li><li><strong>C</strong> 无 Champion<br><span class="gq-explain-dim">「只改 FCT 重测」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。</span></li><li><strong>D</strong> 只完成 ppt<br><span class="gq-explain-dim">「无 Champion」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。</span></li></ul>
+    <p class="gq-explain-anchor">对照本节 B+ 工艺表、F 作业 Rubric 与 G 题干关键词。</p>
+  </div>
+  </div><div class="gq-ref-item" data-qindex="5">
+    <h4 class="gq-ref-q">Q5 【纠错】MBB 只做技术？</h4>
+    
+    <p class="gq-ref-ans"><span style="color:var(--accent)">✓ 否；含部署、战略、辅导</span></p>
+    <div class="gq-explain-block pass">
+    <span class="gq-explain-source author">精编解析</span>
+    <p class="gq-explain-focus"><strong>考点</strong> MBB · GROW/Rubric · 纠错辨析</p>
+    <p class="gq-explain-rationale"><strong>正解（D）</strong> 立场：否；含部署、战略、辅导。题干已植入常见误区，须用工艺段证据反驳。</p>
+    
+    <p class="gq-explain-distractor-title"><strong>误选简析</strong></p>
+    <ul class="gq-explain-distractor-list obj-list"><li><strong>A</strong> 是；只审 Cpk<br><span class="gq-explain-dim">见题干干扰项设计。</span></li><li><strong>B</strong> 否；MBB 不做评审<br><span class="gq-explain-dim">「是；MBB=高级 BB」与模块 13 MBB · GROW/Rubric 证据要求冲突。</span></li><li><strong>C</strong> 是；MBB=高级 BB<br><span class="gq-explain-dim">「是；只审 Cpk」与模块 13 MBB · GROW/Rubric 证据要求冲突。</span></li></ul>
+    <p class="gq-explain-anchor">教研精编 · 模块 13 B+ / C2 Lab</p>
+  </div>
+  </div><div class="gq-ref-item" data-qindex="6">
+    <h4 class="gq-ref-q">Q6 违反辅导原则的有？（多选）</h4>
+    <p class="gq-ref-scenario">【情景】MBB 代替 BB 完成 Minitab 并签署控制计划。</p>
+    <p class="gq-ref-ans"><span style="color:var(--accent)">✓ MBB 代做分析；MBB 代签控制计划</span></p>
+    <div class="gq-explain-block pass">
+    <span class="gq-explain-source auto">规则解析</span>
+    <p class="gq-explain-focus"><strong>考点</strong> 考点（模块 13 · MBB 辅导 · GROW / Rubric）— 现场判断</p>
+    <p class="gq-explain-rationale"><strong>正解（多选）（B+C）</strong> MBB 代做分析。须能在离线/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。</p>
+    
+    <p class="gq-explain-distractor-title"><strong>误选简析</strong></p>
+    <ul class="gq-explain-distractor-list obj-list"><li><strong>A</strong> GROW 四问记录<br><span class="gq-explain-dim">见题干干扰项设计。</span></li><li><strong>D</strong> Rubric 可执行反馈<br><span class="gq-explain-dim">「Rubric 可执行反馈」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。</span></li></ul>
+    <p class="gq-explain-anchor">对照本节 B+ 工艺表、F 作业 Rubric 与 G 题干关键词。</p>
+  </div>
+  </div></div></details>
+        <p class="quiz-submit-row" style="font-size:0.88rem;color:var(--muted)">客观题与 F 节作业一并计入综合分，请点击 F 节「提交作业并自动评分」。</p>
+      </article>
+
+      <article class="card pro" id="sec-h">
+        <h2><span class="section-num">H</span>能力自评（黑带认证口径 1–5）</h2>
+        <div class="self-assessment-panel" id="self-assessment-panel" data-day="13">
+    <p class="hw-hint">自评写入本机浏览器（占结业规划 <strong>5%</strong>），可在 <a href="../reference/homework-scores.html#dashboard">学习仪表盘</a> 汇总。</p>
+    <div class="sa-grid">
+      <label>概念 — 能正确教授 BB
+        <select id="sa-concept" class="sa-select" data-dim="concept">
+          <option value="">—</option>
+          <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+          <option value="4">4</option><option value="5">5</option>
+        </select>
+      </label>
+      <label>应用 — 能操作软件并判读
+        <select id="sa-apply" class="sa-select" data-dim="apply">
+          <option value="">—</option>
+          <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+          <option value="4">4</option><option value="5">5</option>
+        </select>
+      </label>
+      <label>分析 — 能链接商业决策
+        <select id="sa-teach" class="sa-select" data-dim="teach">
+          <option value="">—</option>
+          <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+          <option value="4">4</option><option value="5">5</option>
+        </select>
+      </label>
+    </div>
+    <label class="hw-label" for="sa-evidence">证据/备注（工站号、截图、困惑点）</label>
+    <textarea id="sa-evidence" class="hw-textarea sa-evidence" rows="3" placeholder="例：已完成 C2 SPI GRR 截图；尚不熟 Eth 分层…"></textarea>
+    <div class="form-actions hw-actions">
+      <button type="button" class="btn btn-primary" id="sa-save-btn">保存 H 节自评</button>
+      <span id="sa-status" class="sa-status" aria-live="polite"></span>
+    </div>
+    <p id="sa-warn" class="sa-warn" style="display:none;color:var(--coral)">任一项 &lt; 3：建议重修本模块 · <code>/day 13</code></p>
+  </div>
+        <p style="margin-top:0.75rem">任一项 &lt; 3：重修本模块；建议 <code>/day 13</code> 答疑。</p>
+        <div class="ref-box"><strong>延伸阅读</strong><ul class="obj-list"><li>templates/bb-project-rubric.csv</li></ul></div>
+      </article>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <strong>六西格玛黑带学院</strong> · 模块 13/14 · MBB-COACH-01 ·
+    <a href="../index.html">课程总览</a> ·
+    <a href="../reference/homework-scores.html">我的成绩</a> ·
+    <a href="javascript:window.print()">打印本模块（浅色版式）</a>
+    <span class="print-footer-line">— 机密文件 · 仅供内部培训 —</span>
+  </footer>
+  <script type="application/json" id="hw-rubric-data">{"day":13,"minChars":150,"passScore":70,"mcqWeight":45,"textWeight":55,"dayKeywords":["grow","rubric","辅导","混杂","fct-04","离线","smt","bga","fct","域控","装配","手插"],"evidenceFields":["工站","fct-","profile","program_id","checksum","x-ray","工艺段","离线","sipoc","分段","截图"],"dimensions":{"business":{"label":"商业对齐","weight":15,"keys":["ctq","voc","champion","效益","成本","sipoc","章程","问题陈述","dpmo","ppm","oem","adas","域控"],"forbids":["应该采用","建议使用 minitab","上 minitab"]},"measure":{"label":"测量严谨","weight":20,"keys":["msa","操作定义","抽样","基线","cpk","grr","%r&r","spi","checksum","x-ray","profile","探针"],"forbids":[]},"stats":{"label":"统计有效","weight":25,"keys":["显著","α","p值","假设","doe","效应量","anova","回归","卡方","缺陷矩阵","pareto"],"forbids":[]},"improve":{"label":"改进与控制","weight":25,"keys":["fmea","pfmea","控制计划","pilot","对策","8d","spc","p图","反应计划","u12","空洞"],"forbids":[]},"mbb":{"label":"MBB 表达","weight":30,"keys":["champion","阶段门","复制","故事板","bb","mbb","教练","评审","工艺段","grow","辅导","rubric","反馈"],"forbids":[]}},"mcq":[{"q":"BB 合并 ADAS+车身 FCT 数据，MBB？","options":[{"t":"表扬省时间","correct":false,"v":"a"},{"t":"忽略","correct":false,"v":"b"},{"t":"帮合并","correct":false,"v":"c"},{"t":"打回；要求 FCT-04/05 分序列","correct":true,"v":"d"}],"explain":{"source":"author","focus":"MBB · GROW/Rubric · Q1","rationale":"正解：打回；要求 FCT-04/05 分序列。答题时写出工站号/Profile#/Program_ID 中至少一项。","distractors":{"b":"车身 DCU-B：独立 FCT-04，CAN/LIN 与 ADAS Eth 分表。","c":"车身 DCU-B：独立 FCT-04，CAN/LIN 与 ADAS Eth 分表。","d":"车身 DCU-B：独立 FCT-04，CAN/LIN 与 ADAS Eth 分表。"},"anchor":"教研精编 · 模块 13 B+ / C2 Lab"},"type":"single","correctValue":"d"},{"q":"GROW 的 G 指？","options":[{"t":"Gate","correct":false,"v":"a"},{"t":"Goal 目标","correct":true,"v":"b"},{"t":"Gage","correct":false,"v":"c"},{"t":"GRR","correct":false,"v":"d"}],"explain":{"source":"author","focus":"MBB · GROW/Rubric · Q2","rationale":"正解：Goal 目标。答题时写出工站号/Profile#/Program_ID 中至少一项。","distractors":{"b":"「GRR」与模块 13 MBB · GROW/Rubric 证据要求冲突。","c":"「Gate」与模块 13 MBB · GROW/Rubric 证据要求冲突。","d":"「Gage」与模块 13 MBB · GROW/Rubric 证据要求冲突。"},"anchor":"教研精编 · 模块 13 B+ / C2 Lab"},"type":"single","correctValue":"b"},{"q":"MBB 辅导禁忌？","options":[{"t":"替 BB 做 Minitab 分析","correct":true,"v":"a"},{"t":"挑战混杂","correct":false,"v":"b"},{"t":"问阶段门证据","correct":false,"v":"c"},{"t":"要求故事板","correct":false,"v":"d"}],"explain":{"source":"author","focus":"MBB · GROW/Rubric · Q3","rationale":"正解：替 BB 做 Minitab 分析。答题时写出工站号/Profile#/Program_ID 中至少一项。","distractors":{"b":"「问阶段门证据」与模块 13 MBB · GROW/Rubric 证据要求冲突。","c":"五产品/工站须分层，MBB 评审一票否决合并统计。","d":"「要求故事板」与模块 13 MBB · GROW/Rubric 证据要求冲突。"},"anchor":"教研精编 · 模块 13 B+ / C2 Lab"},"type":"single","correctValue":"a"},{"q":"Rubric 5 分项目典型？","options":[{"t":"可复制+文档全+分工艺段证据","correct":true,"v":"a"},{"t":"只改 FCT 重测","correct":false,"v":"b"},{"t":"无 Champion","correct":false,"v":"c"},{"t":"只完成 ppt","correct":false,"v":"d"}],"explain":{"source":"auto","focus":"考点（模块 13 · MBB 辅导 · GROW / Rubric）— 现场判断","rationale":"可复制+文档全+分工艺段证据。须能在离线/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。","distractors":{"b":"「只完成 ppt」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。","c":"「只改 FCT 重测」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。","d":"「无 Champion」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。"},"anchor":"对照本节 B+ 工艺表、F 作业 Rubric 与 G 题干关键词。"},"type":"single","correctValue":"a"},{"q":"【纠错】MBB 只做技术？","options":[{"t":"是；只审 Cpk","correct":false,"v":"a"},{"t":"否；MBB 不做评审","correct":false,"v":"b"},{"t":"是；MBB=高级 BB","correct":false,"v":"c"},{"t":"否；含部署、战略、辅导","correct":true,"v":"d"}],"explain":{"source":"author","focus":"MBB · GROW/Rubric · 纠错辨析","rationale":"立场：否；含部署、战略、辅导。题干已植入常见误区，须用工艺段证据反驳。","distractors":{"b":"「是；MBB=高级 BB」与模块 13 MBB · GROW/Rubric 证据要求冲突。","c":"「是；只审 Cpk」与模块 13 MBB · GROW/Rubric 证据要求冲突。","d":"「否；MBB 不做评审」与模块 13 MBB · GROW/Rubric 证据要求冲突。"},"anchor":"教研精编 · 模块 13 B+ / C2 Lab"},"type":"single","correctValue":"d"},{"type":"multi","bloom":"evaluate","products":["DCU-A"],"scenario":"【情景】MBB 代替 BB 完成 Minitab 并签署控制计划。","q":"违反辅导原则的有？（多选）","options":[{"t":"GROW 四问记录","correct":false,"v":"a"},{"t":"MBB 代做分析","correct":true,"v":"b"},{"t":"MBB 代签控制计划","correct":true,"v":"c"},{"t":"Rubric 可执行反馈","correct":false,"v":"d"}],"correctValues":["b","c"],"explain":{"source":"auto","focus":"考点（模块 13 · MBB 辅导 · GROW / Rubric）— 现场判断","rationale":"MBB 代做分析。须能在离线/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。","distractors":{"c":"「GROW 四问记录」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。","d":"「Rubric 可执行反馈」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。"},"anchor":"对照本节 B+ 工艺表、F 作业 Rubric 与 G 题干关键词。"}}]}</script>
+  <script src="../js/homework-grader-core.js"></script>
+  <script src="../js/homework-grader.js" defer></script>
+  <script src="../js/self-assessment.js" defer></script>
+  <script src="../js/c2-module-checklist.js" defer></script>
+  <script src="../js/academy.js" defer></script>
+</body>
+</html>

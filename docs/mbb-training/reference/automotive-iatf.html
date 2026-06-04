@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>汽车电子 EMS — 五类产品·四段工艺</title>
+  
+  <script src="../js/theme-init.js"></script>
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/pro.css" />
+  <link rel="stylesheet" href="../css/automotive.css" />
+  <link rel="stylesheet" href="../css/premium.css" />
+  <link rel="stylesheet" href="../css/brand.css" />
+  <link rel="stylesheet" href="../css/print-light.css" media="print" />
+    <script src="../js/theme.js" defer></script>
+  <script src="../js/brand.js" defer></script>
+</head>
+<body>
+  <div class="page-bg"></div>
+  <header class="print-only print-header" aria-hidden="true">
+      <div class="print-header-logo">
+        <img src="../assets/enterprise-logo.svg" alt="" onerror="this.parentElement.innerHTML='<span style=font-size:10pt;color:#1e3a5f;font-weight:700">六西格玛黑带学院</span>'" />
+      </div>
+      <div class="print-header-meta">
+        <strong>六西格玛黑带学院</strong>
+        <span class="print-doc-title">汽车电子 EMS 工艺手册</span>
+        <span>打印日期：<span class="print-date"></span></span>
+      </div>
+    </header>
+  <header class="topbar">
+    <a class="brand" href="../index.html">
+      <span class="brand-logo-wrap" title="企业 Logo — 可替换 assets/enterprise-logo.svg">
+        <img class="brand-logo" src="../assets/enterprise-logo.svg" alt="企业 Logo" width="160" height="40"
+          onerror="this.style.display='none';this.parentElement.classList.add('logo-missing')" />
+      </span>
+      <span class="belt-mark fallback-mark">σ</span>
+      <span class="brand-text-wrap">
+        <span class="brand-org-name">六西格玛黑带学院</span>
+        <span class="brand-org-sub">汽车电子 EMS · MBB 培训</span>
+      </span>
+    </a>
+    <nav>
+      <a class="btn btn-primary" href="site-config.html">现场配置问卷</a>
+      <a class="btn" href="../index.html">总览</a>
+      <a class="btn" href="../templates/process-routing-electronics.csv">工艺路由表</a>
+          <div class="theme-switcher" role="group" aria-label="主题切换">
+      <button type="button" data-theme-pick="dark" title="深色主题"><span class="ico">🌙</span></button>
+      <button type="button" data-theme-pick="light" title="浅色主题"><span class="ico">☀</span></button>
+      <button type="button" data-theme-pick="system" title="跟随系统"><span class="ico">◐</span></button>
+    </div>
+    </nav>
+  </header>
+
+  <div class="wrap">
+    <div class="auto-banner">
+      <strong>贵司已确认的三项工艺规则</strong>
+      <ul class="obj-list" style="margin:0.5rem 0 0">
+        <li><strong>离线烧录</strong>：全部在 <strong>SMT 之前</strong> 完成</li>
+        <li><strong>BGA X-Ray</strong>：安全投产 <strong>100% 全检</strong>；量产后 <strong>抽检</strong>（比例见 CSR / 控制计划）</li>
+        <li><strong>车身域控</strong>：独立 FCT 工站 <strong>FCT-DCU-B-04</strong></li>
+      </ul>
+    </div>
+
+    <h1 class="section-title">五类产品 × 四段工艺</h1>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>产品</th><th>离线(SMT前)</th><th>SMT / BGA</th><th>X-Ray</th><th>FCT</th><th>手插/装配</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>组合仪表 IC</td><td>MCU 预烧</td><td>少量 BGA</td><td>SL全检 / MP抽检</td><td>FCT-IC-01</td><td>接插件 / 扭矩</td></tr>
+          <tr><td>中控 HU</td><td>eMMC+主控</td><td>DDR BGA</td><td>SL全检 / MP按CSR</td><td>FCT-HU-02</td><td>显示贴合</td></tr>
+          <tr><td>座舱域控 DCU-C</td><td>MCU+Switch+eMMC</td><td>关键 BGA</td><td>SL全检 / MP抽检</td><td>FCT-DCU-C-03</td><td>域控盒体</td></tr>
+          <tr><td><strong>车身域控 DCU-B</strong></td><td>MCU 预烧</td><td>BGA+功率</td><td>SL全检 / MP抽检</td><td><strong>FCT-DCU-B-04 独立</strong></td><td>继电器 / 线束</td></tr>
+          <tr><td>ADAS域控 DCU-A</td><td>SOC+eMMC</td><td>大 BGA U12</td><td>SL全检 / MP批首件+5%*</td><td>FCT-DCU-A-05</td><td>上盖扭矩</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin:0.75rem 0">
+      <a class="btn btn-primary" href="../templates/process-routing-electronics.csv">下载工艺路由表 CSV →</a>
+      <a class="btn" href="site-config.html">贵司配置说明 →</a>
+      <a class="btn" href="../data/automotive-xray-log.csv">X-Ray 阶段示例数据</a>
+    </p>
+
+    <h2 class="section-title" style="margin-top:2rem">五产品专节（IATF / 考核锚点）</h2>
+    <div class="card pro" id="product-ic">
+      <h3>组合仪表 IC</h3>
+      <p>CTQ：扭矩、ICT 通断、显示驱动。FCT <strong>FCT-IC-01</strong>。勿与域控柔性线合并统计。</p>
+      <p><a class="btn" href="../days/day12.html">模块 12 部署复制 →</a></p>
+    </div>
+    <div class="card pro" id="product-hu">
+      <h3>中控 HU</h3>
+      <p>离线 eMMC+主控；DDR BGA；<strong>FCT-HU-02</strong>。Eth 分析禁止混入 HU 批次。</p>
+      <p><a class="btn" href="../days/day05.html">模块 05 分析 →</a></p>
+    </div>
+    <div class="card pro" id="product-dcu-c">
+      <h3>座舱域控 DCU-C</h3>
+      <p>MCU+Switch+eMMC；<strong>FCT-DCU-C-03</strong>。QFD 验证止于 EMS FCT，整车时延 OEM 测。</p>
+      <p><a class="btn" href="../days/day11.html">模块 11 DFSS →</a></p>
+    </div>
+    <div class="card pro" id="product-dcu-b">
+      <h3>车身域控 DCU-B</h3>
+      <p>手插继电器浮高独立 PFMEA；<strong>FCT-DCU-B-04 独立</strong> CAN/LIN。</p>
+      <p><a class="btn" href="../days/day08.html">模块 08 PFMEA →</a></p>
+    </div>
+    <div class="card pro" id="product-dcu-a">
+      <h3>ADAS 域控 DCU-A</h3>
+      <p>SOC+eMMC @SMT前；U12 BGA；<strong>FCT-DCU-A-05</strong> Eth 环回。主线 SCAR 案例产品。</p>
+      <p><a class="btn" href="../days/day01.html">模块 01 战略 →</a></p>
+    </div>
+
+    <div class="card tip">
+      <h2>典型工艺顺序（贵司）</h2>
+      <pre style="background:#0d1117;padding:1rem;border-radius:8px;overflow:auto;font-size:0.85rem;line-height:1.6">
+元器件入库 → 【离线烧录 @ SMT前】Checksum / 版本锁定
+    → 【SMT】印刷 → 贴片 → 回流 → AOI
+    → 【X-Ray】Safe Launch = 100% 全检 │ 量产后 = 抽检（见控制计划切换条件）
+    → 【手插/波峰】（车身域控等）
+    → 【ICT】
+    → 【FCT】车身 → FCT-DCU-B-04 │ 其他产品 → 各自工站（勿混批统计）
+    → 【装配/EOL】 → 出厂 → OEM
+      </pre>
+    </div>
+
+    <div class="card pro">
+      <h2>培训与考核如何对齐（14 模块）</h2>
+      <p>每个学习日包含 <strong>B+ 五产品全矩阵</strong>、<strong>G 节 6 题</strong>（含情景多选 Q6）、<strong>F 节作业</strong>与 <strong>H 节自评入库</strong>。L1 综合权重见 <a href="homework-scores.html#dashboard">学习仪表盘</a>。</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>模块</th><th>工艺段重点</th><th>考核锚点</th></tr></thead>
+          <tbody>
+            <tr><td>01–02</td><td>四段地图、ADAS Charter</td><td>SMT前离线、FCT-04/05、问题陈述</td></tr>
+            <tr><td>03–04</td><td>分段数据、SPI/空洞 MSA</td><td>p 图 vs Cpk、%GRR</td></tr>
+            <tr><td>05–06</td><td>缺陷矩阵、Profile DOE</td><td>U12、X-Ray SL/MP、错版批次</td></tr>
+            <tr><td>07–10</td><td>阶段门、PFMEA、控制计划</td><td>五产品分行、反应计划追溯</td></tr>
+            <tr><td>11–14</td><td>DFSS NPI、部署、答辩</td><td>ASIL 边界、证据链</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card warn">
+      <h2>BGA 与离线烧录 — 黑带必审</h2>
+      <ul class="obj-list">
+        <li><strong>离线</strong>：必须在 SMT 前拦截错版；FCT 才发现错版 = 探测度不足</li>
+        <li><strong>X-Ray</strong>：Analyze 须标注从「全检期」切换到「抽检期」的日期与 FCT/BGA 关联</li>
+        <li><strong>分产品</strong>：座舱 / 车身 / ADAS 域控 FCT 数据禁止合并</li>
+        <li><strong>车身 FCT</strong>：仅统计 FCT-DCU-B-04，CAN/LIN 矩阵程序独立</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>主线 SCAR 案例（ADAS 域控 · 跨工艺段）</h2>
+      <p><strong>现象：</strong> ADAS 域控 FCT 一次通过率下降，Eth/CAN 项失败增多。</p>
+      <p><strong>假设链：</strong> ① SMT 前离线 SOC 镜像版本混杂 ② BGA U12 空洞 ③ X-Ray 由 SL 全检改为 MP 抽检后漏检 ④ 装配段（次要）。</p>
+      <p><strong>数据：</strong></p>
+      <ul class="obj-list">
+        <li><a href="../data/automotive-offline-program.csv">offline-program.csv</a></li>
+        <li><a href="../data/automotive-bga-aoi.csv">bga-aoi.csv</a></li>
+        <li><a href="../data/automotive-xray-log.csv">xray-log.csv（SL/MP 阶段）</a></li>
+        <li><a href="../data/automotive-spi-msa.csv">spi-msa.csv</a></li>
+        <li><a href="../data/automotive-fct-yield.csv">fct-yield.csv</a></li>
+      </ul>
+      <p style="margin-top:1rem">
+        <a class="btn btn-primary" href="../days/day04.html">模块 04 MSA（多量具）→</a>
+        <a class="btn" href="../days/day05.html">模块 05 分析 →</a>
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>练习数据与模板</h2>
+      <p>
+        <a class="btn" href="../templates/control-plan-electronics.csv">控制计划（五产品）</a>
+        <a class="btn" href="../templates/pfmea-electronics.csv">PFMEA（分工艺段）</a>
+      </p>
+    </div>
+  </div>
+  <footer class="footer"><a href="../index.html">返回课程</a>    <span class="print-footer-line">— 机密文件 · 仅供内部培训 —</span>
+  </footer>
+</body>
+</html>

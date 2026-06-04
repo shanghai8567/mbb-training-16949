@@ -1,0 +1,66 @@
+/* Automotive industry track */
+.auto-banner {
+  background: var(--color-auto-banner-bg);
+  border: 1px solid var(--color-ref-box-border);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.auto-banner strong { color: var(--color-auto-accent-soft); }
+
+.tag.auto {
+  background: var(--color-ref-box-bg);
+  color: var(--color-auto-accent);
+  border-color: var(--color-ref-box-border);
+}
+
+.card.automotive {
+  border-left: 4px solid var(--color-auto-primary);
+  background: var(--color-auto-card-bg);
+}
+
+.card.automotive h2 {
+  color: var(--color-auto-accent);
+  font-size: 1.05rem;
+}
+
+.aiag-criteria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+
+.aiag-criteria div {
+  text-align: center;
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+}
+
+.aiag-criteria strong {
+  display: block;
+  font-size: 1.1rem;
+  color: var(--bb-gold);
+}
+
+.aiag-criteria .ok strong { color: var(--accent); }
+.aiag-criteria .warn strong { color: var(--gold); }
+.aiag-criteria .no strong { color: var(--coral); }
+
+.card.automotive-deep {
+  border-left: 4px solid var(--gold);
+  background: var(--color-card-deep-bg);
+  margin-bottom: 1.25rem;
+}
+
+.card.automotive-deep h2 {
+  color: var(--gold);
+  font-size: 1.05rem;
+}
+
+.card.automotive-deep .section-num {
+  color: var(--gold);
+}

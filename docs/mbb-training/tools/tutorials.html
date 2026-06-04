@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MBB 专业工具教程库 — Minitab / JMP / Excel</title>
+  
+  <script src="../js/theme-init.js"></script>
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/pro.css" />
+  <link rel="stylesheet" href="../css/automotive.css" />
+  <link rel="stylesheet" href="../css/premium.css" />
+  <link rel="stylesheet" href="../css/brand.css" />
+  <link rel="stylesheet" href="../css/print-light.css" media="print" />
+    <script src="../js/theme.js" defer></script>
+  <script src="../js/brand.js" defer></script>
+</head>
+<body>
+  <div class="page-bg"></div>
+  <header class="print-only print-header" aria-hidden="true">
+      <div class="print-header-logo">
+        <img src="../assets/enterprise-logo.svg" alt="" onerror="this.parentElement.innerHTML='<span style=font-size:10pt;color:#1e3a5f;font-weight:700">六西格玛黑带学院</span>'" />
+      </div>
+      <div class="print-header-meta">
+        <strong>六西格玛黑带学院</strong>
+        <span class="print-doc-title">Minitab 教程库</span>
+        <span>打印日期：<span class="print-date"></span></span>
+      </div>
+    </header>
+  <header class="topbar">
+    <a class="brand" href="../index.html">
+      <span class="brand-logo-wrap" title="企业 Logo — 可替换 assets/enterprise-logo.svg">
+        <img class="brand-logo" src="../assets/enterprise-logo.svg" alt="企业 Logo" width="160" height="40"
+          onerror="this.style.display='none';this.parentElement.classList.add('logo-missing')" />
+      </span>
+      <span class="belt-mark fallback-mark">σ</span>
+      <span class="brand-text-wrap">
+        <span class="brand-org-name">六西格玛黑带学院</span>
+        <span class="brand-org-sub">汽车电子 EMS · MBB 培训</span>
+      </span>
+    </a>
+    <nav>
+      <a class="btn" href="../index.html">← 特训总览</a>
+      <a class="btn" href="../PROMPT-MBB-TUTOR.md">提示词</a>
+          <div class="theme-switcher" role="group" aria-label="主题切换">
+      <button type="button" data-theme-pick="dark" title="深色主题"><span class="ico">🌙</span></button>
+      <button type="button" data-theme-pick="light" title="浅色主题"><span class="ico">☀</span></button>
+      <button type="button" data-theme-pick="system" title="跟随系统"><span class="ico">◐</span></button>
+    </div>
+    </nav>
+  </header>
+
+  <div class="wrap">
+    <div class="day-hero">
+      <h1>专业工具示例教程库</h1>
+      <p class="section-desc">对齐 PROMPT-MBB-TUTOR.md §四 · Minitab 22 菜单路径 · 含示例数据下载</p>
+    </div>
+
+    <nav class="plan" style="margin-bottom:2rem">
+      <a href="#minitab-gage"><span class="d">MSA</span><span class="label">Gage R&R</span></a>
+      <a href="#minitab-capability"><span class="d">Cpk</span><span class="label">过程能力</span></a>
+      <a href="#minitab-ttest"><span class="d">t</span><span class="label">假设检验</span></a>
+      <a href="#minitab-doe"><span class="d">DOE</span><span class="label">2³ 因子</span></a>
+      <a href="#minitab-imr"><span class="d">SPC</span><span class="label">I-MR</span></a>
+      <a href="#jmp"><span class="d">JMP</span><span class="label">对照</span></a>
+      <a href="#excel-deploy"><span class="d">XL</span><span class="label">Excel</span></a>
+      <a href="#fmea"><span class="d">F</span><span class="label">FMEA</span></a>
+      <a href="#qfd"><span class="d">Q</span><span class="label">QFD</span></a>
+      <a href="#storyboard"><span class="d">PPT</span><span class="label">故事板</span></a>
+    </nav>
+
+    <div class="auto-banner">
+      <strong>汽车电子 EMS</strong> — SPI/AOI/ICT/FCT 测量系统 · %GRR 按 AIAG · FCT 良率用 p 图
+    </div>
+
+    <div class="card" id="minitab-gage">
+      <h2>Minitab · Gage R&R（D4 · SPI 锡膏体积）</h2>
+      <p><strong>前置：</strong> Minitab 21/22 · <a href="../data/automotive-spi-msa.csv">automotive-spi-msa.csv</a>（座舱域控 PCBA 关键焊盘 SPI 体积%）· 规格示例 88–92%</p>
+      <ol class="obj-list" style="list-style:decimal;padding-left:1.5rem">
+        <li><code>统计 &gt; 质量工具 &gt; 量具研究 &gt; 研究交叉型量具</code></li>
+        <li>响应：测量值；因子：零件、操作员</li>
+        <li><strong>解读：</strong> %研究变异 RR &lt;10% 可接受；10–30% 边缘；&gt;30% <strong>停止</strong> 仅报 Cpk</li>
+        <li><strong>ndc ≥ 5</strong> 才可分辨过程变异</li>
+      </ol>
+      <h3>MBB 审计</h3>
+      <ul class="obj-list"><li>零件×操作员无交互可疑时查混淆</li><li>别用规格宽掩盖 RR 差</li></ul>
+    </div>
+
+    <div class="card" id="minitab-capability">
+      <h2>Minitab · 过程能力 Cp/Cpk（D4）</h2>
+      <p>数据：<a href="../data/capability-diameter.csv">capability-diameter.csv</a> · LSL=9.5 USL=10.5</p>
+      <ol class="obj-list" style="list-style:decimal;padding-left:1.5rem">
+        <li><code>统计 &gt; 质量工具 &gt; 能力分析 &gt; 正态</code></li>
+        <li>AD p&lt;0.05 → 非正态能力或 Box-Cox</li>
+        <li>Cp 看变宽；Cpk 看居中</li>
+      </ol>
+    </div>
+
+    <div class="card" id="minitab-ttest">
+      <h2>Minitab · 双样本 t（D5）</h2>
+      <p>数据：<a href="../data/hypothesis-yield.csv">hypothesis-yield.csv</a></p>
+      <ol class="obj-list" style="list-style:decimal;padding-left:1.5rem">
+        <li><code>统计 &gt; 基本统计 &gt; 2 样本 t</code></li>
+        <li>勾选等方差检验；不齐 → 不等方差或 Mann-Whitney</li>
+        <li>报告差值 CI + 业务百分点</li>
+      </ol>
+    </div>
+
+    <div class="card" id="minitab-doe">
+      <h2>Minitab · 全因子 DOE 2³（D6–D9）</h2>
+      <p>数据：<a href="../data/doe-2k3-run.csv">doe-2k3-run.csv</a>（含随机化运行序）</p>
+      <ol class="obj-list" style="list-style:decimal;padding-left:1.5rem">
+        <li><code>统计 &gt; DOE &gt; 因子 &gt; 创建因子设计</code> 2 水平 3 因子</li>
+        <li><code>分析因子设计</code> — 主效应 + AB/AC/BC</li>
+        <li>D9：<code>响应优化器</code> + 确认运行（勿外推）</li>
+      </ol>
+    </div>
+
+    <div class="card" id="minitab-imr">
+      <h2>Minitab · I-MR 控制图（D10）</h2>
+      <p>数据：<a href="../data/control-imr.csv">control-imr.csv</a></p>
+      <ol class="obj-list" style="list-style:decimal;padding-left:1.5rem">
+        <li><code>统计 &gt; 控制图 &gt; 变量 &gt; I-MR</code></li>
+        <li>选项：8 点同侧等规则</li>
+        <li>配合 <a href="../templates/control-plan.csv">control-plan.csv</a></li>
+      </ol>
+    </div>
+
+    <div class="card" id="jmp">
+      <h2>JMP 路径对照</h2>
+      <div class="table-wrap"><table>
+        <tr><th>分析</th><th>JMP</th></tr>
+        <tr><td>Gage R&R</td><td>质量与过程 &gt; 测量系统分析</td></tr>
+        <tr><td>能力</td><td>分析 &gt; 能力分析</td></tr>
+        <tr><td>t / ANOVA</td><td>分析 &gt; 以 Y 响应 X 因子</td></tr>
+        <tr><td>DOE</td><td>实验设计 &gt; 全因子 &gt; 拟合模型</td></tr>
+        <tr><td>控制图</td><td>控制图构建器</td></tr>
+      </table></div>
+    </div>
+
+    <div class="card tip" id="excel-deploy">
+      <h2>Excel · 章程 / 甘特 / 雷达（D1–D2、D12）</h2>
+      <ul class="obj-list">
+        <li><a href="../templates/project-charter.csv">project-charter.csv</a></li>
+        <li>雷达图：五维成熟度分数 → 插入 &gt; 图表</li>
+        <li>甘特：培训波次与阶段门日期对齐</li>
+      </ul>
+    </div>
+
+    <div class="card" id="fmea">
+      <h2>PFMEA（D8）</h2>
+      <p>S×O×D 排序；优先严重度高且发生度高。改进验证用 Pilot 数据。</p>
+    </div>
+
+    <div class="card" id="qfd">
+      <h2>QFD 质量屋（D11）</h2>
+      <p>WHATs（VOC）× HOWs（工程特性）；屋顶标 ○正 △负 相关。</p>
+    </div>
+
+    <div class="card" id="storyboard">
+      <h2>故事板 · PowerPoint（D7、D14）</h2>
+      <p>每 DMAIC 阶段 1 页：问题 → 数据 → 结论 → 效益。图表自 Minitab 复制。</p>
+    </div>
+
+    <div class="card" id="rubric">
+      <h2>BB 项目 Rubric（D13）</h2>
+      <p><a href="../templates/bb-project-rubric.csv">bb-project-rubric.csv</a> — 五维加权评分。</p>
+    </div>
+
+    <div class="card" id="capstone">
+      <h2>认证 Capstone（D14）</h2>
+      <p>书面 90min + 案例报告 + CFO 答辩 + 15min 微课（MSA 主题推荐）。</p>
+    </div>
+  </div>
+  <footer class="footer"><a href="../index.html">返回 MBB 14 天特训</a>    <span class="print-footer-line">— 机密文件 · 仅供内部培训 —</span>
+  </footer>
+</body>
+</html>

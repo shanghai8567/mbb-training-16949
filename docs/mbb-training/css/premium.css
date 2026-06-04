@@ -1,0 +1,488 @@
+/**
+ * MBB 培训包 — 专业视觉增强层（叠放在 style / pro / automotive 之后）
+ */
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap");
+
+:root {
+  --font-display: "Plus Jakarta Sans", "Noto Sans SC", sans-serif;
+  --surface-elevated: var(--color-bg-elevated);
+  --glass-border: var(--color-border-strong);
+  --glass-highlight: var(--color-glass-highlight);
+  --shadow-sm: var(--color-shadow-sm);
+  --shadow-md: var(--color-shadow-md);
+  --shadow-glow: var(--color-shadow-glow);
+  --topbar-h: 3.25rem;
+  --sidebar-w: 240px;
+  --content-max: 780px;
+}
+
+/* —— 背景与噪点 —— */
+.page-bg {
+  background:
+    radial-gradient(ellipse 100% 80% at 50% -30%, var(--color-bg-page-gradient-1), transparent 55%),
+    radial-gradient(ellipse 70% 50% at 100% 20%, var(--color-bg-page-gradient-2), transparent 50%),
+    radial-gradient(ellipse 60% 40% at 0% 90%, var(--color-bg-page-gradient-3), transparent 45%),
+    linear-gradient(180deg, var(--color-bg-surface-solid) 0%, var(--color-bg-page) 40%, var(--color-bg-page) 100%);
+}
+
+.page-bg::after {
+  opacity: 0.25;
+  mix-blend-mode: overlay;
+}
+
+/* —— 顶栏 —— */
+.topbar {
+  min-height: var(--topbar-h);
+  padding: 0 1.75rem;
+  background: var(--color-topbar-bg);
+  border-bottom: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.topbar .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.topbar .brand .belt-mark,
+.topbar .brand span.belt-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 8px;
+  background: linear-gradient(145deg, var(--color-gold-dim), transparent);
+  border: 1px solid var(--color-gold-border);
+  color: var(--bb-gold, var(--gold));
+  font-size: 1.1rem;
+  box-shadow: inset 0 1px 0 var(--glass-highlight);
+}
+
+.topbar nav {
+  gap: 0.4rem;
+}
+
+.topbar .btn {
+  border-radius: 8px;
+  font-size: 0.8125rem;
+  padding: 0.5rem 0.95rem;
+  background: var(--color-btn-bg);
+  backdrop-filter: blur(8px);
+}
+
+.topbar .btn-primary {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--color-accent-gradient-end) 100%);
+  box-shadow: 0 2px 12px var(--color-accent-muted);
+  font-weight: 700;
+}
+
+.topbar #mark-complete {
+  border-color: var(--color-gold-border);
+  color: var(--bb-gold, var(--gold));
+}
+
+/* —— 首页 Hero —— */
+.hero.pro {
+  padding: 5rem 2rem 4.5rem;
+}
+
+.hero.pro h1 {
+  font-family: var(--font-display);
+  letter-spacing: -0.03em;
+  line-height: 1.12;
+}
+
+.hero.pro .subtitle {
+  font-size: 1.125rem;
+  line-height: 1.65;
+}
+
+.stat-pill {
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm), inset 0 1px 0 var(--glass-highlight);
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+
+.stat-pill:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md), var(--shadow-glow);
+}
+
+.cert-badge {
+  border-radius: 6px;
+  background: var(--color-bg-hover);
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.cert-badge:hover {
+  border-color: var(--color-border-hover);
+  color: var(--text);
+}
+
+.prompt-cta {
+  border-radius: 14px;
+  padding: 1.75rem 2rem;
+  box-shadow: var(--shadow-md);
+  background:
+    linear-gradient(135deg, var(--color-accent-dim) 0%, transparent 50%),
+    linear-gradient(225deg, var(--color-ref-box-bg) 0%, transparent 50%),
+    var(--surface-elevated);
+}
+
+/* —— 模块网格 —— */
+nav.plan a {
+  border-radius: 12px;
+  padding: 1.35rem 1rem;
+  box-shadow: var(--shadow-sm);
+}
+
+nav.plan a .d {
+  font-family: var(--font-display);
+  font-size: 1.85rem;
+}
+
+nav.plan a .label {
+  font-weight: 500;
+}
+
+/* —— 课程布局 —— */
+.layout-course {
+  grid-template-columns: var(--sidebar-w) 1fr;
+  gap: 2.25rem;
+  max-width: 1280px;
+  padding: 2rem 1.75rem 4rem;
+}
+
+.course-sidebar {
+  border-radius: 12px;
+  background: var(--surface-elevated);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--glass-border);
+  padding: 0.75rem 0;
+  max-height: calc(100vh - var(--topbar-h) - 3rem);
+  overflow-y: auto;
+}
+
+.course-sidebar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.course-sidebar::-webkit-scrollbar-thumb {
+  background: var(--color-border-strong);
+  border-radius: 4px;
+}
+
+.course-sidebar .sb-title {
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  padding: 0.85rem 1.15rem 0.65rem;
+}
+
+.course-sidebar a {
+  padding: 0.55rem 1.15rem;
+  font-weight: 500;
+  transition: all 0.2s var(--ease);
+  border-left-width: 3px;
+}
+
+.course-sidebar a.active {
+  background: linear-gradient(90deg, var(--color-gold-dim), transparent);
+  color: var(--bb-gold-light, var(--gold));
+  border-left-color: var(--bb-gold, var(--gold));
+}
+
+.course-main {
+  max-width: var(--content-max);
+}
+
+/* —— 模块页头 —— */
+.course-main .pro-header.day-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4vw, 2.35rem);
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.course-main .module-id {
+  font-family: var(--font-display);
+}
+
+.day-meta {
+  gap: 0.6rem;
+}
+
+.tag,
+.dmaic-ribbon {
+  border-radius: 6px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* —— 卡片系统 —— */
+.card {
+  border-radius: 14px;
+  background: var(--surface-elevated);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-md), inset 0 1px 0 var(--glass-highlight);
+  padding: 2rem;
+  margin-bottom: 1.75rem;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md), var(--shadow-glow), inset 0 1px 0 var(--glass-highlight);
+}
+
+.card.pro h2 {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 700;
+  padding-bottom: 0.85rem;
+  margin-bottom: 1.15rem;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.card.pro h2 .section-num {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 8px;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  background: var(--color-formula-bg);
+  box-shadow: inset 0 1px 0 var(--color-glass-highlight);
+}
+
+.card.warn {
+  border-left-width: 4px;
+  background: var(--color-card-warn-bg);
+}
+
+.card.tip {
+  border-left-width: 4px;
+  background: var(--color-card-tip-bg);
+}
+
+.card.quiz {
+  border-left-width: 4px;
+  background: var(--color-card-quiz-bg);
+}
+
+.card.automotive {
+  background: var(--color-auto-card-bg);
+  border-color: var(--color-ref-box-border);
+}
+
+.card.automotive-deep {
+  border-radius: 14px;
+  padding: 2rem;
+  box-shadow: var(--shadow-md), 0 0 0 1px var(--color-gold-border);
+}
+
+/* —— 信息块 —— */
+.ref-box,
+.auto-banner {
+  border-radius: 10px;
+  padding: 1.15rem 1.35rem;
+  box-shadow: inset 0 1px 0 var(--glass-highlight);
+}
+
+.auto-banner {
+  background: var(--color-auto-banner-bg);
+  border: 1px solid var(--color-ref-box-border);
+  margin-bottom: 1.75rem;
+}
+
+.auto-banner strong {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+}
+
+.analogy {
+  border-radius: 10px;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.formula-pro {
+  border-radius: 10px;
+  box-shadow: inset 0 2px 8px var(--color-bg-inset);
+}
+
+.pitfall {
+  border-radius: 8px;
+}
+
+.aiag-criteria div {
+  border-radius: 10px;
+  background: var(--color-bg-inset);
+  transition: transform 0.2s;
+}
+
+.aiag-criteria div:hover {
+  transform: scale(1.02);
+}
+
+/* —— 表格 —— */
+.table-wrap {
+  border-radius: 10px;
+  box-shadow: var(--shadow-sm);
+  background: var(--color-bg-inset);
+}
+
+th {
+  background: var(--color-table-head-bg);
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  padding: 0.85rem 1.1rem;
+}
+
+td {
+  padding: 0.8rem 1.1rem;
+}
+
+tr:nth-child(even) td {
+  background: var(--color-table-stripe);
+}
+
+/* —— 章节标题（参考页） —— */
+.section-title {
+  font-family: var(--font-display);
+  font-size: 1.625rem;
+  letter-spacing: -0.02em;
+}
+
+.wrap {
+  max-width: 1120px;
+  padding: 2.5rem 1.75rem 5rem;
+}
+
+/* —— 进度条 —— */
+.progress-wrap {
+  height: 8px;
+  border-radius: 999px;
+  background: var(--color-bg-inset);
+}
+
+.progress-wrap span {
+  background: linear-gradient(90deg, var(--accent), var(--color-auto-primary), var(--bb-gold));
+}
+
+/* —— 页脚 —— */
+.footer {
+  background: var(--color-topbar-bg);
+  margin-top: 3rem;
+}
+
+/* —— 工艺流程序号（B+） —— */
+.card.automotive-deep pre,
+.card.tip pre {
+  border-radius: 10px;
+  border: 1px solid var(--glass-border);
+  font-size: 0.84rem;
+  line-height: 1.7;
+}
+
+.process-pipeline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.25rem;
+  margin: 1.25rem 0;
+  padding: 1rem 1.25rem;
+  background: var(--color-pipeline-bg);
+  border-radius: 10px;
+  border: 1px solid var(--glass-border);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.process-pipeline .step {
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+  background: var(--color-pipeline-step-bg);
+  color: var(--color-pipeline-step-text);
+  border: 1px solid var(--color-ref-box-border);
+}
+
+.process-pipeline .step.accent {
+  background: var(--color-pipeline-accent-bg);
+  color: var(--color-pipeline-accent-text);
+  border-color: var(--color-border-hover);
+}
+
+.process-pipeline .arrow {
+  color: var(--muted);
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+
+.exam-align-hint {
+  margin-top: 1.25rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+  border-radius: 8px;
+  background: var(--color-gold-dim);
+  border: 1px dashed var(--color-gold-border);
+}
+
+.exam-align-hint strong {
+  color: var(--bb-gold, var(--gold));
+}
+
+code {
+  font-size: 0.88em;
+  padding: 0.15em 0.45em;
+  border-radius: 4px;
+  background: var(--color-bg-inset);
+  border: 1px solid var(--color-border-strong);
+  color: var(--color-code-text);
+  font-family: "Cascadia Code", "Consolas", monospace;
+}
+
+.quiz-answers-ref[open] {
+  border-color: var(--color-accent-muted);
+  background: var(--color-accent-dim);
+}
+
+/* —— 聚焦可访问 —— */
+.btn:focus-visible,
+.course-sidebar a:focus-visible,
+nav.plan a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (max-width: 900px) {
+  .layout-course {
+    padding: 1.25rem 1rem 3rem;
+  }
+
+  .topbar {
+    padding: 0.65rem 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .topbar nav {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 640px) {
+  .card {
+    padding: 1.35rem;
+  }
+
+  .hero.pro {
+    padding: 3.5rem 1.25rem 3rem;
+  }
+}

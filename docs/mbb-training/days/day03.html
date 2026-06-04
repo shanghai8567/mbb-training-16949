@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>模块 3 — Measure — 概率与数据收集 | 六西格玛黑带</title>
+  <meta name="description" content="六西格玛黑带 BB-M-01 — Measure — 概率与数据收集" />
+  <meta name="mbb-package-version" content="3.0.0-beta.1" />
+  <script src="../js/theme-init.js"></script>
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/pro.css" />
+  <link rel="stylesheet" href="../css/automotive.css" />
+  <link rel="stylesheet" href="../css/homework-grader.css" />
+  <link rel="stylesheet" href="../css/brand.css" />
+  <link rel="stylesheet" href="../css/premium.css" />
+  <link rel="stylesheet" href="../css/print-light.css" media="print" />
+  <script src="../js/course.js" defer></script>
+  <script src="../js/theme.js" defer></script>
+  <script src="../js/brand.js" defer></script>
+</head>
+<body data-day="3">
+  <div class="page-bg"></div>
+  <header class="print-only print-header" aria-hidden="true">
+      <div class="print-header-logo">
+        <img src="../assets/enterprise-logo.svg" alt="" onerror="this.parentElement.innerHTML='<span style=font-size:10pt;color:#1e3a5f;font-weight:700">六西格玛黑带学院</span>'" />
+      </div>
+      <div class="print-header-meta">
+        <strong>六西格玛黑带学院</strong>
+        <span class="print-doc-title">模块 03 — Measure — 概率与数据收集</span>
+        <span>打印日期：<span class="print-date"></span></span>
+      </div>
+    </header>
+  <header class="topbar">
+    <a class="brand" href="../index.html">
+      <span class="brand-logo-wrap" title="企业 Logo — 可替换 assets/enterprise-logo.svg">
+        <img class="brand-logo" src="../assets/enterprise-logo.svg" alt="企业 Logo" width="160" height="40"
+          onerror="this.style.display='none';this.parentElement.classList.add('logo-missing')" />
+      </span>
+      <span class="belt-mark fallback-mark">σ</span>
+      <span class="brand-text-wrap">
+        <span class="brand-org-name">六西格玛黑带学院</span>
+        <span class="brand-org-sub">汽车电子 EMS · MBB 培训</span>
+      </span>
+    </a>
+    <nav>
+      <a class="btn" href="../index.html">课程总览</a>
+      <a class="btn" href="../reference/tool-matrix.html">工具矩阵</a>
+      <a class="btn" href="../tools/tutorials.html">Minitab 教程</a>
+      <a class="btn" id="nav-prev" href="day02.html">← 上一模块</a>
+      <a class="btn btn-primary" id="nav-next" href="day04.html">下一模块 →</a>
+      <button type="button" class="btn" id="mark-complete">标记完成</button>
+      <div class="theme-switcher" role="group" aria-label="主题切换">
+      <button type="button" data-theme-pick="dark" title="深色主题"><span class="ico">🌙</span></button>
+      <button type="button" data-theme-pick="light" title="浅色主题"><span class="ico">☀</span></button>
+      <button type="button" data-theme-pick="system" title="跟随系统"><span class="ico">◐</span></button>
+    </div>
+    </nav>
+  </header>
+
+  <div class="layout-course">
+    <aside class="course-sidebar">
+      <div class="sb-title">模块 3 目录</div>
+      <a href="#sec-a">A 学习目标</a>
+      <a href="#sec-b">B 核心概念</a>
+      <a href="#sec-b2">B+ 生产线对齐</a>
+      <a href="#sec-c">C 工具与公式</a>
+      <a href="#sec-c2">C2 软件实操</a>
+      <a href="#sec-d">D 行业案例</a>
+      <a href="#sec-e">E 课堂练习</a>
+      <a href="#sec-f">F 课后作业</a>
+      <a href="#sec-g">G 客观自测</a>
+      <a href="#sec-h">H 能力自评</a>
+      <div class="sb-title" style="margin-top:1rem">参考资料</div>
+      <a href="../reference/glossary.html">术语表</a>
+      <a href="../reference/sigma-table.html">σ · DPMO</a>
+      <a href="../reference/automotive-iatf.html">汽车 IATF 专题</a>
+      <a href="../reference/homework-scores.html">我的作业成绩</a>
+    </aside>
+
+    <main class="course-main">
+      <header class="pro-header day-hero" style="border:none;padding:0">
+        <p class="module-id">模块 03 / 14 · BB-M-01</p>
+        <h1>Measure — 概率与数据收集</h1>
+        <div class="day-meta" style="margin-top:1rem">
+          <span class="dmaic-ribbon measure">measure</span>
+          <span class="belt-track">BB 能力域</span>
+          
+          <span class="tag gold">交付：数据收集计划</span>
+        </div>
+        <div class="ref-box" style="margin-top:1rem">
+          <strong>标准对齐</strong> ISO 13053-1 — 测量阶段
+        </div>
+      </header>
+
+      <article class="card pro automotive" id="sec-auto">
+      <h2><span class="section-num">◎</span>汽车电子 EMS（五产品·离线/SMT/手插/装配）</h2>
+      <p><span class="tag auto">汽车制造</span> <strong>IATF：</strong>7.1.5 — 各段测量系统清单</p>
+      
+      <p style="margin-top:0.75rem">建立数据字典：离线(版本/Checksum)、SMT(SPI/AOI 空洞%)、手插(不良类别)、装配(扭矩)、测试(ICT/FCT 代码)。</p>
+      
+      <h3 style="margin-top:1rem;color:var(--bb-gold)">审核检查清单</h3>
+      <ul class="obj-list"><li>ADAS 与车身域控分线体分层</li><li>炉温 Profile ID 追溯</li></ul>
+      <div class="aiag-criteria">
+        <div class="ok"><strong>&lt;10%</strong>%GRR 可接受</div>
+        <div class="warn"><strong>10–30%</strong>边缘/改进</div>
+        <div class="no"><strong>&gt;30%</strong>不可接受</div>
+      </div>
+      <div class="auto-banner" style="margin-top:1rem"><strong>贵司现场配置</strong><ul class="obj-list"><li>全部离线烧录在 SMT 之前完成</li><li>BGA X-Ray：安全投产(Safe Launch) 100% 全检；量产后按 CSR 抽检</li><li>车身域控使用独立 FCT 工站 FCT-DCU-B-04（与座舱/ADAS 分机台）</li></ul><a class="btn btn-primary" href="../reference/site-config.html">1:1 配置页 →</a></div>
+      <p style="margin-top:0.75rem"><a class="btn" href="../reference/automotive-iatf.html">IATF × DMAIC 对照手册 →</a></p>
+    </article>
+
+      <article class="card pro" id="sec-a">
+        <h2><span class="section-num">A</span>学习目标（Learning Objectives）</h2>
+        <ul class="obj-list"><li>区分离散/连续数据与图表</li><li>理解 CLT 对样本均值的意义</li><li>编写数据收集计划</li></ul>
+        <p style="margin-top:0.75rem;font-size:0.88rem;color:var(--muted)">学完应能独立向 Champion 说明本模块对黑带项目的价值。</p>
+      </article>
+
+      <article class="card pro" id="sec-b">
+        <h2><span class="section-num">B</span>核心概念与理论框架</h2>
+        <p>没有操作定义的数据=垃圾进垃圾出。</p><p>【汽车电子 · Measure — 分段数据计划】FCT 一次通过率、离线错版率是属性数据 → p/np 图；SPI 体积、BGA 空洞%、扭矩是计量数据 → I-MR/Xbar-R/Cpk。数据计划按工艺段分表，字段须能追溯到 Profile#、烧录批次、X-Ray 阶段(SL/MP)。</p>
+        <div class="analogy"><strong>专业类比</strong> — 抽样像尝汤：搅匀、随机舀一勺，别只舀表面油花。</div>
+        <p style="margin-top:1rem">正态适用多独立小误差叠加；偏态用变换或非参数。</p>
+        <div class="formula-pro"><div class="label">关键公式</div><code>X̄ ~ N(μ, σ²/n)（CLT，独立同分布前提）</code></div>
+        <p style="margin-top:1rem"><span class="tag auto">本课主线：Measure — 分段数据计划</span></p>
+      </article>
+
+      <article class="card pro automotive-deep" id="sec-b2">
+    <h2><span class="section-num">B+</span>本课与生产线对齐 · 数据字典（按段）</h2>
+    <div class="process-pipeline" aria-label="工艺主线"><span class="step accent">离线@SMT前</span><span class="arrow">→</span><span class="step">SMT·SPI</span><span class="arrow">→</span><span class="step">回流·AOI</span><span class="arrow">→</span><span class="step">X-Ray</span><span class="arrow">→</span><span class="step">手插/波峰</span><span class="arrow">→</span><span class="step">ICT</span><span class="arrow">→</span><span class="step">FCT</span><span class="arrow">→</span><span class="step">装配/EOL</span></div>
+    <ul class="obj-list"><li>离线：Program_ID、Checksum_OK、烧录器#、批次</li><li>SMT：SPI_vol%、炉温 Profile#、AOI_void%、PCB_ID</li><li>手插：不良代码（浮高/通断）、波峰#2（车身）</li><li>FCT：Fail_code、工站号、SOC_FW（须与离线一致）</li></ul>
+    
+    <p class="exam-align-hint">▼ <strong>G 客观题</strong>与 <strong>F 作业</strong>仅考核本节要点（车身 FCT-04 / ADAS BGA·FCT-05）</p>
+  </article>
+
+      <article class="card pro" id="sec-c">
+        <h2><span class="section-num">C</span>工具清单与适用边界</h2>
+        <p>主平台：<strong>Minitab / JMP</strong> ·
+          <a href="../tools/tutorials.html#minitab-capability">分步操作教程</a> ·
+          <a href="../reference/tool-matrix.html">DMAIC 工具矩阵</a></p>
+        <div class="table-wrap tool-matrix" style="margin-top:1rem">
+          <table><thead><tr><th>工具 / 方法</th><th>本模块用途</th></tr></thead><tbody><tr><td>操作定义</td><td>MSA 前提</td></tr><tr><td>描述统计</td><td>基线</td></tr><tr><td>概率图</td><td>分布假定</td></tr></tbody></table>
+        </div>
+        <div class="pitfall"><strong>常见缺陷</strong> 样本无随机/独立</div><div class="pitfall"><strong>常见缺陷</strong> 混淆精确度与准确度</div>
+      </article>
+
+      <article class="card pro tip" id="sec-c2">
+        <h2><span class="section-num">C2</span>专业软件实操 Lab（Minitab / JMP）</h2>
+        <p style="font-size:0.85rem;color:var(--muted)">包版本 3.0.0-beta.1 · 跟做后完成 F 节截图交付</p>
+        <div class="c2-lab-card" id="c2-lab-d3">
+    <p class="c2-lab-meta"><strong>主工具</strong> Minitab / JMP · <strong>版本</strong> Minitab 22
+      · <a href="../tools/tutorials.html#minitab-capability">完整教程 →</a></p>
+    <p class="c2-lab-meta"><strong>数据</strong> <a href="../data/capability-diameter.csv" download>capability-diameter.csv</a> · <a href="../data/automotive-fct-yield.csv" download>automotive-fct-yield.csv</a> · <strong>列定义</strong> C1=计量值；FCT 批次=属性合格/不合格</p>
+    <h3 class="c2-lab-h3">跟做步骤（菜单路径）</h3>
+    <ol class="c2-lab-steps"><li><strong>1.</strong> <code>统计 &gt; 基本统计 &gt; 描述统计 + 图形 &gt; 直方图（capability-diameter.csv）</code></li><li><strong>2.</strong> <code>图形 &gt; 概率图 — 判断正态性（AD p 值）</code></li><li><strong>3.</strong> <code>对 fct-yield：按 DCU-A/B 分表，计划 p 图（勿做 Cpk）</code></li></ol>
+    <p class="c2-lab-read"><strong>输出解读</strong> Session：AD 正态性 p 值；均值/标准差与规格无关前先 MSA。</p>
+    <h3 class="c2-lab-h3">课堂练习</h3>
+    <p>为「离线错版率」写操作定义 3 行 + 选图（p 或 I-MR）。</p>
+    <h3 class="c2-lab-h3" style="color:var(--bb-gold)">F 节建议截图交付</h3>
+    <ul class="obj-list c2-lab-deliver"><li>直方图+概率图截图</li><li>数据计划表一页</li></ul>
+    <h3 class="c2-lab-h3" style="color:var(--bb-gold)">MBB 审计点</h3>
+    <ul class="obj-list"><li>属性数据禁止 I-MR 求 Cpk</li><li>数据计划含 Program_ID、Profile#</li></ul>
+  </div>
+        <p style="margin-top:1rem"><a class="btn btn-primary" href="../templates/process-routing-electronics.csv" download>↓ 下载实验数据（CSV）</a></p>
+      </article>
+
+      <article class="card pro" id="sec-d">
+        <h2><span class="section-num">D</span>行业迷你案例与 黑带教练追问</h2>
+        <p>按工艺段建数据计划：离线 program.csv、SPI、BGA AOI 空洞、FCT；分 DCU-A/B/C 不混批。</p>
+        <h3>黑带教练追问</h3>
+        <ul class="obj-list"><li>是否分层？</li><li>是否受控环境？</li><li>缺失数据规则？</li></ul>
+      </article>
+
+      <article class="card pro" id="sec-e">
+        <h2><span class="section-num">E</span>课堂练习（先作答再对答案）</h2>
+        <ul class="obj-list"><li class="exercise-item">
+        <strong>E1.</strong> 为 SPI 体积写操作定义（钢网 ID、测点、单位 %）
+        <details class="exercise-answer-ref">
+          <summary>参考答案</summary>
+          <p class="ex-ans-body"><strong>要点：</strong>SPI 体积：钢网 ID、测点位置、单位 %、测量系统编号；判定按 CSR 上下限。</p>
+          <p class="ex-ans-explain">操作定义要可执行、可审计。</p>
+        </details>
+      </li><li class="exercise-item">
+        <strong>E2.</strong> 说明 FCT 良率分层：DCU-A / DCU-B 分表
+        <details class="exercise-answer-ref">
+          <summary>参考答案</summary>
+          <p class="ex-ans-body"><strong>要点：</strong>DCU-A 与 DCU-B 分表统计 FCT；字段含 Fail_code、工站、Program_ID。</p>
+          <p class="ex-ans-explain">禁止柔性线合并批次。</p>
+        </details>
+      </li><li class="exercise-item">
+        <strong>E3.</strong> 选图：离线错版率用 p 还是 Xbar-R
+        <details class="exercise-answer-ref">
+          <summary>参考答案</summary>
+          <p class="ex-ans-body"><strong>要点：</strong>离线错版率 → p/np 图；SPI 体积 → I-MR 或 Xbar-R（MSA 合格后）。</p>
+          <p class="ex-ans-explain">数据类型决定控制图，见 B+ 数据字典。</p>
+        </details>
+      </li><li class="exercise-item">
+        <strong>E4.</strong> 为 CTQ 写操作定义
+        <details class="exercise-answer-ref">
+          <summary>参考答案</summary>
+          <p class="ex-ans-body"><strong>要点：</strong>为 CTQ 写操作定义：指标名、单位、测点/工站、判定规则、抽样窗、责任人。</p>
+          <p class="ex-ans-explain">MSA 与能力分析的前置条件。</p>
+        </details>
+      </li><li class="exercise-item">
+        <strong>E5.</strong> 选直方图还是 p 图
+        <details class="exercise-answer-ref">
+          <summary>参考答案</summary>
+          <p class="ex-ans-body"><strong>要点：</strong>FCT 良率：属性 → p 图；SPI 体积：计量 → 直方图/I-MR/Xbar-R（视子组）。</p>
+          <p class="ex-ans-explain">勿对 0/1 良率求 Cpk。</p>
+        </details>
+      </li></ul>
+      </article>
+
+      <article class="card pro warn" id="sec-f">
+        <h2><span class="section-num">F</span>课后作业（可交付物）</h2>
+        <p><strong>交付要求：</strong>数据收集计划一页（Who/What/When/How/n）。</p>
+        <p class="c2-deliver-hint"><strong>C2 截图清单：</strong>直方图+概率图截图、数据计划表一页</p>
+        <p class="c2-module-check"><label><input type="checkbox" id="c2-done-cb" data-day="3" /> 本模块 C2 Lab 跟做截图已交付（计入结业 15%）</label></p>
+        <div class="hw-submit-panel" id="hw-submit-panel">
+    <label for="hw-text" class="hw-label">粘贴或输入课后作业（须体现汽车电子现场）</label>
+    <p class="hw-hint"><strong>评分要点：</strong>结合本模块 B+ 工艺段要点作答。建议字数 ≥ 150，含模块关键词（如 数据计划、p图、spi、操作定义、分层、profile…）。未达字数时文本分按比例封顶。</p>
+    <textarea id="hw-text" class="hw-textarea" rows="8" placeholder="例：ADAS 域控 / 车身域控 / 离线烧录@SMT前 / BGA U12 / X-Ray SL全检 / FCT-DCU-B-04 …"></textarea>
+    <div class="form-actions hw-actions">
+      <button type="button" class="btn btn-primary" id="hw-submit-btn">提交作业并自动评分</button>
+      <button type="button" class="btn" id="hw-save-draft">保存草稿</button>
+    </div>
+    <div id="hw-result" class="hw-result" aria-live="polite"></div>
+    <div id="hw-mcq-review" class="hw-mcq-review" aria-live="polite"></div>
+  </div>
+        <p style="margin-top:0.75rem;font-size:0.88rem;color:var(--muted)">自动评分后仍可提交 AI 深度批改：<code>/review 作业</code></p>
+      </article>
+
+      <article class="card pro quiz" id="sec-g">
+        <h2><span class="section-num">G</span>客观自测（自动判分 · 含纠错题）</h2>
+        <div class="gradable-quiz" id="gradable-quiz" data-day="3">
+    <p class="gq-intro">以下题目<strong>只考本模块 B+ 节与 ◎ 汽车电子专题</strong>所讲要点（离线/SMT·BGA/手插/装配/域控 FCT），请先学完再答。占综合分 <strong>45%</strong>（含 Q6 情景多选）。选项顺序已打乱，请勿猜测字母规律。</p>
+    <div class="gq-block" data-correct="d" data-qindex="1" data-qtype="single">
+        <p class="gq-title"><span class="gq-num">Q1</span>  ADAS 域控「离线 SOC 错版率」宜用哪种图？</p>
+        
+        <ul class="gq-opts"><li class="opt"><input type="radio" name="mcq-d3-q1" id="mcq-d3-q1-a" value="a" data-label="与 SPI 体积合并 Xbar-R" /><label for="mcq-d3-q1-a">与 SPI 体积合并 Xbar-R</label></li><li class="opt"><input type="radio" name="mcq-d3-q1" id="mcq-d3-q1-b" value="b" data-label="不需要图" /><label for="mcq-d3-q1-b">不需要图</label></li><li class="opt"><input type="radio" name="mcq-d3-q1" id="mcq-d3-q1-c" value="c" data-label="I-MR 对错版 0/1 求 Cpk" /><label for="mcq-d3-q1-c">I-MR 对错版 0/1 求 Cpk</label></li><li class="opt"><input type="radio" name="mcq-d3-q1" id="mcq-d3-q1-d" value="d" data-label="p 图或 np 图（属性数据）" /><label for="mcq-d3-q1-d">p 图或 np 图（属性数据）</label></li></ul>
+      </div><div class="gq-block" data-correct="d" data-qindex="2" data-qtype="single">
+        <p class="gq-title"><span class="gq-num">Q2</span>  BGA U12「空洞率%」收集计划必含？</p>
+        
+        <ul class="gq-opts"><li class="opt"><input type="radio" name="mcq-d3-q2" id="mcq-d3-q2-a" value="a" data-label="只测首件不记炉温" /><label for="mcq-d3-q2-a">只测首件不记炉温</label></li><li class="opt"><input type="radio" name="mcq-d3-q2" id="mcq-d3-q2-b" value="b" data-label="仅 FCT 失败后再量测" /><label for="mcq-d3-q2-b">仅 FCT 失败后再量测</label></li><li class="opt"><input type="radio" name="mcq-d3-q2" id="mcq-d3-q2-c" value="c" data-label="与员工班次无关" /><label for="mcq-d3-q2-c">与员工班次无关</label></li><li class="opt"><input type="radio" name="mcq-d3-q2" id="mcq-d3-q2-d" value="d" data-label="操作定义、AOI/X-Ray 判定标准、Profile#、抽样与 SL/MP 阶段标记" /><label for="mcq-d3-q2-d">操作定义、AOI/X-Ray 判定标准、Profile#、抽样与 SL/MP 阶段标记</label></li></ul>
+      </div><div class="gq-block" data-correct="b" data-qindex="3" data-qtype="single">
+        <p class="gq-title"><span class="gq-num">Q3</span>  车身域控手插「继电器浮高」数据应如何分层？</p>
+        
+        <ul class="gq-opts"><li class="opt"><input type="radio" name="mcq-d3-q3" id="mcq-d3-q3-a" value="a" data-label="只记 FCT-05" /><label for="mcq-d3-q3-a">只记 FCT-05</label></li><li class="opt"><input type="radio" name="mcq-d3-q3" id="mcq-d3-q3-b" value="b" data-label="按 DCU-B 线体/波峰#2/班次，不与 ADAS SMT 合并" /><label for="mcq-d3-q3-b">按 DCU-B 线体/波峰#2/班次，不与 ADAS SMT 合并</label></li><li class="opt"><input type="radio" name="mcq-d3-q3" id="mcq-d3-q3-c" value="c" data-label="用 Likert 均值即可" /><label for="mcq-d3-q3-c">用 Likert 均值即可</label></li><li class="opt"><input type="radio" name="mcq-d3-q3" id="mcq-d3-q3-d" value="d" data-label="与 ADAS BGA 空洞合并求平均" /><label for="mcq-d3-q3-d">与 ADAS BGA 空洞合并求平均</label></li></ul>
+      </div><div class="gq-block" data-correct="c" data-qindex="4" data-qtype="single">
+        <p class="gq-title"><span class="gq-num">Q4</span>  比较「X-Ray 全检期 vs 抽检期」空洞不良应？</p>
+        
+        <ul class="gq-opts"><li class="opt"><input type="radio" name="mcq-d3-q4" id="mcq-d3-q4-a" value="a" data-label="删除抽检期数据" /><label for="mcq-d3-q4-a">删除抽检期数据</label></li><li class="opt"><input type="radio" name="mcq-d3-q4" id="mcq-d3-q4-b" value="b" data-label="合并全年数据求总平均" /><label for="mcq-d3-q4-b">合并全年数据求总平均</label></li><li class="opt"><input type="radio" name="mcq-d3-q4" id="mcq-d3-q4-c" value="c" data-label="两阶段分层 + 标注切换日期，避免混杂" /><label for="mcq-d3-q4-c">两阶段分层 + 标注切换日期，避免混杂</label></li><li class="opt"><input type="radio" name="mcq-d3-q4" id="mcq-d3-q4-d" value="d" data-label="只分析 ICT" /><label for="mcq-d3-q4-d">只分析 ICT</label></li></ul>
+      </div><div class="gq-block" data-correct="c" data-qindex="5" data-qtype="single">
+        <p class="gq-title"><span class="gq-num">Q5</span>  【纠错】FCT 良率样本「越多越好」？</p>
+        
+        <ul class="gq-opts"><li class="opt"><input type="radio" name="mcq-d3-q5" id="mcq-d3-q5-a" value="a" data-label="否；不要记录 Fail_code" /><label for="mcq-d3-q5-a">否；不要记录 Fail_code</label></li><li class="opt"><input type="radio" name="mcq-d3-q5" id="mcq-d3-q5-b" value="b" data-label="是；可跨产品合并" /><label for="mcq-d3-q5-b">是；可跨产品合并</label></li><li class="opt"><input type="radio" name="mcq-d3-q5" id="mcq-d3-q5-c" value="c" data-label="否；须定义抽样窗、成本，且注意独立批次假设" /><label for="mcq-d3-q5-c">否；须定义抽样窗、成本，且注意独立批次假设</label></li><li class="opt"><input type="radio" name="mcq-d3-q5" id="mcq-d3-q5-d" value="d" data-label="是；无限抽即可" /><label for="mcq-d3-q5-d">是；无限抽即可</label></li></ul>
+      </div><div class="gq-block" data-correct-multi="b,d" data-qindex="6" data-qtype="multi">
+        <p class="gq-title"><span class="gq-num">Q6</span> <span class="gq-type-badge multi">多选</span> 哪些统计处理不当？（多选）</p>
+        <p class="gq-scenario">【情景】车身 DCU-B 继电器浮高与 ADAS U12 空洞被合并求平均不良率。</p>
+        <ul class="gq-opts"><li class="opt"><input type="checkbox" name="mcq-d3-q6[]" id="mcq-d3-q6-a" value="a" data-label="DCU-B 与 DCU-A 分表建 p 图" /><label for="mcq-d3-q6-a">DCU-B 与 DCU-A 分表建 p 图</label></li><li class="opt"><input type="checkbox" name="mcq-d3-q6[]" id="mcq-d3-q6-b" value="b" data-label="手插浮高与 BGA 空洞合并平均" /><label for="mcq-d3-q6-b">手插浮高与 BGA 空洞合并平均</label></li><li class="opt"><input type="checkbox" name="mcq-d3-q6[]" id="mcq-d3-q6-c" value="c" data-label="SPI 体积用计量型控制图" /><label for="mcq-d3-q6-c">SPI 体积用计量型控制图</label></li><li class="opt"><input type="checkbox" name="mcq-d3-q6[]" id="mcq-d3-q6-d" value="d" data-label="对离线错版率使用 I-MR 求 Cpk" /><label for="mcq-d3-q6-d">对离线错版率使用 I-MR 求 Cpk</label></li></ul>
+      </div>
+  </div>
+  <details class="quiz-answers-ref" id="quiz-answers-ref"><summary>题库解析（提交后将自动展开）</summary><div class="gq-ref-wrap"><div class="gq-ref-item" data-qindex="1">
+    <h4 class="gq-ref-q">Q1 ADAS 域控「离线 SOC 错版率」宜用哪种图？</h4>
+    
+    <p class="gq-ref-ans"><span style="color:var(--accent)">✓ p 图或 np 图（属性数据）</span></p>
+    <div class="gq-explain-block pass">
+    <span class="gq-explain-source author">精编解析</span>
+    <p class="gq-explain-focus"><strong>考点</strong> Measure · 分段数据计划 · Q1</p>
+    <p class="gq-explain-rationale"><strong>正解（D）</strong> 正解：p 图或 np 图（属性数据）。答题时写出工站号/Profile#/Program_ID 中至少一项。</p>
+    
+    <p class="gq-explain-distractor-title"><strong>误选简析</strong></p>
+    <ul class="gq-explain-distractor-list obj-list"><li><strong>A</strong> 与 SPI 体积合并 Xbar-R<br><span class="gq-explain-dim">见题干干扰项设计。</span></li><li><strong>B</strong> 不需要图<br><span class="gq-explain-dim">ADAS DCU-A：FCT-05 + Eth 环回，离线 SOC+eMMC。</span></li><li><strong>C</strong> I-MR 对错版 0/1 求 Cpk<br><span class="gq-explain-dim">ADAS DCU-A：FCT-05 + Eth 环回，离线 SOC+eMMC。</span></li></ul>
+    <p class="gq-explain-anchor">教研精编 · 模块 03 B+ / C2 Lab</p>
+  </div>
+  </div><div class="gq-ref-item" data-qindex="2">
+    <h4 class="gq-ref-q">Q2 BGA U12「空洞率%」收集计划必含？</h4>
+    
+    <p class="gq-ref-ans"><span style="color:var(--accent)">✓ 操作定义、AOI/X-Ray 判定标准、Profile#、抽样与 SL/MP 阶段标记</span></p>
+    <div class="gq-explain-block pass">
+    <span class="gq-explain-source author">精编解析</span>
+    <p class="gq-explain-focus"><strong>考点</strong> Measure · 分段数据计划 · Q2</p>
+    <p class="gq-explain-rationale"><strong>正解（D）</strong> 正解：操作定义、AOI/X-Ray 判定标准、Profile#、抽样与 SL/MP 阶段标记。答题时写出工站号/Profile#/Program_ID 中至少一项。</p>
+    
+    <p class="gq-explain-distractor-title"><strong>误选简析</strong></p>
+    <ul class="gq-explain-distractor-list obj-list"><li><strong>A</strong> 只测首件不记炉温<br><span class="gq-explain-dim">见题干干扰项设计。</span></li><li><strong>B</strong> 仅 FCT 失败后再量测<br><span class="gq-explain-dim">「仅 FCT 失败后再量测」与模块 03 Measure · 分段数据计划 证据要求冲突。</span></li><li><strong>C</strong> 与员工班次无关<br><span class="gq-explain-dim">「只测首件不记炉温」与模块 03 Measure · 分段数据计划 证据要求冲突。</span></li></ul>
+    <p class="gq-explain-anchor">教研精编 · 模块 03 B+ / C2 Lab</p>
+  </div>
+  </div><div class="gq-ref-item" data-qindex="3">
+    <h4 class="gq-ref-q">Q3 车身域控手插「继电器浮高」数据应如何分层？</h4>
+    
+    <p class="gq-ref-ans"><span style="color:var(--accent)">✓ 按 DCU-B 线体/波峰#2/班次，不与 ADAS SMT 合并</span></p>
+    <div class="gq-explain-block pass">
+    <span class="gq-explain-source author">精编解析</span>
+    <p class="gq-explain-focus"><strong>考点</strong> Measure · 分段数据计划 · Q3</p>
+    <p class="gq-explain-rationale"><strong>正解（B）</strong> 正解：按 DCU-B 线体/波峰#2/班次，不与 ADAS SMT 合并。答题时写出工站号/Profile#/Program_ID 中至少一项。</p>
+    
+    <p class="gq-explain-distractor-title"><strong>误选简析</strong></p>
+    <ul class="gq-explain-distractor-list obj-list"><li><strong>A</strong> 只记 FCT-05<br><span class="gq-explain-dim">见题干干扰项设计。</span></li><li><strong>C</strong> 用 Likert 均值即可<br><span class="gq-explain-dim">车身 DCU-B：独立 FCT-04，CAN/LIN 与 ADAS Eth 分表。</span></li><li><strong>D</strong> 与 ADAS BGA 空洞合并求平均<br><span class="gq-explain-dim">车身 DCU-B：独立 FCT-04，CAN/LIN 与 ADAS Eth 分表。</span></li></ul>
+    <p class="gq-explain-anchor">教研精编 · 模块 03 B+ / C2 Lab</p>
+  </div>
+  </div><div class="gq-ref-item" data-qindex="4">
+    <h4 class="gq-ref-q">Q4 比较「X-Ray 全检期 vs 抽检期」空洞不良应？</h4>
+    
+    <p class="gq-ref-ans"><span style="color:var(--accent)">✓ 两阶段分层 + 标注切换日期，避免混杂</span></p>
+    <div class="gq-explain-block pass">
+    <span class="gq-explain-source auto">规则解析</span>
+    <p class="gq-explain-focus"><strong>考点</strong> 考点（模块 03 · Measure · 数据计划与选图）— 现场判断</p>
+    <p class="gq-explain-rationale"><strong>正解（C）</strong> 两阶段分层 + 标注切换日期，避免混杂。须能在离线/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。</p>
+    
+    <p class="gq-explain-distractor-title"><strong>误选简析</strong></p>
+    <ul class="gq-explain-distractor-list obj-list"><li><strong>A</strong> 删除抽检期数据<br><span class="gq-explain-dim">见题干干扰项设计。</span></li><li><strong>B</strong> 合并全年数据求总平均<br><span class="gq-explain-dim">勿合并产品/工站数据，违反分层原则。</span></li><li><strong>D</strong> 只分析 ICT<br><span class="gq-explain-dim">「只分析 ICT」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。</span></li></ul>
+    <p class="gq-explain-anchor">对照本节 B+ 工艺表、F 作业 Rubric 与 G 题干关键词。</p>
+  </div>
+  </div><div class="gq-ref-item" data-qindex="5">
+    <h4 class="gq-ref-q">Q5 【纠错】FCT 良率样本「越多越好」？</h4>
+    
+    <p class="gq-ref-ans"><span style="color:var(--accent)">✓ 否；须定义抽样窗、成本，且注意独立批次假设</span></p>
+    <div class="gq-explain-block pass">
+    <span class="gq-explain-source author">精编解析</span>
+    <p class="gq-explain-focus"><strong>考点</strong> Measure · 分段数据计划 · 纠错辨析</p>
+    <p class="gq-explain-rationale"><strong>正解（C）</strong> 立场：否；须定义抽样窗、成本，且注意独立批次假设。题干已植入常见误区，须用工艺段证据反驳。</p>
+    
+    <p class="gq-explain-distractor-title"><strong>误选简析</strong></p>
+    <ul class="gq-explain-distractor-list obj-list"><li><strong>A</strong> 否；不要记录 Fail_code<br><span class="gq-explain-dim">见题干干扰项设计。</span></li><li><strong>B</strong> 是；可跨产品合并<br><span class="gq-explain-dim">「是；无限抽即可」与模块 03 Measure · 分段数据计划 证据要求冲突。</span></li><li><strong>D</strong> 是；无限抽即可<br><span class="gq-explain-dim">「否；不要记录 Fail_code」与模块 03 Measure · 分段数据计划 证据要求冲突。</span></li></ul>
+    <p class="gq-explain-anchor">教研精编 · 模块 03 B+ / C2 Lab</p>
+  </div>
+  </div><div class="gq-ref-item" data-qindex="6">
+    <h4 class="gq-ref-q">Q6 哪些统计处理不当？（多选）</h4>
+    <p class="gq-ref-scenario">【情景】车身 DCU-B 继电器浮高与 ADAS U12 空洞被合并求平均不良率。</p>
+    <p class="gq-ref-ans"><span style="color:var(--accent)">✓ 手插浮高与 BGA 空洞合并平均；对离线错版率使用 I-MR 求 Cpk</span></p>
+    <div class="gq-explain-block pass">
+    <span class="gq-explain-source auto">规则解析</span>
+    <p class="gq-explain-focus"><strong>考点</strong> 考点（模块 03 · Measure · 数据计划与选图）— 现场判断</p>
+    <p class="gq-explain-rationale"><strong>正解（多选）（B+D）</strong> 手插浮高与 BGA 空洞合并平均。须能在离线/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。</p>
+    
+    <p class="gq-explain-distractor-title"><strong>误选简析</strong></p>
+    <ul class="gq-explain-distractor-list obj-list"><li><strong>A</strong> DCU-B 与 DCU-A 分表建 p 图<br><span class="gq-explain-dim">见题干干扰项设计。</span></li><li><strong>C</strong> SPI 体积用计量型控制图<br><span class="gq-explain-dim">「DCU-B 与 DCU-A 分表建 p 图」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。</span></li></ul>
+    <p class="gq-explain-anchor">对照本节 B+ 工艺表、F 作业 Rubric 与 G 题干关键词。</p>
+  </div>
+  </div></div></details>
+        <p class="quiz-submit-row" style="font-size:0.88rem;color:var(--muted)">客观题与 F 节作业一并计入综合分，请点击 F 节「提交作业并自动评分」。</p>
+      </article>
+
+      <article class="card pro" id="sec-h">
+        <h2><span class="section-num">H</span>能力自评（黑带认证口径 1–5）</h2>
+        <div class="self-assessment-panel" id="self-assessment-panel" data-day="3">
+    <p class="hw-hint">自评写入本机浏览器（占结业规划 <strong>5%</strong>），可在 <a href="../reference/homework-scores.html#dashboard">学习仪表盘</a> 汇总。</p>
+    <div class="sa-grid">
+      <label>概念 — 能正确教授 BB
+        <select id="sa-concept" class="sa-select" data-dim="concept">
+          <option value="">—</option>
+          <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+          <option value="4">4</option><option value="5">5</option>
+        </select>
+      </label>
+      <label>应用 — 能操作软件并判读
+        <select id="sa-apply" class="sa-select" data-dim="apply">
+          <option value="">—</option>
+          <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+          <option value="4">4</option><option value="5">5</option>
+        </select>
+      </label>
+      <label>分析 — 能链接商业决策
+        <select id="sa-teach" class="sa-select" data-dim="teach">
+          <option value="">—</option>
+          <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+          <option value="4">4</option><option value="5">5</option>
+        </select>
+      </label>
+    </div>
+    <label class="hw-label" for="sa-evidence">证据/备注（工站号、截图、困惑点）</label>
+    <textarea id="sa-evidence" class="hw-textarea sa-evidence" rows="3" placeholder="例：已完成 C2 SPI GRR 截图；尚不熟 Eth 分层…"></textarea>
+    <div class="form-actions hw-actions">
+      <button type="button" class="btn btn-primary" id="sa-save-btn">保存 H 节自评</button>
+      <span id="sa-status" class="sa-status" aria-live="polite"></span>
+    </div>
+    <p id="sa-warn" class="sa-warn" style="display:none;color:var(--coral)">任一项 &lt; 3：建议重修本模块 · <code>/day 3</code></p>
+  </div>
+        <p style="margin-top:0.75rem">任一项 &lt; 3：重修本模块；建议 <code>/day 3</code> 答疑。</p>
+        <div class="ref-box"><strong>延伸阅读</strong><ul class="obj-list"><li>data/automotive-offline-program.csv</li><li>data/automotive-bga-aoi.csv</li></ul></div>
+      </article>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <strong>六西格玛黑带学院</strong> · 模块 3/14 · BB-M-01 ·
+    <a href="../index.html">课程总览</a> ·
+    <a href="../reference/homework-scores.html">我的成绩</a> ·
+    <a href="javascript:window.print()">打印本模块（浅色版式）</a>
+    <span class="print-footer-line">— 机密文件 · 仅供内部培训 —</span>
+  </footer>
+  <script type="application/json" id="hw-rubric-data">{"day":3,"minChars":150,"passScore":70,"mcqWeight":45,"textWeight":55,"dayKeywords":["数据计划","p图","spi","操作定义","分层","profile","fail_code","离线","smt","bga","fct","域控","装配","手插"],"evidenceFields":["工站","fct-","profile","program_id","checksum","x-ray","工艺段","离线","sipoc","分段","截图"],"dimensions":{"business":{"label":"商业对齐","weight":15,"keys":["ctq","voc","champion","效益","成本","sipoc","章程","问题陈述","dpmo","ppm","oem","adas","域控"],"forbids":["应该采用","建议使用 minitab","上 minitab"]},"measure":{"label":"测量严谨","weight":30,"keys":["msa","操作定义","抽样","基线","cpk","grr","%r&r","spi","checksum","x-ray","profile","探针","p 图","np","分层","数据计划"],"forbids":[]},"stats":{"label":"统计有效","weight":20,"keys":["显著","α","p值","假设","doe","效应量","anova","回归","卡方","缺陷矩阵","pareto"],"forbids":[]},"improve":{"label":"改进与控制","weight":25,"keys":["fmea","pfmea","控制计划","pilot","对策","8d","spc","p图","反应计划","u12","空洞"],"forbids":[]},"mbb":{"label":"MBB 表达","weight":15,"keys":["champion","阶段门","复制","故事板","bb","mbb","教练","评审","工艺段"],"forbids":[]}},"mcq":[{"q":"ADAS 域控「离线 SOC 错版率」宜用哪种图？","options":[{"t":"与 SPI 体积合并 Xbar-R","correct":false,"v":"a"},{"t":"不需要图","correct":false,"v":"b"},{"t":"I-MR 对错版 0/1 求 Cpk","correct":false,"v":"c"},{"t":"p 图或 np 图（属性数据）","correct":true,"v":"d"}],"explain":{"source":"author","focus":"Measure · 分段数据计划 · Q1","rationale":"正解：p 图或 np 图（属性数据）。答题时写出工站号/Profile#/Program_ID 中至少一项。","distractors":{"b":"ADAS DCU-A：FCT-05 + Eth 环回，离线 SOC+eMMC。","c":"ADAS DCU-A：FCT-05 + Eth 环回，离线 SOC+eMMC。","d":"ADAS DCU-A：FCT-05 + Eth 环回，离线 SOC+eMMC。"},"anchor":"教研精编 · 模块 03 B+ / C2 Lab"},"type":"single","correctValue":"d"},{"q":"BGA U12「空洞率%」收集计划必含？","options":[{"t":"只测首件不记炉温","correct":false,"v":"a"},{"t":"仅 FCT 失败后再量测","correct":false,"v":"b"},{"t":"与员工班次无关","correct":false,"v":"c"},{"t":"操作定义、AOI/X-Ray 判定标准、Profile#、抽样与 SL/MP 阶段标记","correct":true,"v":"d"}],"explain":{"source":"author","focus":"Measure · 分段数据计划 · Q2","rationale":"正解：操作定义、AOI/X-Ray 判定标准、Profile#、抽样与 SL/MP 阶段标记。答题时写出工站号/Profile#/Program_ID 中至少一项。","distractors":{"b":"「仅 FCT 失败后再量测」与模块 03 Measure · 分段数据计划 证据要求冲突。","c":"「只测首件不记炉温」与模块 03 Measure · 分段数据计划 证据要求冲突。","d":"「与员工班次无关」与模块 03 Measure · 分段数据计划 证据要求冲突。"},"anchor":"教研精编 · 模块 03 B+ / C2 Lab"},"type":"single","correctValue":"d"},{"q":"车身域控手插「继电器浮高」数据应如何分层？","options":[{"t":"只记 FCT-05","correct":false,"v":"a"},{"t":"按 DCU-B 线体/波峰#2/班次，不与 ADAS SMT 合并","correct":true,"v":"b"},{"t":"用 Likert 均值即可","correct":false,"v":"c"},{"t":"与 ADAS BGA 空洞合并求平均","correct":false,"v":"d"}],"explain":{"source":"author","focus":"Measure · 分段数据计划 · Q3","rationale":"正解：按 DCU-B 线体/波峰#2/班次，不与 ADAS SMT 合并。答题时写出工站号/Profile#/Program_ID 中至少一项。","distractors":{"b":"车身 DCU-B：独立 FCT-04，CAN/LIN 与 ADAS Eth 分表。","c":"车身 DCU-B：独立 FCT-04，CAN/LIN 与 ADAS Eth 分表。","d":"车身 DCU-B：独立 FCT-04，CAN/LIN 与 ADAS Eth 分表。"},"anchor":"教研精编 · 模块 03 B+ / C2 Lab"},"type":"single","correctValue":"b"},{"q":"比较「X-Ray 全检期 vs 抽检期」空洞不良应？","options":[{"t":"删除抽检期数据","correct":false,"v":"a"},{"t":"合并全年数据求总平均","correct":false,"v":"b"},{"t":"两阶段分层 + 标注切换日期，避免混杂","correct":true,"v":"c"},{"t":"只分析 ICT","correct":false,"v":"d"}],"explain":{"source":"auto","focus":"考点（模块 03 · Measure · 数据计划与选图）— 现场判断","rationale":"两阶段分层 + 标注切换日期，避免混杂。须能在离线/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。","distractors":{"b":"勿合并产品/工站数据，违反分层原则。","c":"「删除抽检期数据」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。","d":"「只分析 ICT」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。"},"anchor":"对照本节 B+ 工艺表、F 作业 Rubric 与 G 题干关键词。"},"type":"single","correctValue":"c"},{"q":"【纠错】FCT 良率样本「越多越好」？","options":[{"t":"否；不要记录 Fail_code","correct":false,"v":"a"},{"t":"是；可跨产品合并","correct":false,"v":"b"},{"t":"否；须定义抽样窗、成本，且注意独立批次假设","correct":true,"v":"c"},{"t":"是；无限抽即可","correct":false,"v":"d"}],"explain":{"source":"author","focus":"Measure · 分段数据计划 · 纠错辨析","rationale":"立场：否；须定义抽样窗、成本，且注意独立批次假设。题干已植入常见误区，须用工艺段证据反驳。","distractors":{"b":"「是；无限抽即可」与模块 03 Measure · 分段数据计划 证据要求冲突。","c":"五产品/工站须分层，MBB 评审一票否决合并统计。","d":"「否；不要记录 Fail_code」与模块 03 Measure · 分段数据计划 证据要求冲突。"},"anchor":"教研精编 · 模块 03 B+ / C2 Lab"},"type":"single","correctValue":"c"},{"type":"multi","bloom":"apply","products":["DCU-B"],"scenario":"【情景】车身 DCU-B 继电器浮高与 ADAS U12 空洞被合并求平均不良率。","q":"哪些统计处理不当？（多选）","options":[{"t":"DCU-B 与 DCU-A 分表建 p 图","correct":false,"v":"a"},{"t":"手插浮高与 BGA 空洞合并平均","correct":true,"v":"b"},{"t":"SPI 体积用计量型控制图","correct":false,"v":"c"},{"t":"对离线错版率使用 I-MR 求 Cpk","correct":true,"v":"d"}],"correctValues":["b","d"],"explain":{"source":"auto","focus":"考点（模块 03 · Measure · 数据计划与选图）— 现场判断","rationale":"手插浮高与 BGA 空洞合并平均。须能在离线/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。","distractors":{"c":"「DCU-B 与 DCU-A 分表建 p 图」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。","d":"「SPI 体积用计量型控制图」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。"},"anchor":"对照本节 B+ 工艺表、F 作业 Rubric 与 G 题干关键词。"}}]}</script>
+  <script src="../js/homework-grader-core.js"></script>
+  <script src="../js/homework-grader.js" defer></script>
+  <script src="../js/self-assessment.js" defer></script>
+  <script src="../js/c2-module-checklist.js" defer></script>
+  <script src="../js/academy.js" defer></script>
+</body>
+</html>

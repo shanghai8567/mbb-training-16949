@@ -1,0 +1,8 @@
+PCB_ID,产线,产品,工序,BGA位号,空洞率_百分,是否合格_1合格0
+PCB-A01,SMT-3,ADAS域控,回流后AOI,U12,8.2,1
+PCB-A02,SMT-3,ADAS域控,回流后AOI,U12,18.5,0
+PCB-A03,SMT-3,ADAS域控,回流后AOI,U12,9.1,1
+PCB-B01,SMT-1,车身域控,回流后AOI,U5,12.0,1
+PCB-B02,SMT-1,车身域控,回流后AOI,U5,22.3,0
+PCB-C01,SMT-2,座舱域控,回流后AOI,U8,7.5,1
+PCB-C02,SMT-2,座舱域控,回流后AOI,U8,11.2,1

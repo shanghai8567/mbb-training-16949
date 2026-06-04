@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MinitabProject version="22" name="MBB-Day06-DOE-2k3">
+  <Description>2³ 全因子 — doe-2k3-run.csv · 运行序须随机</Description>
+  <DataSource path="../doe-2k3-run.csv" worksheet="DOE_Run"/>
+  <Procedure>DOE &gt; Factorial &gt; Analyze Factorial Design</Procedure>
+  <Deliverable>主效应+交互图、残差诊断</Deliverable>
+</MinitabProject>

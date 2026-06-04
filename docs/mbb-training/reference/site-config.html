@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>现场配置问卷 — 汽车电子 EMS</title>
+  
+  <script src="../js/theme-init.js"></script>
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/pro.css" />
+  <link rel="stylesheet" href="../css/automotive.css" />
+  <link rel="stylesheet" href="../css/site-config.css" />
+  <link rel="stylesheet" href="../css/premium.css" />
+  <link rel="stylesheet" href="../css/brand.css" />
+  <link rel="stylesheet" href="../css/print-light.css" media="print" />
+    <script src="../js/theme.js" defer></script>
+  <script src="../js/brand.js" defer></script>
+  <style>
+    #toast {
+      position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 100;
+      padding: 0.75rem 1.25rem; background: var(--surface-solid);
+      border: 1px solid var(--accent); border-radius: var(--radius-sm);
+      opacity: 0; pointer-events: none; transition: opacity 0.25s;
+    }
+    #toast.show { opacity: 1; }
+  </style>
+</head>
+<body>
+  <div class="page-bg"></div>
+  <header class="print-only print-header" aria-hidden="true">
+      <div class="print-header-logo">
+        <img src="../assets/enterprise-logo.svg" alt="" onerror="this.parentElement.innerHTML='<span style=font-size:10pt;color:#1e3a5f;font-weight:700">六西格玛黑带学院</span>'" />
+      </div>
+      <div class="print-header-meta">
+        <strong>六西格玛黑带学院</strong>
+        <span class="print-doc-title">现场配置问卷</span>
+        <span>打印日期：<span class="print-date"></span></span>
+      </div>
+    </header>
+  <header class="topbar">
+    <a class="brand" href="../index.html">
+      <span class="brand-logo-wrap" title="企业 Logo — 可替换 assets/enterprise-logo.svg">
+        <img class="brand-logo" src="../assets/enterprise-logo.svg" alt="企业 Logo" width="160" height="40"
+          onerror="this.style.display='none';this.parentElement.classList.add('logo-missing')" />
+      </span>
+      <span class="belt-mark fallback-mark">σ</span>
+      <span class="brand-text-wrap">
+        <span class="brand-org-name">六西格玛黑带学院</span>
+        <span class="brand-org-sub">汽车电子 EMS · MBB 培训</span>
+      </span>
+    </a>
+    <nav>
+      <a class="btn" href="automotive-iatf.html">汽车专题</a>
+      <a class="btn" href="../index.html">总览</a>
+          <div class="theme-switcher" role="group" aria-label="主题切换">
+      <button type="button" data-theme-pick="dark" title="深色主题"><span class="ico">🌙</span></button>
+      <button type="button" data-theme-pick="light" title="浅色主题"><span class="ico">☀</span></button>
+      <button type="button" data-theme-pick="system" title="跟随系统"><span class="ico">◐</span></button>
+    </div>
+    </nav>
+  </header>
+
+  <div class="wrap">
+    <div class="auto-banner">
+      <strong>贵司工艺 1:1 配置 — 选择题采集</strong>
+      <p>含<strong>单选</strong>、<strong>多选</strong>与<strong>其他（请说明）</strong>补充。校验通过后模块 01 作业可获最多 <strong>+5 分</strong> 自动评分加成。</p>
+      <div class="progress-bar"><span id="progress-fill"></span></div>
+      <p id="progress-text" style="font-size:0.85rem;color:var(--muted);margin-top:0.35rem">必填进度 0/10</p>
+    </div>
+
+    <form id="site-config-form" class="site-form card pro" novalidate>
+      <h2 class="q-section-title">〇、基本信息</h2>
+      <div class="q-block" id="q0">
+        <p class="q-hint">选填；写入摘要页眉，便于 MBB 项目归档。</p>
+        <label class="opt" style="cursor:default;border:none;padding:0">
+          <span style="flex:1">
+            <span style="display:block;margin-bottom:0.35rem;color:var(--muted);font-size:0.85rem">填写人 / 部门</span>
+            <input type="text" id="meta-respondent" placeholder="例：质量部 张工" class="inline-other" style="margin:0;width:100%" />
+          </span>
+        </label>
+        <label class="opt" style="cursor:default;border:none;padding:0;margin-top:0.5rem">
+          <span style="flex:1">
+            <span style="display:block;margin-bottom:0.35rem;color:var(--muted);font-size:0.85rem">工厂 / 产线</span>
+            <input type="text" id="meta-plant" placeholder="例：XX EMS · SMT1 + FCT 车间" class="inline-other" style="margin:0;width:100%" />
+          </span>
+        </label>
+      </div>
+
+      <h2 class="q-section-title">一、离线烧录</h2>
+
+      <div class="q-block" id="q1">
+        <div class="q-head">
+          <span class="q-id">Q1</span>
+          <span class="q-type is-single">单选</span>
+          <h3 class="q-title">离线烧录相对 SMT 的时点是？</h3>
+        </div>
+        <p class="q-hint">贵司已确认：全部在 SMT 之前。</p>
+        <ul class="opt-list">
+          <li class="opt">
+            <input type="radio" name="q1" id="q1-a" value="before-smt" data-label="全部在 SMT 之前" checked />
+            <label for="q1-a">全部在 <strong>SMT 之前</strong>（单板裸板或关键料预烧）</label>
+          </li>
+          <li class="opt">
+            <input type="radio" name="q1" id="q1-b" value="after-smt" data-label="部分在 SMT 之后单板烧录" />
+            <label for="q1-b">部分产品在 <strong>SMT 之后</strong> 再做单板烧录</label>
+          </li>
+          <li class="opt">
+            <input type="radio" name="q1" id="q1-c" value="mixed" data-label="混线（按产品不同）" data-triggers-other="1" />
+            <label for="q1-c"><strong>混线</strong> — 不同产品时点不同（请在下方说明）</label>
+          </li>
+          <li class="opt">
+            <input type="radio" name="q1" id="q1-d" value="other" data-label="其他" data-triggers-other="1" />
+            <label for="q1-d"><strong>其他</strong>（请在下方说明）</label>
+          </li>
+        </ul>
+        <div class="other-wrap" id="q1-other-wrap">
+          <textarea id="q4-other" rows="2" placeholder="混线/其他：写明产品、时点、工站…"></textarea>
+        </div>
+        <p class="field-error"></p>
+      </div>
+
+      <div class="q-block" id="q2">
+        <div class="q-head">
+          <span class="q-id">Q2</span>
+          <span class="q-type is-multi">多选</span>
+          <h3 class="q-title">哪些产品会做离线烧录？</h3>
+        </div>
+        <ul class="opt-list">
+          <li class="opt"><input type="checkbox" name="q2" id="q2-all" value="all-products" data-label="全部五类产品" /><label for="q2-all">全部五类产品</label></li>
+          <li class="opt"><input type="checkbox" name="q2" id="q2-ic" value="ic" data-label="组合仪表 IC" /><label for="q2-ic">组合仪表 IC（MCU 预烧）</label></li>
+          <li class="opt"><input type="checkbox" name="q2" id="q2-hu" value="hu" data-label="中控 HU" /><label for="q2-hu">中控 HU（eMMC / 主控）</label></li>
+          <li class="opt"><input type="checkbox" name="q2" id="q2-c" value="dcu-c" data-label="座舱域控" /><label for="q2-c">座舱域控 DCU-C</label></li>
+          <li class="opt"><input type="checkbox" name="q2" id="q2-b" value="dcu-b" data-label="车身域控" /><label for="q2-b">车身域控 DCU-B</label></li>
+          <li class="opt"><input type="checkbox" name="q2" id="q2-a" value="dcu-a" data-label="ADAS域控" /><label for="q2-a">ADAS 域控 DCU-A（SOC+eMMC）</label></li>
+        </ul>
+        <p class="field-error"></p>
+      </div>
+
+      <div class="q-block" id="q3">
+        <div class="q-head">
+          <span class="q-id">Q3</span>
+          <span class="q-type is-single">单选</span>
+          <h3 class="q-title">程序版本 / Checksum 如何控制？</h3>
+        </div>
+        <ul class="opt-list">
+          <li class="opt"><input type="radio" name="q3" id="q3-a" value="checksum-100" data-label="100% 自动比对" checked /><label for="q3-a"><strong>100%</strong> 自动比对 CSR 清单，不符停线隔离</label></li>
+          <li class="opt"><input type="radio" name="q3" id="q3-b" value="sample" data-label="抽检比对" /><label for="q3-b">抽检比对 + 批记录</label></li>
+          <li class="opt"><input type="radio" name="q3" id="q3-c" value="manual-sys" data-label="人工+系统双确认" /><label for="q3-c">人工复核 + 系统锁版本</label></li>
+          <li class="opt"><input type="radio" name="q3" id="q3-d" value="other" data-label="其他" data-triggers-other="1" /><label for="q3-d"><strong>其他</strong></label></li>
+        </ul>
+        <div class="other-wrap">
+          <textarea id="q3-other" rows="2" placeholder="其他版本控制方式…"></textarea>
+        </div>
+        <p class="field-error"></p>
+      </div>
+
+      <h2 class="q-section-title">二、BGA X-Ray</h2>
+
+      <div class="q-block" id="q5">
+        <div class="q-head">
+          <span class="q-id">Q5</span>
+          <span class="q-type is-single">单选</span>
+          <h3 class="q-title">安全投产（Safe Launch）阶段 X-Ray 策略？</h3>
+        </div>
+        <ul class="opt-list">
+          <li class="opt"><input type="radio" name="q5" id="q5-a" value="sl-100" data-label="Safe Launch 100% 全检" checked /><label for="q5-a"><strong>100% 全检</strong>（贵司已确认）</label></li>
+          <li class="opt"><input type="radio" name="q5" id="q5-b" value="sl-first" data-label="仅首件+批首件" /><label for="q5-b">仅首件 + 每批首件</label></li>
+          <li class="opt"><input type="radio" name="q5" id="q5-c" value="no-xray" data-label="不使用 X-Ray" /><label for="q5-c">产线不使用 X-Ray（仅 AOI）</label></li>
+          <li class="opt"><input type="radio" name="q5" id="q5-d" value="other" data-label="其他" data-triggers-other="1" /><label for="q5-d"><strong>其他</strong></label></li>
+        </ul>
+        <p class="field-error"></p>
+      </div>
+
+      <div class="q-block" id="q6">
+        <div class="q-head">
+          <span class="q-id">Q6</span>
+          <span class="q-type is-single">单选</span>
+          <h3 class="q-title">量产后（Mass Production）X-Ray 抽样策略？</h3>
+        </div>
+        <ul class="opt-list">
+          <li class="opt"><input type="radio" name="q6" id="q6-a" value="csr" data-label="按顾客 CSR 文件" checked /><label for="q6-a"><strong>按顾客 CSR</strong>（文件编号写入控制计划）</label></li>
+          <li class="opt"><input type="radio" name="q6" id="q6-b" value="fixed-pct" data-label="批首件+固定比例抽检" /><label for="q6-b">批首件 + 固定比例抽检（%）</label></li>
+          <li class="opt"><input type="radio" name="q6" id="q6-c" value="periodic" data-label="首件+周期性抽检" /><label for="q6-c">首件 + 周期性（如每 2h / 每班 N 片）</label></li>
+          <li class="opt"><input type="radio" name="q6" id="q6-d" value="ng-tighten" data-label="NG触发加严至全检" /><label for="q6-d">平时抽检，<strong>NG 触发加严</strong>至全检直至稳定</label></li>
+          <li class="opt"><input type="radio" name="q6" id="q6-e" value="other" data-label="其他" data-triggers-other="1" /><label for="q6-e"><strong>其他</strong></label></li>
+        </ul>
+        <div class="other-wrap inline-other" id="q6-pct-wrap">
+          <input type="number" id="q6-pct" min="0" max="100" step="0.1" placeholder="量产抽检比例 %（例：5）" />
+        </div>
+        <p class="field-error"></p>
+      </div>
+
+      <div class="q-block" id="q7">
+        <div class="q-head">
+          <span class="q-id">Q7</span>
+          <span class="q-type is-multi">多选</span>
+          <h3 class="q-title">X-Ray 重点覆盖范围？（可多选）</h3>
+        </div>
+        <ul class="opt-list">
+          <li class="opt"><input type="checkbox" name="q7" id="q7-all" value="all-key-bga" data-label="全部关键 BGA" checked /><label for="q7-all">全部关键 BGA 位号</label></li>
+          <li class="opt"><input type="checkbox" name="q7" id="q7-adas" value="adas-bga" data-label="ADAS 大 BGA（如 U12）" checked /><label for="q7-adas">ADAS 域控大 BGA（如 U12）</label></li>
+          <li class="opt"><input type="checkbox" name="q7" id="q7-body" value="body-bga" data-label="车身域控关键 BGA" checked /><label for="q7-body">车身域控关键 BGA</label></li>
+          <li class="opt"><input type="checkbox" name="q7" id="q7-hu" value="hu-ddr" data-label="中控 DDR 等" /><label for="q7-hu">中控 HU — DDR 等 BGA</label></li>
+          <li class="opt"><input type="checkbox" name="q7" id="q7-cockpit" value="cockpit" data-label="座舱按 CSR" /><label for="q7-cockpit">座舱域控 — 按 CSR 清单</label></li>
+        </ul>
+        <p class="field-error"></p>
+      </div>
+
+      <div class="q-block" id="q8">
+        <div class="q-head">
+          <span class="q-id">Q8</span>
+          <span class="q-type is-other">其他补充</span>
+          <h3 class="q-title">X-Ray 设备、SL→MP 切换条件、空洞判定标准</h3>
+        </div>
+        <textarea id="q8-other" rows="3" placeholder="例：AXI#2；连续 3 批 FCT≥99.5% 后由全检切 5% 抽检；空洞≤15%…"></textarea>
+      </div>
+
+      <h2 class="q-section-title">三、FCT 工站布局</h2>
+
+      <div class="q-block" id="q9">
+        <div class="q-head">
+          <span class="q-id">Q9</span>
+          <span class="q-type is-multi">多选</span>
+          <h3 class="q-title">哪些产品拥有<strong>独立</strong> FCT 工站？（可多选）</h3>
+        </div>
+        <ul class="opt-list">
+          <li class="opt"><input type="checkbox" name="q9" id="q9-b" value="dcu-b" data-label="车身域控 独立" checked /><label for="q9-b"><strong>车身域控</strong> — FCT-DCU-B-04（贵司已确认）</label></li>
+          <li class="opt"><input type="checkbox" name="q9" id="q9-a" value="dcu-a" data-label="ADAS域控 独立" checked /><label for="q9-a"><strong>ADAS 域控</strong> — FCT-DCU-A-05</label></li>
+          <li class="opt"><input type="checkbox" name="q9" id="q9-c" value="dcu-c" data-label="座舱域控 独立" /><label for="q9-c">座舱域控 — 独立台</label></li>
+          <li class="opt"><input type="checkbox" name="q9" id="q9-hu" value="hu" data-label="中控 HU 独立" /><label for="q9-hu">中控 HU — 独立台</label></li>
+          <li class="opt"><input type="checkbox" name="q9" id="q9-ic" value="ic" data-label="仪表 IC 独立" /><label for="q9-ic">组合仪表 IC — 独立台</label></li>
+          <li class="opt"><input type="checkbox" name="q9" id="q9-shared" value="shared" data-label="均为柔性共用线" /><label for="q9-shared">均无独立台 — 柔性线共用（不同程序切换）</label></li>
+        </ul>
+        <p class="field-error"></p>
+      </div>
+
+      <div class="q-block" id="q10">
+        <div class="q-head">
+          <span class="q-id">Q10</span>
+          <span class="q-type is-single">单选</span>
+          <h3 class="q-title">车身域控（DCU-B）FCT 组织方式？</h3>
+        </div>
+        <ul class="opt-list">
+          <li class="opt"><input type="radio" name="q10" id="q10-a" value="dedicated" data-label="独立专线/专台" checked /><label for="q10-a"><strong>独立专线 / 专台</strong>，CAN/LIN 矩阵程序独立</label></li>
+          <li class="opt"><input type="radio" name="q10" id="q10-b" value="shared-prog" data-label="与座舱共线不同程序" /><label for="q10-b">与座舱/其他共线，但<strong>程序与数据分开统计</strong></label></li>
+          <li class="opt"><input type="radio" name="q10" id="q10-c" value="other" data-label="其他" data-triggers-other="1" /><label for="q10-c"><strong>其他</strong></label></li>
+        </ul>
+        <div class="other-wrap">
+          <textarea id="q10-other" rows="2" placeholder="其他 FCT 组织方式…"></textarea>
+        </div>
+        <p class="field-error"></p>
+      </div>
+
+      <div class="q-block" id="q11">
+        <div class="q-head">
+          <span class="q-id">Q11</span>
+          <span class="q-type is-other">其他补充</span>
+          <h3 class="q-title">FCT 台编号、探针 PM、禁止混批统计规则</h3>
+        </div>
+        <textarea id="q11-other" rows="2" placeholder="例：车身仅统计 FCT-04；ADAS 禁止与 HU 程序混批…"></textarea>
+      </div>
+
+      <h2 class="q-section-title">四、项目范围</h2>
+
+      <div class="q-block" id="q12">
+        <div class="q-head">
+          <span class="q-id">Q12</span>
+          <span class="q-type is-multi">多选</span>
+          <h3 class="q-title">本次黑带培训 / 项目涉及的在产产品？</h3>
+        </div>
+        <ul class="opt-list">
+          <li class="opt"><input type="checkbox" name="q12" id="q12-ic" value="ic" data-label="仪表 IC" checked /><label for="q12-ic">组合仪表 IC</label></li>
+          <li class="opt"><input type="checkbox" name="q12" id="q12-hu" value="hu" data-label="中控 HU" checked /><label for="q12-hu">中控 HU</label></li>
+          <li class="opt"><input type="checkbox" name="q12" id="q12-c" value="dcu-c" data-label="座舱域控" checked /><label for="q12-c">座舱域控</label></li>
+          <li class="opt"><input type="checkbox" name="q12" id="q12-b" value="dcu-b" data-label="车身域控" checked /><label for="q12-b">车身域控</label></li>
+          <li class="opt"><input type="checkbox" name="q12" id="q12-a" value="dcu-a" data-label="ADAS域控" checked /><label for="q12-a">ADAS 域控</label></li>
+        </ul>
+        <p class="field-error"></p>
+      </div>
+
+      <div class="q-block" id="q13">
+        <div class="q-head">
+          <span class="q-id">Q13</span>
+          <span class="q-type is-multi">多选</span>
+          <h3 class="q-title">已上线、纳入 DMAIC 范围的工艺段？</h3>
+        </div>
+        <ul class="opt-list">
+          <li class="opt"><input type="checkbox" name="q13" id="q13-off" value="offline" data-label="离线烧录" checked /><label for="q13-off">离线烧录（SMT 前）</label></li>
+          <li class="opt"><input type="checkbox" name="q13" id="q13-smt" value="smt" data-label="SMT含BGA" checked /><label for="q13-smt">SMT（含 BGA / SPI / AOI）</label></li>
+          <li class="opt"><input type="checkbox" name="q13" id="q13-xray" value="xray" data-label="X-Ray" checked /><label for="q13-xray">BGA X-Ray</label></li>
+          <li class="opt"><input type="checkbox" name="q13" id="q13-tht" value="tht" data-label="手插波峰" checked /><label for="q13-tht">手插 / 波峰</label></li>
+          <li class="opt"><input type="checkbox" name="q13" id="q13-ict" value="ict" data-label="ICT" checked /><label for="q13-ict">ICT</label></li>
+          <li class="opt"><input type="checkbox" name="q13" id="q13-fct" value="fct" data-label="FCT" checked /><label for="q13-fct">FCT</label></li>
+          <li class="opt"><input type="checkbox" name="q13" id="q13-assy" value="assy" data-label="装配EOL" checked /><label for="q13-assy">装配 / EOL</label></li>
+        </ul>
+        <p class="field-error"></p>
+      </div>
+
+      <div class="q-block" id="q14">
+        <div class="q-head">
+          <span class="q-id">Q14</span>
+          <span class="q-type is-other">其他补充</span>
+          <h3 class="q-title">CSR 特殊要求、功能安全边界、待与 OEM 确认项</h3>
+        </div>
+        <textarea id="q14-other" rows="4" placeholder="自由填写：ASIL 范围、软件交付物、PPAP 提交级别、任何与课件默认不一致的现场差异…"></textarea>
+      </div>
+
+      <div class="form-actions">
+        <button type="button" class="btn" id="btn-defaults">载入课件默认（贵司三项）</button>
+        <button type="button" class="btn" id="btn-save">保存到浏览器</button>
+        <button type="button" class="btn btn-primary" id="btn-validate">校验并生成摘要</button>
+        <button type="button" class="btn" id="btn-copy">复制摘要</button>
+        <button type="button" class="btn" id="btn-json">导出 JSON</button>
+      </div>
+    </form>
+
+    <article class="card pro site-summary" id="site-summary">
+      <h2>配置摘要</h2>
+      <pre id="summary-text"></pre>
+      <p style="margin-top:0.75rem;font-size:0.85rem;color:var(--muted)">
+        同步路由表：<a href="../templates/process-routing-electronics.csv">process-routing-electronics.csv</a>
+        · 控制计划：<a href="../templates/control-plan-electronics.csv">control-plan-electronics.csv</a>
+      </p>
+    </article>
+
+    <div class="card tip" style="margin-top:1.5rem">
+      <h2>只读对照（课件锁定值）</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>项</th><th>课件默认</th><th>题型</th></tr></thead>
+          <tbody>
+            <tr><td>离线烧录</td><td>全部 SMT 前</td><td>Q1 单选</td></tr>
+            <tr><td>BGA X-Ray</td><td>SL 全检 / MP 抽检</td><td>Q5–Q8</td></tr>
+            <tr><td>车身 FCT</td><td>FCT-DCU-B-04 独立</td><td>Q9–Q11</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast">已更新</div>
+  <footer class="footer"><a href="../index.html">返回课程</a>    <span class="print-footer-line">— 机密文件 · 仅供内部培训 —</span>
+  </footer>
+  <script src="../js/site-config-form.js"></script>
+</body>
+</html>

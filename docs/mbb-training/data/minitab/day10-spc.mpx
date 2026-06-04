@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MinitabProject version="22" name="MBB-Day10-SPC-IMR">
+  <Description>I-MR 控制图 — control-imr.csv</Description>
+  <DataSource path="../control-imr.csv" worksheet="IMR"/>
+  <Procedure>Stat &gt; Control Charts &gt; I-MR</Procedure>
+  <Deliverable>控制图 + 西方电气规则标注</Deliverable>
+</MinitabProject>

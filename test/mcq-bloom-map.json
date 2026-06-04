@@ -1,0 +1,21 @@
+{
+  "version": "1.0.0",
+  "levels": ["remember", "understand", "apply", "analyze", "evaluate", "create"],
+  "days": {
+    "1": ["understand", "apply", "apply", "analyze", "evaluate", "analyze"],
+    "2": ["apply", "apply", "analyze", "evaluate", "evaluate", "apply"],
+    "3": ["apply", "apply", "analyze", "analyze", "evaluate", "apply"],
+    "4": ["analyze", "evaluate", "evaluate", "apply", "evaluate", "evaluate"],
+    "5": ["analyze", "analyze", "evaluate", "apply", "evaluate", "analyze"],
+    "6": ["apply", "apply", "analyze", "evaluate", "evaluate", "apply"],
+    "7": ["evaluate", "evaluate", "analyze", "apply", "evaluate", "evaluate"],
+    "8": ["apply", "apply", "analyze", "apply", "evaluate", "apply"],
+    "9": ["understand", "evaluate", "apply", "evaluate", "evaluate", "evaluate"],
+    "10": ["apply", "apply", "evaluate", "apply", "evaluate", "apply"],
+    "11": ["understand", "apply", "analyze", "apply", "evaluate", "analyze"],
+    "12": ["understand", "apply", "apply", "evaluate", "evaluate", "apply"],
+    "13": ["apply", "apply", "evaluate", "evaluate", "evaluate", "evaluate"],
+    "14": ["evaluate", "evaluate", "analyze", "evaluate", "evaluate", "evaluate"]
+  },
+  "note": "每模块 5 题 enrichment + 第 6 题 v2 多选；与 B+ 工艺段对齐"
+}

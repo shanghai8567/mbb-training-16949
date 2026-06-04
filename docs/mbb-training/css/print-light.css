@@ -1,0 +1,319 @@
+/**
+ * 浅色打印主题 — 培训讲义 / 作业归档
+ * 使用：浏览器打印 (Ctrl+P) 或「打印本模块」链接
+ */
+@media print {
+  :root {
+    color-scheme: light;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  html,
+  body {
+    background: #fff !important;
+    color: #1a1d24 !important;
+    font-size: 11pt;
+    line-height: 1.55;
+  }
+
+  .page-bg {
+    display: none !important;
+  }
+
+  /* 屏幕顶栏隐藏，改用打印页眉 */
+  .topbar {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .print-header {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0 0 12pt;
+    margin: 0 0 14pt;
+    border-bottom: 2pt solid #1e3a5f;
+    page-break-after: avoid;
+  }
+
+  .print-header-logo {
+    flex-shrink: 0;
+    height: 36pt;
+    max-width: 140pt;
+  }
+
+  .print-header-logo img {
+    height: 100%;
+    width: auto;
+    max-width: 140pt;
+    object-fit: contain;
+  }
+
+  .print-header-meta {
+    text-align: right;
+    font-size: 9pt;
+    color: #4a5568;
+    line-height: 1.45;
+  }
+
+  .print-header-meta strong {
+    display: block;
+    font-size: 11pt;
+    color: #1e3a5f;
+    font-weight: 700;
+  }
+
+  .print-header-meta .print-doc-title {
+    font-size: 10pt;
+    color: #2d3748;
+    margin-top: 2pt;
+  }
+
+  .layout-course {
+    display: block !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .course-sidebar {
+    display: none !important;
+  }
+
+  .course-main {
+    max-width: 100% !important;
+  }
+
+  .card,
+  .card.pro,
+  .card.automotive,
+  .card.automotive-deep,
+  .card.warn,
+  .card.tip,
+  .card.quiz {
+    background: #fff !important;
+    border: 1pt solid #cbd5e0 !important;
+    border-radius: 4pt !important;
+    box-shadow: none !important;
+    padding: 12pt 14pt !important;
+    margin-bottom: 12pt !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .card.warn {
+    border-left: 4pt solid #c53030 !important;
+    background: #fff5f5 !important;
+  }
+
+  .card.tip {
+    border-left: 4pt solid #b7791f !important;
+    background: #fffff0 !important;
+  }
+
+  .card.automotive,
+  .card.automotive-deep {
+    border-left: 4pt solid #2b5ea8 !important;
+    background: #f7fafc !important;
+  }
+
+  .card h2,
+  .card.pro h2 {
+    color: #1e3a5f !important;
+    border-bottom: 1pt solid #e2e8f0 !important;
+    font-size: 12pt !important;
+  }
+
+  .section-num {
+    background: #1e3a5f !important;
+    color: #fff !important;
+    border: none !important;
+  }
+
+  a {
+    color: #1e3a5f !important;
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 8pt;
+    color: #718096;
+    word-break: break-all;
+  }
+
+  a[href^="#"]::after,
+  a[href^="javascript"]::after {
+    content: none;
+  }
+
+  .btn,
+  #mark-complete,
+  .hw-actions,
+  .form-actions,
+  .quiz-submit-row,
+  #toast {
+    display: none !important;
+  }
+
+  .hw-textarea {
+    border: 1pt solid #cbd5e0 !important;
+    background: #f7fafc !important;
+    color: #1a1d24 !important;
+  }
+
+  .hw-result.is-visible {
+    display: block !important;
+    border: 1pt solid #2b5ea8 !important;
+  }
+
+  .gradable-quiz .gq-opts .opt {
+    border: 1pt solid #e2e8f0 !important;
+    background: #fff !important;
+  }
+
+  .gradable-quiz .gq-opts .opt:has(input:checked) {
+    border: 1pt solid #2b5ea8 !important;
+    background: #ebf8ff !important;
+  }
+
+  .process-pipeline {
+    background: #f7fafc !important;
+    border: 1pt solid #cbd5e0 !important;
+  }
+
+  .process-pipeline .step {
+    background: #edf2f7 !important;
+    color: #2d3748 !important;
+    border: 1pt solid #a0aec0 !important;
+  }
+
+  .process-pipeline .step.accent {
+    background: #e6fffa !important;
+    color: #234e52 !important;
+    border-color: #38b2ac !important;
+  }
+
+  .table-wrap {
+    border: 1pt solid #cbd5e0 !important;
+  }
+
+  th {
+    background: #edf2f7 !important;
+    color: #1e3a5f !important;
+  }
+
+  td,
+  th {
+    border-color: #e2e8f0 !important;
+    color: #1a1d24 !important;
+  }
+
+  tr:nth-child(even) td {
+    background: #f7fafc !important;
+  }
+
+  .ref-box,
+  .auto-banner {
+    background: #ebf8ff !important;
+    border: 1pt solid #90cdf4 !important;
+    color: #1a1d24 !important;
+  }
+
+  .analogy {
+    background: #fffff0 !important;
+    border: 1pt solid #ecc94b !important;
+    color: #744210 !important;
+  }
+
+  .formula-pro,
+  pre {
+    background: #f7fafc !important;
+    border: 1pt solid #cbd5e0 !important;
+    color: #1a1d24 !important;
+  }
+
+  .pitfall {
+    background: #fff5f5 !important;
+    border-left: 3pt solid #c53030 !important;
+  }
+
+  .tag,
+  .dmaic-ribbon {
+    border: 1pt solid #a0aec0 !important;
+    color: #1a1d24 !important;
+    background: #edf2f7 !important;
+    box-shadow: none !important;
+  }
+
+  .quiz details,
+  .quiz-answers-ref {
+    border: 1pt solid #cbd5e0 !important;
+    background: #fff !important;
+  }
+
+  .quiz details[open] summary {
+    background: #edf2f7 !important;
+  }
+
+  details.quiz-answers-ref {
+    display: block !important;
+  }
+
+  .quiz-answers-ref summary {
+    display: none;
+  }
+
+  .site-form .q-block {
+    border: 1pt solid #e2e8f0 !important;
+    background: #fff !important;
+    page-break-inside: avoid;
+  }
+
+  .footer {
+    border-top: 1pt solid #cbd5e0 !important;
+    color: #718096 !important;
+    margin-top: 18pt;
+    padding-top: 10pt;
+    font-size: 9pt;
+  }
+
+  .footer strong {
+    color: #1e3a5f !important;
+  }
+
+  .print-footer-line {
+    display: block !important;
+    text-align: center;
+    font-size: 8pt;
+    color: #a0aec0;
+    margin-top: 6pt;
+  }
+
+  @page {
+    size: A4;
+    margin: 18mm 16mm 20mm;
+  }
+
+  @page {
+    @bottom-center {
+      content: counter(page) " / " counter(pages);
+      font-size: 9pt;
+      color: #718096;
+    }
+  }
+}
+
+/* 屏幕：打印块隐藏 */
+.print-only,
+.print-header,
+.print-footer-line {
+  display: none;
+}

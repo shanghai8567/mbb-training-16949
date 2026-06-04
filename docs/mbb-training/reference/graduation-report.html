@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>L1 结业报告 — 六西格玛黑带</title>
+  <script src="../js/theme-init.js"></script>
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/pro.css" />
+  <link rel="stylesheet" href="../css/homework-grader.css" />
+  <link rel="stylesheet" href="../css/premium.css" />
+  <link rel="stylesheet" href="../css/print-light.css" media="print" />
+  <script src="../js/theme.js" defer></script>
+  <script src="../js/learning-dashboard.js" defer></script>
+</head>
+<body>
+  <div class="page-bg"></div>
+  <header class="topbar">
+    <a class="brand" href="../index.html">σ 六西格玛黑带学院</a>
+    <nav>
+      <a class="btn" href="homework-scores.html">成绩</a>
+      <button type="button" class="btn btn-primary" onclick="window.print()">打印报告</button>
+    </nav>
+  </header>
+  <div class="wrap">
+    <div class="card pro">
+      <h1 style="margin-top:0">MBB 预备营 · L1 结业报告</h1>
+      <p id="report-meta" style="color:var(--muted)"></p>
+      <div id="report-summary"></div>
+      <h2>14 模块明细</h2>
+      <div class="table-wrap">
+        <table id="report-table">
+          <thead>
+            <tr><th>模块</th><th>F+G</th><th>H 自评</th><th>C2</th><th>状态</th></tr>
+          </thead>
+          <tbody id="report-body"></tbody>
+        </table>
+      </div>
+      <p class="auto-banner" style="margin-top:1.25rem">
+        <strong>声明</strong>：本报告为浏览器本地 L1 摸底，不等同企业 MBB 认证。
+        <a href="mbb-certification-boundary.html">认证边界 →</a>
+      </p>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const HW = "mbb-hw-scores";
+      const SA = "mbb-self-assessment-v1";
+      const C2 = "mbb-c2-by-day-v1";
+
+      function load(k) {
+        try {
+          return JSON.parse(localStorage.getItem(k) || "{}");
+        } catch {
+          return {};
+        }
+      }
+
+      function hAvg(rec) {
+        if (!rec) return null;
+        const n = [rec.concept, rec.apply, rec.teach].map(Number).filter((x) => x >= 1 && x <= 5);
+        if (n.length < 3) return null;
+        return Math.round((n.reduce((a, b) => a + b, 0) / n.length / 5) * 100);
+      }
+
+      function render() {
+        const hw = load(HW);
+        const sa = load(SA);
+        const c2 = load(C2);
+        const body = document.getElementById("report-body");
+        body.innerHTML = "";
+        for (let n = 1; n <= 14; n++) {
+          const h = hw[String(n)];
+          const hp = hAvg(sa[String(n)]);
+          const c2ok = c2[String(n)] ? "✓" : "—";
+          const fg = h ? h.total + "/100" : "未提交";
+          const pass = h && h.total >= 70;
+          const tr = document.createElement("tr");
+          tr.innerHTML =
+            "<td>模块 " + n + "</td><td>" + fg + "</td><td>" + (hp != null ? hp + "%" : "—") + "</td><td>" + c2ok + "</td><td>" + (pass ? "达标" : "待完成") + "</td>";
+          body.appendChild(tr);
+        }
+        document.getElementById("report-meta").textContent =
+          "生成时间：" + new Date().toLocaleString() + " · 包版本 3.0.0-beta.1";
+        if (window.MBBLearningDashboard) {
+          const d = MBBLearningDashboard.computeL1Composite();
+          document.getElementById("report-summary").innerHTML =
+            '<div class="l1-composite-ring"><div class="hw-score-big ' +
+            (d.composite >= 70 ? "pass" : "warn") +
+            '">' +
+            d.composite +
+            '<span style="font-size:1rem;color:var(--muted)">/100</span></div><p>L1 综合（已录入权重 ' +
+            d.activeW +
+            "%）" +
+            (d.fullComposite != null ? " · 全轨 " + d.fullComposite + "/100" : "") +
+            "</p></div>";
+        }
+      }
+      render();
+    })();
+  </script>
+</body>
+</html>

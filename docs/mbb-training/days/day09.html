@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>模块 9 — DOE 进阶 — RSM 与确认 | 六西格玛黑带</title>
+  <meta name="description" content="六西格玛黑带 BB-I-02 — DOE 进阶 — RSM 与确认" />
+  <meta name="mbb-package-version" content="3.0.0-beta.1" />
+  <script src="../js/theme-init.js"></script>
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/pro.css" />
+  <link rel="stylesheet" href="../css/automotive.css" />
+  <link rel="stylesheet" href="../css/homework-grader.css" />
+  <link rel="stylesheet" href="../css/brand.css" />
+  <link rel="stylesheet" href="../css/premium.css" />
+  <link rel="stylesheet" href="../css/print-light.css" media="print" />
+  <script src="../js/course.js" defer></script>
+  <script src="../js/theme.js" defer></script>
+  <script src="../js/brand.js" defer></script>
+</head>
+<body data-day="9">
+  <div class="page-bg"></div>
+  <header class="print-only print-header" aria-hidden="true">
+      <div class="print-header-logo">
+        <img src="../assets/enterprise-logo.svg" alt="" onerror="this.parentElement.innerHTML='<span style=font-size:10pt;color:#1e3a5f;font-weight:700">六西格玛黑带学院</span>'" />
+      </div>
+      <div class="print-header-meta">
+        <strong>六西格玛黑带学院</strong>
+        <span class="print-doc-title">模块 09 — DOE 进阶 — RSM 与确认</span>
+        <span>打印日期：<span class="print-date"></span></span>
+      </div>
+    </header>
+  <header class="topbar">
+    <a class="brand" href="../index.html">
+      <span class="brand-logo-wrap" title="企业 Logo — 可替换 assets/enterprise-logo.svg">
+        <img class="brand-logo" src="../assets/enterprise-logo.svg" alt="企业 Logo" width="160" height="40"
+          onerror="this.style.display='none';this.parentElement.classList.add('logo-missing')" />
+      </span>
+      <span class="belt-mark fallback-mark">σ</span>
+      <span class="brand-text-wrap">
+        <span class="brand-org-name">六西格玛黑带学院</span>
+        <span class="brand-org-sub">汽车电子 EMS · MBB 培训</span>
+      </span>
+    </a>
+    <nav>
+      <a class="btn" href="../index.html">课程总览</a>
+      <a class="btn" href="../reference/tool-matrix.html">工具矩阵</a>
+      <a class="btn" href="../tools/tutorials.html">Minitab 教程</a>
+      <a class="btn" id="nav-prev" href="day08.html">← 上一模块</a>
+      <a class="btn btn-primary" id="nav-next" href="day10.html">下一模块 →</a>
+      <button type="button" class="btn" id="mark-complete">标记完成</button>
+      <div class="theme-switcher" role="group" aria-label="主题切换">
+      <button type="button" data-theme-pick="dark" title="深色主题"><span class="ico">🌙</span></button>
+      <button type="button" data-theme-pick="light" title="浅色主题"><span class="ico">☀</span></button>
+      <button type="button" data-theme-pick="system" title="跟随系统"><span class="ico">◐</span></button>
+    </div>
+    </nav>
+  </header>
+
+  <div class="layout-course">
+    <aside class="course-sidebar">
+      <div class="sb-title">模块 9 目录</div>
+      <a href="#sec-a">A 学习目标</a>
+      <a href="#sec-b">B 核心概念</a>
+      <a href="#sec-b2">B+ 生产线对齐</a>
+      <a href="#sec-c">C 工具与公式</a>
+      <a href="#sec-c2">C2 软件实操</a>
+      <a href="#sec-d">D 行业案例</a>
+      <a href="#sec-e">E 课堂练习</a>
+      <a href="#sec-f">F 课后作业</a>
+      <a href="#sec-g">G 客观自测</a>
+      <a href="#sec-h">H 能力自评</a>
+      <div class="sb-title" style="margin-top:1rem">参考资料</div>
+      <a href="../reference/glossary.html">术语表</a>
+      <a href="../reference/sigma-table.html">σ · DPMO</a>
+      <a href="../reference/automotive-iatf.html">汽车 IATF 专题</a>
+      <a href="../reference/homework-scores.html">我的作业成绩</a>
+    </aside>
+
+    <main class="course-main">
+      <header class="pro-header day-hero" style="border:none;padding:0">
+        <p class="module-id">模块 09 / 14 · BB-I-02</p>
+        <h1>DOE 进阶 — RSM 与确认</h1>
+        <div class="day-meta" style="margin-top:1rem">
+          <span class="dmaic-ribbon improve">improve</span>
+          <span class="belt-track">BB 能力域</span>
+          <span class="tag gold">阶段门 Improve</span>
+          <span class="tag gold">交付：确认运行计划</span>
+        </div>
+        <div class="ref-box" style="margin-top:1rem">
+          <strong>标准对齐</strong> 响应曲面 / 稳健参数设计
+        </div>
+      </header>
+
+      <article class="card pro automotive" id="sec-auto">
+      <h2><span class="section-num">◎</span>汽车电子 EMS（五产品·离线/SMT/手插/装配）</h2>
+      <p><span class="tag auto">汽车制造</span> <strong>IATF：</strong>见 automotive-iatf.html</p>
+      
+      <p style="margin-top:0.75rem">SPI/BGA 空洞稳健区确认；ADAS FCT≥目标 3 批；离线烧录错版=0。</p>
+      
+      <h3 style="margin-top:1rem;color:var(--bb-gold)">审核检查清单</h3>
+      <ul class="obj-list"></ul>
+      <div class="aiag-criteria">
+        <div class="ok"><strong>&lt;10%</strong>%GRR 可接受</div>
+        <div class="warn"><strong>10–30%</strong>边缘/改进</div>
+        <div class="no"><strong>&gt;30%</strong>不可接受</div>
+      </div>
+      <div class="auto-banner" style="margin-top:1rem"><strong>贵司现场配置</strong><ul class="obj-list"><li>全部离线烧录在 SMT 之前完成</li><li>BGA X-Ray：安全投产(Safe Launch) 100% 全检；量产后按 CSR 抽检</li><li>车身域控使用独立 FCT 工站 FCT-DCU-B-04（与座舱/ADAS 分机台）</li></ul><a class="btn btn-primary" href="../reference/site-config.html">1:1 配置页 →</a></div>
+      <p style="margin-top:0.75rem"><a class="btn" href="../reference/automotive-iatf.html">IATF × DMAIC 对照手册 →</a></p>
+    </article>
+
+      <article class="card pro" id="sec-a">
+        <h2><span class="section-num">A</span>学习目标（Learning Objectives）</h2>
+        <ul class="obj-list"><li>CCD/RSM 概念</li><li>响应优化器</li><li>确认运行 3 点</li></ul>
+        <p style="margin-top:0.75rem;font-size:0.88rem;color:var(--muted)">学完应能独立向 Champion 说明本模块对黑带项目的价值。</p>
+      </article>
+
+      <article class="card pro" id="sec-b">
+        <h2><span class="section-num">B</span>核心概念与理论框架</h2>
+        <p>RSM 找山坡最平缓平台，不单峰冒险。</p><p>【汽车电子 · RSM — SPI/空洞稳健区】确认运行：在 Profile#ADAS-04 稳健区内试产 3 批，每批离线 0 错版、SL 期 X-Ray 全检、FCT≥99.5%。</p>
+        <div class="analogy"><strong>专业类比</strong> — 炒菜火候曲面：甜区比单点最高温更安全。</div>
+        <p style="margin-top:1rem">曲率显著才 RSM；外推禁止。</p>
+        <div class="formula-pro"><div class="label">关键公式</div><code>二次响应曲面模型</code></div>
+        <p style="margin-top:1rem"><span class="tag auto">本课主线：RSM — SPI/空洞稳健区</span></p>
+      </article>
+
+      <article class="card pro automotive-deep" id="sec-b2">
+    <h2><span class="section-num">B+</span>本课与生产线对齐 · Safe Launch 验证批</h2>
+    <div class="process-pipeline" aria-label="工艺主线"><span class="step accent">离线@SMT前</span><span class="arrow">→</span><span class="step">SMT·SPI</span><span class="arrow">→</span><span class="step">回流·AOI</span><span class="arrow">→</span><span class="step">X-Ray</span><span class="arrow">→</span><span class="step">手插/波峰</span><span class="arrow">→</span><span class="step">ICT</span><span class="arrow">→</span><span class="step">FCT</span><span class="arrow">→</span><span class="step">装配/EOL</span></div>
+    <ul class="obj-list"><li>批记录：烧录批次、炉温曲线号、X-Ray 阶段=SL</li><li>响应：SPI Cpk、U12 空洞%、FCT Eth%</li></ul>
+    
+    <p class="exam-align-hint">▼ <strong>G 客观题</strong>与 <strong>F 作业</strong>仅考核本节要点（车身 FCT-04 / ADAS BGA·FCT-05）</p>
+  </article>
+
+      <article class="card pro" id="sec-c">
+        <h2><span class="section-num">C</span>工具清单与适用边界</h2>
+        <p>主平台：<strong>Minitab</strong> ·
+          <a href="../tools/tutorials.html#minitab-doe">分步操作教程</a> ·
+          <a href="../reference/tool-matrix.html">DMAIC 工具矩阵</a></p>
+        <div class="table-wrap tool-matrix" style="margin-top:1rem">
+          <table><thead><tr><th>工具 / 方法</th><th>本模块用途</th></tr></thead><tbody><tr><td>CCD / RSM</td><td>优化</td></tr><tr><td>响应优化器</td><td>设定点</td></tr><tr><td>确认运行</td><td>验证预测</td></tr></tbody></table>
+        </div>
+        <div class="pitfall"><strong>常见缺陷</strong> 计算机最优未做确认运行</div><div class="pitfall"><strong>常见缺陷</strong> 曲率不显著仍用 RSM</div>
+      </article>
+
+      <article class="card pro tip" id="sec-c2">
+        <h2><span class="section-num">C2</span>专业软件实操 Lab（Minitab）</h2>
+        <p style="font-size:0.85rem;color:var(--muted)">包版本 3.0.0-beta.1 · 跟做后完成 F 节截图交付</p>
+        <div class="c2-lab-card" id="c2-lab-d9">
+    <p class="c2-lab-meta"><strong>主工具</strong> Minitab / JMP · <strong>版本</strong> Minitab 22
+      · <a href="../tools/tutorials.html#minitab-doe">完整教程 →</a></p>
+    <p class="c2-lab-meta"><strong>数据</strong> <a href="../data/doe-2k3-run.csv" download>doe-2k3-run.csv</a> · <strong>列定义</strong> RSM：因子水平 ≥3；响应 Y</p>
+    <h3 class="c2-lab-h3">跟做步骤（菜单路径）</h3>
+    <ol class="c2-lab-steps"><li><strong>1.</strong> <code>统计 &gt; DOE &gt; 响应曲面 &gt; 创建曲面设计（CCD）</code></li><li><strong>2.</strong> <code>统计 &gt; DOE &gt; 响应曲面 &gt; 分析曲面设计</code></li><li><strong>3.</strong> <code>统计 &gt; DOE &gt; 响应优化器 — 边界内优化</code></li><li><strong>4.</strong> <code>计划 3 批 Safe Launch 确认运行</code></li></ol>
+    <p class="c2-lab-read"><strong>输出解读</strong> 优化器解须在试验域内；外推须追加确认运行。</p>
+    <h3 class="c2-lab-h3">课堂练习</h3>
+    <p>写 3 批 ADAS Safe Launch 判定标准各 1 行。</p>
+    <h3 class="c2-lab-h3" style="color:var(--bb-gold)">F 节建议截图交付</h3>
+    <ul class="obj-list c2-lab-deliver"><li>曲面图/优化器截图</li><li>Safe Launch 计划表</li></ul>
+    <h3 class="c2-lab-h3" style="color:var(--bb-gold)">MBB 审计点</h3>
+    <ul class="obj-list"><li>禁止未验证直接量产</li><li>Safe Launch 含离线 0 错版</li></ul>
+  </div>
+        <p style="margin-top:1rem"><a class="btn btn-primary" href="../data/doe-2k3-run.csv" download>↓ 下载实验数据（CSV）</a></p>
+      </article>
+
+      <article class="card pro" id="sec-d">
+        <h2><span class="section-num">D</span>行业迷你案例与 黑带教练追问</h2>
+        <p>SPI/空洞稳健区；3 批 ADAS Safe Launch：离线 0 错版 + FCT≥99.5%。</p>
+        <h3>黑带教练追问</h3>
+        <ul class="obj-list"><li>稳健性？</li><li>噪声因子？</li><li>生产节拍的因子水平？</li></ul>
+      </article>
+
+      <article class="card pro" id="sec-e">
+        <h2><span class="section-num">E</span>课堂练习（先作答再对答案）</h2>
+        <ul class="obj-list"><li class="exercise-item">
+        <strong>E1.</strong> 写 3 批 Safe Launch 判定标准
+        <details class="exercise-answer-ref">
+          <summary>参考答案</summary>
+          <p class="ex-ans-body"><strong>要点：</strong>Safe Launch 3 批：① U12 空洞≤SL 目标 ② FCT Eth≥99.5% ③ 无新增 Fail_code Top3；任一批不达标则停扩产。</p>
+          <p class="ex-ans-explain">CSR 常规定 3–5 批。</p>
+        </details>
+      </li><li class="exercise-item">
+        <strong>E2.</strong> 说明外推禁止的边界
+        <details class="exercise-answer-ref">
+          <summary>参考答案</summary>
+          <p class="ex-ans-body"><strong>要点：</strong>外推禁止：Minitab 最优点在 DOE 立方体外 → 须 3 点确认运行（含预测区间覆盖），ECN 前不得量产。</p>
+          <p class="ex-ans-explain">曲率不显著不必上 RSM。</p>
+        </details>
+      </li><li class="exercise-item">
+        <strong>E3.</strong> 何时用 RSM
+        <details class="exercise-answer-ref">
+          <summary>参考答案</summary>
+          <p class="ex-ans-body"><strong>要点：</strong>RSM/CCD：曲率显著、因子≥2、需找稳健平台时用；筛选阶段用 2^(k-p) 即可。</p>
+          <p class="ex-ans-explain">ADAS Profile 优化典型场景。</p>
+        </details>
+      </li><li class="exercise-item">
+        <strong>E4.</strong> 写确认运行表
+        <details class="exercise-answer-ref">
+          <summary>参考答案</summary>
+          <p class="ex-ans-body"><strong>要点：</strong>确认运行表：3 点（预测最优、最优±Δ）、每点 n≥3 板、随机序、响应空洞% 与 FCT 抽检。</p>
+          <p class="ex-ans-explain">附预测 vs 实测对比表。</p>
+        </details>
+      </li></ul>
+      </article>
+
+      <article class="card pro warn" id="sec-f">
+        <h2><span class="section-num">F</span>课后作业（可交付物）</h2>
+        <p><strong>交付要求：</strong>含 Profile 稳健区截图或因子水平表 + 3 批结果表</p>
+        <p class="c2-deliver-hint"><strong>C2 截图清单：</strong>曲面图/优化器截图、Safe Launch 计划表</p>
+        <p class="c2-module-check"><label><input type="checkbox" id="c2-done-cb" data-day="9" /> 本模块 C2 Lab 跟做截图已交付（计入结业 15%）</label></p>
+        <div class="hw-submit-panel" id="hw-submit-panel">
+    <label for="hw-text" class="hw-label">粘贴或输入课后作业（须体现汽车电子现场）</label>
+    <p class="hw-hint"><strong>评分要点：</strong>含 Profile 稳健区截图或因子水平表 + 3 批结果表。建议字数 ≥ 150，含模块关键词（如 rsm、ccd、safe launch、profile、稳健、离线…）。未达字数时文本分按比例封顶。</p>
+    <textarea id="hw-text" class="hw-textarea" rows="8" placeholder="例：ADAS 域控 / 车身域控 / 离线烧录@SMT前 / BGA U12 / X-Ray SL全检 / FCT-DCU-B-04 …"></textarea>
+    <div class="form-actions hw-actions">
+      <button type="button" class="btn btn-primary" id="hw-submit-btn">提交作业并自动评分</button>
+      <button type="button" class="btn" id="hw-save-draft">保存草稿</button>
+    </div>
+    <div id="hw-result" class="hw-result" aria-live="polite"></div>
+    <div id="hw-mcq-review" class="hw-mcq-review" aria-live="polite"></div>
+  </div>
+        <p style="margin-top:0.75rem;font-size:0.88rem;color:var(--muted)">自动评分后仍可提交 AI 深度批改：<code>/review 作业</code></p>
+      </article>
+
+      <article class="card pro quiz" id="sec-g">
+        <h2><span class="section-num">G</span>客观自测（自动判分 · 含纠错题）</h2>
+        <div class="gradable-quiz" id="gradable-quiz" data-day="9">
+    <p class="gq-intro">以下题目<strong>只考本模块 B+ 节与 ◎ 汽车电子专题</strong>所讲要点（离线/SMT·BGA/手插/装配/域控 FCT），请先学完再答。占综合分 <strong>45%</strong>（含 Q6 情景多选）。选项顺序已打乱，请勿猜测字母规律。</p>
+    <div class="gq-block" data-correct="d" data-qindex="1" data-qtype="single">
+        <p class="gq-title"><span class="gq-num">Q1</span>  CCD 用于 ADAS 项目的典型响应？</p>
+        
+        <ul class="gq-opts"><li class="opt"><input type="radio" name="mcq-d9-q1" id="mcq-d9-q1-a" value="a" data-label="仓单数量" /><label for="mcq-d9-q1-a">仓单数量</label></li><li class="opt"><input type="radio" name="mcq-d9-q1" id="mcq-d9-q1-b" value="b" data-label="FCT 代码行数" /><label for="mcq-d9-q1-b">FCT 代码行数</label></li><li class="opt"><input type="radio" name="mcq-d9-q1" id="mcq-d9-q1-c" value="c" data-label="员工年龄" /><label for="mcq-d9-q1-c">员工年龄</label></li><li class="opt"><input type="radio" name="mcq-d9-q1" id="mcq-d9-q1-d" value="d" data-label="SPI 体积% 或 U12 空洞% 的二次曲面" /><label for="mcq-d9-q1-d">SPI 体积% 或 U12 空洞% 的二次曲面</label></li></ul>
+      </div><div class="gq-block" data-correct="d" data-qindex="2" data-qtype="single">
+        <p class="gq-title"><span class="gq-num">Q2</span>  Safe Launch 验证批 ADAS 须？</p>
+        
+        <ul class="gq-opts"><li class="opt"><input type="radio" name="mcq-d9-q2" id="mcq-d9-q2-a" value="a" data-label="与车身合并批" /><label for="mcq-d9-q2-a">与车身合并批</label></li><li class="opt"><input type="radio" name="mcq-d9-q2" id="mcq-d9-q2-b" value="b" data-label="只测 1 片" /><label for="mcq-d9-q2-b">只测 1 片</label></li><li class="opt"><input type="radio" name="mcq-d9-q2" id="mcq-d9-q2-c" value="c" data-label="跳过 SPI" /><label for="mcq-d9-q2-c">跳过 SPI</label></li><li class="opt"><input type="radio" name="mcq-d9-q2" id="mcq-d9-q2-d" value="d" data-label="离线 0 错版 + FCT≥目标 连续 3 批 + X-Ray SL 全检" /><label for="mcq-d9-q2-d">离线 0 错版 + FCT≥目标 连续 3 批 + X-Ray SL 全检</label></li></ul>
+      </div><div class="gq-block" data-correct="a" data-qindex="3" data-qtype="single">
+        <p class="gq-title"><span class="gq-num">Q3</span>  响应曲面外推？</p>
+        
+        <ul class="gq-opts"><li class="opt"><input type="radio" name="mcq-d9-q3" id="mcq-d9-q3-a" value="a" data-label="禁止；须边界内优化+确认运行" /><label for="mcq-d9-q3-a">禁止；须边界内优化+确认运行</label></li><li class="opt"><input type="radio" name="mcq-d9-q3" id="mcq-d9-q3-b" value="b" data-label="只对 HU 允许" /><label for="mcq-d9-q3-b">只对 HU 允许</label></li><li class="opt"><input type="radio" name="mcq-d9-q3" id="mcq-d9-q3-c" value="c" data-label="允许；计算机最优即可" /><label for="mcq-d9-q3-c">允许；计算机最优即可</label></li><li class="opt"><input type="radio" name="mcq-d9-q3" id="mcq-d9-q3-d" value="d" data-label="只对 ICT 允许" /><label for="mcq-d9-q3-d">只对 ICT 允许</label></li></ul>
+      </div><div class="gq-block" data-correct="d" data-qindex="4" data-qtype="single">
+        <p class="gq-title"><span class="gq-num">Q4</span>  稳健区确认后写入？</p>
+        
+        <ul class="gq-opts"><li class="opt"><input type="radio" name="mcq-d9-q4" id="mcq-d9-q4-a" value="a" data-label="仅 BB 笔记本" /><label for="mcq-d9-q4-a">仅 BB 笔记本</label></li><li class="opt"><input type="radio" name="mcq-d9-q4" id="mcq-d9-q4-b" value="b" data-label="口头" /><label for="mcq-d9-q4-b">口头</label></li><li class="opt"><input type="radio" name="mcq-d9-q4" id="mcq-d9-q4-c" value="c" data-label="FCT 程序注释" /><label for="mcq-d9-q4-c">FCT 程序注释</label></li><li class="opt"><input type="radio" name="mcq-d9-q4" id="mcq-d9-q4-d" value="d" data-label="Profile#、控制计划、PPAP 变更" /><label for="mcq-d9-q4-d">Profile#、控制计划、PPAP 变更</label></li></ul>
+      </div><div class="gq-block" data-correct="b" data-qindex="5" data-qtype="single">
+        <p class="gq-title"><span class="gq-num">Q5</span>  【纠错】优化器输出=可量产？</p>
+        
+        <ul class="gq-opts"><li class="opt"><input type="radio" name="mcq-d9-q5" id="mcq-d9-q5-a" value="a" data-label="否；不要优化" /><label for="mcq-d9-q5-a">否；不要优化</label></li><li class="opt"><input type="radio" name="mcq-d9-q5" id="mcq-d9-q5-b" value="b" data-label="否；须现场确认运行与 FCT 验证" /><label for="mcq-d9-q5-b">否；须现场确认运行与 FCT 验证</label></li><li class="opt"><input type="radio" name="mcq-d9-q5" id="mcq-d9-q5-c" value="c" data-label="是；R²&gt;0.9" /><label for="mcq-d9-q5-c">是；R²&gt;0.9</label></li><li class="opt"><input type="radio" name="mcq-d9-q5" id="mcq-d9-q5-d" value="d" data-label="是；MBB 签字即可" /><label for="mcq-d9-q5-d">是；MBB 签字即可</label></li></ul>
+      </div><div class="gq-block" data-correct-multi="c,d" data-qindex="6" data-qtype="multi">
+        <p class="gq-title"><span class="gq-num">Q6</span> <span class="gq-type-badge multi">多选</span> 禁止项有？（多选）</p>
+        <p class="gq-scenario">【情景】Minitab 优化器给出试验区外最优点，团队计划下周直接扩产。</p>
+        <ul class="gq-opts"><li class="opt"><input type="checkbox" name="mcq-d9-q6[]" id="mcq-d9-q6-a" value="a" data-label="预测区间验证" /><label for="mcq-d9-q6-a">预测区间验证</label></li><li class="opt"><input type="checkbox" name="mcq-d9-q6[]" id="mcq-d9-q6-b" value="b" data-label="3 批 Safe Launch 判定" /><label for="mcq-d9-q6-b">3 批 Safe Launch 判定</label></li><li class="opt"><input type="checkbox" name="mcq-d9-q6[]" id="mcq-d9-q6-c" value="c" data-label="未做确认运行即量产" /><label for="mcq-d9-q6-c">未做确认运行即量产</label></li><li class="opt"><input type="checkbox" name="mcq-d9-q6[]" id="mcq-d9-q6-d" value="d" data-label="外推未试验区域" /><label for="mcq-d9-q6-d">外推未试验区域</label></li></ul>
+      </div>
+  </div>
+  <details class="quiz-answers-ref" id="quiz-answers-ref"><summary>题库解析（提交后将自动展开）</summary><div class="gq-ref-wrap"><div class="gq-ref-item" data-qindex="1">
+    <h4 class="gq-ref-q">Q1 CCD 用于 ADAS 项目的典型响应？</h4>
+    
+    <p class="gq-ref-ans"><span style="color:var(--accent)">✓ SPI 体积% 或 U12 空洞% 的二次曲面</span></p>
+    <div class="gq-explain-block pass">
+    <span class="gq-explain-source author">精编解析</span>
+    <p class="gq-explain-focus"><strong>考点</strong> RSM · Safe Launch · Q1</p>
+    <p class="gq-explain-rationale"><strong>正解（D）</strong> 正解：SPI 体积% 或 U12 空洞% 的二次曲面。答题时写出工站号/Profile#/Program_ID 中至少一项。</p>
+    
+    <p class="gq-explain-distractor-title"><strong>误选简析</strong></p>
+    <ul class="gq-explain-distractor-list obj-list"><li><strong>A</strong> 仓单数量<br><span class="gq-explain-dim">见题干干扰项设计。</span></li><li><strong>B</strong> FCT 代码行数<br><span class="gq-explain-dim">ADAS DCU-A：FCT-05 + Eth 环回，离线 SOC+eMMC。</span></li><li><strong>C</strong> 员工年龄<br><span class="gq-explain-dim">ADAS DCU-A：FCT-05 + Eth 环回，离线 SOC+eMMC。</span></li></ul>
+    <p class="gq-explain-anchor">教研精编 · 模块 09 B+ / C2 Lab</p>
+  </div>
+  </div><div class="gq-ref-item" data-qindex="2">
+    <h4 class="gq-ref-q">Q2 Safe Launch 验证批 ADAS 须？</h4>
+    
+    <p class="gq-ref-ans"><span style="color:var(--accent)">✓ 离线 0 错版 + FCT≥目标 连续 3 批 + X-Ray SL 全检</span></p>
+    <div class="gq-explain-block pass">
+    <span class="gq-explain-source author">精编解析</span>
+    <p class="gq-explain-focus"><strong>考点</strong> RSM · Safe Launch · Q2</p>
+    <p class="gq-explain-rationale"><strong>正解（D）</strong> 正解：离线 0 错版 + FCT≥目标 连续 3 批 + X-Ray SL 全检。答题时写出工站号/Profile#/Program_ID 中至少一项。</p>
+    
+    <p class="gq-explain-distractor-title"><strong>误选简析</strong></p>
+    <ul class="gq-explain-distractor-list obj-list"><li><strong>A</strong> 与车身合并批<br><span class="gq-explain-dim">见题干干扰项设计。</span></li><li><strong>B</strong> 只测 1 片<br><span class="gq-explain-dim">ADAS DCU-A：FCT-05 + Eth 环回，离线 SOC+eMMC。</span></li><li><strong>C</strong> 跳过 SPI<br><span class="gq-explain-dim">ADAS DCU-A：FCT-05 + Eth 环回，离线 SOC+eMMC。</span></li></ul>
+    <p class="gq-explain-anchor">教研精编 · 模块 09 B+ / C2 Lab</p>
+  </div>
+  </div><div class="gq-ref-item" data-qindex="3">
+    <h4 class="gq-ref-q">Q3 响应曲面外推？</h4>
+    
+    <p class="gq-ref-ans"><span style="color:var(--accent)">✓ 禁止；须边界内优化+确认运行</span></p>
+    <div class="gq-explain-block pass">
+    <span class="gq-explain-source author">精编解析</span>
+    <p class="gq-explain-focus"><strong>考点</strong> RSM · Safe Launch · Q3</p>
+    <p class="gq-explain-rationale"><strong>正解（A）</strong> 正解：禁止；须边界内优化+确认运行。答题时写出工站号/Profile#/Program_ID 中至少一项。</p>
+    
+    <p class="gq-explain-distractor-title"><strong>误选简析</strong></p>
+    <ul class="gq-explain-distractor-list obj-list"><li><strong>B</strong> 只对 HU 允许<br><span class="gq-explain-dim">「允许；计算机最优即可」与模块 09 RSM · Safe Launch 证据要求冲突。</span></li><li><strong>C</strong> 允许；计算机最优即可<br><span class="gq-explain-dim">中控 HU：FCT 程序与域控分离，勿并入 ADAS Eth 分析。</span></li><li><strong>D</strong> 只对 ICT 允许<br><span class="gq-explain-dim">「只对 ICT 允许」与模块 09 RSM · Safe Launch 证据要求冲突。</span></li></ul>
+    <p class="gq-explain-anchor">教研精编 · 模块 09 B+ / C2 Lab</p>
+  </div>
+  </div><div class="gq-ref-item" data-qindex="4">
+    <h4 class="gq-ref-q">Q4 稳健区确认后写入？</h4>
+    
+    <p class="gq-ref-ans"><span style="color:var(--accent)">✓ Profile#、控制计划、PPAP 变更</span></p>
+    <div class="gq-explain-block pass">
+    <span class="gq-explain-source auto">规则解析</span>
+    <p class="gq-explain-focus"><strong>考点</strong> 考点（模块 09 · Improve · RSM / Safe Launch）— 现场判断</p>
+    <p class="gq-explain-rationale"><strong>正解（D）</strong> Profile#、控制计划、PPAP 变更。须能在离线/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。</p>
+    
+    <p class="gq-explain-distractor-title"><strong>误选简析</strong></p>
+    <ul class="gq-explain-distractor-list obj-list"><li><strong>A</strong> 仅 BB 笔记本<br><span class="gq-explain-dim">见题干干扰项设计。</span></li><li><strong>B</strong> 口头<br><span class="gq-explain-dim">「仅 BB 笔记本」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。</span></li><li><strong>C</strong> FCT 程序注释<br><span class="gq-explain-dim">认证须证据与评审记录。</span></li></ul>
+    <p class="gq-explain-anchor">对照本节 B+ 工艺表、F 作业 Rubric 与 G 题干关键词。</p>
+  </div>
+  </div><div class="gq-ref-item" data-qindex="5">
+    <h4 class="gq-ref-q">Q5 【纠错】优化器输出=可量产？</h4>
+    
+    <p class="gq-ref-ans"><span style="color:var(--accent)">✓ 否；须现场确认运行与 FCT 验证</span></p>
+    <div class="gq-explain-block pass">
+    <span class="gq-explain-source author">精编解析</span>
+    <p class="gq-explain-focus"><strong>考点</strong> RSM · Safe Launch · 纠错辨析</p>
+    <p class="gq-explain-rationale"><strong>正解（B）</strong> 立场：否；须现场确认运行与 FCT 验证。题干已植入常见误区，须用工艺段证据反驳。</p>
+    
+    <p class="gq-explain-distractor-title"><strong>误选简析</strong></p>
+    <ul class="gq-explain-distractor-list obj-list"><li><strong>A</strong> 否；不要优化<br><span class="gq-explain-dim">见题干干扰项设计。</span></li><li><strong>C</strong> 是；R²&gt;0.9<br><span class="gq-explain-dim">「是；MBB 签字即可」与模块 09 RSM · Safe Launch 证据要求冲突。</span></li><li><strong>D</strong> 是；MBB 签字即可<br><span class="gq-explain-dim">「否；不要优化」与模块 09 RSM · Safe Launch 证据要求冲突。</span></li></ul>
+    <p class="gq-explain-anchor">教研精编 · 模块 09 B+ / C2 Lab</p>
+  </div>
+  </div><div class="gq-ref-item" data-qindex="6">
+    <h4 class="gq-ref-q">Q6 禁止项有？（多选）</h4>
+    <p class="gq-ref-scenario">【情景】Minitab 优化器给出试验区外最优点，团队计划下周直接扩产。</p>
+    <p class="gq-ref-ans"><span style="color:var(--accent)">✓ 未做确认运行即量产；外推未试验区域</span></p>
+    <div class="gq-explain-block pass">
+    <span class="gq-explain-source auto">规则解析</span>
+    <p class="gq-explain-focus"><strong>考点</strong> 考点（模块 09 · Improve · RSM / Safe Launch）— 现场判断</p>
+    <p class="gq-explain-rationale"><strong>正解（多选）（C+D）</strong> 未做确认运行即量产。须能在离线/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。</p>
+    
+    <p class="gq-explain-distractor-title"><strong>误选简析</strong></p>
+    <ul class="gq-explain-distractor-list obj-list"><li><strong>A</strong> 预测区间验证<br><span class="gq-explain-dim">见题干干扰项设计。</span></li><li><strong>B</strong> 3 批 Safe Launch 判定<br><span class="gq-explain-dim">见题干干扰项设计。</span></li></ul>
+    <p class="gq-explain-anchor">对照本节 B+ 工艺表、F 作业 Rubric 与 G 题干关键词。</p>
+  </div>
+  </div></div></details>
+        <p class="quiz-submit-row" style="font-size:0.88rem;color:var(--muted)">客观题与 F 节作业一并计入综合分，请点击 F 节「提交作业并自动评分」。</p>
+      </article>
+
+      <article class="card pro" id="sec-h">
+        <h2><span class="section-num">H</span>能力自评（黑带认证口径 1–5）</h2>
+        <div class="self-assessment-panel" id="self-assessment-panel" data-day="9">
+    <p class="hw-hint">自评写入本机浏览器（占结业规划 <strong>5%</strong>），可在 <a href="../reference/homework-scores.html#dashboard">学习仪表盘</a> 汇总。</p>
+    <div class="sa-grid">
+      <label>概念 — 能正确教授 BB
+        <select id="sa-concept" class="sa-select" data-dim="concept">
+          <option value="">—</option>
+          <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+          <option value="4">4</option><option value="5">5</option>
+        </select>
+      </label>
+      <label>应用 — 能操作软件并判读
+        <select id="sa-apply" class="sa-select" data-dim="apply">
+          <option value="">—</option>
+          <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+          <option value="4">4</option><option value="5">5</option>
+        </select>
+      </label>
+      <label>分析 — 能链接商业决策
+        <select id="sa-teach" class="sa-select" data-dim="teach">
+          <option value="">—</option>
+          <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+          <option value="4">4</option><option value="5">5</option>
+        </select>
+      </label>
+    </div>
+    <label class="hw-label" for="sa-evidence">证据/备注（工站号、截图、困惑点）</label>
+    <textarea id="sa-evidence" class="hw-textarea sa-evidence" rows="3" placeholder="例：已完成 C2 SPI GRR 截图；尚不熟 Eth 分层…"></textarea>
+    <div class="form-actions hw-actions">
+      <button type="button" class="btn btn-primary" id="sa-save-btn">保存 H 节自评</button>
+      <span id="sa-status" class="sa-status" aria-live="polite"></span>
+    </div>
+    <p id="sa-warn" class="sa-warn" style="display:none;color:var(--coral)">任一项 &lt; 3：建议重修本模块 · <code>/day 9</code></p>
+  </div>
+        <p style="margin-top:0.75rem">任一项 &lt; 3：重修本模块；建议 <code>/day 9</code> 答疑。</p>
+        <div class="ref-box"><strong>延伸阅读</strong><ul class="obj-list"><li>Minitab DOE — 响应优化</li></ul></div>
+      </article>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <strong>六西格玛黑带学院</strong> · 模块 9/14 · BB-I-02 ·
+    <a href="../index.html">课程总览</a> ·
+    <a href="../reference/homework-scores.html">我的成绩</a> ·
+    <a href="javascript:window.print()">打印本模块（浅色版式）</a>
+    <span class="print-footer-line">— 机密文件 · 仅供内部培训 —</span>
+  </footer>
+  <script type="application/json" id="hw-rubric-data">{"day":9,"minChars":150,"passScore":70,"mcqWeight":45,"textWeight":55,"dayKeywords":["rsm","ccd","safe launch","profile","稳健","离线","smt","bga","fct","域控","装配","手插"],"evidenceFields":["工站","fct-","profile","program_id","checksum","x-ray","工艺段","离线","sipoc","分段","截图"],"dimensions":{"business":{"label":"商业对齐","weight":15,"keys":["ctq","voc","champion","效益","成本","sipoc","章程","问题陈述","dpmo","ppm","oem","adas","域控"],"forbids":["应该采用","建议使用 minitab","上 minitab"]},"measure":{"label":"测量严谨","weight":20,"keys":["msa","操作定义","抽样","基线","cpk","grr","%r&r","spi","checksum","x-ray","profile","探针"],"forbids":[]},"stats":{"label":"统计有效","weight":30,"keys":["显著","α","p值","假设","doe","效应量","anova","回归","卡方","缺陷矩阵","pareto","响应曲面","稳健","safe launch","pilot"],"forbids":[]},"improve":{"label":"改进与控制","weight":25,"keys":["fmea","pfmea","控制计划","pilot","对策","8d","spc","p图","反应计划","u12","空洞"],"forbids":[]},"mbb":{"label":"MBB 表达","weight":15,"keys":["champion","阶段门","复制","故事板","bb","mbb","教练","评审","工艺段"],"forbids":[]}},"mcq":[{"q":"CCD 用于 ADAS 项目的典型响应？","options":[{"t":"仓单数量","correct":false,"v":"a"},{"t":"FCT 代码行数","correct":false,"v":"b"},{"t":"员工年龄","correct":false,"v":"c"},{"t":"SPI 体积% 或 U12 空洞% 的二次曲面","correct":true,"v":"d"}],"explain":{"source":"author","focus":"RSM · Safe Launch · Q1","rationale":"正解：SPI 体积% 或 U12 空洞% 的二次曲面。答题时写出工站号/Profile#/Program_ID 中至少一项。","distractors":{"b":"ADAS DCU-A：FCT-05 + Eth 环回，离线 SOC+eMMC。","c":"ADAS DCU-A：FCT-05 + Eth 环回，离线 SOC+eMMC。","d":"ADAS DCU-A：FCT-05 + Eth 环回，离线 SOC+eMMC。"},"anchor":"教研精编 · 模块 09 B+ / C2 Lab"},"type":"single","correctValue":"d"},{"q":"Safe Launch 验证批 ADAS 须？","options":[{"t":"与车身合并批","correct":false,"v":"a"},{"t":"只测 1 片","correct":false,"v":"b"},{"t":"跳过 SPI","correct":false,"v":"c"},{"t":"离线 0 错版 + FCT≥目标 连续 3 批 + X-Ray SL 全检","correct":true,"v":"d"}],"explain":{"source":"author","focus":"RSM · Safe Launch · Q2","rationale":"正解：离线 0 错版 + FCT≥目标 连续 3 批 + X-Ray SL 全检。答题时写出工站号/Profile#/Program_ID 中至少一项。","distractors":{"b":"ADAS DCU-A：FCT-05 + Eth 环回，离线 SOC+eMMC。","c":"ADAS DCU-A：FCT-05 + Eth 环回，离线 SOC+eMMC。","d":"车身 DCU-B：独立 FCT-04，CAN/LIN 与 ADAS Eth 分表。"},"anchor":"教研精编 · 模块 09 B+ / C2 Lab"},"type":"single","correctValue":"d"},{"q":"响应曲面外推？","options":[{"t":"禁止；须边界内优化+确认运行","correct":true,"v":"a"},{"t":"只对 HU 允许","correct":false,"v":"b"},{"t":"允许；计算机最优即可","correct":false,"v":"c"},{"t":"只对 ICT 允许","correct":false,"v":"d"}],"explain":{"source":"author","focus":"RSM · Safe Launch · Q3","rationale":"正解：禁止；须边界内优化+确认运行。答题时写出工站号/Profile#/Program_ID 中至少一项。","distractors":{"b":"「允许；计算机最优即可」与模块 09 RSM · Safe Launch 证据要求冲突。","c":"中控 HU：FCT 程序与域控分离，勿并入 ADAS Eth 分析。","d":"「只对 ICT 允许」与模块 09 RSM · Safe Launch 证据要求冲突。"},"anchor":"教研精编 · 模块 09 B+ / C2 Lab"},"type":"single","correctValue":"a"},{"q":"稳健区确认后写入？","options":[{"t":"仅 BB 笔记本","correct":false,"v":"a"},{"t":"口头","correct":false,"v":"b"},{"t":"FCT 程序注释","correct":false,"v":"c"},{"t":"Profile#、控制计划、PPAP 变更","correct":true,"v":"d"}],"explain":{"source":"auto","focus":"考点（模块 09 · Improve · RSM / Safe Launch）— 现场判断","rationale":"Profile#、控制计划、PPAP 变更。须能在离线/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。","distractors":{"b":"「仅 BB 笔记本」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。","c":"认证须证据与评审记录。","d":"「FCT 程序注释」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。"},"anchor":"对照本节 B+ 工艺表、F 作业 Rubric 与 G 题干关键词。"},"type":"single","correctValue":"d"},{"q":"【纠错】优化器输出=可量产？","options":[{"t":"否；不要优化","correct":false,"v":"a"},{"t":"否；须现场确认运行与 FCT 验证","correct":true,"v":"b"},{"t":"是；R²>0.9","correct":false,"v":"c"},{"t":"是；MBB 签字即可","correct":false,"v":"d"}],"explain":{"source":"author","focus":"RSM · Safe Launch · 纠错辨析","rationale":"立场：否；须现场确认运行与 FCT 验证。题干已植入常见误区，须用工艺段证据反驳。","distractors":{"b":"「是；R²>0.9」与模块 09 RSM · Safe Launch 证据要求冲突。","c":"「是；MBB 签字即可」与模块 09 RSM · Safe Launch 证据要求冲突。","d":"「否；不要优化」与模块 09 RSM · Safe Launch 证据要求冲突。"},"anchor":"教研精编 · 模块 09 B+ / C2 Lab"},"type":"single","correctValue":"b"},{"type":"multi","bloom":"evaluate","products":["DCU-A"],"scenario":"【情景】Minitab 优化器给出试验区外最优点，团队计划下周直接扩产。","q":"禁止项有？（多选）","options":[{"t":"预测区间验证","correct":false,"v":"a"},{"t":"3 批 Safe Launch 判定","correct":false,"v":"b"},{"t":"未做确认运行即量产","correct":true,"v":"c"},{"t":"外推未试验区域","correct":true,"v":"d"}],"correctValues":["c","d"],"explain":{"source":"auto","focus":"考点（模块 09 · Improve · RSM / Safe Launch）— 现场判断","rationale":"未做确认运行即量产。须能在离线/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。","distractors":{"c":"「3 批 Safe Launch 判定」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。","d":"「预测区间验证」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。"},"anchor":"对照本节 B+ 工艺表、F 作业 Rubric 与 G 题干关键词。"}}]}</script>
+  <script src="../js/homework-grader-core.js"></script>
+  <script src="../js/homework-grader.js" defer></script>
+  <script src="../js/self-assessment.js" defer></script>
+  <script src="../js/c2-module-checklist.js" defer></script>
+  <script src="../js/academy.js" defer></script>
+</body>
+</html>

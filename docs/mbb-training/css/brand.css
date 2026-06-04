@@ -1,0 +1,125 @@
+/**
+ * 企业 Logo 位 — 替换 assets/enterprise-logo.svg 或修改下方变量
+ */
+:root {
+  --brand-logo-file: url("../assets/enterprise-logo.svg");
+  --brand-org-name: "六西格玛黑带学院";
+  --brand-org-sub: "汽车电子 EMS · MBB 培训";
+  --brand-logo-h: 2.25rem;
+  --brand-logo-max-w: 10rem;
+}
+
+/* —— 顶栏 Logo —— */
+.topbar .brand {
+  gap: 0.75rem;
+}
+
+.brand-logo-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  height: var(--brand-logo-h);
+  min-width: 2.5rem;
+  max-width: var(--brand-logo-max-w);
+  padding: 0.2rem 0.5rem;
+  border-radius: 8px;
+  background: var(--color-logo-wrap-bg);
+  border: 1px dashed var(--color-logo-wrap-border);
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.brand-logo-wrap:hover {
+  border-color: var(--color-border-hover);
+  background: var(--color-accent-dim);
+}
+
+.brand-logo {
+  display: block;
+  height: 100%;
+  width: auto;
+  max-width: var(--brand-logo-max-w);
+  object-fit: contain;
+  object-position: left center;
+}
+
+.brand-logo.is-fallback-hidden {
+  display: none;
+}
+
+.brand-text-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  line-height: 1.2;
+  min-width: 0;
+}
+
+.brand-org-name {
+  font-family: var(--font-display, inherit);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.brand-org-sub {
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+
+/* Logo 加载失败时显示 σ 徽章 */
+.brand .belt-mark.fallback-mark {
+  display: none;
+}
+
+.brand-logo-wrap.logo-missing + .belt-mark.fallback-mark {
+  display: inline-flex !important;
+}
+
+/* Hero 区 Logo（首页） */
+.hero-brand-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.hero-logo-slot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 1.25rem;
+  border-radius: 12px;
+  background: var(--color-logo-wrap-bg);
+  border: 1px dashed var(--color-logo-wrap-border);
+  min-height: 3.5rem;
+  min-width: 10rem;
+}
+
+.hero-logo-slot img {
+  height: 2.75rem;
+  width: auto;
+  max-width: 12rem;
+  object-fit: contain;
+}
+
+.hero-brand-divider {
+  width: 1px;
+  height: 2.5rem;
+  background: linear-gradient(180deg, transparent, var(--border), transparent);
+}
+
+@media (max-width: 640px) {
+  .brand-org-sub {
+    display: none;
+  }
+
+  .brand-logo-wrap {
+    max-width: 5.5rem;
+  }
+}

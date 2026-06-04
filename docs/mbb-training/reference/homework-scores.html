@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>我的作业成绩 — 六西格玛黑带</title>
+  
+  <script src="../js/theme-init.js"></script>
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/pro.css" />
+  <link rel="stylesheet" href="../css/homework-grader.css" />
+  <link rel="stylesheet" href="../css/premium.css" />
+  <link rel="stylesheet" href="../css/brand.css" />
+  <link rel="stylesheet" href="../css/print-light.css" media="print" />
+    <script src="../js/theme.js" defer></script>
+  <script src="../js/brand.js" defer></script>
+  <script src="../js/self-assessment.js" defer></script>
+  <script src="../js/learning-dashboard.js" defer></script>
+</head>
+<body>
+  <div class="page-bg"></div>
+  <header class="print-only print-header" aria-hidden="true">
+      <div class="print-header-logo">
+        <img src="../assets/enterprise-logo.svg" alt="" onerror="this.parentElement.innerHTML='<span style=font-size:10pt;color:#1e3a5f;font-weight:700">六西格玛黑带学院</span>'" />
+      </div>
+      <div class="print-header-meta">
+        <strong>六西格玛黑带学院</strong>
+        <span class="print-doc-title">作业成绩汇总</span>
+        <span>打印日期：<span class="print-date"></span></span>
+      </div>
+    </header>
+  <header class="topbar">
+    <a class="brand" href="../index.html">
+      <span class="brand-logo-wrap" title="企业 Logo — 可替换 assets/enterprise-logo.svg">
+        <img class="brand-logo" src="../assets/enterprise-logo.svg" alt="企业 Logo" width="160" height="40"
+          onerror="this.style.display='none';this.parentElement.classList.add('logo-missing')" />
+      </span>
+      <span class="belt-mark fallback-mark">σ</span>
+      <span class="brand-text-wrap">
+        <span class="brand-org-name">六西格玛黑带学院</span>
+        <span class="brand-org-sub">汽车电子 EMS · MBB 培训</span>
+      </span>
+    </a>
+    <nav><a class="btn" href="../index.html">总览</a>      <div class="theme-switcher" role="group" aria-label="主题切换">
+      <button type="button" data-theme-pick="dark" title="深色主题"><span class="ico">🌙</span></button>
+      <button type="button" data-theme-pick="light" title="浅色主题"><span class="ico">☀</span></button>
+      <button type="button" data-theme-pick="system" title="跟随系统"><span class="ico">◐</span></button>
+    </div>
+    </nav>
+  </header>
+
+  <div class="wrap scores-dashboard">
+    <div class="auto-banner">
+      <strong>L1 自动评分记录</strong>
+      <p>在各模块 <strong>F 课后作业</strong> 区点击「提交作业并自动评分」后写入本机浏览器。达标线默认 <strong>70 分</strong>。本页仅为 <strong>L1 摸底</strong>，不等同企业 MBB 认证。</p>
+    </div>
+    <div class="card pro tip" style="margin-bottom:1rem">
+      <h3 style="margin-top:0">三级评价</h3>
+      <ul class="obj-list">
+        <li><strong>L1</strong> — 本页汇总 + 客观题解析（浏览器本地）</li>
+        <li><strong>L2</strong> — 复制 <code>SYSTEM-PROMPT.txt</code>，对 F 节作业使用 <code>/review</code></li>
+        <li><strong>L3</strong> — MBB 阶段门 + Capstone 答辩（见 <a href="mbb-certification-boundary.html">认证边界</a>）</li>
+      </ul>
+      <p style="font-size:0.85rem;color:var(--muted)">结业权重 v3：G <strong>25%</strong> + F <strong>35%</strong> + C2 <strong>15%</strong> + H <strong>5%</strong> + Capstone <strong>20%</strong>（后两项可在下方录入）</p>
+    </div>
+
+    <div class="card pro tip" id="dashboard">
+      <h2 style="margin-top:0">L1 学习仪表盘（权重 v2）</h2>
+      <div id="l1-dashboard"></div>
+    </div>
+
+    <div class="card pro">
+      <h2>14 模块成绩</h2>
+      <div id="scores-list"></div>
+      <p id="scores-empty" style="color:var(--muted);display:none">暂无记录。请先完成至少一个模块的作业提交。</p>
+      <div class="form-actions" style="margin-top:1rem">
+        <button type="button" class="btn" id="btn-refresh">刷新</button>
+        <a class="btn btn-primary" href="graduation-report.html">导出 L1 结业报告</a>
+        <button type="button" class="btn" id="btn-clear">清除全部成绩</button>
+      </div>
+    </div>
+
+    <div class="card tip">
+      <h2>评分说明</h2>
+      <ul class="obj-list">
+        <li><strong>55%</strong> 作业文本 — 四维 Rubric 关键词（商业 / 测量 / 统计 / 改进 / MBB）</li>
+        <li><strong>45%</strong> G 节客观题 — 6 题（含 Q6 情景多选），提交时一并判分</li>
+        <li><strong>H 5%</strong> — 各模块 H 节保存自评后计入仪表盘</li>
+        <li><strong>模块 01</strong> 完成现场配置问卷校验可最多 <strong>+5</strong> 分加成</li>
+        <li>自动分不等同于 MBB 认证；深度批改仍可用 <code>/review 作业</code></li>
+      </ul>
+    </div>
+  </div>
+
+  <footer class="footer"><a href="../index.html">返回课程</a>    <span class="print-footer-line">— 机密文件 · 仅供内部培训 —</span>
+  </footer>
+  <script>
+    (function () {
+      const KEY = "mbb-hw-scores";
+      const list = document.getElementById("scores-list");
+      const empty = document.getElementById("scores-empty");
+
+      const SA_KEY = "mbb-self-assessment-v1";
+      const C2_KEY = "mbb-c2-by-day-v1";
+
+      function load(k) {
+        try {
+          return JSON.parse(localStorage.getItem(k) || "{}");
+        } catch {
+          return {};
+        }
+      }
+
+      function hLabel(n) {
+        const rec = load(SA_KEY)[String(n)];
+        if (!rec) return "";
+        const nums = [rec.concept, rec.apply, rec.teach].map(Number).filter((x) => x >= 1 && x <= 5);
+        if (nums.length < 3) return " · H 未完成";
+        const avg = Math.round((nums.reduce((a, b) => a + b, 0) / nums.length / 5) * 100);
+        return " · H " + avg + "%";
+      }
+
+      function c2Label(n) {
+        return load(C2_KEY)[String(n)] ? " · C2 ✓" : "";
+      }
+
+      function render() {
+        const all = load(KEY);
+        list.innerHTML = "";
+        const any = Object.keys(all).length || Object.keys(load(SA_KEY)).length;
+        if (!any) empty.style.display = "block";
+        else empty.style.display = "none";
+
+        for (let n = 1; n <= 14; n++) {
+          const rec = all[String(n)];
+          const card = document.createElement("div");
+          card.className = "day-score-card";
+          const hrefF = "../days/day" + String(n).padStart(2, "0") + ".html#sec-f";
+          const hrefH = "../days/day" + String(n).padStart(2, "0") + ".html#sec-h";
+          if (rec) {
+            const pass = rec.total >= 70;
+            card.innerHTML =
+              '<span><strong>模块 ' +
+              n +
+              '</strong> · <span style="color:' +
+              (pass ? "var(--accent)" : "var(--coral)") +
+              '">' +
+              rec.total +
+              "/100</span> · 文本 " +
+              rec.textPercent +
+              " + 客观 " +
+              rec.mcqPercent +
+              (rec.bonus ? " +加成 " + rec.bonus : "") +
+              hLabel(n) +
+              c2Label(n) +
+              '</span><a class="btn" href="' +
+              hrefF +
+              '">作业</a><a class="btn" href="' +
+              hrefH +
+              '">H</a>';
+          } else {
+            card.innerHTML =
+              '<span style="color:var(--muted)">模块 ' +
+              n +
+              " — 未提交" +
+              hLabel(n) +
+              c2Label(n) +
+              '</span><a class="btn" href="' +
+              hrefF +
+              '">作业</a><a class="btn" href="' +
+              hrefH +
+              '">H</a>';
+          }
+          list.appendChild(card);
+        }
+      }
+
+      document.getElementById("btn-refresh").addEventListener("click", render);
+      document.getElementById("btn-clear").addEventListener("click", function () {
+        if (confirm("确定清除本机全部自动评分记录？")) {
+          localStorage.removeItem(KEY);
+          render();
+        }
+      });
+      render();
+      if (window.MBBLearningDashboard) {
+        MBBLearningDashboard.renderDashboard("l1-dashboard");
+      }
+      window.addEventListener("mbb-sa-saved", render);
+      window.addEventListener("mbb-c2-updated", () => {
+        render();
+        if (window.MBBLearningDashboard) MBBLearningDashboard.renderDashboard("l1-dashboard");
+      });
+    })();
+  </script>
+</body>
+</html>

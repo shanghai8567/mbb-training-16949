@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="40" viewBox="0 0 160 40" role="img" aria-label=" Logo `M">
+  <rect x="0.5" y="0.5" width="159" height="39" rx="6" fill="none" stroke="#2b5ea8" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="80" y="17" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" font-weight="600" fill="#2b5ea8">ENTERPRISE LOGO</text>
+  <text x="80" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" fill="#5a6a7a">ÿb: assets/enterprise-logo.svg</text>
+</svg>

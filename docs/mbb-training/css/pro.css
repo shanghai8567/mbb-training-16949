@@ -1,0 +1,224 @@
+/* Six Sigma Black Belt Academy — Professional Layer */
+:root {
+  --bb-black: var(--color-bg-inset);
+  --phase-define: #2e7d6e;
+  --phase-measure: #2b5ea8;
+  --phase-analyze: #b86e1f;
+  --phase-improve: #6b4fa8;
+  --phase-control: #a83248;
+  --phase-dfss: #4a6fa5;
+  --phase-lead: #5c6370;
+}
+
+.pro-header {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.pro-header .module-id {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--bb-gold);
+  margin-bottom: 0.5rem;
+}
+
+.belt-track {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.65rem;
+  border-radius: 4px;
+  background: var(--bb-black);
+  border: 1px solid var(--bb-gold);
+  color: var(--bb-gold-light);
+}
+
+.belt-track.mbb { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
+
+.dmaic-ribbon {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.85rem;
+  border-radius: 4px;
+  margin-right: 0.5rem;
+  color: #fff;
+}
+
+.dmaic-ribbon.define { background: var(--phase-define); }
+.dmaic-ribbon.measure { background: var(--phase-measure); }
+.dmaic-ribbon.analyze { background: var(--phase-analyze); }
+.dmaic-ribbon.improve { background: var(--phase-improve); }
+.dmaic-ribbon.control { background: var(--phase-control); }
+.dmaic-ribbon.dfss { background: var(--phase-dfss); }
+.dmaic-ribbon.overview { background: var(--phase-lead); }
+.dmaic-ribbon.leadership { background: var(--phase-lead); }
+
+.layout-course {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 2rem;
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .layout-course { grid-template-columns: 1fr; }
+  .course-sidebar { position: static !important; }
+}
+
+.course-sidebar {
+  position: sticky;
+  top: 4.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 1rem 0;
+  font-size: 0.82rem;
+}
+
+.course-sidebar .sb-title {
+  padding: 0 1rem 0.75rem;
+  font-weight: 700;
+  color: var(--bb-gold);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 0.5rem;
+}
+
+.course-sidebar a {
+  display: block;
+  padding: 0.45rem 1rem;
+  color: var(--muted);
+  border-left: 3px solid transparent;
+  text-decoration: none;
+}
+
+.course-sidebar a:hover,
+.course-sidebar a.active {
+  color: var(--text);
+  background: var(--color-bg-hover);
+  border-left-color: var(--bb-gold);
+}
+
+.course-main { min-width: 0; }
+
+.ref-box {
+  background: var(--color-ref-box-bg);
+  border: 1px solid var(--color-ref-box-border);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+  font-size: 0.88rem;
+}
+
+.ref-box strong { color: var(--color-auto-accent-soft); font-size: 0.75rem; letter-spacing: 0.06em; }
+
+.tool-matrix { font-size: 0.85rem; }
+.tool-matrix td:first-child { font-weight: 600; color: var(--accent); white-space: nowrap; }
+
+.pitfall {
+  border-left: 3px solid var(--coral);
+  padding: 0.65rem 1rem;
+  margin: 0.5rem 0;
+  background: var(--color-pitfall-bg);
+  font-size: 0.92rem;
+}
+
+.pitfall strong { color: var(--coral); font-size: 0.8rem; }
+
+.formula-pro {
+  border: 1px solid var(--color-formula-border);
+  background: var(--color-formula-bg);
+  padding: 1.25rem;
+  border-radius: var(--radius-sm);
+  margin: 1rem 0;
+}
+
+.formula-pro .label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--bb-gold);
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+}
+
+.formula-pro code {
+  font-size: 1.05rem;
+  color: var(--text);
+  font-family: "Cambria Math", Georgia, serif;
+}
+
+.section-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 4px;
+  background: var(--bb-black);
+  border: 1px solid var(--bb-gold);
+  color: var(--bb-gold);
+  font-size: 0.8rem;
+  font-weight: 800;
+  margin-right: 0.5rem;
+}
+
+.card.pro h2 { font-size: 1.1rem; letter-spacing: 0.02em; }
+
+.hero.pro .eyebrow { color: var(--bb-gold); border-color: var(--color-gold-border); background: var(--color-gold-dim); }
+
+.dmaic-wheel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+.dmaic-wheel span {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #fff;
+}
+
+.cert-align {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.cert-badge {
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 0.3rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--muted);
+  background: var(--color-bg-inset);
+}
+
+.topbar .brand .belt-mark {
+  color: var(--bb-gold);
+  font-weight: 800;
+}
+
+@media print {
+  .topbar, .course-sidebar, .btn, .page-bg { display: none !important; }
+  .layout-course { display: block; padding: 0; }
+  .card { page-break-inside: avoid; border: 1px solid #ccc; }
+}
