@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="../css/premium.css" />
   <link rel="stylesheet" href="../css/print-light.css" media="print" />
   <link rel="stylesheet" href="../css/interactive-learning.css" />
+  <link rel="stylesheet" href="../css/factory-scenario.css" />
   <script src="../js/course.js" defer></script>
   <script src="../js/theme.js" defer></script>
   <script src="../js/brand.js" defer></script>
@@ -72,7 +73,9 @@
       <a href="#sec-f">F 课后作业</a>
       <a href="#sec-g">G 客观自测</a>
       <a href="#sec-h">H 能力自评</a>
+      <a href="#sec-factory">🏭 工厂实景</a>
       <div class="sb-title" style="margin-top:1rem">参考资料</div>
+      <a href="../reference/factory-floor-lab.html">场景总览</a>
       <a href="../reference/glossary.html">术语表</a>
       <a href="../reference/sigma-table.html">σ · DPMO</a>
       <a href="../reference/automotive-iatf.html">汽车 IATF 专题</a>
@@ -132,6 +135,42 @@
     <ul class="obj-list"><li>VOC→CTQ：Eth 丢包率、启动时延、功能安全相关项（界定 ASIL 边界）</li><li>离线烧录 CTQ：SOC_FW + eMMC_IMG Checksum 与 CSR 一致</li><li>SMT CTQ：SPI 体积%、U12 空洞%、Profile#ADAS-04</li><li>FCT CTQ：Eth/CAN 环回 100% 项、工站 FCT-DCU-A-05</li></ul>
     
     <p class="exam-align-hint">▼ <strong>G 客观题</strong>与 <strong>F 作业</strong>仅考核本节要点（车身 FCT-04 / ADAS BGA·FCT-05）</p>
+  </article>
+
+      <article class="card pro factory-scenario" id="sec-factory" data-factory-day="2">
+    <h2><span class="section-num">🏭</span>工厂实景 · 六西格玛致用课堂</h2>
+    <p class="fs-meta">
+      <span class="tag auto">Define · Charter · CTQ 树</span>
+      <span class="tag gold">会议室 · FCT-DCU-A-05 数据投影</span>
+    </p>
+    <div class="fs-product-row"><span class="fs-product-tag">ADAS 域控 DCU-A</span></div>
+
+    <div class="fs-tabs" role="tablist" aria-label="场景学习模式">
+      <button type="button" class="fs-tab is-active" data-fs-panel="scene" role="tab" aria-selected="true">① 现场故事</button>
+      <button type="button" class="fs-tab" data-fs-panel="sigma" role="tab">② 黑带解析</button>
+      <button type="button" class="fs-tab" data-fs-panel="apply" role="tab">③ 30 秒致用</button>
+    </div>
+
+    <div class="fs-panel is-active" id="fs-panel-scene" role="tabpanel">
+      <h3 class="fs-story-title">OEM 邮件：Eth 丢包不是「加强检验」能解决的</h3>
+      <p class="fs-scene">客户质量工程师发来 SCAR：「高速 Eth 丢包上升」。产线经理提议「FCT 加严全检」。MBB 把邮件投屏：问题陈述里写着「降低不良」——没有基线%、没有批次窗、没有工站号。</p>
+      <div class="fs-dialogue"><div class="fs-dialogue-line"><span class="fs-who">产线经理</span><span class="fs-line">加 2 台 FCT 重测不就行了？</span></div><div class="fs-dialogue-line"><span class="fs-who">MBB</span><span class="fs-line">重测是掩盖，不是 Define；先写清 Eth 一次通过率从多少到多少。</span></div><div class="fs-dialogue-line"><span class="fs-who">BB 学员</span><span class="fs-line">那离线烧录 Checksum 要进 Charter 吗？</span></div><div class="fs-dialogue-line"><span class="fs-who">MBB</span><span class="fs-line">必须进——软件版本是 CTQ，不是附件。</span></div></div>
+    </div>
+
+    <div class="fs-panel" id="fs-panel-sigma" role="tabpanel" hidden>
+      <p class="fs-sigma">**Define** 的核心是 **可测量问题陈述 + 范围边界**。汽车电子 SCAR 要写明四段工艺（离线烧录/SMT/手插/装配/FCT），排除整车路试。CTQ 树把 VOC「感知可靠」拆到 Eth%、Checksum、Profile#——后面 Measure/Analyze 才有合法数据表。</p>
+      <div class="fs-tools"><span class="fs-tool-tag">项目章程</span><span class="fs-tool-tag">CTQ 树</span><span class="fs-tool-tag">SIPOC 边界</span></div>
+      <div class="fs-pitfall"><strong>典型踩坑</strong> — 用对策当问题（「加强烧录管理」）— 阶段门应 No-Go。</div>
+    </div>
+
+    <div class="fs-panel" id="fs-panel-apply" role="tabpanel" hidden>
+      <div class="fs-apply-box">
+        <strong>现在就做</strong>
+        <p>用 1 句话重写问题陈述：含指标、时间窗、FCT-05、不含对策。</p>
+      </div>
+      <p class="fs-fun"><span class="fs-fun-ico">💡</span> Champion 最爱听：**「从 99.2% 到 97.1%，20 批，FCT-05。」**</p>
+      <p style="margin-top:0.75rem;font-size:0.88rem;color:var(--muted)">完成致用行动后，前往 <a href="#sec-e">E 课堂练习</a> 或 <a href="#sec-f">F 作业提交</a> 巩固。</p>
+    </div>
   </article>
 
       <article class="card pro" id="sec-c">
@@ -396,6 +435,7 @@
   <script src="../js/interactive-learning-core.js"></script>
   <script src="../js/homework-grader.js" defer></script>
   <script src="../js/interactive-learning.js" defer></script>
+  <script src="../js/factory-scenario.js" defer></script>
   <script src="../js/self-assessment.js" defer></script>
   <script src="../js/c2-module-checklist.js" defer></script>
   <script src="../js/academy.js" defer></script>

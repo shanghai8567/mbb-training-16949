@@ -1,0 +1,209 @@
+/* 工厂实景 · 六西格玛致用课堂 */
+.factory-scenario {
+  border-left: 4px solid var(--gold, #e8c547);
+  background: linear-gradient(
+    135deg,
+    rgba(232, 197, 71, 0.06) 0%,
+    var(--surface-solid, #121c30) 45%
+  );
+}
+
+.factory-scenario .fs-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.65rem;
+}
+
+.fs-product-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+.fs-product-tag,
+.fs-tool-tag {
+  font-size: 0.72rem;
+  padding: 0.12rem 0.45rem;
+  border-radius: 4px;
+  background: var(--gold-dim, rgba(232, 197, 71, 0.12));
+  color: var(--bb-gold, var(--gold));
+  border: 1px solid rgba(232, 197, 71, 0.25);
+}
+
+.fs-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+.fs-tab {
+  font-size: 0.82rem;
+  padding: 0.45rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--border, rgba(120, 160, 220, 0.2));
+  background: transparent;
+  color: var(--muted, #8fa3c4);
+  cursor: pointer;
+}
+
+.fs-tab:hover,
+.fs-tab.is-active {
+  border-color: var(--gold, #e8c547);
+  color: var(--text, #f0f4fc);
+  background: var(--gold-dim, rgba(232, 197, 71, 0.12));
+}
+
+.fs-panel {
+  animation: fs-fade 0.25s ease;
+}
+
+.fs-panel[hidden] {
+  display: none !important;
+}
+
+@keyframes fs-fade {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fs-story-title {
+  font-size: 1.1rem;
+  color: var(--gold, #e8c547);
+  margin: 0 0 0.65rem;
+}
+
+.fs-scene {
+  line-height: 1.65;
+  font-size: 0.95rem;
+}
+
+.fs-dialogue {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px dashed var(--border, rgba(120, 160, 220, 0.2));
+}
+
+.fs-dialogue-line {
+  margin: 0.5rem 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem 0.75rem;
+  align-items: start;
+}
+
+.fs-who {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent, #00e5b8);
+  white-space: nowrap;
+}
+
+.fs-line {
+  font-size: 0.88rem;
+  color: var(--text, #f0f4fc);
+}
+
+.fs-sigma {
+  line-height: 1.65;
+}
+
+.fs-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 1rem 0;
+}
+
+.fs-pitfall {
+  padding: 0.65rem 0.85rem;
+  border-radius: 8px;
+  background: rgba(255, 107, 138, 0.1);
+  border-left: 3px solid var(--coral, #ff6b8a);
+  font-size: 0.9rem;
+}
+
+.fs-apply-box {
+  padding: 1rem 1.15rem;
+  border-radius: 10px;
+  background: var(--accent-dim, rgba(0, 229, 184, 0.1));
+  border: 1px solid var(--border-hover, rgba(0, 212, 170, 0.35));
+}
+
+.fs-apply-box strong {
+  display: block;
+  color: var(--accent, #00e5b8);
+  margin-bottom: 0.35rem;
+}
+
+.fs-fun {
+  margin-top: 1rem;
+  font-size: 0.92rem;
+  color: var(--muted, #8fa3c4);
+}
+
+.fs-fun-ico {
+  margin-right: 0.25rem;
+}
+
+/* 场景总览 hub */
+.fs-hub-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.fs-hub-card {
+  display: block;
+  padding: 1rem 1.1rem;
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid var(--border, rgba(120, 160, 220, 0.15));
+  background: var(--surface-solid, #121c30);
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.fs-hub-card:hover {
+  border-color: var(--gold, #e8c547);
+  transform: translateY(-2px);
+}
+
+.fs-hub-day {
+  font-size: 0.72rem;
+  color: var(--accent, #00e5b8);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.fs-hub-card strong {
+  display: block;
+  margin: 0.35rem 0;
+  font-size: 0.95rem;
+  color: var(--text, #f0f4fc);
+}
+
+.fs-hub-station {
+  font-size: 0.78rem;
+  color: var(--muted, #8fa3c4);
+}
+
+@media print {
+  .fs-tabs {
+    display: none;
+  }
+  .fs-panel[hidden] {
+    display: block !important;
+  }
+}

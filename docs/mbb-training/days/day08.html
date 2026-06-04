@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="../css/premium.css" />
   <link rel="stylesheet" href="../css/print-light.css" media="print" />
   <link rel="stylesheet" href="../css/interactive-learning.css" />
+  <link rel="stylesheet" href="../css/factory-scenario.css" />
   <script src="../js/course.js" defer></script>
   <script src="../js/theme.js" defer></script>
   <script src="../js/brand.js" defer></script>
@@ -72,7 +73,9 @@
       <a href="#sec-f">F 课后作业</a>
       <a href="#sec-g">G 客观自测</a>
       <a href="#sec-h">H 能力自评</a>
+      <a href="#sec-factory">🏭 工厂实景</a>
       <div class="sb-title" style="margin-top:1rem">参考资料</div>
+      <a href="../reference/factory-floor-lab.html">场景总览</a>
       <a href="../reference/glossary.html">术语表</a>
       <a href="../reference/sigma-table.html">σ · DPMO</a>
       <a href="../reference/automotive-iatf.html">汽车 IATF 专题</a>
@@ -132,6 +135,42 @@
     <ul class="obj-list"><li>离线烧录@SMT前：SOC 镜像错版 — 探测度 2（Checksum）</li><li>SMT：U12 空洞 — 关联 Profile#、AOI、AXI</li><li>手插：DCU-B 继电器浮高 — 通断检</li><li>FCT：禁止用重测掩盖 SMT/离线烧录问题</li></ul>
     
     <p class="exam-align-hint">▼ <strong>G 客观题</strong>与 <strong>F 作业</strong>仅考核本节要点（车身 FCT-04 / ADAS BGA·FCT-05）</p>
+  </article>
+
+      <article class="card pro factory-scenario" id="sec-factory" data-factory-day="8">
+    <h2><span class="section-num">🏭</span>工厂实景 · 六西格玛致用课堂</h2>
+    <p class="fs-meta">
+      <span class="tag auto">Improve · PFMEA · 探测度</span>
+      <span class="tag gold">PFMEA 墙贴 · SMT·X-Ray 联合工段</span>
+    </p>
+    <div class="fs-product-row"><span class="fs-product-tag">ADAS DCU-A</span></div>
+
+    <div class="fs-tabs" role="tablist" aria-label="场景学习模式">
+      <button type="button" class="fs-tab is-active" data-fs-panel="scene" role="tab" aria-selected="true">① 现场故事</button>
+      <button type="button" class="fs-tab" data-fs-panel="sigma" role="tab">② 黑带解析</button>
+      <button type="button" class="fs-tab" data-fs-panel="apply" role="tab">③ 30 秒致用</button>
+    </div>
+
+    <div class="fs-panel is-active" id="fs-panel-scene" role="tabpanel">
+      <h3 class="fs-story-title">PFMEA 里的 U12：空洞 RPN 与探测度</h3>
+      <p class="fs-scene">团队把 RPN 从 180 降到 120——全靠调低 O 值。MBB 问：「Checksum 探测度变了吗？」沉默。正确动作：离线烧录 100% 比对、X-Ray SL 全检写进 **探测度 2**。</p>
+      <div class="fs-dialogue"><div class="fs-dialogue-line"><span class="fs-who">BB</span><span class="fs-line">O 值下调 RPN 就安全了。</span></div><div class="fs-dialogue-line"><span class="fs-who">MBB</span><span class="fs-line">问探测度：现场能不能 100% 拦住错版？</span></div></div>
+    </div>
+
+    <div class="fs-panel" id="fs-panel-sigma" role="tabpanel" hidden>
+      <p class="fs-sigma">**PFMEA** 按工艺段分行：离线烧录错版 S 高、U12 空洞 S 高、车身继电器浮高独立行。**探测度** 必须对应实物控制（Checksum、X-Ray、FCT 探针），不是「加强检验」口号。</p>
+      <div class="fs-tools"><span class="fs-tool-tag">PFMEA</span><span class="fs-tool-tag">RPN</span><span class="fs-tool-tag">探测度/发生度/严重度</span></div>
+      <div class="fs-pitfall"><strong>典型踩坑</strong> — 仅降 O 值不加强探测 —— 审计红灯。</div>
+    </div>
+
+    <div class="fs-panel" id="fs-panel-apply" role="tabpanel" hidden>
+      <div class="fs-apply-box">
+        <strong>现在就做</strong>
+        <p>写 1 行 PFMEA：ADAS 离线烧录错版，含 S/O/D 各 1 词理由。</p>
+      </div>
+      <p class="fs-fun"><span class="fs-fun-ico">💡</span> RPN 不是化妆：**数字小了，探测得真。**</p>
+      <p style="margin-top:0.75rem;font-size:0.88rem;color:var(--muted)">完成致用行动后，前往 <a href="#sec-e">E 课堂练习</a> 或 <a href="#sec-f">F 作业提交</a> 巩固。</p>
+    </div>
   </article>
 
       <article class="card pro" id="sec-c">
@@ -389,6 +428,7 @@
   <script src="../js/interactive-learning-core.js"></script>
   <script src="../js/homework-grader.js" defer></script>
   <script src="../js/interactive-learning.js" defer></script>
+  <script src="../js/factory-scenario.js" defer></script>
   <script src="../js/self-assessment.js" defer></script>
   <script src="../js/c2-module-checklist.js" defer></script>
   <script src="../js/academy.js" defer></script>

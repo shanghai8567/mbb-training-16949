@@ -27,6 +27,7 @@
     "sec-f",
     "sec-g",
     "sec-h",
+    "sec-factory",
   ];
 
   const SECTION_LABELS = {
@@ -41,6 +42,7 @@
     "sec-f": "F 作业",
     "sec-g": "G 自测",
     "sec-h": "H 自评",
+    "sec-factory": "🏭 工厂实景",
   };
 
   function loadAllProgress() {

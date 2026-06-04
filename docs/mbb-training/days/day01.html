@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="../css/premium.css" />
   <link rel="stylesheet" href="../css/print-light.css" media="print" />
   <link rel="stylesheet" href="../css/interactive-learning.css" />
+  <link rel="stylesheet" href="../css/factory-scenario.css" />
   <script src="../js/course.js" defer></script>
   <script src="../js/theme.js" defer></script>
   <script src="../js/brand.js" defer></script>
@@ -72,7 +73,9 @@
       <a href="#sec-f">F 课后作业</a>
       <a href="#sec-g">G 客观自测</a>
       <a href="#sec-h">H 能力自评</a>
+      <a href="#sec-factory">🏭 工厂实景</a>
       <div class="sb-title" style="margin-top:1rem">参考资料</div>
+      <a href="../reference/factory-floor-lab.html">场景总览</a>
       <a href="../reference/glossary.html">术语表</a>
       <a href="../reference/sigma-table.html">σ · DPMO</a>
       <a href="../reference/automotive-iatf.html">汽车 IATF 专题</a>
@@ -135,6 +138,42 @@
     <p style="font-size:0.85rem;color:var(--muted);margin-top:0.5rem">全产品共用：SL 100% 全检 → MP 抽检（Analyze 须标切换日）</p>
   </div>
     <p class="exam-align-hint">▼ <strong>G 客观题</strong>与 <strong>F 作业</strong>仅考核本节要点（车身 FCT-04 / ADAS BGA·FCT-05）</p>
+  </article>
+
+      <article class="card pro factory-scenario" id="sec-factory" data-factory-day="1">
+    <h2><span class="section-num">🏭</span>工厂实景 · 六西格玛致用课堂</h2>
+    <p class="fs-meta">
+      <span class="tag auto">战略 · σ 语言 · 工艺段地图</span>
+      <span class="tag gold">离线烧录区 · 烧录器 #7 · SMT 入口门禁</span>
+    </p>
+    <div class="fs-product-row"><span class="fs-product-tag">ADAS 域控 DCU-A</span><span class="fs-product-tag">车身域控 DCU-B</span></div>
+
+    <div class="fs-tabs" role="tablist" aria-label="场景学习模式">
+      <button type="button" class="fs-tab is-active" data-fs-panel="scene" role="tab" aria-selected="true">① 现场故事</button>
+      <button type="button" class="fs-tab" data-fs-panel="sigma" role="tab">② 黑带解析</button>
+      <button type="button" class="fs-tab" data-fs-panel="apply" role="tab">③ 30 秒致用</button>
+    </div>
+
+    <div class="fs-panel is-active" id="fs-panel-scene" role="tabpanel">
+      <h3 class="fs-story-title">夜班铃声：错版 SOC 还没贴片就被拦下</h3>
+      <p class="fs-scene">凌晨 2:17，SMT 线边屏幕弹出红色拦截：Batch#ADAS-8842 的 SOC_FW 与 CSR 清单不一致。烧录员老王松了口气——要是这道门失效，U12 贴完才发现，整批报废加上 OEM 停线索赔，故事就变成「事后英雄」而不是「事前黑带」。</p>
+      <div class="fs-dialogue"><div class="fs-dialogue-line"><span class="fs-who">烧录员老王</span><span class="fs-line">Checksum 红灯我能理解，但 HU 那批为啥也卡住？</span></div><div class="fs-dialogue-line"><span class="fs-who">MBB 张工</span><span class="fs-line">因为五产品共用烧录器≠共用程序；混 Profile 的统计会骗过你。</span></div><div class="fs-dialogue-line"><span class="fs-who">Champion 李总</span><span class="fs-line">我要的是：哪段工艺省钱、哪段省钱但埋雷——用 DPMO 说。</span></div></div>
+    </div>
+
+    <div class="fs-panel" id="fs-panel-sigma" role="tabpanel" hidden>
+      <p class="fs-sigma">六西格玛在这里不是「喊口号降不良」，而是 **用 σ/DPMO 统一语言**，把 **离线烧录 → SMT → X-Ray → FCT** 拆成可度量 CTQ。MBB 的价值是画清「产品×工艺段」地图：错版是 **Define 前就该关掉的门**；SPI Cpk 再漂亮，也替代不了 Eth FCT 的 p 图。</p>
+      <div class="fs-tools"><span class="fs-tool-tag">SIPOC（范围）</span><span class="fs-tool-tag">DPMO/ppm（战略沟通）</span><span class="fs-tool-tag">五产品 routing 表</span></div>
+      <div class="fs-pitfall"><strong>典型踩坑</strong> — 把五类产品 FCT 良率合并汇报 —— Champion 会听到「假繁荣」。</div>
+    </div>
+
+    <div class="fs-panel" id="fs-panel-apply" role="tabpanel" hidden>
+      <div class="fs-apply-box">
+        <strong>现在就做</strong>
+        <p>打开 routing 表：用 3 种颜色标 ADAS/车身/HU 的 FCT 工站号；向同事用 1 句话解释「为何离线烧录必须在 SMT 前」。</p>
+      </div>
+      <p class="fs-fun"><span class="fs-fun-ico">💡</span> 记住口诀：**「烧录不对，后面全废；分段统计，MBB 不背锅。」**</p>
+      <p style="margin-top:0.75rem;font-size:0.88rem;color:var(--muted)">完成致用行动后，前往 <a href="#sec-e">E 课堂练习</a> 或 <a href="#sec-f">F 作业提交</a> 巩固。</p>
+    </div>
   </article>
 
       <article class="card pro" id="sec-c">
@@ -399,6 +438,7 @@
   <script src="../js/interactive-learning-core.js"></script>
   <script src="../js/homework-grader.js" defer></script>
   <script src="../js/interactive-learning.js" defer></script>
+  <script src="../js/factory-scenario.js" defer></script>
   <script src="../js/self-assessment.js" defer></script>
   <script src="../js/c2-module-checklist.js" defer></script>
   <script src="../js/academy.js" defer></script>

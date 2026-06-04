@@ -18,6 +18,8 @@ const { DAY_ENRICHMENT, renderDeepDiveHtml } = require("./automotive-day-enrichm
 const { renderTopbarBrand, renderPrintHeader, renderThemeSwitcher } = require("./brand-html");
 const { renderC2Lab, getC2LabForDay } = require("./c2-lab-specs");
 const { renderSelfAssessmentSection } = require("./render-self-assessment");
+const { renderFactoryScenarioHtml } = require("./render-factory-scenario");
+const { renderFactoryHubCards } = require("./render-factory-scenario");
 
 const PACKAGE_VERSION = "3.0.0-beta.1";
 
@@ -565,6 +567,7 @@ function renderDay(d) {
   const quizHtml = renderGradableQuiz(d.n);
   const homeworkFormHtml = renderHomeworkForm(d.n, d.homework);
   const deepDiveHtml = renderDeepDiveHtml(DAY_ENRICHMENT[d.n], esc);
+  const factoryHtml = renderFactoryScenarioHtml(d.n, esc);
   const enrichFocus = d.enrichFocus ? `<span class="tag auto">本课主线：${esc(d.enrichFocus)}</span>` : "";
   const objHtml = d.objectives.map((o) => `<li>${esc(o)}</li>`).join("");
   const exHtml = renderExerciseSection(d.n, d.exercises);
@@ -617,6 +620,7 @@ ${THEME_HEAD}
   <link rel="stylesheet" href="../css/premium.css" />
   <link rel="stylesheet" href="../css/print-light.css" media="print" />
   <link rel="stylesheet" href="../css/interactive-learning.css" />
+  <link rel="stylesheet" href="../css/factory-scenario.css" />
   <script src="../js/course.js" defer></script>
   <script src="../js/theme.js" defer></script>
   <script src="../js/brand.js" defer></script>
@@ -650,7 +654,9 @@ ${THEME_HEAD}
       <a href="#sec-f">F 课后作业</a>
       <a href="#sec-g">G 客观自测</a>
       <a href="#sec-h">H 能力自评</a>
+      <a href="#sec-factory">🏭 工厂实景</a>
       <div class="sb-title" style="margin-top:1rem">参考资料</div>
+      <a href="../reference/factory-floor-lab.html">场景总览</a>
       <a href="../reference/glossary.html">术语表</a>
       <a href="../reference/sigma-table.html">σ · DPMO</a>
       <a href="../reference/automotive-iatf.html">汽车 IATF 专题</a>
@@ -693,6 +699,8 @@ ${THEME_HEAD}
       </article>
 
       ${deepDiveHtml}
+
+      ${factoryHtml}
 
       <article class="card pro" id="sec-c">
         <h2><span class="section-num">C</span>工具清单与适用边界</h2>
@@ -760,6 +768,7 @@ ${THEME_HEAD}
   <script src="../js/interactive-learning-core.js"></script>
   <script src="../js/homework-grader.js" defer></script>
   <script src="../js/interactive-learning.js" defer></script>
+  <script src="../js/factory-scenario.js" defer></script>
   <script src="../js/self-assessment.js" defer></script>
   <script src="../js/c2-module-checklist.js" defer></script>
   <script src="../js/academy.js" defer></script>
@@ -773,3 +782,52 @@ for (const d of DAYS) {
   console.log("built", out);
 }
 console.log("14 days OK");
+
+const hubHtml = `<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>工厂实景实验室 — 14 模块场景总览</title>
+  <script src="../js/theme-init.js"></script>
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/pro.css" />
+  <link rel="stylesheet" href="../css/factory-scenario.css" />
+  <link rel="stylesheet" href="../css/brand.css" />
+  <script src="../js/theme.js" defer></script>
+  <script src="../js/brand.js" defer></script>
+</head>
+<body>
+  <div class="page-bg"></div>
+  <header class="topbar">
+    <a class="brand" href="../index.html">
+      <span class="belt-mark fallback-mark">σ</span>
+      <span class="brand-text-wrap">
+        <span class="brand-org-name">六西格玛黑带学院</span>
+        <span class="brand-org-sub">工厂实景实验室</span>
+      </span>
+    </a>
+    <nav>
+      <a class="btn" href="../index.html">课程总览</a>
+      <a class="btn btn-primary" href="../days/day01.html#sec-factory">从模块 01 开始</a>
+    </nav>
+  </header>
+  <div class="wrap">
+    <div class="card pro">
+      <h1 style="margin-top:0">🏭 汽车电子 EMS 工厂实景实验室</h1>
+      <p style="color:var(--muted);max-width:720px">
+        每条场景 = <strong>产线故事</strong> + <strong>六西格玛解析</strong> + <strong>30 秒致用</strong>，点击进入对应模块。
+      </p>
+      <div class="fs-hub-grid">${renderFactoryHubCards(esc)}</div>
+    </div>
+  </div>
+  <footer class="footer"><a href="../index.html">返回课程总览</a></footer>
+</body>
+</html>`;
+fs.writeFileSync(
+  path.join(__dirname, "../docs/mbb-training/reference/factory-floor-lab.html"),
+  hubHtml,
+  "utf8"
+);
+console.log("factory-floor-lab.html OK");

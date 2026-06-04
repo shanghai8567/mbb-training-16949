@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="../css/premium.css" />
   <link rel="stylesheet" href="../css/print-light.css" media="print" />
   <link rel="stylesheet" href="../css/interactive-learning.css" />
+  <link rel="stylesheet" href="../css/factory-scenario.css" />
   <script src="../js/course.js" defer></script>
   <script src="../js/theme.js" defer></script>
   <script src="../js/brand.js" defer></script>
@@ -72,7 +73,9 @@
       <a href="#sec-f">F 课后作业</a>
       <a href="#sec-g">G 客观自测</a>
       <a href="#sec-h">H 能力自评</a>
+      <a href="#sec-factory">🏭 工厂实景</a>
       <div class="sb-title" style="margin-top:1rem">参考资料</div>
+      <a href="../reference/factory-floor-lab.html">场景总览</a>
       <a href="../reference/glossary.html">术语表</a>
       <a href="../reference/sigma-table.html">σ · DPMO</a>
       <a href="../reference/automotive-iatf.html">汽车 IATF 专题</a>
@@ -132,6 +135,42 @@
     <ul class="obj-list"><li>SMT：SPI#3 体积 — 交叉型 GRR，目标 %GRR&lt;10%</li><li>离线烧录：Checksum 比对 — 研究再现性（不同烧录器#）</li><li>BGA：AOI 空洞 vs AXI#2 金标准一致性</li><li>测试：FCT 探针 — 接触电阻/误测率</li></ul>
     
     <p class="exam-align-hint">▼ <strong>G 客观题</strong>与 <strong>F 作业</strong>仅考核本节要点（车身 FCT-04 / ADAS BGA·FCT-05）</p>
+  </article>
+
+      <article class="card pro factory-scenario" id="sec-factory" data-factory-day="4">
+    <h2><span class="section-num">🏭</span>工厂实景 · 六西格玛致用课堂</h2>
+    <p class="fs-meta">
+      <span class="tag auto">Measure · MSA · Gage R&amp;R</span>
+      <span class="tag gold">MSA 室 · SPI 测厚仪 · ADAS 钢网库</span>
+    </p>
+    <div class="fs-product-row"><span class="fs-product-tag">ADAS DCU-A</span><span class="fs-product-tag">座舱 DCU-C</span></div>
+
+    <div class="fs-tabs" role="tablist" aria-label="场景学习模式">
+      <button type="button" class="fs-tab is-active" data-fs-panel="scene" role="tab" aria-selected="true">① 现场故事</button>
+      <button type="button" class="fs-tab" data-fs-panel="sigma" role="tab">② 黑带解析</button>
+      <button type="button" class="fs-tab" data-fs-panel="apply" role="tab">③ 30 秒致用</button>
+    </div>
+
+    <div class="fs-panel is-active" id="fs-panel-scene" role="tabpanel">
+      <h3 class="fs-story-title">GRR=28% 的 SPI，还能开控制限吗？</h3>
+      <p class="fs-scene">三台 SPI 比对，%GRR=28%。工艺想「先上线，以后再改善」。MBB 翻开 AIAG MSA-4 判据：&gt;30% 不可接受，10–30% 边缘。「边缘不是通行证，是改进项目。」</p>
+      <div class="fs-dialogue"><div class="fs-dialogue-line"><span class="fs-who">工艺工程师</span><span class="fs-line">28% 差不多能用吧？</span></div><div class="fs-dialogue-line"><span class="fs-who">MBB</span><span class="fs-line">边缘区要立项改进，不是口头放行。</span></div></div>
+    </div>
+
+    <div class="fs-panel" id="fs-panel-sigma" role="tabpanel" hidden>
+      <p class="fs-sigma">**MSA 是 Measure 阶段的门禁**：%GRR、ndc、偏倚要进报告。汽车电子常见陷阱：座舱与 ADAS 共用测点却不评审；SL 全检期数据混入 MP 抽检期。MBB 签字的条件是：**测量系统合格 + 分层数据**。</p>
+      <div class="fs-tools"><span class="fs-tool-tag">Gage R&amp;R</span><span class="fs-tool-tag">ndc</span><span class="fs-tool-tag">分层（SL/MP）</span></div>
+      <div class="fs-pitfall"><strong>典型踩坑</strong> — MSA 不合格仍报 Cpk 达标对外汇报。</div>
+    </div>
+
+    <div class="fs-panel" id="fs-panel-apply" role="tabpanel" hidden>
+      <div class="fs-apply-box">
+        <strong>现在就做</strong>
+        <p>写下：若 GRR=28%，你建议「可用/改进/停用」哪一项及 1 条理由。</p>
+      </div>
+      <p class="fs-fun"><span class="fs-fun-ico">💡</span> GRR 像秤：**不准的秤，越称越冤。**</p>
+      <p style="margin-top:0.75rem;font-size:0.88rem;color:var(--muted)">完成致用行动后，前往 <a href="#sec-e">E 课堂练习</a> 或 <a href="#sec-f">F 作业提交</a> 巩固。</p>
+    </div>
   </article>
 
       <article class="card pro" id="sec-c">
@@ -396,6 +435,7 @@
   <script src="../js/interactive-learning-core.js"></script>
   <script src="../js/homework-grader.js" defer></script>
   <script src="../js/interactive-learning.js" defer></script>
+  <script src="../js/factory-scenario.js" defer></script>
   <script src="../js/self-assessment.js" defer></script>
   <script src="../js/c2-module-checklist.js" defer></script>
   <script src="../js/academy.js" defer></script>

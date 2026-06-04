@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="../css/premium.css" />
   <link rel="stylesheet" href="../css/print-light.css" media="print" />
   <link rel="stylesheet" href="../css/interactive-learning.css" />
+  <link rel="stylesheet" href="../css/factory-scenario.css" />
   <script src="../js/course.js" defer></script>
   <script src="../js/theme.js" defer></script>
   <script src="../js/brand.js" defer></script>
@@ -72,7 +73,9 @@
       <a href="#sec-f">F 课后作业</a>
       <a href="#sec-g">G 客观自测</a>
       <a href="#sec-h">H 能力自评</a>
+      <a href="#sec-factory">🏭 工厂实景</a>
       <div class="sb-title" style="margin-top:1rem">参考资料</div>
+      <a href="../reference/factory-floor-lab.html">场景总览</a>
       <a href="../reference/glossary.html">术语表</a>
       <a href="../reference/sigma-table.html">σ · DPMO</a>
       <a href="../reference/automotive-iatf.html">汽车 IATF 专题</a>
@@ -132,6 +135,42 @@
     <ul class="obj-list"><li>H0：离线烧录版本与 FCT 失败独立 — 用列联表/卡方</li><li>两样本：SL 期 vs MP 期 U12 空洞率 — 2 样本 t 或 Mann-Whitney</li><li>禁止：合并 DCU-B 车身 FCT 数据</li></ul>
     
     <p class="exam-align-hint">▼ <strong>G 客观题</strong>与 <strong>F 作业</strong>仅考核本节要点（车身 FCT-04 / ADAS BGA·FCT-05）</p>
+  </article>
+
+      <article class="card pro factory-scenario" id="sec-factory" data-factory-day="5">
+    <h2><span class="section-num">🏭</span>工厂实景 · 六西格玛致用课堂</h2>
+    <p class="fs-meta">
+      <span class="tag auto">Analyze · 假设检验 · 缺陷矩阵</span>
+      <span class="tag gold">Analyze 战情室 · X-Ray SL 全检区</span>
+    </p>
+    <div class="fs-product-row"><span class="fs-product-tag">ADAS DCU-A</span></div>
+
+    <div class="fs-tabs" role="tablist" aria-label="场景学习模式">
+      <button type="button" class="fs-tab is-active" data-fs-panel="scene" role="tab" aria-selected="true">① 现场故事</button>
+      <button type="button" class="fs-tab" data-fs-panel="sigma" role="tab">② 黑带解析</button>
+      <button type="button" class="fs-tab" data-fs-panel="apply" role="tab">③ 30 秒致用</button>
+    </div>
+
+    <div class="fs-panel is-active" id="fs-panel-scene" role="tabpanel">
+      <h3 class="fs-story-title">Eth 失败：是错版批次，还是炉温 Profile？</h3>
+      <p class="fs-scene">Pareto 显示 Eth_FAIL 占 62%。BB 想「炉温调高试试」。MBB 拉出列联表：Checksum_FAIL 与 Eth_FAIL 在错版批次高度相关；炉温只在 SL 切换后次要。</p>
+      <div class="fs-dialogue"><div class="fs-dialogue-line"><span class="fs-who">BB</span><span class="fs-line">我把炉温 +5℃ 试产？</span></div><div class="fs-dialogue-line"><span class="fs-who">MBB</span><span class="fs-line">先证明不是错版批次——列联表比直觉靠谱。</span></div></div>
+    </div>
+
+    <div class="fs-panel" id="fs-panel-sigma" role="tabpanel" hidden>
+      <p class="fs-sigma">**Analyze** 用 **缺陷-过程矩阵** 链到离线烧录/SMT/X-Ray/FCT。假设检验前检查前提；**统计显著≠业务显著** 要讲清效应量。汽车电子切忌：混入 HU 的 FCT-03 数据讲 ADAS 故事。</p>
+      <div class="fs-tools"><span class="fs-tool-tag">Pareto</span><span class="fs-tool-tag">列联表/卡方</span><span class="fs-tool-tag">5Why + 可验证根因</span></div>
+      <div class="fs-pitfall"><strong>典型踩坑</strong> — 观察性相关直接改量产 Profile，无 DOE 确认。</div>
+    </div>
+
+    <div class="fs-panel" id="fs-panel-apply" role="tabpanel" hidden>
+      <div class="fs-apply-box">
+        <strong>现在就做</strong>
+        <p>画 3×3 缺陷矩阵草图：行=失效模式，列=四段工艺。</p>
+      </div>
+      <p class="fs-fun"><span class="fs-fun-ico">💡</span> MBB 口头禅：**「先分层，再回归；先版本，再炉温。」**</p>
+      <p style="margin-top:0.75rem;font-size:0.88rem;color:var(--muted)">完成致用行动后，前往 <a href="#sec-e">E 课堂练习</a> 或 <a href="#sec-f">F 作业提交</a> 巩固。</p>
+    </div>
   </article>
 
       <article class="card pro" id="sec-c">
@@ -396,6 +435,7 @@
   <script src="../js/interactive-learning-core.js"></script>
   <script src="../js/homework-grader.js" defer></script>
   <script src="../js/interactive-learning.js" defer></script>
+  <script src="../js/factory-scenario.js" defer></script>
   <script src="../js/self-assessment.js" defer></script>
   <script src="../js/c2-module-checklist.js" defer></script>
   <script src="../js/academy.js" defer></script>

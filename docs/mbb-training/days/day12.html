@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="../css/premium.css" />
   <link rel="stylesheet" href="../css/print-light.css" media="print" />
   <link rel="stylesheet" href="../css/interactive-learning.css" />
+  <link rel="stylesheet" href="../css/factory-scenario.css" />
   <script src="../js/course.js" defer></script>
   <script src="../js/theme.js" defer></script>
   <script src="../js/brand.js" defer></script>
@@ -72,7 +73,9 @@
       <a href="#sec-f">F 课后作业</a>
       <a href="#sec-g">G 客观自测</a>
       <a href="#sec-h">H 能力自评</a>
+      <a href="#sec-factory">🏭 工厂实景</a>
       <div class="sb-title" style="margin-top:1rem">参考资料</div>
+      <a href="../reference/factory-floor-lab.html">场景总览</a>
       <a href="../reference/glossary.html">术语表</a>
       <a href="../reference/sigma-table.html">σ · DPMO</a>
       <a href="../reference/automotive-iatf.html">汽车 IATF 专题</a>
@@ -132,6 +135,42 @@
     <ul class="obj-list"><li>模板 A：离线烧录错版 p 图</li><li>模板 B：SPI+空洞</li><li>模板 C：车身手插</li><li>模板 D：ADAS FCT Eth</li></ul>
     
     <p class="exam-align-hint">▼ <strong>G 客观题</strong>与 <strong>F 作业</strong>仅考核本节要点（车身 FCT-04 / ADAS BGA·FCT-05）</p>
+  </article>
+
+      <article class="card pro factory-scenario" id="sec-factory" data-factory-day="12">
+    <h2><span class="section-num">🏭</span>工厂实景 · 六西格玛致用课堂</h2>
+    <p class="fs-meta">
+      <span class="tag auto">部署 · Kotter · 模板复制</span>
+      <span class="tag gold">集团 EMS 培训室 · 四模板看板</span>
+    </p>
+    <div class="fs-product-row"><span class="fs-product-tag">HU</span><span class="fs-product-tag">IC</span><span class="fs-product-tag">DCU-C</span><span class="fs-product-tag">DCU-A</span><span class="fs-product-tag">DCU-B</span></div>
+
+    <div class="fs-tabs" role="tablist" aria-label="场景学习模式">
+      <button type="button" class="fs-tab is-active" data-fs-panel="scene" role="tab" aria-selected="true">① 现场故事</button>
+      <button type="button" class="fs-tab" data-fs-panel="sigma" role="tab">② 黑带解析</button>
+      <button type="button" class="fs-tab" data-fs-panel="apply" role="tab">③ 30 秒致用</button>
+    </div>
+
+    <div class="fs-panel is-active" id="fs-panel-scene" role="tabpanel">
+      <h3 class="fs-story-title">第一波复制：ADAS 模板能否拯救 HU 线？</h3>
+      <p class="fs-scene">总部要求 90 天复制「ADAS 空洞模板」到 HU。HU 班长抗议：「我们没有 U12 大 BGA！」MBB 调整：**先复制「分层 FCT + 烧录版本系统」，再复制「因子设置」。**</p>
+      <div class="fs-dialogue"><div class="fs-dialogue-line"><span class="fs-who">HU 班长</span><span class="fs-line">空洞模板对我们不适用！</span></div><div class="fs-dialogue-line"><span class="fs-who">MBB</span><span class="fs-line">先复制版本门禁和 FCT 分层，再谈 DOE 因子。</span></div></div>
+    </div>
+
+    <div class="fs-panel" id="fs-panel-sigma" role="tabpanel" hidden>
+      <p class="fs-sigma">**组织部署** 看复制率与 waves：Kotter/ADKAR 要配 **项目漏斗**。MBB 防止「工具先行无项目」；仪表 IC 线也要纳入第一波，否则数据孤岛。</p>
+      <div class="fs-tools"><span class="fs-tool-tag">Kotter 8 步</span><span class="fs-tool-tag">ADKAR</span><span class="fs-tool-tag">模板 A–D</span></div>
+      <div class="fs-pitfall"><strong>典型踩坑</strong> — 采购 Minitab 许可但没有项目支撑。</div>
+    </div>
+
+    <div class="fs-panel" id="fs-panel-apply" role="tabpanel" hidden>
+      <div class="fs-apply-box">
+        <strong>现在就做</strong>
+        <p>列出 1 个「可复制」项 + 1 个「不可直接复制」项及原因。</p>
+      </div>
+      <p class="fs-fun"><span class="fs-fun-ico">💡</span> 复制不是复印：**改页码，不改结论。**</p>
+      <p style="margin-top:0.75rem;font-size:0.88rem;color:var(--muted)">完成致用行动后，前往 <a href="#sec-e">E 课堂练习</a> 或 <a href="#sec-f">F 作业提交</a> 巩固。</p>
+    </div>
   </article>
 
       <article class="card pro" id="sec-c">
@@ -389,6 +428,7 @@
   <script src="../js/interactive-learning-core.js"></script>
   <script src="../js/homework-grader.js" defer></script>
   <script src="../js/interactive-learning.js" defer></script>
+  <script src="../js/factory-scenario.js" defer></script>
   <script src="../js/self-assessment.js" defer></script>
   <script src="../js/c2-module-checklist.js" defer></script>
   <script src="../js/academy.js" defer></script>

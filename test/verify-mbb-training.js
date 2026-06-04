@@ -75,6 +75,9 @@ const proFiles = [
   "js/interactive-learning-core.js",
   "js/interactive-learning.js",
   "css/interactive-learning.css",
+  "css/factory-scenario.css",
+  "js/factory-scenario.js",
+  "reference/factory-floor-lab.html",
   "reference/graduation-report.html",
   "ops/mcq-pilot-calibration.csv",
   "ops/mcq-blind-review-record.md",
@@ -152,6 +155,9 @@ for (let i = 1; i <= 14; i++) {
   if (html.includes("interactive-learning.js") && html.includes("interactive-learning-core.js"))
     ok(fn + " interactive learning UX");
   else bad(fn + " missing interactive learning scripts");
+  if (html.includes("sec-factory") && html.includes("factory-scenario"))
+    ok(fn + " factory floor scenario section");
+  else bad(fn + " missing factory scenario section");
   if (i === 1 && html.includes("product-matrix-full")) ok(fn + " B+ full product matrix");
   if (html.includes('meta name="mbb-package-version"')) ok(fn + " package version meta");
   else bad(fn + " missing package version meta");
