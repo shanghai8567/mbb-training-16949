@@ -14,6 +14,7 @@ const scripts = [
   "verify-mbb-training.js",
   "upgrade-status.js",
   "c2-checklist.test.js",
+  "interactive-learning.test.js",
 ];
 
 let fail = 0;

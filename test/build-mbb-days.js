@@ -616,6 +616,7 @@ ${THEME_HEAD}
   <link rel="stylesheet" href="../css/brand.css" />
   <link rel="stylesheet" href="../css/premium.css" />
   <link rel="stylesheet" href="../css/print-light.css" media="print" />
+  <link rel="stylesheet" href="../css/interactive-learning.css" />
   <script src="../js/course.js" defer></script>
   <script src="../js/theme.js" defer></script>
   <script src="../js/brand.js" defer></script>
@@ -756,7 +757,9 @@ ${THEME_HEAD}
   </footer>
   <script type="application/json" id="hw-rubric-data">${rubricJson}</script>
   <script src="../js/homework-grader-core.js"></script>
+  <script src="../js/interactive-learning-core.js"></script>
   <script src="../js/homework-grader.js" defer></script>
+  <script src="../js/interactive-learning.js" defer></script>
   <script src="../js/self-assessment.js" defer></script>
   <script src="../js/c2-module-checklist.js" defer></script>
   <script src="../js/academy.js" defer></script>

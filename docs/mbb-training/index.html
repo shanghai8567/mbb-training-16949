@@ -14,7 +14,10 @@
   <link rel="stylesheet" href="css/premium.css" />
   <link rel="stylesheet" href="css/brand.css" />
   <link rel="stylesheet" href="css/print-light.css" media="print" />
+  <link rel="stylesheet" href="css/interactive-learning.css" />
   <script src="js/course.js" defer></script>
+  <script src="js/interactive-learning-core.js"></script>
+  <script src="js/interactive-learning.js" defer></script>
     <script src="js/theme.js" defer></script>
   <script src="js/brand.js" defer></script>
 </head>
@@ -122,6 +125,21 @@
         <a class="btn" href="templates/capstone-defense-checklist.html">答辩检查单</a>
         <a class="btn" href="templates/coaching-grow-rubric.html">GROW/Rubric</a>
         <a class="btn" href="MBB-RED-TEAM-CHECKLIST.md">红队清单</a>
+      </p>
+    </div>
+    <div class="card pro tip" id="il-resume-card" style="margin-bottom:1.25rem">
+      <h2 style="margin-top:0">交互式学习路径</h2>
+      <p style="font-size:0.9rem;color:var(--muted);margin:0 0 0.5rem">
+        每模块侧边栏显示<strong>章节进度环</strong>；滚动阅读自动打卡；G 节支持<strong>逐题即时反馈</strong>；E 节点击展开参考答案。
+      </p>
+      <div class="il-resume-stat">
+        <div class="il-stat-box"><strong id="il-avg-pct">0%</strong><span>全课程章节均完成度</span></div>
+        <div class="il-stat-box"><strong id="il-done-count">0 / 14</strong><span>已标记完成模块</span></div>
+        <div class="il-stat-box"><strong id="il-resume-module">模块 1</strong><span>建议续学</span></div>
+      </div>
+      <p style="margin-top:0.85rem">
+        <a class="btn btn-primary" id="il-resume-link" href="days/day01.html">继续学习 →</a>
+        <a class="btn" href="reference/homework-scores.html#dashboard">学习仪表盘</a>
       </p>
     </div>
     <div class="prompt-cta">

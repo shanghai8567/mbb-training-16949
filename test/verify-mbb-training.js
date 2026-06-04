@@ -72,6 +72,9 @@ const proFiles = [
   "js/self-assessment.js",
   "js/learning-dashboard.js",
   "js/c2-module-checklist.js",
+  "js/interactive-learning-core.js",
+  "js/interactive-learning.js",
+  "css/interactive-learning.css",
   "reference/graduation-report.html",
   "ops/mcq-pilot-calibration.csv",
   "ops/mcq-blind-review-record.md",
@@ -146,6 +149,9 @@ for (let i = 1; i <= 14; i++) {
   else bad(fn + " missing H self-assessment");
   if (html.includes("c2-done-cb")) ok(fn + " C2 per-module checkbox");
   else bad(fn + " missing C2 checkbox");
+  if (html.includes("interactive-learning.js") && html.includes("interactive-learning-core.js"))
+    ok(fn + " interactive learning UX");
+  else bad(fn + " missing interactive learning scripts");
   if (i === 1 && html.includes("product-matrix-full")) ok(fn + " B+ full product matrix");
   if (html.includes('meta name="mbb-package-version"')) ok(fn + " package version meta");
   else bad(fn + " missing package version meta");
