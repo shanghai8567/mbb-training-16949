@@ -8,7 +8,7 @@
 [![runtime](https://img.shields.io/badge/build-Node.js_≥18-339933?style=flat-square&logo=node.js&logoColor=white)](#开发与质量门禁)
 [![domain](https://img.shields.io/badge/domain-automotive_EMS_·_IATF_16949-c0392b?style=flat-square)](docs/mbb-training/reference/automotive-iatf.html)
 [![qa](https://img.shields.io/badge/QA-run--mbb--suite-success?style=flat-square)](#开发与质量门禁)
-[![repository](https://img.shields.io/badge/repository-private-181717?style=flat-square&logo=github)](https://github.com/shanghai8567/mbb-training-16949)
+[![repository](https://img.shields.io/badge/repository-public-181717?style=flat-square&logo=github)](https://github.com/shanghai8567/mbb-training-16949)
 
 **企业级离线培训资产包**：面向汽车电子 EMS 的 Master Black Belt（MBB）预备营，覆盖 14 个教学模块、可审计的三级评价路径、统计软件跟做 Lab，以及可本地部署的 HTML 课件与自动评分引擎。
 
