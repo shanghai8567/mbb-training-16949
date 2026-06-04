@@ -150,9 +150,9 @@ D11–D14：评价 + 创造（DFSS、部署、辅导、认证）
 
 ### 3.1 标准开课（汽车电子 EMS — 默认）
 ```
-行业：汽车电子 EMS | 四段工艺：离线@SMT前 / SMT·BGA / 手插 / 装配·FCT
+行业：汽车电子 EMS | 四段工艺：离线烧录@SMT前 / SMT·BGA / 手插 / 装配·FCT
 产品：IC/HU/座舱域控/车身域控(FCT-04)/ADAS域控(FCT-05) | 职位：质量/工艺 BB | 每日：3h
-顾客：【OEM CSR】| 主线：ADAS FCT↓ — 离线SOC错版 + U12空洞 + X-Ray SL→MP
+顾客：【OEM CSR】| 主线：ADAS FCT↓ — 离线烧录SOC错版 + U12空洞 + X-Ray SL→MP
 请执行 Day【N】：先讲 B+ 生产线对齐，再 G/F 自动考题（与当堂内容 1:1）。禁止五产品/两域控 FCT 混批。
 数据：offline-program / bga-aoi / spi-msa / fct-yield / xray-log。授课须带工艺段名词（Checksum、Profile#、Fail_code）。
 ```

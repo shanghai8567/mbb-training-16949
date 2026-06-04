@@ -119,7 +119,7 @@ function testEmptyTextCap() {
 function testTextWithKeywords() {
   const rubric = buildRubricForDay(2);
   const sample =
-    "ADAS 域控 Charter：问题陈述 Eth 一次通过率 97.1%，范围 sipoc 离线 smt fct champion ctq voc " +
+    "ADAS 域控 Charter：问题陈述 Eth 一次通过率 97.1%，范围 sipoc 离线烧录 smt fct champion ctq voc " +
     "效益 ppm 基线 msa 操作定义 显著 doe fmea 控制计划 pfmea 阶段门 故事板 mbb 教练 评审 工艺段".repeat(3);
   const textGrade = Core.gradeText(sample, rubric);
   ok("text: rich keywords scores higher", textGrade.textPercent >= 35);

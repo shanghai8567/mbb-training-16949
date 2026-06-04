@@ -95,10 +95,10 @@
       </header>
 
       <article class="card pro automotive" id="sec-auto">
-      <h2><span class="section-num">◎</span>汽车电子 EMS（五产品·离线/SMT/手插/装配）</h2>
+      <h2><span class="section-num">◎</span>汽车电子 EMS（五产品·离线烧录/SMT/手插/装配）</h2>
       <p><span class="tag auto">汽车制造</span> <strong>IATF：</strong>8.2 顾客输入 — 含软件交付物清单</p>
       <p><strong>AIAG：</strong>APQP Phase 1</p>
-      <p style="margin-top:0.75rem">SCAR：ADAS 域控量产 FCT 通过率下降；Suspect 链：离线 SOC 镜像版本混杂 + SMT BGA U12 空洞偏高；Charter 须列 4 工艺段范围。</p>
+      <p style="margin-top:0.75rem">SCAR：ADAS 域控量产 FCT 通过率下降；Suspect 链：离线烧录 SOC 镜像版本混杂 + SMT BGA U12 空洞偏高；Charter 须列 4 工艺段范围。</p>
       <p><strong>汽车交付补充：</strong>ADAS 域控 Charter + 工艺段特殊特性矩阵</p>
       <h3 style="margin-top:1rem;color:var(--bb-gold)">审核检查清单</h3>
       <ul class="obj-list"><li>Charter 区分 DCU-C / DCU-B / DCU-A</li><li>CTQ 按段：烧录 Checksum、SPI、BGA 空洞、FCT 项</li><li>SIPOC 到 OEM 整车但不含路测</li></ul>
@@ -119,7 +119,7 @@
 
       <article class="card pro" id="sec-b">
         <h2><span class="section-num">B</span>核心概念与理论框架</h2>
-        <p>问题陈述像医生主诉：描述症状，不能开药方当问题。</p><p>【汽车电子 · Define — ADAS SCAR Charter】问题陈述示例：「ADAS 域控 FCT Eth 一次通过率由 99.2% 降至 97.1%（n=连续 20 批）」— 禁止写「加强烧录管理」当问题。范围必须写明：离线/SMT/手插/装配/FCT，排除整车路测。</p>
+        <p>问题陈述像医生主诉：描述症状，不能开药方当问题。</p><p>【汽车电子 · Define — ADAS SCAR Charter】问题陈述示例：「ADAS 域控 FCT Eth 一次通过率由 99.2% 降至 97.1%（n=连续 20 批）」— 禁止写「加强烧录管理」当问题。范围必须写明：离线烧录/SMT/手插/装配/FCT，排除整车路测。</p>
         <div class="analogy"><strong>专业类比</strong> — CTQ 树像翻译：客户「快」→「首次响应≤5分钟」。</div>
         <p style="margin-top:1rem">亲和图归类原话；项目筛选矩阵=影响×可行性。</p>
         
@@ -128,8 +128,8 @@
 
       <article class="card pro automotive-deep" id="sec-b2">
     <h2><span class="section-num">B+</span>本课与生产线对齐 · ADAS SCAR — CTQ 按工艺段分解</h2>
-    <div class="process-pipeline" aria-label="工艺主线"><span class="step accent">离线@SMT前</span><span class="arrow">→</span><span class="step">SMT·SPI</span><span class="arrow">→</span><span class="step">回流·AOI</span><span class="arrow">→</span><span class="step">X-Ray</span><span class="arrow">→</span><span class="step">手插/波峰</span><span class="arrow">→</span><span class="step">ICT</span><span class="arrow">→</span><span class="step">FCT</span><span class="arrow">→</span><span class="step">装配/EOL</span></div>
-    <ul class="obj-list"><li>VOC→CTQ：Eth 丢包率、启动时延、功能安全相关项（界定 ASIL 边界）</li><li>离线 CTQ：SOC_FW + eMMC_IMG Checksum 与 CSR 一致</li><li>SMT CTQ：SPI 体积%、U12 空洞%、Profile#ADAS-04</li><li>FCT CTQ：Eth/CAN 环回 100% 项、工站 FCT-DCU-A-05</li></ul>
+    <div class="process-pipeline" aria-label="工艺主线"><span class="step accent">离线烧录@SMT前</span><span class="arrow">→</span><span class="step">SMT·SPI</span><span class="arrow">→</span><span class="step">回流·AOI</span><span class="arrow">→</span><span class="step">X-Ray</span><span class="arrow">→</span><span class="step">手插/波峰</span><span class="arrow">→</span><span class="step">ICT</span><span class="arrow">→</span><span class="step">FCT</span><span class="arrow">→</span><span class="step">装配/EOL</span></div>
+    <ul class="obj-list"><li>VOC→CTQ：Eth 丢包率、启动时延、功能安全相关项（界定 ASIL 边界）</li><li>离线烧录 CTQ：SOC_FW + eMMC_IMG Checksum 与 CSR 一致</li><li>SMT CTQ：SPI 体积%、U12 空洞%、Profile#ADAS-04</li><li>FCT CTQ：Eth/CAN 环回 100% 项、工站 FCT-DCU-A-05</li></ul>
     
     <p class="exam-align-hint">▼ <strong>G 客观题</strong>与 <strong>F 作业</strong>仅考核本节要点（车身 FCT-04 / ADAS BGA·FCT-05）</p>
   </article>
@@ -167,7 +167,7 @@
 
       <article class="card pro" id="sec-d">
         <h2><span class="section-num">D</span>行业迷你案例与 黑带教练追问</h2>
-        <p>SCAR：ADAS 域控 FCT 下降；怀疑离线 SOC 版本混杂 + BGA U12 空洞；范围含离线/SMT/测试，不含整车路测。</p>
+        <p>SCAR：ADAS 域控 FCT 下降；怀疑离线烧录 SOC 版本混杂 + BGA U12 空洞；范围含离线烧录/SMT/测试，不含整车路测。</p>
         <h3>黑带教练追问</h3>
         <ul class="obj-list"><li>是否全球项目？</li><li>数据历史谁保管？</li><li>复制潜力？</li></ul>
       </article>
@@ -185,7 +185,7 @@
         <strong>E2.</strong> 列 4 段 SIPOC：离线烧录器#7 → SMT 线#5 → （手插若适用）→ FCT-05
         <details class="exercise-answer-ref">
           <summary>参考答案</summary>
-          <p class="ex-ans-body"><strong>要点：</strong>SIPOC 四段：离线#7 → SMT#5 →（手插若适用）→ FCT-05；Input 含 SOC_FW、eMMC_IMG。</p>
+          <p class="ex-ans-body"><strong>要点：</strong>SIPOC 四段：离线烧录#7 → SMT#5 →（手插若适用）→ FCT-05；Input 含 SOC_FW、eMMC_IMG。</p>
           <p class="ex-ans-explain">与 B+ CTQ 分解表逐行对应。</p>
         </details>
       </li><li class="exercise-item">
@@ -234,7 +234,7 @@
       <article class="card pro quiz" id="sec-g">
         <h2><span class="section-num">G</span>客观自测（自动判分 · 含纠错题）</h2>
         <div class="gradable-quiz" id="gradable-quiz" data-day="2">
-    <p class="gq-intro">以下题目<strong>只考本模块 B+ 节与 ◎ 汽车电子专题</strong>所讲要点（离线/SMT·BGA/手插/装配/域控 FCT），请先学完再答。占综合分 <strong>45%</strong>（含 Q6 情景多选）。选项顺序已打乱，请勿猜测字母规律。</p>
+    <p class="gq-intro">以下题目<strong>只考本模块 B+ 节与 ◎ 汽车电子专题</strong>所讲要点（离线烧录/SMT·BGA/手插/装配/域控 FCT），请先学完再答。占综合分 <strong>45%</strong>（含 Q6 情景多选）。选项顺序已打乱，请勿猜测字母规律。</p>
     <div class="gq-block" data-correct="a" data-qindex="1" data-qtype="single">
         <p class="gq-title"><span class="gq-num">Q1</span>  「降低 ADAS FCT 不良」适合作为问题陈述吗？</p>
         
@@ -271,7 +271,7 @@
     <p class="gq-explain-rationale"><strong>正解（A）</strong> 正解：否；应改为可测量指标如 Eth 一次通过率%、时间范围。答题时写出工站号/Profile#/Program_ID 中至少一项。</p>
     
     <p class="gq-explain-distractor-title"><strong>误选简析</strong></p>
-    <ul class="gq-explain-distractor-list obj-list"><li><strong>B</strong> 否；应写「员工加强检验」<br><span class="gq-explain-dim">ADAS DCU-A：FCT-05 + Eth 环回，离线 SOC+eMMC。</span></li><li><strong>C</strong> 是；足够清晰<br><span class="gq-explain-dim">ADAS DCU-A：FCT-05 + Eth 环回，离线 SOC+eMMC。</span></li><li><strong>D</strong> 是；可加上「上 X-Ray」<br><span class="gq-explain-dim">ADAS DCU-A：FCT-05 + Eth 环回，离线 SOC+eMMC。</span></li></ul>
+    <ul class="gq-explain-distractor-list obj-list"><li><strong>B</strong> 否；应写「员工加强检验」<br><span class="gq-explain-dim">ADAS DCU-A：FCT-05 + Eth 环回，离线烧录 SOC+eMMC。</span></li><li><strong>C</strong> 是；足够清晰<br><span class="gq-explain-dim">ADAS DCU-A：FCT-05 + Eth 环回，离线烧录 SOC+eMMC。</span></li><li><strong>D</strong> 是；可加上「上 X-Ray」<br><span class="gq-explain-dim">ADAS DCU-A：FCT-05 + Eth 环回，离线烧录 SOC+eMMC。</span></li></ul>
     <p class="gq-explain-anchor">教研精编 · 模块 02 B+ / C2 Lab</p>
   </div>
   </div><div class="gq-ref-item" data-qindex="2">
@@ -284,7 +284,7 @@
     <p class="gq-explain-rationale"><strong>正解（C）</strong> 正解：EMS 出厂 FCT/EOL；不含 OEM 整车路测。答题时写出工站号/Profile#/Program_ID 中至少一项。</p>
     
     <p class="gq-explain-distractor-title"><strong>误选简析</strong></p>
-    <ul class="gq-explain-distractor-list obj-list"><li><strong>A</strong> OEM 售后市场<br><span class="gq-explain-dim">见题干干扰项设计。</span></li><li><strong>B</strong> 仅离线烧录<br><span class="gq-explain-dim">ADAS DCU-A：FCT-05 + Eth 环回，离线 SOC+eMMC。</span></li><li><strong>D</strong> 仅 SMT 段<br><span class="gq-explain-dim">ADAS DCU-A：FCT-05 + Eth 环回，离线 SOC+eMMC。</span></li></ul>
+    <ul class="gq-explain-distractor-list obj-list"><li><strong>A</strong> OEM 售后市场<br><span class="gq-explain-dim">见题干干扰项设计。</span></li><li><strong>B</strong> 仅离线烧录<br><span class="gq-explain-dim">ADAS DCU-A：FCT-05 + Eth 环回，离线烧录 SOC+eMMC。</span></li><li><strong>D</strong> 仅 SMT 段<br><span class="gq-explain-dim">ADAS DCU-A：FCT-05 + Eth 环回，离线烧录 SOC+eMMC。</span></li></ul>
     <p class="gq-explain-anchor">教研精编 · 模块 02 B+ / C2 Lab</p>
   </div>
   </div><div class="gq-ref-item" data-qindex="3">
@@ -307,7 +307,7 @@
     <div class="gq-explain-block pass">
     <span class="gq-explain-source auto">规则解析</span>
     <p class="gq-explain-focus"><strong>考点</strong> 考点（模块 02 · Define · Charter 与 VOC/CTQ）— 现场判断</p>
-    <p class="gq-explain-rationale"><strong>正解（A）</strong> 范围含全厂所有产品且无 Champion。须能在离线/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。</p>
+    <p class="gq-explain-rationale"><strong>正解（A）</strong> 范围含全厂所有产品且无 Champion。须能在离线烧录/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。</p>
     
     <p class="gq-explain-distractor-title"><strong>误选简析</strong></p>
     <ul class="gq-explain-distractor-list obj-list"><li><strong>B</strong> 已区分 SL/MP X-Ray<br><span class="gq-explain-dim">「已列出 BGA 位号 U12」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。</span></li><li><strong>C</strong> 已附 process-routing 表<br><span class="gq-explain-dim">「已附 process-routing 表」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。</span></li><li><strong>D</strong> 已列出 BGA 位号 U12<br><span class="gq-explain-dim">「已区分 SL/MP X-Ray」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。</span></li></ul>
@@ -333,7 +333,7 @@
     <div class="gq-explain-block pass">
     <span class="gq-explain-source auto">规则解析</span>
     <p class="gq-explain-focus"><strong>考点</strong> 考点（模块 02 · Define · Charter 与 VOC/CTQ）— 现场判断</p>
-    <p class="gq-explain-rationale"><strong>正解（多选）（A+C）</strong> 更换钢网（对策）。须能在离线/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。</p>
+    <p class="gq-explain-rationale"><strong>正解（多选）（A+C）</strong> 更换钢网（对策）。须能在离线烧录/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。</p>
     
     <p class="gq-explain-distractor-title"><strong>误选简析</strong></p>
     <ul class="gq-explain-distractor-list obj-list"><li><strong>B</strong> Eth 一次通过率基线% + 时间窗<br><span class="gq-explain-dim">见题干干扰项设计。</span></li><li><strong>D</strong> 范围止于 EMS FCT（不含整车路试）<br><span class="gq-explain-dim">「范围止于 EMS FCT（不含整车路试）」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。</span></li></ul>
@@ -391,7 +391,7 @@
     <a href="javascript:window.print()">打印本模块（浅色版式）</a>
     <span class="print-footer-line">— 机密文件 · 仅供内部培训 —</span>
   </footer>
-  <script type="application/json" id="hw-rubric-data">{"day":2,"minChars":150,"passScore":70,"mcqWeight":45,"textWeight":55,"dayKeywords":["charter","ctq","voc","adas","eth","问题陈述","sipoc","checksum","离线","smt","bga","fct","域控","装配","手插"],"evidenceFields":["工站","fct-","profile","program_id","checksum","x-ray","工艺段","离线","sipoc","分段","截图"],"dimensions":{"business":{"label":"商业对齐","weight":25,"keys":["ctq","voc","champion","效益","成本","sipoc","章程","问题陈述","dpmo","ppm","oem","adas","域控","charter","范围"],"forbids":["应该采用","建议使用 minitab","上 minitab"]},"measure":{"label":"测量严谨","weight":15,"keys":["msa","操作定义","抽样","基线","cpk","grr","%r&r","spi","checksum","x-ray","profile","探针"],"forbids":[]},"stats":{"label":"统计有效","weight":25,"keys":["显著","α","p值","假设","doe","效应量","anova","回归","卡方","缺陷矩阵","pareto"],"forbids":[]},"improve":{"label":"改进与控制","weight":25,"keys":["fmea","pfmea","控制计划","pilot","对策","8d","spc","p图","反应计划","u12","空洞"],"forbids":[]},"mbb":{"label":"MBB 表达","weight":15,"keys":["champion","阶段门","复制","故事板","bb","mbb","教练","评审","工艺段"],"forbids":[]}},"mcq":[{"q":"「降低 ADAS FCT 不良」适合作为问题陈述吗？","options":[{"t":"否；应改为可测量指标如 Eth 一次通过率%、时间范围","correct":true,"v":"a"},{"t":"否；应写「员工加强检验」","correct":false,"v":"b"},{"t":"是；足够清晰","correct":false,"v":"c"},{"t":"是；可加上「上 X-Ray」","correct":false,"v":"d"}],"explain":{"source":"author","focus":"Define · ADAS Charter · Q1","rationale":"正解：否；应改为可测量指标如 Eth 一次通过率%、时间范围。答题时写出工站号/Profile#/Program_ID 中至少一项。","distractors":{"b":"ADAS DCU-A：FCT-05 + Eth 环回，离线 SOC+eMMC。","c":"ADAS DCU-A：FCT-05 + Eth 环回，离线 SOC+eMMC。","d":"ADAS DCU-A：FCT-05 + Eth 环回，离线 SOC+eMMC。"},"anchor":"教研精编 · 模块 02 B+ / C2 Lab"},"type":"single","correctValue":"a"},{"q":"ADAS 域控 Charter 范围应止于？","options":[{"t":"OEM 售后市场","correct":false,"v":"a"},{"t":"仅离线烧录","correct":false,"v":"b"},{"t":"EMS 出厂 FCT/EOL；不含 OEM 整车路测","correct":true,"v":"c"},{"t":"仅 SMT 段","correct":false,"v":"d"}],"explain":{"source":"author","focus":"Define · ADAS Charter · Q2","rationale":"正解：EMS 出厂 FCT/EOL；不含 OEM 整车路测。答题时写出工站号/Profile#/Program_ID 中至少一项。","distractors":{"b":"ADAS DCU-A：FCT-05 + Eth 环回，离线 SOC+eMMC。","c":"ADAS DCU-A：FCT-05 + Eth 环回，离线 SOC+eMMC。","d":"ADAS DCU-A：FCT-05 + Eth 环回，离线 SOC+eMMC。"},"anchor":"教研精编 · 模块 02 B+ / C2 Lab"},"type":"single","correctValue":"c"},{"q":"车身域控 DCU-B 与 ADAS 的 CTQ 能否共用同一 FCT 项清单？","options":[{"t":"是；都是域控","correct":false,"v":"a"},{"t":"仅合并统计不合并程序","correct":false,"v":"b"},{"t":"是；合并降本","correct":false,"v":"c"},{"t":"否；车身 CAN/LIN 与 ADAS Eth 程序/工站不同","correct":true,"v":"d"}],"explain":{"source":"author","focus":"Define · ADAS Charter · Q3","rationale":"正解：否；车身 CAN/LIN 与 ADAS Eth 程序/工站不同。答题时写出工站号/Profile#/Program_ID 中至少一项。","distractors":{"b":"车身 DCU-B：独立 FCT-04，CAN/LIN 与 ADAS Eth 分表。","c":"车身 DCU-B：独立 FCT-04，CAN/LIN 与 ADAS Eth 分表。","d":"车身 DCU-B：独立 FCT-04，CAN/LIN 与 ADAS Eth 分表。"},"anchor":"教研精编 · 模块 02 B+ / C2 Lab"},"type":"single","correctValue":"d"},{"q":"Define 阶段门被否决的常见原因？","options":[{"t":"范围含全厂所有产品且无 Champion","correct":true,"v":"a"},{"t":"已区分 SL/MP X-Ray","correct":false,"v":"b"},{"t":"已附 process-routing 表","correct":false,"v":"c"},{"t":"已列出 BGA 位号 U12","correct":false,"v":"d"}],"explain":{"source":"auto","focus":"考点（模块 02 · Define · Charter 与 VOC/CTQ）— 现场判断","rationale":"范围含全厂所有产品且无 Champion。须能在离线/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。","distractors":{"b":"「已列出 BGA 位号 U12」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。","c":"「已附 process-routing 表」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。","d":"「已区分 SL/MP X-Ray」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。"},"anchor":"对照本节 B+ 工艺表、F 作业 Rubric 与 G 题干关键词。"},"type":"single","correctValue":"a"},{"q":"【纠错】章程写「立即更换钢网并收紧 Profile」？","options":[{"t":"是；MBB 要求","correct":false,"v":"a"},{"t":"否；对策属 Improve，问题陈述只描述可测量症状","correct":true,"v":"b"},{"t":"可以；写在 VOC 里","correct":false,"v":"c"},{"t":"是；Define 就要写方案","correct":false,"v":"d"}],"explain":{"focus":"纠错 — Define 禁止写对策","rationale":"问题陈述只描述可测量症状；钢网/Profile 属于 Improve，写入章程会导致阶段门证据无效。","distractors":{"b":"Define 阶段就要方案会混淆 VOC 与对策。","c":"MBB 不会在 Define 指定具体工艺参数。","d":"VOC 原话需翻译为 CTQ，不是直接对策。"},"anchor":"templates/project-charter.csv","source":"author"},"type":"single","correctValue":"b"},{"type":"multi","bloom":"apply","products":["DCU-A"],"scenario":"【情景】Charter 草案写：「降低不良，措施：更换钢网、收紧 Profile#ADAS-04」。","q":"哪些条目不应出现在 Define 阶段交付物中？（多选）","options":[{"t":"收紧 Profile（对策）","correct":true,"v":"a"},{"t":"Eth 一次通过率基线% + 时间窗","correct":false,"v":"b"},{"t":"更换钢网（对策）","correct":true,"v":"c"},{"t":"范围止于 EMS FCT（不含整车路试）","correct":false,"v":"d"}],"correctValues":["a","c"],"explain":{"source":"auto","focus":"考点（模块 02 · Define · Charter 与 VOC/CTQ）— 现场判断","rationale":"更换钢网（对策）。须能在离线/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。","distractors":{"c":"「Eth 一次通过率基线% + 时间窗」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。","d":"「范围止于 EMS FCT（不含整车路试）」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。"},"anchor":"对照本节 B+ 工艺表、F 作业 Rubric 与 G 题干关键词。"}}]}</script>
+  <script type="application/json" id="hw-rubric-data">{"day":2,"minChars":150,"passScore":70,"mcqWeight":45,"textWeight":55,"dayKeywords":["charter","ctq","voc","adas","eth","问题陈述","sipoc","checksum","离线烧录","smt","bga","fct","域控","装配","手插"],"evidenceFields":["工站","fct-","profile","program_id","checksum","x-ray","工艺段","离线烧录","sipoc","分段","截图"],"dimensions":{"business":{"label":"商业对齐","weight":25,"keys":["ctq","voc","champion","效益","成本","sipoc","章程","问题陈述","dpmo","ppm","oem","adas","域控","charter","范围"],"forbids":["应该采用","建议使用 minitab","上 minitab"]},"measure":{"label":"测量严谨","weight":15,"keys":["msa","操作定义","抽样","基线","cpk","grr","%r&r","spi","checksum","x-ray","profile","探针"],"forbids":[]},"stats":{"label":"统计有效","weight":25,"keys":["显著","α","p值","假设","doe","效应量","anova","回归","卡方","缺陷矩阵","pareto"],"forbids":[]},"improve":{"label":"改进与控制","weight":25,"keys":["fmea","pfmea","控制计划","pilot","对策","8d","spc","p图","反应计划","u12","空洞"],"forbids":[]},"mbb":{"label":"MBB 表达","weight":15,"keys":["champion","阶段门","复制","故事板","bb","mbb","教练","评审","工艺段"],"forbids":[]}},"mcq":[{"q":"「降低 ADAS FCT 不良」适合作为问题陈述吗？","options":[{"t":"否；应改为可测量指标如 Eth 一次通过率%、时间范围","correct":true,"v":"a"},{"t":"否；应写「员工加强检验」","correct":false,"v":"b"},{"t":"是；足够清晰","correct":false,"v":"c"},{"t":"是；可加上「上 X-Ray」","correct":false,"v":"d"}],"explain":{"source":"author","focus":"Define · ADAS Charter · Q1","rationale":"正解：否；应改为可测量指标如 Eth 一次通过率%、时间范围。答题时写出工站号/Profile#/Program_ID 中至少一项。","distractors":{"b":"ADAS DCU-A：FCT-05 + Eth 环回，离线烧录 SOC+eMMC。","c":"ADAS DCU-A：FCT-05 + Eth 环回，离线烧录 SOC+eMMC。","d":"ADAS DCU-A：FCT-05 + Eth 环回，离线烧录 SOC+eMMC。"},"anchor":"教研精编 · 模块 02 B+ / C2 Lab"},"type":"single","correctValue":"a"},{"q":"ADAS 域控 Charter 范围应止于？","options":[{"t":"OEM 售后市场","correct":false,"v":"a"},{"t":"仅离线烧录","correct":false,"v":"b"},{"t":"EMS 出厂 FCT/EOL；不含 OEM 整车路测","correct":true,"v":"c"},{"t":"仅 SMT 段","correct":false,"v":"d"}],"explain":{"source":"author","focus":"Define · ADAS Charter · Q2","rationale":"正解：EMS 出厂 FCT/EOL；不含 OEM 整车路测。答题时写出工站号/Profile#/Program_ID 中至少一项。","distractors":{"b":"ADAS DCU-A：FCT-05 + Eth 环回，离线烧录 SOC+eMMC。","c":"ADAS DCU-A：FCT-05 + Eth 环回，离线烧录 SOC+eMMC。","d":"ADAS DCU-A：FCT-05 + Eth 环回，离线烧录 SOC+eMMC。"},"anchor":"教研精编 · 模块 02 B+ / C2 Lab"},"type":"single","correctValue":"c"},{"q":"车身域控 DCU-B 与 ADAS 的 CTQ 能否共用同一 FCT 项清单？","options":[{"t":"是；都是域控","correct":false,"v":"a"},{"t":"仅合并统计不合并程序","correct":false,"v":"b"},{"t":"是；合并降本","correct":false,"v":"c"},{"t":"否；车身 CAN/LIN 与 ADAS Eth 程序/工站不同","correct":true,"v":"d"}],"explain":{"source":"author","focus":"Define · ADAS Charter · Q3","rationale":"正解：否；车身 CAN/LIN 与 ADAS Eth 程序/工站不同。答题时写出工站号/Profile#/Program_ID 中至少一项。","distractors":{"b":"车身 DCU-B：独立 FCT-04，CAN/LIN 与 ADAS Eth 分表。","c":"车身 DCU-B：独立 FCT-04，CAN/LIN 与 ADAS Eth 分表。","d":"车身 DCU-B：独立 FCT-04，CAN/LIN 与 ADAS Eth 分表。"},"anchor":"教研精编 · 模块 02 B+ / C2 Lab"},"type":"single","correctValue":"d"},{"q":"Define 阶段门被否决的常见原因？","options":[{"t":"范围含全厂所有产品且无 Champion","correct":true,"v":"a"},{"t":"已区分 SL/MP X-Ray","correct":false,"v":"b"},{"t":"已附 process-routing 表","correct":false,"v":"c"},{"t":"已列出 BGA 位号 U12","correct":false,"v":"d"}],"explain":{"source":"auto","focus":"考点（模块 02 · Define · Charter 与 VOC/CTQ）— 现场判断","rationale":"范围含全厂所有产品且无 Champion。须能在离线烧录/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。","distractors":{"b":"「已列出 BGA 位号 U12」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。","c":"「已附 process-routing 表」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。","d":"「已区分 SL/MP X-Ray」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。"},"anchor":"对照本节 B+ 工艺表、F 作业 Rubric 与 G 题干关键词。"},"type":"single","correctValue":"a"},{"q":"【纠错】章程写「立即更换钢网并收紧 Profile」？","options":[{"t":"是；MBB 要求","correct":false,"v":"a"},{"t":"否；对策属 Improve，问题陈述只描述可测量症状","correct":true,"v":"b"},{"t":"可以；写在 VOC 里","correct":false,"v":"c"},{"t":"是；Define 就要写方案","correct":false,"v":"d"}],"explain":{"focus":"纠错 — Define 禁止写对策","rationale":"问题陈述只描述可测量症状；钢网/Profile 属于 Improve，写入章程会导致阶段门证据无效。","distractors":{"b":"Define 阶段就要方案会混淆 VOC 与对策。","c":"MBB 不会在 Define 指定具体工艺参数。","d":"VOC 原话需翻译为 CTQ，不是直接对策。"},"anchor":"templates/project-charter.csv","source":"author"},"type":"single","correctValue":"b"},{"type":"multi","bloom":"apply","products":["DCU-A"],"scenario":"【情景】Charter 草案写：「降低不良，措施：更换钢网、收紧 Profile#ADAS-04」。","q":"哪些条目不应出现在 Define 阶段交付物中？（多选）","options":[{"t":"收紧 Profile（对策）","correct":true,"v":"a"},{"t":"Eth 一次通过率基线% + 时间窗","correct":false,"v":"b"},{"t":"更换钢网（对策）","correct":true,"v":"c"},{"t":"范围止于 EMS FCT（不含整车路试）","correct":false,"v":"d"}],"correctValues":["a","c"],"explain":{"source":"auto","focus":"考点（模块 02 · Define · Charter 与 VOC/CTQ）— 现场判断","rationale":"更换钢网（对策）。须能在离线烧录/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。","distractors":{"c":"「Eth 一次通过率基线% + 时间窗」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。","d":"「范围止于 EMS FCT（不含整车路试）」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。"},"anchor":"对照本节 B+ 工艺表、F 作业 Rubric 与 G 题干关键词。"}}]}</script>
   <script src="../js/homework-grader-core.js"></script>
   <script src="../js/interactive-learning-core.js"></script>
   <script src="../js/homework-grader.js" defer></script>

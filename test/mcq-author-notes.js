@@ -22,7 +22,7 @@ const FOCUS = {
 /** 精编覆盖：每模块 Q1–Q3 + Q5（纠错），共 4×14=56 题 */
 const AUTHOR_LIB = {
   "1-1": {
-    focus: "离线必须在 SMT 前 — Checksum 门禁",
+    focus: "离线烧录必须在 SMT 前 — Checksum 门禁",
     rationale:
       "ADAS/车身 SOC·MCU 镜像须在贴片前烧录并 100% 比对；回流后补烧无法拦截错版，且污染追溯链。",
     distractors: {
@@ -35,7 +35,7 @@ const AUTHOR_LIB = {
   "1-5": {
     focus: "纠错 — Cpk 不能代表 FCT 客户体验",
     rationale:
-      "SPI Cpk 只说明焊膏体积能力；Eth FCT 为属性 CTQ，须独立 MSA + p 图 + 缺陷矩阵链到离线/BGA。",
+      "SPI Cpk 只说明焊膏体积能力；Eth FCT 为属性 CTQ，须独立 MSA + p 图 + 缺陷矩阵链到离线烧录/BGA。",
     distractors: {
       b: "1.33 是能力参考，非客户满意度充分条件。",
       c: "SPI 与软件版本、探针无关是错误因果。",
@@ -60,7 +60,7 @@ const AUTHOR_LIB = {
     distractors: {
       b: "OEM 责任不能写入 EMS PFMEA 探测度。",
       c: "HU 中控与 DCU-C 程序不同，不能合并 CTQ。",
-      d: "跳过 Verify 仍须离线 Checksum 设计。",
+      d: "跳过 Verify 仍须离线烧录 Checksum 设计。",
     },
     anchor: "PRODUCTS.dcuC · 模块11 B+",
   },
@@ -93,7 +93,7 @@ const PRODUCT_HINTS = [
   [/HU|中控/i, "中控 HU：FCT 程序与域控分离，勿并入 ADAS Eth 分析。"],
   [/仪表|IC 扭矩/i, "组合仪表 IC：扭矩/ICT 为独立 CTQ，勿与 BGA 空洞混批。"],
   [/DCU-B|车身|FCT-04/i, "车身 DCU-B：独立 FCT-04，CAN/LIN 与 ADAS Eth 分表。"],
-  [/DCU-A|ADAS|FCT-05|Eth/i, "ADAS DCU-A：FCT-05 + Eth 环回，离线 SOC+eMMC。"],
+  [/DCU-A|ADAS|FCT-05|Eth/i, "ADAS DCU-A：FCT-05 + Eth 环回，离线烧录 SOC+eMMC。"],
 ];
 
 function authorDistractor(text, question, dayN) {

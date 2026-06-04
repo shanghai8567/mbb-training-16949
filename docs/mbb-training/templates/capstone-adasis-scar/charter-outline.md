@@ -7,7 +7,7 @@
 - 工站：FCT-DCU-A-05
 
 ## 范围
-- 含：离线 / SMT / X-Ray / FCT
+- 含：离线烧录 / SMT / X-Ray / FCT
 - 不含：OEM 整车路试
 
 ## CTQ（3 条操作定义）

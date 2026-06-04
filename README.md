@@ -11,7 +11,7 @@
 [![repository](https://img.shields.io/badge/repository-public-181717?style=flat-square&logo=github)](https://github.com/shanghai8567/mbb-training-16949)
 [![license](https://img.shields.io/badge/license-MIT-yellow?style=flat-square)](LICENSE)
 
-**企业级离线培训资产包**：面向汽车电子 EMS 的 Master Black Belt（MBB）预备营，覆盖 14 个教学模块、可审计的三级评价路径、统计软件跟做 Lab，以及可本地部署的 HTML 课件与自动评分引擎。
+**企业级离线烧录培训资产包**：面向汽车电子 EMS 的 Master Black Belt（MBB）预备营，覆盖 14 个教学模块、可审计的三级评价路径、统计软件跟做 Lab，以及可本地部署的 HTML 课件与自动评分引擎。
 
 | 属性 | 说明 |
 |------|------|
@@ -43,7 +43,7 @@
 
 ## 项目概述
 
-本仓库交付一套 **可复现、可验收、可离线运行** 的六西格玛黑带（MBB）培训解决方案，服务于汽车电子 EMS 场景下的：
+本仓库交付一套 **可复现、可验收、可离线烧录运行** 的六西格玛黑带（MBB）培训解决方案，服务于汽车电子 EMS 场景下的：
 
 - **学员**：按模块完成 DMAIC/DFSS 知识建构、课后作业、Minitab/JMP 跟做及客观题测评；
 - **讲师 / MBB**：使用阶段门模板、Capstone 评审清单与红队验收脚本保障交付质量；

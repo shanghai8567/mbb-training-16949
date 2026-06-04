@@ -155,7 +155,7 @@ for (let i = 1; i <= 14; i++) {
   if (i === 1 && html.includes("product-matrix-full")) ok(fn + " B+ full product matrix");
   if (html.includes('meta name="mbb-package-version"')) ok(fn + " package version meta");
   else bad(fn + " missing package version meta");
-  if (html.includes("FCT-DCU") || html.includes("离线") || html.includes("BGA"))
+  if (html.includes("FCT-DCU") || html.includes("离线烧录") || html.includes("BGA"))
     ok(fn + " automotive production terms");
   else bad(fn + " missing automotive terms in day");
 }

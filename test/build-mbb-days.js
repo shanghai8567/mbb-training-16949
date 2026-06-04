@@ -583,7 +583,7 @@ function renderDay(d) {
   const auto = p.automotive;
   const autoHtml = auto
     ? `<article class="card pro automotive" id="sec-auto">
-      <h2><span class="section-num">◎</span>汽车电子 EMS（五产品·离线/SMT/手插/装配）</h2>
+      <h2><span class="section-num">◎</span>汽车电子 EMS（五产品·离线烧录/SMT/手插/装配）</h2>
       <p><span class="tag auto">汽车制造</span> <strong>IATF：</strong>${esc(auto.iatf || "见 automotive-iatf.html")}</p>
       ${auto.aiag ? `<p><strong>AIAG：</strong>${esc(auto.aiag)}</p>` : ""}
       <p style="margin-top:0.75rem">${esc(auto.scenario || "")}</p>

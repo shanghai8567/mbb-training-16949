@@ -95,10 +95,10 @@
       </header>
 
       <article class="card pro automotive" id="sec-auto">
-      <h2><span class="section-num">◎</span>汽车电子 EMS（五产品·离线/SMT/手插/装配）</h2>
+      <h2><span class="section-num">◎</span>汽车电子 EMS（五产品·离线烧录/SMT/手插/装配）</h2>
       <p><span class="tag auto">汽车制造</span> <strong>IATF：</strong>见 automotive-iatf.html</p>
       
-      <p style="margin-top:0.75rem">ADAS SCAR 阶段门：证明根因段（离线/SMT）+ 对车身/座舱线无回归；PPAP 变更项列表。</p>
+      <p style="margin-top:0.75rem">ADAS SCAR 阶段门：证明根因段（离线烧录/SMT）+ 对车身/座舱线无回归；PPAP 变更项列表。</p>
       
       <h3 style="margin-top:1rem;color:var(--bb-gold)">审核检查清单</h3>
       <ul class="obj-list"><li>8D 与 DMAIC 附件映射</li><li>Safe Launch 批次</li></ul>
@@ -128,7 +128,7 @@
 
       <article class="card pro automotive-deep" id="sec-b2">
     <h2><span class="section-num">B+</span>本课与生产线对齐 · ADAS SCAR 阶段门检查单</h2>
-    <div class="process-pipeline" aria-label="工艺主线"><span class="step accent">离线@SMT前</span><span class="arrow">→</span><span class="step">SMT·SPI</span><span class="arrow">→</span><span class="step">回流·AOI</span><span class="arrow">→</span><span class="step">X-Ray</span><span class="arrow">→</span><span class="step">手插/波峰</span><span class="arrow">→</span><span class="step">ICT</span><span class="arrow">→</span><span class="step">FCT</span><span class="arrow">→</span><span class="step">装配/EOL</span></div>
+    <div class="process-pipeline" aria-label="工艺主线"><span class="step accent">离线烧录@SMT前</span><span class="arrow">→</span><span class="step">SMT·SPI</span><span class="arrow">→</span><span class="step">回流·AOI</span><span class="arrow">→</span><span class="step">X-Ray</span><span class="arrow">→</span><span class="step">手插/波峰</span><span class="arrow">→</span><span class="step">ICT</span><span class="arrow">→</span><span class="step">FCT</span><span class="arrow">→</span><span class="step">装配/EOL</span></div>
     <ul class="obj-list"><li>Measure：SPI/烧录/BGA 空洞 MSA + FCT 基线（仅 FCT-05）</li><li>Analyze：U12 空洞 Pareto、SOC 版本列联、X-Ray SL→MP 日期</li><li>Improve/Control：Profile#、控制计划、Safe Launch 3 批</li></ul>
     
     <p class="exam-align-hint">▼ <strong>G 客观题</strong>与 <strong>F 作业</strong>仅考核本节要点（车身 FCT-04 / ADAS BGA·FCT-05）</p>
@@ -178,7 +178,7 @@
         <strong>E1.</strong> 列 Measure 门 5 项证据
         <details class="exercise-answer-ref">
           <summary>参考答案</summary>
-          <p class="ex-ans-body"><strong>要点：</strong>Measure 门 5 项：① SPI GRR ② 离线 Checksum GR&amp;R ③ BGA 空洞基线（SL/MP 标注）④ FCT-05 基线 p 图 ⑤ 数据计划签字。</p>
+          <p class="ex-ans-body"><strong>要点：</strong>Measure 门 5 项：① SPI GRR ② 离线烧录 Checksum GR&amp;R ③ BGA 空洞基线（SL/MP 标注）④ FCT-05 基线 p 图 ⑤ 数据计划签字。</p>
           <p class="ex-ans-explain">缺分段 MSA 应打回。</p>
         </details>
       </li><li class="exercise-item">
@@ -212,7 +212,7 @@
         <p class="c2-module-check"><label><input type="checkbox" id="c2-done-cb" data-day="7" /> 本模块 C2 Lab 跟做截图已交付（计入结业 15%）</label></p>
         <div class="hw-submit-panel" id="hw-submit-panel">
     <label for="hw-text" class="hw-label">粘贴或输入课后作业（须体现汽车电子现场）</label>
-    <p class="hw-hint"><strong>评分要点：</strong>阶段门纪要：各段证据页码、签字、对车身域控外溢评估。建议字数 ≥ 150，含模块关键词（如 阶段门、故事板、回归、dcu-b、证据链、离线…）。未达字数时文本分按比例封顶。</p>
+    <p class="hw-hint"><strong>评分要点：</strong>阶段门纪要：各段证据页码、签字、对车身域控外溢评估。建议字数 ≥ 150，含模块关键词（如 阶段门、故事板、回归、dcu-b、证据链、离线烧录…）。未达字数时文本分按比例封顶。</p>
     <textarea id="hw-text" class="hw-textarea" rows="8" placeholder="例：ADAS 域控 / 车身域控 / 离线烧录@SMT前 / BGA U12 / X-Ray SL全检 / FCT-DCU-B-04 …"></textarea>
     <div class="form-actions hw-actions">
       <button type="button" class="btn btn-primary" id="hw-submit-btn">提交作业并自动评分</button>
@@ -227,11 +227,11 @@
       <article class="card pro quiz" id="sec-g">
         <h2><span class="section-num">G</span>客观自测（自动判分 · 含纠错题）</h2>
         <div class="gradable-quiz" id="gradable-quiz" data-day="7">
-    <p class="gq-intro">以下题目<strong>只考本模块 B+ 节与 ◎ 汽车电子专题</strong>所讲要点（离线/SMT·BGA/手插/装配/域控 FCT），请先学完再答。占综合分 <strong>45%</strong>（含 Q6 情景多选）。选项顺序已打乱，请勿猜测字母规律。</p>
+    <p class="gq-intro">以下题目<strong>只考本模块 B+ 节与 ◎ 汽车电子专题</strong>所讲要点（离线烧录/SMT·BGA/手插/装配/域控 FCT），请先学完再答。占综合分 <strong>45%</strong>（含 Q6 情景多选）。选项顺序已打乱，请勿猜测字母规律。</p>
     <div class="gq-block" data-correct="b" data-qindex="1" data-qtype="single">
         <p class="gq-title"><span class="gq-num">Q1</span>  Measure 门对 ADAS 项目的核心证据？</p>
         
-        <ul class="gq-opts"><li class="opt"><input type="radio" name="mcq-d7-q1" id="mcq-d7-q1-a" value="a" data-label="仅 HU 数据" /><label for="mcq-d7-q1-a">仅 HU 数据</label></li><li class="opt"><input type="radio" name="mcq-d7-q1" id="mcq-d7-q1-b" value="b" data-label="分段 MSA 合格 + 离线/SMT/FCT 基线" /><label for="mcq-d7-q1-b">分段 MSA 合格 + 离线/SMT/FCT 基线</label></li><li class="opt"><input type="radio" name="mcq-d7-q1" id="mcq-d7-q1-c" value="c" data-label="跳过 MSA" /><label for="mcq-d7-q1-c">跳过 MSA</label></li><li class="opt"><input type="radio" name="mcq-d7-q1" id="mcq-d7-q1-d" value="d" data-label="仅口头汇报" /><label for="mcq-d7-q1-d">仅口头汇报</label></li></ul>
+        <ul class="gq-opts"><li class="opt"><input type="radio" name="mcq-d7-q1" id="mcq-d7-q1-a" value="a" data-label="仅 HU 数据" /><label for="mcq-d7-q1-a">仅 HU 数据</label></li><li class="opt"><input type="radio" name="mcq-d7-q1" id="mcq-d7-q1-b" value="b" data-label="分段 MSA 合格 + 离线烧录/SMT/FCT 基线" /><label for="mcq-d7-q1-b">分段 MSA 合格 + 离线烧录/SMT/FCT 基线</label></li><li class="opt"><input type="radio" name="mcq-d7-q1" id="mcq-d7-q1-c" value="c" data-label="跳过 MSA" /><label for="mcq-d7-q1-c">跳过 MSA</label></li><li class="opt"><input type="radio" name="mcq-d7-q1" id="mcq-d7-q1-d" value="d" data-label="仅口头汇报" /><label for="mcq-d7-q1-d">仅口头汇报</label></li></ul>
       </div><div class="gq-block" data-correct="a" data-qindex="2" data-qtype="single">
         <p class="gq-title"><span class="gq-num">Q2</span>  Analyze 门打回理由？</p>
         
@@ -257,14 +257,14 @@
   <details class="quiz-answers-ref" id="quiz-answers-ref"><summary>题库解析（提交后将自动展开）</summary><div class="gq-ref-wrap"><div class="gq-ref-item" data-qindex="1">
     <h4 class="gq-ref-q">Q1 Measure 门对 ADAS 项目的核心证据？</h4>
     
-    <p class="gq-ref-ans"><span style="color:var(--accent)">✓ 分段 MSA 合格 + 离线/SMT/FCT 基线</span></p>
+    <p class="gq-ref-ans"><span style="color:var(--accent)">✓ 分段 MSA 合格 + 离线烧录/SMT/FCT 基线</span></p>
     <div class="gq-explain-block pass">
     <span class="gq-explain-source author">精编解析</span>
     <p class="gq-explain-focus"><strong>考点</strong> 阶段门 · ADAS SCAR · Q1</p>
-    <p class="gq-explain-rationale"><strong>正解（B）</strong> 正解：分段 MSA 合格 + 离线/SMT/FCT 基线。答题时写出工站号/Profile#/Program_ID 中至少一项。</p>
+    <p class="gq-explain-rationale"><strong>正解（B）</strong> 正解：分段 MSA 合格 + 离线烧录/SMT/FCT 基线。答题时写出工站号/Profile#/Program_ID 中至少一项。</p>
     
     <p class="gq-explain-distractor-title"><strong>误选简析</strong></p>
-    <ul class="gq-explain-distractor-list obj-list"><li><strong>A</strong> 仅 HU 数据<br><span class="gq-explain-dim">见题干干扰项设计。</span></li><li><strong>C</strong> 跳过 MSA<br><span class="gq-explain-dim">中控 HU：FCT 程序与域控分离，勿并入 ADAS Eth 分析。</span></li><li><strong>D</strong> 仅口头汇报<br><span class="gq-explain-dim">ADAS DCU-A：FCT-05 + Eth 环回，离线 SOC+eMMC。</span></li></ul>
+    <ul class="gq-explain-distractor-list obj-list"><li><strong>A</strong> 仅 HU 数据<br><span class="gq-explain-dim">见题干干扰项设计。</span></li><li><strong>C</strong> 跳过 MSA<br><span class="gq-explain-dim">中控 HU：FCT 程序与域控分离，勿并入 ADAS Eth 分析。</span></li><li><strong>D</strong> 仅口头汇报<br><span class="gq-explain-dim">ADAS DCU-A：FCT-05 + Eth 环回，离线烧录 SOC+eMMC。</span></li></ul>
     <p class="gq-explain-anchor">教研精编 · 模块 07 B+ / C2 Lab</p>
   </div>
   </div><div class="gq-ref-item" data-qindex="2">
@@ -277,7 +277,7 @@
     <p class="gq-explain-rationale"><strong>正解（A）</strong> 正解：根因未验证、混杂五类产品、无 X-Ray 阶段分层。答题时写出工站号/Profile#/Program_ID 中至少一项。</p>
     
     <p class="gq-explain-distractor-title"><strong>误选简析</strong></p>
-    <ul class="gq-explain-distractor-list obj-list"><li><strong>B</strong> 已区分 DCU-A/B<br><span class="gq-explain-dim">「已附缺陷-过程矩阵」与模块 07 阶段门 · ADAS SCAR 证据要求冲突。</span></li><li><strong>C</strong> 已附缺陷-过程矩阵<br><span class="gq-explain-dim">ADAS DCU-A：FCT-05 + Eth 环回，离线 SOC+eMMC。</span></li><li><strong>D</strong> 已做卡方<br><span class="gq-explain-dim">「已做卡方」与模块 07 阶段门 · ADAS SCAR 证据要求冲突。</span></li></ul>
+    <ul class="gq-explain-distractor-list obj-list"><li><strong>B</strong> 已区分 DCU-A/B<br><span class="gq-explain-dim">「已附缺陷-过程矩阵」与模块 07 阶段门 · ADAS SCAR 证据要求冲突。</span></li><li><strong>C</strong> 已附缺陷-过程矩阵<br><span class="gq-explain-dim">ADAS DCU-A：FCT-05 + Eth 环回，离线烧录 SOC+eMMC。</span></li><li><strong>D</strong> 已做卡方<br><span class="gq-explain-dim">「已做卡方」与模块 07 阶段门 · ADAS SCAR 证据要求冲突。</span></li></ul>
     <p class="gq-explain-anchor">教研精编 · 模块 07 B+ / C2 Lab</p>
   </div>
   </div><div class="gq-ref-item" data-qindex="3">
@@ -300,7 +300,7 @@
     <div class="gq-explain-block pass">
     <span class="gq-explain-source auto">规则解析</span>
     <p class="gq-explain-focus"><strong>考点</strong> 考点（模块 07 · DMAIC 阶段门与故事板）— 现场判断</p>
-    <p class="gq-explain-rationale"><strong>正解（A）</strong> DCU-B 独立 FCT-04 批对比，无异常趋势。须能在离线/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。</p>
+    <p class="gq-explain-rationale"><strong>正解（A）</strong> DCU-B 独立 FCT-04 批对比，无异常趋势。须能在离线烧录/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。</p>
     
     <p class="gq-explain-distractor-title"><strong>误选简析</strong></p>
     <ul class="gq-explain-distractor-list obj-list"><li><strong>B</strong> 合并 ADAS+车身良率<br><span class="gq-explain-dim">「不测车身」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。</span></li><li><strong>C</strong> 只改 ADAS 程序<br><span class="gq-explain-dim">勿合并产品/工站数据，违反分层原则。</span></li><li><strong>D</strong> 不测车身<br><span class="gq-explain-dim">「只改 ADAS 程序」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。</span></li></ul>
@@ -326,7 +326,7 @@
     <div class="gq-explain-block pass">
     <span class="gq-explain-source auto">规则解析</span>
     <p class="gq-explain-focus"><strong>考点</strong> 考点（模块 07 · DMAIC 阶段门与故事板）— 现场判断</p>
-    <p class="gq-explain-rationale"><strong>正解（多选）（B+D）</strong> 阶段门口头通过无签字。须能在离线/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。</p>
+    <p class="gq-explain-rationale"><strong>正解（多选）（B+D）</strong> 阶段门口头通过无签字。须能在离线烧录/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。</p>
     
     <p class="gq-explain-distractor-title"><strong>误选简析</strong></p>
     <ul class="gq-explain-distractor-list obj-list"><li><strong>A</strong> Measure 门附分段 MSA<br><span class="gq-explain-dim">见题干干扰项设计。</span></li><li><strong>C</strong> 故事板含效益与风险<br><span class="gq-explain-dim">「Measure 门附分段 MSA」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。</span></li></ul>
@@ -384,7 +384,7 @@
     <a href="javascript:window.print()">打印本模块（浅色版式）</a>
     <span class="print-footer-line">— 机密文件 · 仅供内部培训 —</span>
   </footer>
-  <script type="application/json" id="hw-rubric-data">{"day":7,"minChars":150,"passScore":70,"mcqWeight":45,"textWeight":55,"dayKeywords":["阶段门","故事板","回归","dcu-b","证据链","离线","smt","bga","fct","域控","装配","手插"],"evidenceFields":["工站","fct-","profile","program_id","checksum","x-ray","工艺段","离线","sipoc","分段","截图"],"dimensions":{"business":{"label":"商业对齐","weight":20,"keys":["ctq","voc","champion","效益","成本","sipoc","章程","问题陈述","dpmo","ppm","oem","adas","域控","阶段门","故事板","证据链"],"forbids":["应该采用","建议使用 minitab","上 minitab"]},"measure":{"label":"测量严谨","weight":20,"keys":["msa","操作定义","抽样","基线","cpk","grr","%r&r","spi","checksum","x-ray","profile","探针"],"forbids":[]},"stats":{"label":"统计有效","weight":25,"keys":["显著","α","p值","假设","doe","效应量","anova","回归","卡方","缺陷矩阵","pareto"],"forbids":[]},"improve":{"label":"改进与控制","weight":25,"keys":["fmea","pfmea","控制计划","pilot","对策","8d","spc","p图","反应计划","u12","空洞"],"forbids":[]},"mbb":{"label":"MBB 表达","weight":20,"keys":["champion","阶段门","复制","故事板","bb","mbb","教练","评审","工艺段","打回","签字"],"forbids":[]}},"mcq":[{"q":"Measure 门对 ADAS 项目的核心证据？","options":[{"t":"仅 HU 数据","correct":false,"v":"a"},{"t":"分段 MSA 合格 + 离线/SMT/FCT 基线","correct":true,"v":"b"},{"t":"跳过 MSA","correct":false,"v":"c"},{"t":"仅口头汇报","correct":false,"v":"d"}],"explain":{"source":"author","focus":"阶段门 · ADAS SCAR · Q1","rationale":"正解：分段 MSA 合格 + 离线/SMT/FCT 基线。答题时写出工站号/Profile#/Program_ID 中至少一项。","distractors":{"b":"ADAS DCU-A：FCT-05 + Eth 环回，离线 SOC+eMMC。","c":"中控 HU：FCT 程序与域控分离，勿并入 ADAS Eth 分析。","d":"ADAS DCU-A：FCT-05 + Eth 环回，离线 SOC+eMMC。"},"anchor":"教研精编 · 模块 07 B+ / C2 Lab"},"type":"single","correctValue":"b"},{"q":"Analyze 门打回理由？","options":[{"t":"根因未验证、混杂五类产品、无 X-Ray 阶段分层","correct":true,"v":"a"},{"t":"已区分 DCU-A/B","correct":false,"v":"b"},{"t":"已附缺陷-过程矩阵","correct":false,"v":"c"},{"t":"已做卡方","correct":false,"v":"d"}],"explain":{"source":"author","focus":"阶段门 · ADAS SCAR · Q2","rationale":"正解：根因未验证、混杂五类产品、无 X-Ray 阶段分层。答题时写出工站号/Profile#/Program_ID 中至少一项。","distractors":{"b":"「已附缺陷-过程矩阵」与模块 07 阶段门 · ADAS SCAR 证据要求冲突。","c":"ADAS DCU-A：FCT-05 + Eth 环回，离线 SOC+eMMC。","d":"「已做卡方」与模块 07 阶段门 · ADAS SCAR 证据要求冲突。"},"anchor":"教研精编 · 模块 07 B+ / C2 Lab"},"type":"single","correctValue":"a"},{"q":"故事板对 OEM 汇报应含？","options":[{"t":"仅 FCT 程序代码","correct":false,"v":"a"},{"t":"工艺段证据链、效益、复制与未决风险","correct":true,"v":"b"},{"t":"员工名单","correct":false,"v":"c"},{"t":"仅 Minitab 截图","correct":false,"v":"d"}],"explain":{"source":"author","focus":"阶段门 · ADAS SCAR · Q3","rationale":"正解：工艺段证据链、效益、复制与未决风险。答题时写出工站号/Profile#/Program_ID 中至少一项。","distractors":{"b":"「仅 Minitab 截图」与模块 07 阶段门 · ADAS SCAR 证据要求冲突。","c":"「仅 FCT 程序代码」与模块 07 阶段门 · ADAS SCAR 证据要求冲突。","d":"「员工名单」与模块 07 阶段门 · ADAS SCAR 证据要求冲突。"},"anchor":"教研精编 · 模块 07 B+ / C2 Lab"},"type":"single","correctValue":"b"},{"q":"证明对车身域控无回归应？","options":[{"t":"DCU-B 独立 FCT-04 批对比，无异常趋势","correct":true,"v":"a"},{"t":"合并 ADAS+车身良率","correct":false,"v":"b"},{"t":"只改 ADAS 程序","correct":false,"v":"c"},{"t":"不测车身","correct":false,"v":"d"}],"explain":{"source":"auto","focus":"考点（模块 07 · DMAIC 阶段门与故事板）— 现场判断","rationale":"DCU-B 独立 FCT-04 批对比，无异常趋势。须能在离线/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。","distractors":{"b":"「不测车身」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。","c":"勿合并产品/工站数据，违反分层原则。","d":"「只改 ADAS 程序」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。"},"anchor":"对照本节 B+ 工艺表、F 作业 Rubric 与 G 题干关键词。"},"type":"single","correctValue":"a"},{"q":"【纠错】阶段门可口头通过？","options":[{"t":"是；BB 决定","correct":false,"v":"a"},{"t":"是；Champion 忙","correct":false,"v":"b"},{"t":"否；须文档化证据与签字","correct":true,"v":"c"},{"t":"是；只改 X-Ray","correct":false,"v":"d"}],"explain":{"source":"author","focus":"阶段门 · ADAS SCAR · 纠错辨析","rationale":"立场：否；须文档化证据与签字。题干已植入常见误区，须用工艺段证据反驳。","distractors":{"b":"「是；Champion 忙」与模块 07 阶段门 · ADAS SCAR 证据要求冲突。","c":"「是；BB 决定」与模块 07 阶段门 · ADAS SCAR 证据要求冲突。","d":"「是；只改 X-Ray」与模块 07 阶段门 · ADAS SCAR 证据要求冲突。"},"anchor":"教研精编 · 模块 07 B+ / C2 Lab"},"type":"single","correctValue":"c"},{"type":"multi","bloom":"evaluate","products":["DCU-B"],"scenario":"【情景】Analyze 门评审：仅 PPT 口头汇报，无 DCU-B 回归证据。","q":"应打回的理由包括？（多选）","options":[{"t":"Measure 门附分段 MSA","correct":false,"v":"a"},{"t":"未证明对车身域控无回归","correct":true,"v":"b"},{"t":"故事板含效益与风险","correct":false,"v":"c"},{"t":"阶段门口头通过无签字","correct":true,"v":"d"}],"correctValues":["b","d"],"explain":{"source":"auto","focus":"考点（模块 07 · DMAIC 阶段门与故事板）— 现场判断","rationale":"阶段门口头通过无签字。须能在离线/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。","distractors":{"c":"「Measure 门附分段 MSA」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。","d":"「故事板含效益与风险」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。"},"anchor":"对照本节 B+ 工艺表、F 作业 Rubric 与 G 题干关键词。"}}]}</script>
+  <script type="application/json" id="hw-rubric-data">{"day":7,"minChars":150,"passScore":70,"mcqWeight":45,"textWeight":55,"dayKeywords":["阶段门","故事板","回归","dcu-b","证据链","离线烧录","smt","bga","fct","域控","装配","手插"],"evidenceFields":["工站","fct-","profile","program_id","checksum","x-ray","工艺段","离线烧录","sipoc","分段","截图"],"dimensions":{"business":{"label":"商业对齐","weight":20,"keys":["ctq","voc","champion","效益","成本","sipoc","章程","问题陈述","dpmo","ppm","oem","adas","域控","阶段门","故事板","证据链"],"forbids":["应该采用","建议使用 minitab","上 minitab"]},"measure":{"label":"测量严谨","weight":20,"keys":["msa","操作定义","抽样","基线","cpk","grr","%r&r","spi","checksum","x-ray","profile","探针"],"forbids":[]},"stats":{"label":"统计有效","weight":25,"keys":["显著","α","p值","假设","doe","效应量","anova","回归","卡方","缺陷矩阵","pareto"],"forbids":[]},"improve":{"label":"改进与控制","weight":25,"keys":["fmea","pfmea","控制计划","pilot","对策","8d","spc","p图","反应计划","u12","空洞"],"forbids":[]},"mbb":{"label":"MBB 表达","weight":20,"keys":["champion","阶段门","复制","故事板","bb","mbb","教练","评审","工艺段","打回","签字"],"forbids":[]}},"mcq":[{"q":"Measure 门对 ADAS 项目的核心证据？","options":[{"t":"仅 HU 数据","correct":false,"v":"a"},{"t":"分段 MSA 合格 + 离线烧录/SMT/FCT 基线","correct":true,"v":"b"},{"t":"跳过 MSA","correct":false,"v":"c"},{"t":"仅口头汇报","correct":false,"v":"d"}],"explain":{"source":"author","focus":"阶段门 · ADAS SCAR · Q1","rationale":"正解：分段 MSA 合格 + 离线烧录/SMT/FCT 基线。答题时写出工站号/Profile#/Program_ID 中至少一项。","distractors":{"b":"ADAS DCU-A：FCT-05 + Eth 环回，离线烧录 SOC+eMMC。","c":"中控 HU：FCT 程序与域控分离，勿并入 ADAS Eth 分析。","d":"ADAS DCU-A：FCT-05 + Eth 环回，离线烧录 SOC+eMMC。"},"anchor":"教研精编 · 模块 07 B+ / C2 Lab"},"type":"single","correctValue":"b"},{"q":"Analyze 门打回理由？","options":[{"t":"根因未验证、混杂五类产品、无 X-Ray 阶段分层","correct":true,"v":"a"},{"t":"已区分 DCU-A/B","correct":false,"v":"b"},{"t":"已附缺陷-过程矩阵","correct":false,"v":"c"},{"t":"已做卡方","correct":false,"v":"d"}],"explain":{"source":"author","focus":"阶段门 · ADAS SCAR · Q2","rationale":"正解：根因未验证、混杂五类产品、无 X-Ray 阶段分层。答题时写出工站号/Profile#/Program_ID 中至少一项。","distractors":{"b":"「已附缺陷-过程矩阵」与模块 07 阶段门 · ADAS SCAR 证据要求冲突。","c":"ADAS DCU-A：FCT-05 + Eth 环回，离线烧录 SOC+eMMC。","d":"「已做卡方」与模块 07 阶段门 · ADAS SCAR 证据要求冲突。"},"anchor":"教研精编 · 模块 07 B+ / C2 Lab"},"type":"single","correctValue":"a"},{"q":"故事板对 OEM 汇报应含？","options":[{"t":"仅 FCT 程序代码","correct":false,"v":"a"},{"t":"工艺段证据链、效益、复制与未决风险","correct":true,"v":"b"},{"t":"员工名单","correct":false,"v":"c"},{"t":"仅 Minitab 截图","correct":false,"v":"d"}],"explain":{"source":"author","focus":"阶段门 · ADAS SCAR · Q3","rationale":"正解：工艺段证据链、效益、复制与未决风险。答题时写出工站号/Profile#/Program_ID 中至少一项。","distractors":{"b":"「仅 Minitab 截图」与模块 07 阶段门 · ADAS SCAR 证据要求冲突。","c":"「仅 FCT 程序代码」与模块 07 阶段门 · ADAS SCAR 证据要求冲突。","d":"「员工名单」与模块 07 阶段门 · ADAS SCAR 证据要求冲突。"},"anchor":"教研精编 · 模块 07 B+ / C2 Lab"},"type":"single","correctValue":"b"},{"q":"证明对车身域控无回归应？","options":[{"t":"DCU-B 独立 FCT-04 批对比，无异常趋势","correct":true,"v":"a"},{"t":"合并 ADAS+车身良率","correct":false,"v":"b"},{"t":"只改 ADAS 程序","correct":false,"v":"c"},{"t":"不测车身","correct":false,"v":"d"}],"explain":{"source":"auto","focus":"考点（模块 07 · DMAIC 阶段门与故事板）— 现场判断","rationale":"DCU-B 独立 FCT-04 批对比，无异常趋势。须能在离线烧录/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。","distractors":{"b":"「不测车身」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。","c":"勿合并产品/工站数据，违反分层原则。","d":"「只改 ADAS 程序」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。"},"anchor":"对照本节 B+ 工艺表、F 作业 Rubric 与 G 题干关键词。"},"type":"single","correctValue":"a"},{"q":"【纠错】阶段门可口头通过？","options":[{"t":"是；BB 决定","correct":false,"v":"a"},{"t":"是；Champion 忙","correct":false,"v":"b"},{"t":"否；须文档化证据与签字","correct":true,"v":"c"},{"t":"是；只改 X-Ray","correct":false,"v":"d"}],"explain":{"source":"author","focus":"阶段门 · ADAS SCAR · 纠错辨析","rationale":"立场：否；须文档化证据与签字。题干已植入常见误区，须用工艺段证据反驳。","distractors":{"b":"「是；Champion 忙」与模块 07 阶段门 · ADAS SCAR 证据要求冲突。","c":"「是；BB 决定」与模块 07 阶段门 · ADAS SCAR 证据要求冲突。","d":"「是；只改 X-Ray」与模块 07 阶段门 · ADAS SCAR 证据要求冲突。"},"anchor":"教研精编 · 模块 07 B+ / C2 Lab"},"type":"single","correctValue":"c"},{"type":"multi","bloom":"evaluate","products":["DCU-B"],"scenario":"【情景】Analyze 门评审：仅 PPT 口头汇报，无 DCU-B 回归证据。","q":"应打回的理由包括？（多选）","options":[{"t":"Measure 门附分段 MSA","correct":false,"v":"a"},{"t":"未证明对车身域控无回归","correct":true,"v":"b"},{"t":"故事板含效益与风险","correct":false,"v":"c"},{"t":"阶段门口头通过无签字","correct":true,"v":"d"}],"correctValues":["b","d"],"explain":{"source":"auto","focus":"考点（模块 07 · DMAIC 阶段门与故事板）— 现场判断","rationale":"阶段门口头通过无签字。须能在离线烧录/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。","distractors":{"c":"「Measure 门附分段 MSA」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。","d":"「故事板含效益与风险」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。"},"anchor":"对照本节 B+ 工艺表、F 作业 Rubric 与 G 题干关键词。"}}]}</script>
   <script src="../js/homework-grader-core.js"></script>
   <script src="../js/interactive-learning-core.js"></script>
   <script src="../js/homework-grader.js" defer></script>

@@ -95,10 +95,10 @@
       </header>
 
       <article class="card pro automotive" id="sec-auto">
-      <h2><span class="section-num">◎</span>汽车电子 EMS（五产品·离线/SMT/手插/装配）</h2>
+      <h2><span class="section-num">◎</span>汽车电子 EMS（五产品·离线烧录/SMT/手插/装配）</h2>
       <p><span class="tag auto">汽车制造</span> <strong>IATF：</strong>见 automotive-iatf.html</p>
       
-      <p style="margin-top:0.75rem">缺陷-过程矩阵：ADAS FCT Eth 失败 ↔ 离线(SMT前)错版 OR BGA U12 空洞 OR X-Ray 从全检切抽检后漏检；卡方/对比检验。</p>
+      <p style="margin-top:0.75rem">缺陷-过程矩阵：ADAS FCT Eth 失败 ↔ 离线烧录(SMT前)错版 OR BGA U12 空洞 OR X-Ray 从全检切抽检后漏检；卡方/对比检验。</p>
       
       <h3 style="margin-top:1rem;color:var(--bb-gold)">审核检查清单</h3>
       <ul class="obj-list"><li>混杂：不同 DCU 产品不可合并分析</li><li>车身问题勿用 ADAS FCT 工站数据</li><li>对比 X-Ray SL 全检期 vs MP 抽检期 Pareto</li></ul>
@@ -119,7 +119,7 @@
 
       <article class="card pro" id="sec-b">
         <h2><span class="section-num">B</span>核心概念与理论框架</h2>
-        <p>p 值不是 H0 为真的概率。</p><p>【汽车电子 · Analyze — 缺陷-过程矩阵 + ADAS FCT】用缺陷-过程矩阵：行=Eth_FAIL/CAN_FAIL/Checksum_FAIL；列=离线/SMT/手插/装配。卡方或对比检验比较「错版批次 vs 正常批次」FCT；须对比 X-Ray SL 全检期与 MP 抽检期的空洞 Pareto。</p>
+        <p>p 值不是 H0 为真的概率。</p><p>【汽车电子 · Analyze — 缺陷-过程矩阵 + ADAS FCT】用缺陷-过程矩阵：行=Eth_FAIL/CAN_FAIL/Checksum_FAIL；列=离线烧录/SMT/手插/装配。卡方或对比检验比较「错版批次 vs 正常批次」FCT；须对比 X-Ray SL 全检期与 MP 抽检期的空洞 Pareto。</p>
         <div class="analogy"><strong>专业类比</strong> — ANOVA 显著后像发现「有差异」，Tukey 才告诉「谁和谁差」。</div>
         <p style="margin-top:1rem">先 Levene/正态；再选 t/ANOVA/非参数。</p>
         <div class="formula-pro"><div class="label">关键公式</div><code>α = P(拒绝H₀ | H₀为真)</code></div>
@@ -128,8 +128,8 @@
 
       <article class="card pro automotive-deep" id="sec-b2">
     <h2><span class="section-num">B+</span>本课与生产线对齐 · ADAS SCAR 假设检验路径</h2>
-    <div class="process-pipeline" aria-label="工艺主线"><span class="step accent">离线@SMT前</span><span class="arrow">→</span><span class="step">SMT·SPI</span><span class="arrow">→</span><span class="step">回流·AOI</span><span class="arrow">→</span><span class="step">X-Ray</span><span class="arrow">→</span><span class="step">手插/波峰</span><span class="arrow">→</span><span class="step">ICT</span><span class="arrow">→</span><span class="step">FCT</span><span class="arrow">→</span><span class="step">装配/EOL</span></div>
-    <ul class="obj-list"><li>H0：离线版本与 FCT 失败独立 — 用列联表/卡方</li><li>两样本：SL 期 vs MP 期 U12 空洞率 — 2 样本 t 或 Mann-Whitney</li><li>禁止：合并 DCU-B 车身 FCT 数据</li></ul>
+    <div class="process-pipeline" aria-label="工艺主线"><span class="step accent">离线烧录@SMT前</span><span class="arrow">→</span><span class="step">SMT·SPI</span><span class="arrow">→</span><span class="step">回流·AOI</span><span class="arrow">→</span><span class="step">X-Ray</span><span class="arrow">→</span><span class="step">手插/波峰</span><span class="arrow">→</span><span class="step">ICT</span><span class="arrow">→</span><span class="step">FCT</span><span class="arrow">→</span><span class="step">装配/EOL</span></div>
+    <ul class="obj-list"><li>H0：离线烧录版本与 FCT 失败独立 — 用列联表/卡方</li><li>两样本：SL 期 vs MP 期 U12 空洞率 — 2 样本 t 或 Mann-Whitney</li><li>禁止：合并 DCU-B 车身 FCT 数据</li></ul>
     
     <p class="exam-align-hint">▼ <strong>G 客观题</strong>与 <strong>F 作业</strong>仅考核本节要点（车身 FCT-04 / ADAS BGA·FCT-05）</p>
   </article>
@@ -167,7 +167,7 @@
 
       <article class="card pro" id="sec-d">
         <h2><span class="section-num">D</span>行业迷你案例与 黑带教练追问</h2>
-        <p>ADAS FCT Eth/CAN 失效 ↔ 离线版本 batch + BGA 空洞批次 交叉表；排除 HU 程序误用。</p>
+        <p>ADAS FCT Eth/CAN 失效 ↔ 离线烧录版本 batch + BGA 空洞批次 交叉表；排除 HU 程序误用。</p>
         <h3>黑带教练追问</h3>
         <ul class="obj-list"><li>独立吗？</li><li>是否多重比较？</li><li>根因可测量吗？</li></ul>
       </article>
@@ -178,7 +178,7 @@
         <strong>E1.</strong> 填缺陷-过程矩阵（至少 3 行缺陷 × 4 列工艺）
         <details class="exercise-answer-ref">
           <summary>参考答案</summary>
-          <p class="ex-ans-body"><strong>要点：</strong>缺陷×工艺矩阵：行 Eth_FAIL/Checksum_FAIL/U12_void；列 离线/SMT/手插/FCT；格内填 n 或 %。</p>
+          <p class="ex-ans-body"><strong>要点：</strong>缺陷×工艺矩阵：行 Eth_FAIL/Checksum_FAIL/U12_void；列 离线烧录/SMT/手插/FCT；格内填 n 或 %。</p>
           <p class="ex-ans-explain">Analyze 门核心证据。</p>
         </details>
       </li><li class="exercise-item">
@@ -214,7 +214,7 @@
 
       <article class="card pro warn" id="sec-f">
         <h2><span class="section-num">F</span>课后作业（可交付物）</h2>
-        <p><strong>交付要求：</strong>缺陷-过程矩阵（行=缺陷代码，列=离线/SMT/手插/装配）。</p>
+        <p><strong>交付要求：</strong>缺陷-过程矩阵（行=缺陷代码，列=离线烧录/SMT/手插/装配）。</p>
         <p class="c2-deliver-hint"><strong>C2 截图清单：</strong>检验输出截图、缺陷-过程矩阵表</p>
         <p class="c2-module-check"><label><input type="checkbox" id="c2-done-cb" data-day="5" /> 本模块 C2 Lab 跟做截图已交付（计入结业 15%）</label></p>
         <div class="hw-submit-panel" id="hw-submit-panel">
@@ -234,13 +234,13 @@
       <article class="card pro quiz" id="sec-g">
         <h2><span class="section-num">G</span>客观自测（自动判分 · 含纠错题）</h2>
         <div class="gradable-quiz" id="gradable-quiz" data-day="5">
-    <p class="gq-intro">以下题目<strong>只考本模块 B+ 节与 ◎ 汽车电子专题</strong>所讲要点（离线/SMT·BGA/手插/装配/域控 FCT），请先学完再答。占综合分 <strong>45%</strong>（含 Q6 情景多选）。选项顺序已打乱，请勿猜测字母规律。</p>
+    <p class="gq-intro">以下题目<strong>只考本模块 B+ 节与 ◎ 汽车电子专题</strong>所讲要点（离线烧录/SMT·BGA/手插/装配/域控 FCT），请先学完再答。占综合分 <strong>45%</strong>（含 Q6 情景多选）。选项顺序已打乱，请勿猜测字母规律。</p>
     <div class="gq-block" data-correct="c" data-qindex="1" data-qtype="single">
         <p class="gq-title"><span class="gq-num">Q1</span>  ADAS Eth 失败上升，首先应排除？</p>
         
         <ul class="gq-opts"><li class="opt"><input type="radio" name="mcq-d5-q1" id="mcq-d5-q1-a" value="a" data-label="仪表 IC 扭矩" /><label for="mcq-d5-q1-a">仪表 IC 扭矩</label></li><li class="opt"><input type="radio" name="mcq-d5-q1" id="mcq-d5-q1-b" value="b" data-label="SPI 已合格" /><label for="mcq-d5-q1-b">SPI 已合格</label></li><li class="opt"><input type="radio" name="mcq-d5-q1" id="mcq-d5-q1-c" value="c" data-label="HU 中控程序误测、车身 FCT-04 数据混入" /><label for="mcq-d5-q1-c">HU 中控程序误测、车身 FCT-04 数据混入</label></li><li class="opt"><input type="radio" name="mcq-d5-q1" id="mcq-d5-q1-d" value="d" data-label="OEM 品牌" /><label for="mcq-d5-q1-d">OEM 品牌</label></li></ul>
       </div><div class="gq-block" data-correct="b" data-qindex="2" data-qtype="single">
-        <p class="gq-title"><span class="gq-num">Q2</span>  离线 SOC v2.4.0/v2.4.1 混杂，适宜分析？</p>
+        <p class="gq-title"><span class="gq-num">Q2</span>  离线烧录 SOC v2.4.0/v2.4.1 混杂，适宜分析？</p>
         
         <ul class="gq-opts"><li class="opt"><input type="radio" name="mcq-d5-q2" id="mcq-d5-q2-a" value="a" data-label="只问产线班长" /><label for="mcq-d5-q2-a">只问产线班长</label></li><li class="opt"><input type="radio" name="mcq-d5-q2" id="mcq-d5-q2-b" value="b" data-label="按 Program_ID 分层对比 FCT 通过率/缺陷 Pareto" /><label for="mcq-d5-q2-b">按 Program_ID 分层对比 FCT 通过率/缺陷 Pareto</label></li><li class="opt"><input type="radio" name="mcq-d5-q2" id="mcq-d5-q2-c" value="c" data-label="忽略版本" /><label for="mcq-d5-q2-c">忽略版本</label></li><li class="opt"><input type="radio" name="mcq-d5-q2" id="mcq-d5-q2-d" value="d" data-label="全厂总良率 t 检验" /><label for="mcq-d5-q2-d">全厂总良率 t 检验</label></li></ul>
       </div><div class="gq-block" data-correct="d" data-qindex="3" data-qtype="single">
@@ -271,11 +271,11 @@
     <p class="gq-explain-rationale"><strong>正解（C）</strong> 正解：HU 中控程序误测、车身 FCT-04 数据混入。答题时写出工站号/Profile#/Program_ID 中至少一项。</p>
     
     <p class="gq-explain-distractor-title"><strong>误选简析</strong></p>
-    <ul class="gq-explain-distractor-list obj-list"><li><strong>A</strong> 仪表 IC 扭矩<br><span class="gq-explain-dim">见题干干扰项设计。</span></li><li><strong>B</strong> SPI 已合格<br><span class="gq-explain-dim">ADAS DCU-A：FCT-05 + Eth 环回，离线 SOC+eMMC。</span></li><li><strong>D</strong> OEM 品牌<br><span class="gq-explain-dim">ADAS DCU-A：FCT-05 + Eth 环回，离线 SOC+eMMC。</span></li></ul>
+    <ul class="gq-explain-distractor-list obj-list"><li><strong>A</strong> 仪表 IC 扭矩<br><span class="gq-explain-dim">见题干干扰项设计。</span></li><li><strong>B</strong> SPI 已合格<br><span class="gq-explain-dim">ADAS DCU-A：FCT-05 + Eth 环回，离线烧录 SOC+eMMC。</span></li><li><strong>D</strong> OEM 品牌<br><span class="gq-explain-dim">ADAS DCU-A：FCT-05 + Eth 环回，离线烧录 SOC+eMMC。</span></li></ul>
     <p class="gq-explain-anchor">教研精编 · 模块 05 B+ / C2 Lab</p>
   </div>
   </div><div class="gq-ref-item" data-qindex="2">
-    <h4 class="gq-ref-q">Q2 离线 SOC v2.4.0/v2.4.1 混杂，适宜分析？</h4>
+    <h4 class="gq-ref-q">Q2 离线烧录 SOC v2.4.0/v2.4.1 混杂，适宜分析？</h4>
     
     <p class="gq-ref-ans"><span style="color:var(--accent)">✓ 按 Program_ID 分层对比 FCT 通过率/缺陷 Pareto</span></p>
     <div class="gq-explain-block pass">
@@ -307,7 +307,7 @@
     <div class="gq-explain-block pass">
     <span class="gq-explain-source auto">规则解析</span>
     <p class="gq-explain-focus"><strong>考点</strong> 考点（模块 05 · Analyze · 根因与分层）— 现场判断</p>
-    <p class="gq-explain-rationale"><strong>正解（A）</strong> MBB 否决；改为可测因素如 Checksum 门禁、Profile 漂移。须能在离线/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。</p>
+    <p class="gq-explain-rationale"><strong>正解（A）</strong> MBB 否决；改为可测因素如 Checksum 门禁、Profile 漂移。须能在离线烧录/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。</p>
     
     <p class="gq-explain-distractor-title"><strong>误选简析</strong></p>
     <ul class="gq-explain-distractor-list obj-list"><li><strong>B</strong> 写入 PFMEA 即可<br><span class="gq-explain-dim">「接受；加培训即可」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。</span></li><li><strong>C</strong> 接受；加培训即可<br><span class="gq-explain-dim">「接受；扣绩效」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。</span></li><li><strong>D</strong> 接受；扣绩效<br><span class="gq-explain-dim">「写入 PFMEA 即可」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。</span></li></ul>
@@ -333,7 +333,7 @@
     <div class="gq-explain-block pass">
     <span class="gq-explain-source auto">规则解析</span>
     <p class="gq-explain-focus"><strong>考点</strong> 考点（模块 05 · Analyze · 根因与分层）— 现场判断</p>
-    <p class="gq-explain-rationale"><strong>正解（多选）（C+D）</strong> HU 数据混入 ADAS 域控。须能在离线/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。</p>
+    <p class="gq-explain-rationale"><strong>正解（多选）（C+D）</strong> HU 数据混入 ADAS 域控。须能在离线烧录/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。</p>
     
     <p class="gq-explain-distractor-title"><strong>误选简析</strong></p>
     <ul class="gq-explain-distractor-list obj-list"><li><strong>A</strong> 缺陷-过程矩阵四段工艺列齐全<br><span class="gq-explain-dim">见题干干扰项设计。</span></li><li><strong>B</strong> X-Ray SL/MP 切换日标注<br><span class="gq-explain-dim">见题干干扰项设计。</span></li></ul>
@@ -391,7 +391,7 @@
     <a href="javascript:window.print()">打印本模块（浅色版式）</a>
     <span class="print-footer-line">— 机密文件 · 仅供内部培训 —</span>
   </footer>
-  <script type="application/json" id="hw-rubric-data">{"day":5,"minChars":150,"passScore":70,"mcqWeight":45,"textWeight":55,"dayKeywords":["缺陷矩阵","卡方","eth","u12","分层","x-ray","错版","fct","离线","smt","bga","域控","装配","手插"],"evidenceFields":["工站","fct-","profile","program_id","checksum","x-ray","工艺段","离线","sipoc","分段","截图"],"dimensions":{"business":{"label":"商业对齐","weight":15,"keys":["ctq","voc","champion","效益","成本","sipoc","章程","问题陈述","dpmo","ppm","oem","adas","域控"],"forbids":["应该采用","建议使用 minitab","上 minitab"]},"measure":{"label":"测量严谨","weight":20,"keys":["msa","操作定义","抽样","基线","cpk","grr","%r&r","spi","checksum","x-ray","profile","探针"],"forbids":[]},"stats":{"label":"统计有效","weight":30,"keys":["显著","α","p值","假设","doe","效应量","anova","回归","卡方","缺陷矩阵","pareto","混杂","分层","根因"],"forbids":[]},"improve":{"label":"改进与控制","weight":20,"keys":["fmea","pfmea","控制计划","pilot","对策","8d","spc","p图","反应计划","u12","空洞"],"forbids":[]},"mbb":{"label":"MBB 表达","weight":15,"keys":["champion","阶段门","复制","故事板","bb","mbb","教练","评审","工艺段"],"forbids":[]}},"mcq":[{"q":"ADAS Eth 失败上升，首先应排除？","options":[{"t":"仪表 IC 扭矩","correct":false,"v":"a"},{"t":"SPI 已合格","correct":false,"v":"b"},{"t":"HU 中控程序误测、车身 FCT-04 数据混入","correct":true,"v":"c"},{"t":"OEM 品牌","correct":false,"v":"d"}],"explain":{"source":"author","focus":"Analyze · 缺陷矩阵 · Q1","rationale":"正解：HU 中控程序误测、车身 FCT-04 数据混入。答题时写出工站号/Profile#/Program_ID 中至少一项。","distractors":{"b":"ADAS DCU-A：FCT-05 + Eth 环回，离线 SOC+eMMC。","c":"组合仪表 IC：扭矩/ICT 为独立 CTQ，勿与 BGA 空洞混批。","d":"ADAS DCU-A：FCT-05 + Eth 环回，离线 SOC+eMMC。"},"anchor":"教研精编 · 模块 05 B+ / C2 Lab"},"type":"single","correctValue":"c"},{"q":"离线 SOC v2.4.0/v2.4.1 混杂，适宜分析？","options":[{"t":"只问产线班长","correct":false,"v":"a"},{"t":"按 Program_ID 分层对比 FCT 通过率/缺陷 Pareto","correct":true,"v":"b"},{"t":"忽略版本","correct":false,"v":"c"},{"t":"全厂总良率 t 检验","correct":false,"v":"d"}],"explain":{"source":"author","focus":"Analyze · 缺陷矩阵 · Q2","rationale":"正解：按 Program_ID 分层对比 FCT 通过率/缺陷 Pareto。答题时写出工站号/Profile#/Program_ID 中至少一项。","distractors":{"b":"五产品/工站须分层，MBB 评审一票否决合并统计。","c":"「只问产线班长」与模块 05 Analyze · 缺陷矩阵 证据要求冲突。","d":"「忽略版本」与模块 05 Analyze · 缺陷矩阵 证据要求冲突。"},"anchor":"教研精编 · 模块 05 B+ / C2 Lab"},"type":"single","correctValue":"b"},{"q":"X-Ray 由 SL 全检改为 MP 抽检后空洞漏检，Analyze 应？","options":[{"t":"删除抽检期","correct":false,"v":"a"},{"t":"停止 X-Ray","correct":false,"v":"b"},{"t":"只分析装配扭矩","correct":false,"v":"c"},{"t":"标注切换日，分阶段 Pareto + 与 FCT 失败时间对齐","correct":true,"v":"d"}],"explain":{"source":"author","focus":"Analyze · 缺陷矩阵 · Q3","rationale":"正解：标注切换日，分阶段 Pareto + 与 FCT 失败时间对齐。答题时写出工站号/Profile#/Program_ID 中至少一项。","distractors":{"b":"「删除抽检期」与模块 05 Analyze · 缺陷矩阵 证据要求冲突。","c":"「只分析装配扭矩」与模块 05 Analyze · 缺陷矩阵 证据要求冲突。","d":"「停止 X-Ray」与模块 05 Analyze · 缺陷矩阵 证据要求冲突。"},"anchor":"教研精编 · 模块 05 B+ / C2 Lab"},"type":"single","correctValue":"d"},{"q":"「操作员不认真」作为根因？","options":[{"t":"MBB 否决；改为可测因素如 Checksum 门禁、Profile 漂移","correct":true,"v":"a"},{"t":"写入 PFMEA 即可","correct":false,"v":"b"},{"t":"接受；加培训即可","correct":false,"v":"c"},{"t":"接受；扣绩效","correct":false,"v":"d"}],"explain":{"source":"auto","focus":"考点（模块 05 · Analyze · 根因与分层）— 现场判断","rationale":"MBB 否决；改为可测因素如 Checksum 门禁、Profile 漂移。须能在离线/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。","distractors":{"b":"「接受；加培训即可」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。","c":"「接受；扣绩效」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。","d":"「写入 PFMEA 即可」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。"},"anchor":"对照本节 B+ 工艺表、F 作业 Rubric 与 G 题干关键词。"},"type":"single","correctValue":"a"},{"q":"【纠错】p=0.04 就全产线换钢网？","options":[{"t":"是；只改 FCT","correct":false,"v":"a"},{"t":"否；永远不要显著","correct":false,"v":"b"},{"t":"否；须效应量、成本、锁定 SMT 段证据","correct":true,"v":"c"},{"t":"是；显著就行","correct":false,"v":"d"}],"explain":{"source":"author","focus":"Analyze · 缺陷矩阵 · 纠错辨析","rationale":"立场：否；须效应量、成本、锁定 SMT 段证据。题干已植入常见误区，须用工艺段证据反驳。","distractors":{"b":"「是；显著就行」与模块 05 Analyze · 缺陷矩阵 证据要求冲突。","c":"「是；只改 FCT」与模块 05 Analyze · 缺陷矩阵 证据要求冲突。","d":"「否；永远不要显著」与模块 05 Analyze · 缺陷矩阵 证据要求冲突。"},"anchor":"教研精编 · 模块 05 B+ / C2 Lab"},"type":"single","correctValue":"c"},{"type":"multi","bloom":"analyze","products":["HU"],"scenario":"【情景】分析 Eth 失败时混入中控 HU FCT-03 数据，且未按 SOC_FW 分层。","q":"哪些导致根因结论不可信？（多选）","options":[{"t":"缺陷-过程矩阵四段工艺列齐全","correct":false,"v":"a"},{"t":"X-Ray SL/MP 切换日标注","correct":false,"v":"b"},{"t":"未按 Program_ID/SOC_FW 分层","correct":true,"v":"c"},{"t":"HU 数据混入 ADAS 域控","correct":true,"v":"d"}],"correctValues":["c","d"],"explain":{"source":"auto","focus":"考点（模块 05 · Analyze · 根因与分层）— 现场判断","rationale":"HU 数据混入 ADAS 域控。须能在离线/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。","distractors":{"c":"「缺陷-过程矩阵四段工艺列齐全」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。","d":"「X-Ray SL/MP 切换日标注」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。"},"anchor":"对照本节 B+ 工艺表、F 作业 Rubric 与 G 题干关键词。"}}]}</script>
+  <script type="application/json" id="hw-rubric-data">{"day":5,"minChars":150,"passScore":70,"mcqWeight":45,"textWeight":55,"dayKeywords":["缺陷矩阵","卡方","eth","u12","分层","x-ray","错版","fct","离线烧录","smt","bga","域控","装配","手插"],"evidenceFields":["工站","fct-","profile","program_id","checksum","x-ray","工艺段","离线烧录","sipoc","分段","截图"],"dimensions":{"business":{"label":"商业对齐","weight":15,"keys":["ctq","voc","champion","效益","成本","sipoc","章程","问题陈述","dpmo","ppm","oem","adas","域控"],"forbids":["应该采用","建议使用 minitab","上 minitab"]},"measure":{"label":"测量严谨","weight":20,"keys":["msa","操作定义","抽样","基线","cpk","grr","%r&r","spi","checksum","x-ray","profile","探针"],"forbids":[]},"stats":{"label":"统计有效","weight":30,"keys":["显著","α","p值","假设","doe","效应量","anova","回归","卡方","缺陷矩阵","pareto","混杂","分层","根因"],"forbids":[]},"improve":{"label":"改进与控制","weight":20,"keys":["fmea","pfmea","控制计划","pilot","对策","8d","spc","p图","反应计划","u12","空洞"],"forbids":[]},"mbb":{"label":"MBB 表达","weight":15,"keys":["champion","阶段门","复制","故事板","bb","mbb","教练","评审","工艺段"],"forbids":[]}},"mcq":[{"q":"ADAS Eth 失败上升，首先应排除？","options":[{"t":"仪表 IC 扭矩","correct":false,"v":"a"},{"t":"SPI 已合格","correct":false,"v":"b"},{"t":"HU 中控程序误测、车身 FCT-04 数据混入","correct":true,"v":"c"},{"t":"OEM 品牌","correct":false,"v":"d"}],"explain":{"source":"author","focus":"Analyze · 缺陷矩阵 · Q1","rationale":"正解：HU 中控程序误测、车身 FCT-04 数据混入。答题时写出工站号/Profile#/Program_ID 中至少一项。","distractors":{"b":"ADAS DCU-A：FCT-05 + Eth 环回，离线烧录 SOC+eMMC。","c":"组合仪表 IC：扭矩/ICT 为独立 CTQ，勿与 BGA 空洞混批。","d":"ADAS DCU-A：FCT-05 + Eth 环回，离线烧录 SOC+eMMC。"},"anchor":"教研精编 · 模块 05 B+ / C2 Lab"},"type":"single","correctValue":"c"},{"q":"离线烧录 SOC v2.4.0/v2.4.1 混杂，适宜分析？","options":[{"t":"只问产线班长","correct":false,"v":"a"},{"t":"按 Program_ID 分层对比 FCT 通过率/缺陷 Pareto","correct":true,"v":"b"},{"t":"忽略版本","correct":false,"v":"c"},{"t":"全厂总良率 t 检验","correct":false,"v":"d"}],"explain":{"source":"author","focus":"Analyze · 缺陷矩阵 · Q2","rationale":"正解：按 Program_ID 分层对比 FCT 通过率/缺陷 Pareto。答题时写出工站号/Profile#/Program_ID 中至少一项。","distractors":{"b":"五产品/工站须分层，MBB 评审一票否决合并统计。","c":"「只问产线班长」与模块 05 Analyze · 缺陷矩阵 证据要求冲突。","d":"「忽略版本」与模块 05 Analyze · 缺陷矩阵 证据要求冲突。"},"anchor":"教研精编 · 模块 05 B+ / C2 Lab"},"type":"single","correctValue":"b"},{"q":"X-Ray 由 SL 全检改为 MP 抽检后空洞漏检，Analyze 应？","options":[{"t":"删除抽检期","correct":false,"v":"a"},{"t":"停止 X-Ray","correct":false,"v":"b"},{"t":"只分析装配扭矩","correct":false,"v":"c"},{"t":"标注切换日，分阶段 Pareto + 与 FCT 失败时间对齐","correct":true,"v":"d"}],"explain":{"source":"author","focus":"Analyze · 缺陷矩阵 · Q3","rationale":"正解：标注切换日，分阶段 Pareto + 与 FCT 失败时间对齐。答题时写出工站号/Profile#/Program_ID 中至少一项。","distractors":{"b":"「删除抽检期」与模块 05 Analyze · 缺陷矩阵 证据要求冲突。","c":"「只分析装配扭矩」与模块 05 Analyze · 缺陷矩阵 证据要求冲突。","d":"「停止 X-Ray」与模块 05 Analyze · 缺陷矩阵 证据要求冲突。"},"anchor":"教研精编 · 模块 05 B+ / C2 Lab"},"type":"single","correctValue":"d"},{"q":"「操作员不认真」作为根因？","options":[{"t":"MBB 否决；改为可测因素如 Checksum 门禁、Profile 漂移","correct":true,"v":"a"},{"t":"写入 PFMEA 即可","correct":false,"v":"b"},{"t":"接受；加培训即可","correct":false,"v":"c"},{"t":"接受；扣绩效","correct":false,"v":"d"}],"explain":{"source":"auto","focus":"考点（模块 05 · Analyze · 根因与分层）— 现场判断","rationale":"MBB 否决；改为可测因素如 Checksum 门禁、Profile 漂移。须能在离线烧录/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。","distractors":{"b":"「接受；加培训即可」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。","c":"「接受；扣绩效」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。","d":"「写入 PFMEA 即可」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。"},"anchor":"对照本节 B+ 工艺表、F 作业 Rubric 与 G 题干关键词。"},"type":"single","correctValue":"a"},{"q":"【纠错】p=0.04 就全产线换钢网？","options":[{"t":"是；只改 FCT","correct":false,"v":"a"},{"t":"否；永远不要显著","correct":false,"v":"b"},{"t":"否；须效应量、成本、锁定 SMT 段证据","correct":true,"v":"c"},{"t":"是；显著就行","correct":false,"v":"d"}],"explain":{"source":"author","focus":"Analyze · 缺陷矩阵 · 纠错辨析","rationale":"立场：否；须效应量、成本、锁定 SMT 段证据。题干已植入常见误区，须用工艺段证据反驳。","distractors":{"b":"「是；显著就行」与模块 05 Analyze · 缺陷矩阵 证据要求冲突。","c":"「是；只改 FCT」与模块 05 Analyze · 缺陷矩阵 证据要求冲突。","d":"「否；永远不要显著」与模块 05 Analyze · 缺陷矩阵 证据要求冲突。"},"anchor":"教研精编 · 模块 05 B+ / C2 Lab"},"type":"single","correctValue":"c"},{"type":"multi","bloom":"analyze","products":["HU"],"scenario":"【情景】分析 Eth 失败时混入中控 HU FCT-03 数据，且未按 SOC_FW 分层。","q":"哪些导致根因结论不可信？（多选）","options":[{"t":"缺陷-过程矩阵四段工艺列齐全","correct":false,"v":"a"},{"t":"X-Ray SL/MP 切换日标注","correct":false,"v":"b"},{"t":"未按 Program_ID/SOC_FW 分层","correct":true,"v":"c"},{"t":"HU 数据混入 ADAS 域控","correct":true,"v":"d"}],"correctValues":["c","d"],"explain":{"source":"auto","focus":"考点（模块 05 · Analyze · 根因与分层）— 现场判断","rationale":"HU 数据混入 ADAS 域控。须能在离线烧录/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。","distractors":{"c":"「缺陷-过程矩阵四段工艺列齐全」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。","d":"「X-Ray SL/MP 切换日标注」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。"},"anchor":"对照本节 B+ 工艺表、F 作业 Rubric 与 G 题干关键词。"}}]}</script>
   <script src="../js/homework-grader-core.js"></script>
   <script src="../js/interactive-learning-core.js"></script>
   <script src="../js/homework-grader.js" defer></script>

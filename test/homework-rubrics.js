@@ -16,7 +16,7 @@ const EVIDENCE_FIELDS = [
   "checksum",
   "x-ray",
   "工艺段",
-  "离线",
+  "离线烧录",
   "sipoc",
   "分段",
   "截图",
@@ -238,7 +238,7 @@ function renderGradableQuiz(dayN) {
   const refDetails = rubric.mcq.map((item, i) => renderRefDetail(item, i)).join("");
 
   return `<div class="gradable-quiz" id="gradable-quiz" data-day="${dayN}">
-    <p class="gq-intro">以下题目<strong>只考本模块 B+ 节与 ◎ 汽车电子专题</strong>所讲要点（离线/SMT·BGA/手插/装配/域控 FCT），请先学完再答。占综合分 <strong>${rubric.mcqWeight}%</strong>（含 Q6 情景多选）。选项顺序已打乱，请勿猜测字母规律。</p>
+    <p class="gq-intro">以下题目<strong>只考本模块 B+ 节与 ◎ 汽车电子专题</strong>所讲要点（离线烧录/SMT·BGA/手插/装配/域控 FCT），请先学完再答。占综合分 <strong>${rubric.mcqWeight}%</strong>（含 Q6 情景多选）。选项顺序已打乱，请勿猜测字母规律。</p>
     ${blocks}
   </div>
   <details class="quiz-answers-ref" id="quiz-answers-ref"><summary>题库解析（提交后将自动展开）</summary><div class="gq-ref-wrap">${refDetails}</div></details>`;

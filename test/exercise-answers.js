@@ -5,7 +5,7 @@ const EXERCISE_ANSWERS_BY_DAY = {
   1: [
     {
       answer:
-        "routing 表标注：① 离线@SMT前 + Checksum；② X-Ray SL 100% / MP 抽检 + 切换日；③ 车身 FCT-DCU-B-04 与 ADAS FCT-05 分线。",
+        "routing 表标注：① 离线烧录@SMT前 + Checksum；② X-Ray SL 100% / MP 抽检 + 切换日；③ 车身 FCT-DCU-B-04 与 ADAS FCT-05 分线。",
       explain: "三条规则须与 site-config 问卷及 B+ 表一致，不可写「加强管理」。",
     },
     {
@@ -34,7 +34,7 @@ const EXERCISE_ANSWERS_BY_DAY = {
     },
     {
       answer:
-        "SIPOC 四段：离线#7 → SMT#5 →（手插若适用）→ FCT-05；Input 含 SOC_FW、eMMC_IMG。",
+        "SIPOC 四段：离线烧录#7 → SMT#5 →（手插若适用）→ FCT-05；Input 含 SOC_FW、eMMC_IMG。",
       explain: "与 B+ CTQ 分解表逐行对应。",
     },
     {
@@ -60,7 +60,7 @@ const EXERCISE_ANSWERS_BY_DAY = {
       explain: "禁止柔性线合并批次。",
     },
     {
-      answer: "离线错版率 → p/np 图；SPI 体积 → I-MR 或 Xbar-R（MSA 合格后）。",
+      answer: "离线烧录错版率 → p/np 图；SPI 体积 → I-MR 或 Xbar-R（MSA 合格后）。",
       explain: "数据类型决定控制图，见 B+ 数据字典。",
     },
     {
@@ -91,12 +91,12 @@ const EXERCISE_ANSWERS_BY_DAY = {
     },
     {
       answer: "Cp 高 Cpk 低：变异宽度尚可但均值偏离目标（钢网厚度/刮刀/压力）；对策调中心而非仅缩公差。",
-      explain: "与 FCT 程序错误、离线版本无关时需分 CTQ 查。",
+      explain: "与 FCT 程序错误、离线烧录版本无关时需分 CTQ 查。",
     },
   ],
   5: [
     {
-      answer: "缺陷×工艺矩阵：行 Eth_FAIL/Checksum_FAIL/U12_void；列 离线/SMT/手插/FCT；格内填 n 或 %。",
+      answer: "缺陷×工艺矩阵：行 Eth_FAIL/Checksum_FAIL/U12_void；列 离线烧录/SMT/手插/FCT；格内填 n 或 %。",
       explain: "Analyze 门核心证据。",
     },
     {
@@ -128,7 +128,7 @@ const EXERCISE_ANSWERS_BY_DAY = {
   ],
   7: [
     {
-      answer: "Measure 门 5 项：① SPI GRR ② 离线 Checksum GR&R ③ BGA 空洞基线（SL/MP 标注）④ FCT-05 基线 p 图 ⑤ 数据计划签字。",
+      answer: "Measure 门 5 项：① SPI GRR ② 离线烧录 Checksum GR&R ③ BGA 空洞基线（SL/MP 标注）④ FCT-05 基线 p 图 ⑤ 数据计划签字。",
       explain: "缺分段 MSA 应打回。",
     },
     {
@@ -146,7 +146,7 @@ const EXERCISE_ANSWERS_BY_DAY = {
   ],
   8: [
     {
-      answer: "PFMEA 行：离线 SOC 错版 S=10 O=3 D=2（Checksum）；SMT U12 空洞 S=9 O=4 D=3（Profile+AOI+AXI）。",
+      answer: "PFMEA 行：离线烧录 SOC 错版 S=10 O=3 D=2（Checksum）；SMT U12 空洞 S=9 O=4 D=3（Profile+AOI+AXI）。",
       explain: "探测度须对应实际门禁。",
     },
     {
@@ -254,7 +254,7 @@ const EXERCISE_ANSWERS_BY_DAY = {
   ],
   14: [
     {
-      answer: "3min 大纲：离线-Checksum 门禁；SMT-SPI+Profile#；X-Ray-SL/MP 切换；FCT-Eth 基线与复制计划 — 各 1 句 + 年化 ROI。",
+      answer: "3min 大纲：离线烧录-Checksum 门禁；SMT-SPI+Profile#；X-Ray-SL/MP 切换；FCT-Eth 基线与复制计划 — 各 1 句 + 年化 ROI。",
       explain: "CFO 关心硬效益与风险。",
     },
     {

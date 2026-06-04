@@ -20,7 +20,7 @@ const FOCUS_BY_DAY = {
 
 const DISTRACTOR_HINTS = [
   [/合并|混|柔性|总良率|HU|中控/i, "勿合并产品/工站数据，违反分层原则。"],
-  [/回流.*烧|补烧|FCT.*再烧/i, "离线须在 SMT 前完成，事后烧录无法拦截错版。"],
+  [/回流.*烧|补烧|FCT.*再烧/i, "离线烧录须在 SMT 前完成，事后烧录无法拦截错版。"],
   [/Cpk.*满意|1\.33|忽略.*X-Ray/i, "单点 Cpk 不能替代 CTQ 链与 MSA。"],
   [/Minitab|代替.*分析|替 BB/i, "MBB 教练不代劳分析。"],
   [/口头|自动认证|60 分/i, "认证须证据与评审记录。"],
@@ -43,7 +43,7 @@ function buildRationale(correctText, question) {
   if (/【纠错】/.test(question)) {
     return `纠偏：${correctText}。须用可测证据链支撑，而非经验口号。`;
   }
-  return `${correctText}。须能在离线/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。`;
+  return `${correctText}。须能在离线烧录/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。`;
 }
 
 /**

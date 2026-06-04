@@ -13,7 +13,7 @@ const MCQ_V2_BY_DAY = {
       { t: "合并 ADAS+车身 FCT 数据做总良率", correct: true },
       { t: "仅用 SPI Cpk 代表 Eth FCT 改善", correct: true },
       { t: "按 Program_ID 分层比较 FCT 通过率", correct: false },
-      { t: "离线 Checksum 100% 在 SMT 前完成", correct: false },
+      { t: "离线烧录 Checksum 100% 在 SMT 前完成", correct: false },
     ],
   },
   2: {
@@ -37,7 +37,7 @@ const MCQ_V2_BY_DAY = {
     q: "哪些统计处理不当？（多选）",
     options: [
       { t: "手插浮高与 BGA 空洞合并平均", correct: true },
-      { t: "对离线错版率使用 I-MR 求 Cpk", correct: true },
+      { t: "对离线烧录错版率使用 I-MR 求 Cpk", correct: true },
       { t: "DCU-B 与 DCU-A 分表建 p 图", correct: false },
       { t: "SPI 体积用计量型控制图", correct: false },
     ],
@@ -98,11 +98,11 @@ const MCQ_V2_BY_DAY = {
     type: "multi",
     bloom: "apply",
     products: ["DCU-A", "DCU-B"],
-    scenario: "【情景】PFMEA 仅降低 O 值，未加强离线 Checksum 探测度。",
+    scenario: "【情景】PFMEA 仅降低 O 值，未加强离线烧录 Checksum 探测度。",
     q: "不充分的改进有？（多选）",
     options: [
       { t: "只降 O 不加强探测", correct: true },
-      { t: "离线错版仍无 Checksum 门禁", correct: true },
+      { t: "离线烧录错版仍无 Checksum 门禁", correct: true },
       { t: "手插浮高增加通断检", correct: false },
       { t: "ADAS U12 空洞关联 Profile#", correct: false },
     ],

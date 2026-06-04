@@ -2,7 +2,7 @@
  * 五产品 × 四工艺段 全矩阵（B+ / IATF 共用）
  */
 const PRODUCT_MATRIX_FULL = {
-  headers: ["产品", "离线@SMT前", "SMT·BGA", "手插/波峰", "FCT 工站"],
+  headers: ["产品", "离线烧录@SMT前", "SMT·BGA", "手插/波峰", "FCT 工站"],
   rows: [
     ["组合仪表 IC", "MCU 预烧", "少量 BGA · SPI", "接插件扭矩", "FCT-IC-01"],
     ["中控 HU", "eMMC+主控镜像", "DDR BGA · SPI", "显示贴合", "FCT-HU-02"],

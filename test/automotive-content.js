@@ -23,7 +23,7 @@ module.exports.AUTO_PRO = {
         "车身域控 FCT 数据是否仅来自 FCT-DCU-B-04？",
         "离线烧录版本门禁是否独立于人检？",
       ],
-      deliverableExtra: "五类产品工艺路由表（离线/SMT/手插/装配）",
+      deliverableExtra: "五类产品工艺路由表（离线烧录/SMT/手插/装配）",
     },
     refs: ["templates/process-routing-electronics.csv", "IPC-A-610", "IATF 16949 CSR"],
     pitfalls: ["五类产品混用同一 FCT 程序", "离线烧录未纳入 PPAP 数据包"],
@@ -34,7 +34,7 @@ module.exports.AUTO_PRO = {
       iatf: "8.2 顾客输入 — 含软件交付物清单",
       aiag: "APQP Phase 1",
       scenario:
-        "SCAR：ADAS 域控量产 FCT 通过率下降；Suspect 链：离线 SOC 镜像版本混杂 + SMT BGA U12 空洞偏高；Charter 须列 4 工艺段范围。",
+        "SCAR：ADAS 域控量产 FCT 通过率下降；Suspect 链：离线烧录 SOC 镜像版本混杂 + SMT BGA U12 空洞偏高；Charter 须列 4 工艺段范围。",
       checklist: [
         "Charter 区分 DCU-C / DCU-B / DCU-A",
         "CTQ 按段：烧录 Checksum、SPI、BGA 空洞、FCT 项",
@@ -53,7 +53,7 @@ module.exports.AUTO_PRO = {
     automotive: {
       iatf: "7.1.5 — 各段测量系统清单",
       scenario:
-        "建立数据字典：离线(版本/Checksum)、SMT(SPI/AOI 空洞%)、手插(不良类别)、装配(扭矩)、测试(ICT/FCT 代码)。",
+        "建立数据字典：离线烧录(版本/Checksum)、SMT(SPI/AOI 空洞%)、手插(不良类别)、装配(扭矩)、测试(ICT/FCT 代码)。",
       checklist: ["ADAS 与车身域控分线体分层", "炉温 Profile ID 追溯"],
     },
     refs: ["data/automotive-offline-program.csv", "data/automotive-bga-aoi.csv"],
@@ -87,7 +87,7 @@ module.exports.AUTO_PRO = {
   5: {
     automotive: {
       scenario:
-        "缺陷-过程矩阵：ADAS FCT Eth 失败 ↔ 离线(SMT前)错版 OR BGA U12 空洞 OR X-Ray 从全检切抽检后漏检；卡方/对比检验。",
+        "缺陷-过程矩阵：ADAS FCT Eth 失败 ↔ 离线烧录(SMT前)错版 OR BGA U12 空洞 OR X-Ray 从全检切抽检后漏检；卡方/对比检验。",
       checklist: [
         "混杂：不同 DCU 产品不可合并分析",
         "车身问题勿用 ADAS FCT 工站数据",
@@ -106,7 +106,7 @@ module.exports.AUTO_PRO = {
   7: {
     automotive: {
       scenario:
-        "ADAS SCAR 阶段门：证明根因段（离线/SMT）+ 对车身/座舱线无回归；PPAP 变更项列表。",
+        "ADAS SCAR 阶段门：证明根因段（离线烧录/SMT）+ 对车身/座舱线无回归；PPAP 变更项列表。",
       checklist: ["8D 与 DMAIC 附件映射", "Safe Launch 批次"],
     },
   },
@@ -126,7 +126,7 @@ module.exports.AUTO_PRO = {
     iso: "8.5.1.1 控制计划 — 分产品分工艺段",
     automotive: {
       scenario:
-        "control-plan-electronics.csv：IC/HU/DCU-C/DCU-B/DCU-A 各行；离线/SMT/手插/装配/FCT 反应计划含追溯号。",
+        "control-plan-electronics.csv：IC/HU/DCU-C/DCU-B/DCU-A 各行；离线烧录/SMT/手插/装配/FCT 反应计划含追溯号。",
       deliverableExtra: "五类产品控制计划齐套",
     },
   },
@@ -149,7 +149,7 @@ module.exports.AUTO_PRO = {
   14: {
     automotive: {
       scenario:
-        "答辩：ADAS 域控 SCAR — 离线+SMT BGA+装配扭矩+FCT；说明与车身/座舱差异；模拟 OEM 电子与功能安全接口人。",
+        "答辩：ADAS 域控 SCAR — 离线烧录+SMT BGA+装配扭矩+FCT；说明与车身/座舱差异；模拟 OEM 电子与功能安全接口人。",
       checklist: ["ASIL 相关项不越界承诺", "数据脱敏"],
     },
   },
@@ -164,17 +164,17 @@ module.exports.AUTO_DAYS = {
       "打开 reference/site-config.html → 载入默认 → 校验并生成摘要",
       "阅读 reference/automotive-iatf.html",
       "打开 templates/process-routing-electronics.csv",
-      "画 ADAS 域控 SIPOC（离线→SMT→X-Ray→FCT）",
+      "画 ADAS 域控 SIPOC（离线烧录→SMT→X-Ray→FCT）",
     ],
   },
   2: {
     tags: ["Define", "汽车电子", "ADAS", "Define ✓"],
-    case: "SCAR：ADAS 域控 FCT 下降；怀疑离线 SOC 版本混杂 + BGA U12 空洞；范围含离线/SMT/测试，不含整车路测。",
+    case: "SCAR：ADAS 域控 FCT 下降；怀疑离线烧录 SOC 版本混杂 + BGA U12 空洞；范围含离线烧录/SMT/测试，不含整车路测。",
     homework: "ADAS Charter + 分工艺段特殊特性（烧录/SPI/BGA/FCT）。",
   },
   3: {
     tags: ["Measure", "汽车电子", "分段"],
-    case: "按工艺段建数据计划：离线 program.csv、SPI、BGA AOI 空洞、FCT；分 DCU-A/B/C 不混批。",
+    case: "按工艺段建数据计划：离线烧录 program.csv、SPI、BGA AOI 空洞、FCT；分 DCU-A/B/C 不混批。",
     dataFile: "templates/process-routing-electronics.csv",
     toolSteps: [
       "核对 offline-program / bga-aoi / spi-msa 字段定义",
@@ -183,7 +183,7 @@ module.exports.AUTO_DAYS = {
   },
   4: {
     tags: ["Measure ✓", "MSA", "BGA", "PPAP"],
-    case: "SPI %GRR；离线 Checksum 比对可靠性；BGA 空洞 AOI 一致性；FCT 探针 GRR。",
+    case: "SPI %GRR；离线烧录 Checksum 比对可靠性；BGA 空洞 AOI 一致性；FCT 探针 GRR。",
     dataFile: "data/automotive-spi-msa.csv",
     toolSteps: [
       "Gage R&R：spi-msa.csv",
@@ -200,9 +200,9 @@ module.exports.AUTO_DAYS = {
   },
   5: {
     tags: ["Analyze", "汽车电子", "ADAS"],
-    case: "ADAS FCT Eth/CAN 失效 ↔ 离线版本 batch + BGA 空洞批次 交叉表；排除 HU 程序误用。",
+    case: "ADAS FCT Eth/CAN 失效 ↔ 离线烧录版本 batch + BGA 空洞批次 交叉表；排除 HU 程序误用。",
     dataFile: "data/automotive-fct-yield.csv",
-    homework: "缺陷-过程矩阵（行=缺陷代码，列=离线/SMT/手插/装配）。",
+    homework: "缺陷-过程矩阵（行=缺陷代码，列=离线烧录/SMT/手插/装配）。",
   },
   6: {
     tags: ["DOE", "汽车电子", "SMT"],
@@ -215,23 +215,23 @@ module.exports.AUTO_DAYS = {
   },
   8: {
     tags: ["Improve", "汽车电子", "PFMEA"],
-    case: "PFMEA 更新：离线错版 S=10；BGA 空洞 S=9；手插浮高（车身线）；装配扭矩。",
+    case: "PFMEA 更新：离线烧录错版 S=10；BGA 空洞 S=9；手插浮高（车身线）；装配扭矩。",
     homework: "pfmea-electronics.csv 填 ADAS+车身各≥2 行；Pugh 选烧录门禁方案。",
     dataFile: "templates/pfmea-electronics.csv",
   },
   9: {
     tags: ["RSM", "汽车电子", "Improve ✓"],
-    case: "SPI/空洞稳健区；3 批 ADAS Safe Launch：离线 0 错版 + FCT≥99.5%。",
+    case: "SPI/空洞稳健区；3 批 ADAS Safe Launch：离线烧录 0 错版 + FCT≥99.5%。",
   },
   10: {
     tags: ["Control", "汽车电子", "PPAP", "Control ✓"],
-    case: "五类产品 control-plan 齐套；ADAS 重点：离线100%校验、SPI SPC、BGA 空洞、FCT p 图、装配扭矩。",
+    case: "五类产品 control-plan 齐套；ADAS 重点：离线烧录100%校验、SPI SPC、BGA 空洞、FCT p 图、装配扭矩。",
     homework: "control-plan-electronics.csv：IC/HU/DCU-C/DCU-B/DCU-A 各≥1 工序。",
     dataFile: "templates/control-plan-electronics.csv",
   },
   11: {
     tags: ["DFSS", "汽车电子", "ADAS NPI"],
-    case: "新 ADAS 平台 — QFD：感知/ASIL/时延→SOC BGA→离线镜像→Profile→FCT 场景库。",
+    case: "新 ADAS 平台 — QFD：感知/ASIL/时延→SOC BGA→离线烧录镜像→Profile→FCT 场景库。",
   },
   12: {
     tags: ["部署", "汽车电子"],
@@ -243,7 +243,7 @@ module.exports.AUTO_DAYS = {
   },
   14: {
     tags: ["认证", "汽车电子"],
-    case: "答辩：ADAS SCAR 全工艺段（离线/SMT/手插/装配/FCT）对 OEM + 功能安全接口说明边界。",
+    case: "答辩：ADAS SCAR 全工艺段（离线烧录/SMT/手插/装配/FCT）对 OEM + 功能安全接口说明边界。",
     homework: "毕业清单 + 3min 汇报（五类产品+四工艺段）。",
   },
 };

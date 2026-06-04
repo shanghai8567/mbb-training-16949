@@ -190,7 +190,7 @@
       line("涉及产品", labels(data.q2_offlineProducts)),
       line("版本校验", data.q3_versionCheck?.label),
       line("版本校验-其他", data.q3_versionOther),
-      line("离线-其他", data.q4_offlineOther),
+      line("离线烧录-其他", data.q4_offlineOther),
       "",
       "■ BGA X-Ray",
       line("Safe Launch", data.q5_xraySafeLaunch?.label),

@@ -66,7 +66,7 @@
     <div class="table-wrap">
       <table>
         <thead>
-          <tr><th>产品</th><th>离线(SMT前)</th><th>SMT / BGA</th><th>X-Ray</th><th>FCT</th><th>手插/装配</th></tr>
+          <tr><th>产品</th><th>离线烧录(SMT前)</th><th>SMT / BGA</th><th>X-Ray</th><th>FCT</th><th>手插/装配</th></tr>
         </thead>
         <tbody>
           <tr><td>组合仪表 IC</td><td>MCU 预烧</td><td>少量 BGA</td><td>SL全检 / MP抽检</td><td>FCT-IC-01</td><td>接插件 / 扭矩</td></tr>
@@ -91,7 +91,7 @@
     </div>
     <div class="card pro" id="product-hu">
       <h3>中控 HU</h3>
-      <p>离线 eMMC+主控；DDR BGA；<strong>FCT-HU-02</strong>。Eth 分析禁止混入 HU 批次。</p>
+      <p>离线烧录 eMMC+主控；DDR BGA；<strong>FCT-HU-02</strong>。Eth 分析禁止混入 HU 批次。</p>
       <p><a class="btn" href="../days/day05.html">模块 05 分析 →</a></p>
     </div>
     <div class="card pro" id="product-dcu-c">
@@ -130,7 +130,7 @@
         <table>
           <thead><tr><th>模块</th><th>工艺段重点</th><th>考核锚点</th></tr></thead>
           <tbody>
-            <tr><td>01–02</td><td>四段地图、ADAS Charter</td><td>SMT前离线、FCT-04/05、问题陈述</td></tr>
+            <tr><td>01–02</td><td>四段地图、ADAS Charter</td><td>SMT前离线烧录、FCT-04/05、问题陈述</td></tr>
             <tr><td>03–04</td><td>分段数据、SPI/空洞 MSA</td><td>p 图 vs Cpk、%GRR</td></tr>
             <tr><td>05–06</td><td>缺陷矩阵、Profile DOE</td><td>U12、X-Ray SL/MP、错版批次</td></tr>
             <tr><td>07–10</td><td>阶段门、PFMEA、控制计划</td><td>五产品分行、反应计划追溯</td></tr>
@@ -143,7 +143,7 @@
     <div class="card warn">
       <h2>BGA 与离线烧录 — 黑带必审</h2>
       <ul class="obj-list">
-        <li><strong>离线</strong>：必须在 SMT 前拦截错版；FCT 才发现错版 = 探测度不足</li>
+        <li><strong>离线烧录</strong>：必须在 SMT 前拦截错版；FCT 才发现错版 = 探测度不足</li>
         <li><strong>X-Ray</strong>：Analyze 须标注从「全检期」切换到「抽检期」的日期与 FCT/BGA 关联</li>
         <li><strong>分产品</strong>：座舱 / 车身 / ADAS 域控 FCT 数据禁止合并</li>
         <li><strong>车身 FCT</strong>：仅统计 FCT-DCU-B-04，CAN/LIN 矩阵程序独立</li>
@@ -153,7 +153,7 @@
     <div class="card">
       <h2>主线 SCAR 案例（ADAS 域控 · 跨工艺段）</h2>
       <p><strong>现象：</strong> ADAS 域控 FCT 一次通过率下降，Eth/CAN 项失败增多。</p>
-      <p><strong>假设链：</strong> ① SMT 前离线 SOC 镜像版本混杂 ② BGA U12 空洞 ③ X-Ray 由 SL 全检改为 MP 抽检后漏检 ④ 装配段（次要）。</p>
+      <p><strong>假设链：</strong> ① SMT 前离线烧录 SOC 镜像版本混杂 ② BGA U12 空洞 ③ X-Ray 由 SL 全检改为 MP 抽检后漏检 ④ 装配段（次要）。</p>
       <p><strong>数据：</strong></p>
       <ul class="obj-list">
         <li><a href="../data/automotive-offline-program.csv">offline-program.csv</a></li>

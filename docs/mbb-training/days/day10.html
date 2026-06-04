@@ -95,10 +95,10 @@
       </header>
 
       <article class="card pro automotive" id="sec-auto">
-      <h2><span class="section-num">◎</span>汽车电子 EMS（五产品·离线/SMT/手插/装配）</h2>
+      <h2><span class="section-num">◎</span>汽车电子 EMS（五产品·离线烧录/SMT/手插/装配）</h2>
       <p><span class="tag auto">汽车制造</span> <strong>IATF：</strong>见 automotive-iatf.html</p>
       
-      <p style="margin-top:0.75rem">control-plan-electronics.csv：IC/HU/DCU-C/DCU-B/DCU-A 各行；离线/SMT/手插/装配/FCT 反应计划含追溯号。</p>
+      <p style="margin-top:0.75rem">control-plan-electronics.csv：IC/HU/DCU-C/DCU-B/DCU-A 各行；离线烧录/SMT/手插/装配/FCT 反应计划含追溯号。</p>
       <p><strong>汽车交付补充：</strong>五类产品控制计划齐套</p>
       <h3 style="margin-top:1rem;color:var(--bb-gold)">审核检查清单</h3>
       <ul class="obj-list"></ul>
@@ -128,8 +128,8 @@
 
       <article class="card pro automotive-deep" id="sec-b2">
     <h2><span class="section-num">B+</span>本课与生产线对齐 · ADAS 控制计划关键行</h2>
-    <div class="process-pipeline" aria-label="工艺主线"><span class="step accent">离线@SMT前</span><span class="arrow">→</span><span class="step">SMT·SPI</span><span class="arrow">→</span><span class="step">回流·AOI</span><span class="arrow">→</span><span class="step">X-Ray</span><span class="arrow">→</span><span class="step">手插/波峰</span><span class="arrow">→</span><span class="step">ICT</span><span class="arrow">→</span><span class="step">FCT</span><span class="arrow">→</span><span class="step">装配/EOL</span></div>
-    <ul class="obj-list"><li>050 离线@SMT前 — Checksum 100%</li><li>145 X-Ray — SL 全检 / MP 抽检切换条件</li><li>420 FCT-05 — p 图 + Fail_code</li></ul>
+    <div class="process-pipeline" aria-label="工艺主线"><span class="step accent">离线烧录@SMT前</span><span class="arrow">→</span><span class="step">SMT·SPI</span><span class="arrow">→</span><span class="step">回流·AOI</span><span class="arrow">→</span><span class="step">X-Ray</span><span class="arrow">→</span><span class="step">手插/波峰</span><span class="arrow">→</span><span class="step">ICT</span><span class="arrow">→</span><span class="step">FCT</span><span class="arrow">→</span><span class="step">装配/EOL</span></div>
+    <ul class="obj-list"><li>050 离线烧录@SMT前 — Checksum 100%</li><li>145 X-Ray — SL 全检 / MP 抽检切换条件</li><li>420 FCT-05 — p 图 + Fail_code</li></ul>
     
     <p class="exam-align-hint">▼ <strong>G 客观题</strong>与 <strong>F 作业</strong>仅考核本节要点（车身 FCT-04 / ADAS BGA·FCT-05）</p>
   </article>
@@ -153,7 +153,7 @@
       · <a href="../tools/tutorials.html#minitab-imr">完整教程 →</a></p>
     <p class="c2-lab-meta"><strong>数据</strong> <a href="../data/control-imr.csv" download>control-imr.csv</a> · <a href="../templates/control-plan-electronics.csv" download>control-plan-electronics.csv</a> · <strong>列定义</strong> 子组=1 → I-MR；FCT 率 → p 图</p>
     <h3 class="c2-lab-h3">跟做步骤（菜单路径）</h3>
-    <ol class="c2-lab-steps"><li><strong>1.</strong> <code>统计 &gt; 控制图 &gt; 变量 &gt; I-MR — control-imr.csv</code></li><li><strong>2.</strong> <code>统计 &gt; 控制图 &gt; 属性 &gt; p — FCT 一次通过率</code></li><li><strong>3.</strong> <code>control-plan-electronics：离线 Checksum、SPI、X-Ray、FCT 各行</code></li></ol>
+    <ol class="c2-lab-steps"><li><strong>1.</strong> <code>统计 &gt; 控制图 &gt; 变量 &gt; I-MR — control-imr.csv</code></li><li><strong>2.</strong> <code>统计 &gt; 控制图 &gt; 属性 &gt; p — FCT 一次通过率</code></li><li><strong>3.</strong> <code>control-plan-electronics：离线烧录 Checksum、SPI、X-Ray、FCT 各行</code></li></ol>
     <p class="c2-lab-read"><strong>输出解读</strong> 特殊原因规则；p 图 LCL 为负时的处理说明。</p>
     <h3 class="c2-lab-h3">课堂练习</h3>
     <p>标 ADAS X-Ray SL→MP 切换条件 1 行。</p>
@@ -167,7 +167,7 @@
 
       <article class="card pro" id="sec-d">
         <h2><span class="section-num">D</span>行业迷你案例与 黑带教练追问</h2>
-        <p>五类产品 control-plan 齐套；ADAS 重点：离线100%校验、SPI SPC、BGA 空洞、FCT p 图、装配扭矩。</p>
+        <p>五类产品 control-plan 齐套；ADAS 重点：离线烧录100%校验、SPI SPC、BGA 空洞、FCT p 图、装配扭矩。</p>
         <h3>黑带教练追问</h3>
         <ul class="obj-list"><li>谁反应？</li><li>培训？</li><li>系统自动采集？</li></ul>
       </article>
@@ -207,12 +207,12 @@
 
       <article class="card pro warn" id="sec-f">
         <h2><span class="section-num">F</span>课后作业（可交付物）</h2>
-        <p><strong>交付要求：</strong>五产品各≥1 工序；ADAS 含离线/SPI/X-Ray/FCT；control-plan-electronics.csv：IC/HU/DCU-C/DCU-B/DCU-A 各≥1 工序。</p>
+        <p><strong>交付要求：</strong>五产品各≥1 工序；ADAS 含离线烧录/SPI/X-Ray/FCT；control-plan-electronics.csv：IC/HU/DCU-C/DCU-B/DCU-A 各≥1 工序。</p>
         <p class="c2-deliver-hint"><strong>C2 截图清单：</strong>控制图截图、控制计划摘录</p>
         <p class="c2-module-check"><label><input type="checkbox" id="c2-done-cb" data-day="10" /> 本模块 C2 Lab 跟做截图已交付（计入结业 15%）</label></p>
         <div class="hw-submit-panel" id="hw-submit-panel">
     <label for="hw-text" class="hw-label">粘贴或输入课后作业（须体现汽车电子现场）</label>
-    <p class="hw-hint"><strong>评分要点：</strong>五产品各≥1 工序；ADAS 含离线/SPI/X-Ray/FCT。建议字数 ≥ 150，含模块关键词（如 控制计划、p图、spc、反应计划、追溯、离线…）。未达字数时文本分按比例封顶。</p>
+    <p class="hw-hint"><strong>评分要点：</strong>五产品各≥1 工序；ADAS 含离线烧录/SPI/X-Ray/FCT。建议字数 ≥ 150，含模块关键词（如 控制计划、p图、spc、反应计划、追溯、离线烧录…）。未达字数时文本分按比例封顶。</p>
     <textarea id="hw-text" class="hw-textarea" rows="8" placeholder="例：ADAS 域控 / 车身域控 / 离线烧录@SMT前 / BGA U12 / X-Ray SL全检 / FCT-DCU-B-04 …"></textarea>
     <div class="form-actions hw-actions">
       <button type="button" class="btn btn-primary" id="hw-submit-btn">提交作业并自动评分</button>
@@ -227,11 +227,11 @@
       <article class="card pro quiz" id="sec-g">
         <h2><span class="section-num">G</span>客观自测（自动判分 · 含纠错题）</h2>
         <div class="gradable-quiz" id="gradable-quiz" data-day="10">
-    <p class="gq-intro">以下题目<strong>只考本模块 B+ 节与 ◎ 汽车电子专题</strong>所讲要点（离线/SMT·BGA/手插/装配/域控 FCT），请先学完再答。占综合分 <strong>45%</strong>（含 Q6 情景多选）。选项顺序已打乱，请勿猜测字母规律。</p>
+    <p class="gq-intro">以下题目<strong>只考本模块 B+ 节与 ◎ 汽车电子专题</strong>所讲要点（离线烧录/SMT·BGA/手插/装配/域控 FCT），请先学完再答。占综合分 <strong>45%</strong>（含 Q6 情景多选）。选项顺序已打乱，请勿猜测字母规律。</p>
     <div class="gq-block" data-correct="a" data-qindex="1" data-qtype="single">
         <p class="gq-title"><span class="gq-num">Q1</span>  ADAS 控制计划须单独一行？</p>
         
-        <ul class="gq-opts"><li class="opt"><input type="radio" name="mcq-d10-q1" id="mcq-d10-q1-a" value="a" data-label="离线 100% Checksum、SPI SPC、X-Ray SL/MP、FCT p 图、装配扭矩" /><label for="mcq-d10-q1-a">离线 100% Checksum、SPI SPC、X-Ray SL/MP、FCT p 图、装配扭矩</label></li><li class="opt"><input type="radio" name="mcq-d10-q1" id="mcq-d10-q1-b" value="b" data-label="只写目检" /><label for="mcq-d10-q1-b">只写目检</label></li><li class="opt"><input type="radio" name="mcq-d10-q1" id="mcq-d10-q1-c" value="c" data-label="与车身合并一行" /><label for="mcq-d10-q1-c">与车身合并一行</label></li><li class="opt"><input type="radio" name="mcq-d10-q1" id="mcq-d10-q1-d" value="d" data-label="只写 FCT" /><label for="mcq-d10-q1-d">只写 FCT</label></li></ul>
+        <ul class="gq-opts"><li class="opt"><input type="radio" name="mcq-d10-q1" id="mcq-d10-q1-a" value="a" data-label="离线烧录 100% Checksum、SPI SPC、X-Ray SL/MP、FCT p 图、装配扭矩" /><label for="mcq-d10-q1-a">离线烧录 100% Checksum、SPI SPC、X-Ray SL/MP、FCT p 图、装配扭矩</label></li><li class="opt"><input type="radio" name="mcq-d10-q1" id="mcq-d10-q1-b" value="b" data-label="只写目检" /><label for="mcq-d10-q1-b">只写目检</label></li><li class="opt"><input type="radio" name="mcq-d10-q1" id="mcq-d10-q1-c" value="c" data-label="与车身合并一行" /><label for="mcq-d10-q1-c">与车身合并一行</label></li><li class="opt"><input type="radio" name="mcq-d10-q1" id="mcq-d10-q1-d" value="d" data-label="只写 FCT" /><label for="mcq-d10-q1-d">只写 FCT</label></li></ul>
       </div><div class="gq-block" data-correct="d" data-qindex="2" data-qtype="single">
         <p class="gq-title"><span class="gq-num">Q2</span>  p 图 LCL 为负时？</p>
         
@@ -257,14 +257,14 @@
   <details class="quiz-answers-ref" id="quiz-answers-ref"><summary>题库解析（提交后将自动展开）</summary><div class="gq-ref-wrap"><div class="gq-ref-item" data-qindex="1">
     <h4 class="gq-ref-q">Q1 ADAS 控制计划须单独一行？</h4>
     
-    <p class="gq-ref-ans"><span style="color:var(--accent)">✓ 离线 100% Checksum、SPI SPC、X-Ray SL/MP、FCT p 图、装配扭矩</span></p>
+    <p class="gq-ref-ans"><span style="color:var(--accent)">✓ 离线烧录 100% Checksum、SPI SPC、X-Ray SL/MP、FCT p 图、装配扭矩</span></p>
     <div class="gq-explain-block pass">
     <span class="gq-explain-source author">精编解析</span>
     <p class="gq-explain-focus"><strong>考点</strong> Control · SPC/CP · Q1</p>
-    <p class="gq-explain-rationale"><strong>正解（A）</strong> 正解：离线 100% Checksum、SPI SPC、X-Ray SL/MP、FCT p 图、装配扭矩。答题时写出工站号/Profile#/Program_ID 中至少一项。</p>
+    <p class="gq-explain-rationale"><strong>正解（A）</strong> 正解：离线烧录 100% Checksum、SPI SPC、X-Ray SL/MP、FCT p 图、装配扭矩。答题时写出工站号/Profile#/Program_ID 中至少一项。</p>
     
     <p class="gq-explain-distractor-title"><strong>误选简析</strong></p>
-    <ul class="gq-explain-distractor-list obj-list"><li><strong>B</strong> 只写目检<br><span class="gq-explain-dim">ADAS DCU-A：FCT-05 + Eth 环回，离线 SOC+eMMC。</span></li><li><strong>C</strong> 与车身合并一行<br><span class="gq-explain-dim">车身 DCU-B：独立 FCT-04，CAN/LIN 与 ADAS Eth 分表。</span></li><li><strong>D</strong> 只写 FCT<br><span class="gq-explain-dim">ADAS DCU-A：FCT-05 + Eth 环回，离线 SOC+eMMC。</span></li></ul>
+    <ul class="gq-explain-distractor-list obj-list"><li><strong>B</strong> 只写目检<br><span class="gq-explain-dim">ADAS DCU-A：FCT-05 + Eth 环回，离线烧录 SOC+eMMC。</span></li><li><strong>C</strong> 与车身合并一行<br><span class="gq-explain-dim">车身 DCU-B：独立 FCT-04，CAN/LIN 与 ADAS Eth 分表。</span></li><li><strong>D</strong> 只写 FCT<br><span class="gq-explain-dim">ADAS DCU-A：FCT-05 + Eth 环回，离线烧录 SOC+eMMC。</span></li></ul>
     <p class="gq-explain-anchor">教研精编 · 模块 10 B+ / C2 Lab</p>
   </div>
   </div><div class="gq-ref-item" data-qindex="2">
@@ -300,7 +300,7 @@
     <div class="gq-explain-block pass">
     <span class="gq-explain-source auto">规则解析</span>
     <p class="gq-explain-focus"><strong>考点</strong> 考点（模块 10 · Control · 控制计划与 SPC）— 现场判断</p>
-    <p class="gq-explain-rationale"><strong>正解（A）</strong> 烧录批次、Profile#、X-Ray 阶段、PCB_ID。须能在离线/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。</p>
+    <p class="gq-explain-rationale"><strong>正解（A）</strong> 烧录批次、Profile#、X-Ray 阶段、PCB_ID。须能在离线烧录/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。</p>
     
     <p class="gq-explain-distractor-title"><strong>误选简析</strong></p>
     <ul class="gq-explain-distractor-list obj-list"><li><strong>B</strong> 只写停线<br><span class="gq-explain-dim">「只写停线」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。</span></li><li><strong>C</strong> 不需要<br><span class="gq-explain-dim">「不需要」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。</span></li><li><strong>D</strong> 只追溯 HU<br><span class="gq-explain-dim">勿合并产品/工站数据，违反分层原则。</span></li></ul>
@@ -326,7 +326,7 @@
     <div class="gq-explain-block pass">
     <span class="gq-explain-source auto">规则解析</span>
     <p class="gq-explain-focus"><strong>考点</strong> 考点（模块 10 · Control · 控制计划与 SPC）— 现场判断</p>
-    <p class="gq-explain-rationale"><strong>正解（多选）（A+C）</strong> 用控制图代替 MSA。须能在离线/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。</p>
+    <p class="gq-explain-rationale"><strong>正解（多选）（A+C）</strong> 用控制图代替 MSA。须能在离线烧录/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。</p>
     
     <p class="gq-explain-distractor-title"><strong>误选简析</strong></p>
     <ul class="gq-explain-distractor-list obj-list"><li><strong>B</strong> FCT 探针 MSA 合格记录<br><span class="gq-explain-dim">见题干干扰项设计。</span></li><li><strong>D</strong> I-MR 阶段分隔改进前后<br><span class="gq-explain-dim">「I-MR 阶段分隔改进前后」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。</span></li></ul>
@@ -384,7 +384,7 @@
     <a href="javascript:window.print()">打印本模块（浅色版式）</a>
     <span class="print-footer-line">— 机密文件 · 仅供内部培训 —</span>
   </footer>
-  <script type="application/json" id="hw-rubric-data">{"day":10,"minChars":150,"passScore":70,"mcqWeight":45,"textWeight":55,"dayKeywords":["控制计划","p图","spc","反应计划","追溯","离线","smt","bga","fct","域控","装配","手插"],"evidenceFields":["工站","fct-","profile","program_id","checksum","x-ray","工艺段","离线","sipoc","分段","截图"],"dimensions":{"business":{"label":"商业对齐","weight":15,"keys":["ctq","voc","champion","效益","成本","sipoc","章程","问题陈述","dpmo","ppm","oem","adas","域控"],"forbids":["应该采用","建议使用 minitab","上 minitab"]},"measure":{"label":"测量严谨","weight":20,"keys":["msa","操作定义","抽样","基线","cpk","grr","%r&r","spi","checksum","x-ray","profile","探针"],"forbids":[]},"stats":{"label":"统计有效","weight":25,"keys":["显著","α","p值","假设","doe","效应量","anova","回归","卡方","缺陷矩阵","pareto"],"forbids":[]},"improve":{"label":"改进与控制","weight":35,"keys":["fmea","pfmea","控制计划","pilot","对策","8d","spc","p图","反应计划","u12","空洞","追溯"],"forbids":[]},"mbb":{"label":"MBB 表达","weight":15,"keys":["champion","阶段门","复制","故事板","bb","mbb","教练","评审","工艺段"],"forbids":[]}},"mcq":[{"q":"ADAS 控制计划须单独一行？","options":[{"t":"离线 100% Checksum、SPI SPC、X-Ray SL/MP、FCT p 图、装配扭矩","correct":true,"v":"a"},{"t":"只写目检","correct":false,"v":"b"},{"t":"与车身合并一行","correct":false,"v":"c"},{"t":"只写 FCT","correct":false,"v":"d"}],"explain":{"source":"author","focus":"Control · SPC/CP · Q1","rationale":"正解：离线 100% Checksum、SPI SPC、X-Ray SL/MP、FCT p 图、装配扭矩。答题时写出工站号/Profile#/Program_ID 中至少一项。","distractors":{"b":"ADAS DCU-A：FCT-05 + Eth 环回，离线 SOC+eMMC。","c":"车身 DCU-B：独立 FCT-04，CAN/LIN 与 ADAS Eth 分表。","d":"ADAS DCU-A：FCT-05 + Eth 环回，离线 SOC+eMMC。"},"anchor":"教研精编 · 模块 10 B+ / C2 Lab"},"type":"single","correctValue":"a"},{"q":"p 图 LCL 为负时？","options":[{"t":"改 Cpk","correct":false,"v":"a"},{"t":"忽略 LCL","correct":false,"v":"b"},{"t":"停 FCT","correct":false,"v":"c"},{"t":"改图或用精确二项限；FCT/错版率常用","correct":true,"v":"d"}],"explain":{"source":"author","focus":"Control · SPC/CP · Q2","rationale":"正解：改图或用精确二项限；FCT/错版率常用。答题时写出工站号/Profile#/Program_ID 中至少一项。","distractors":{"b":"「忽略 LCL」与模块 10 Control · SPC/CP 证据要求冲突。","c":"「改 Cpk」与模块 10 Control · SPC/CP 证据要求冲突。","d":"「停 FCT」与模块 10 Control · SPC/CP 证据要求冲突。"},"anchor":"教研精编 · 模块 10 B+ / C2 Lab"},"type":"single","correctValue":"d"},{"q":"控制图特殊原因先查？","options":[{"t":"直接结案","correct":false,"v":"a"},{"t":"测量系统（SPI/探针）再庆祝发现","correct":true,"v":"b"},{"t":"立即换人","correct":false,"v":"c"},{"t":"删点","correct":false,"v":"d"}],"explain":{"source":"author","focus":"Control · SPC/CP · Q3","rationale":"正解：测量系统（SPI/探针）再庆祝发现。答题时写出工站号/Profile#/Program_ID 中至少一项。","distractors":{"b":"「立即换人」与模块 10 Control · SPC/CP 证据要求冲突。","c":"「直接结案」与模块 10 Control · SPC/CP 证据要求冲突。","d":"「删点」与模块 10 Control · SPC/CP 证据要求冲突。"},"anchor":"教研精编 · 模块 10 B+ / C2 Lab"},"type":"single","correctValue":"b"},{"q":"反应计划须含追溯？","options":[{"t":"烧录批次、Profile#、X-Ray 阶段、PCB_ID","correct":true,"v":"a"},{"t":"只写停线","correct":false,"v":"b"},{"t":"不需要","correct":false,"v":"c"},{"t":"只追溯 HU","correct":false,"v":"d"}],"explain":{"source":"auto","focus":"考点（模块 10 · Control · 控制计划与 SPC）— 现场判断","rationale":"烧录批次、Profile#、X-Ray 阶段、PCB_ID。须能在离线/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。","distractors":{"b":"「只写停线」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。","c":"「不需要」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。","d":"勿合并产品/工站数据，违反分层原则。"},"anchor":"对照本节 B+ 工艺表、F 作业 Rubric 与 G 题干关键词。"},"type":"single","correctValue":"a"},{"q":"【纠错】控制图可代替 MSA？","options":[{"t":"否；MS 须先稳定","correct":true,"v":"a"},{"t":"是；万能","correct":false,"v":"b"},{"t":"否；不要控制图","correct":false,"v":"c"},{"t":"是；只对 BGA","correct":false,"v":"d"}],"explain":{"source":"author","focus":"Control · SPC/CP · 纠错辨析","rationale":"立场：否；MS 须先稳定。题干已植入常见误区，须用工艺段证据反驳。","distractors":{"b":"「是；万能」与模块 10 Control · SPC/CP 证据要求冲突。","c":"「是；只对 BGA」与模块 10 Control · SPC/CP 证据要求冲突。","d":"「否；不要控制图」与模块 10 Control · SPC/CP 证据要求冲突。"},"anchor":"教研精编 · 模块 10 B+ / C2 Lab"},"type":"single","correctValue":"a"},{"type":"multi","bloom":"apply","products":["DCU-C"],"scenario":"【情景】座舱 DCU-C 控制计划未写 X-Ray SL→MP 切换条件，仅用控制图代替 MSA。","q":"控制阶段缺陷有？（多选）","options":[{"t":"用控制图代替 MSA","correct":true,"v":"a"},{"t":"FCT 探针 MSA 合格记录","correct":false,"v":"b"},{"t":"未定义 X-Ray 切换反应计划","correct":true,"v":"c"},{"t":"I-MR 阶段分隔改进前后","correct":false,"v":"d"}],"correctValues":["a","c"],"explain":{"source":"auto","focus":"考点（模块 10 · Control · 控制计划与 SPC）— 现场判断","rationale":"用控制图代替 MSA。须能在离线/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。","distractors":{"c":"「FCT 探针 MSA 合格记录」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。","d":"「I-MR 阶段分隔改进前后」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。"},"anchor":"对照本节 B+ 工艺表、F 作业 Rubric 与 G 题干关键词。"}}]}</script>
+  <script type="application/json" id="hw-rubric-data">{"day":10,"minChars":150,"passScore":70,"mcqWeight":45,"textWeight":55,"dayKeywords":["控制计划","p图","spc","反应计划","追溯","离线烧录","smt","bga","fct","域控","装配","手插"],"evidenceFields":["工站","fct-","profile","program_id","checksum","x-ray","工艺段","离线烧录","sipoc","分段","截图"],"dimensions":{"business":{"label":"商业对齐","weight":15,"keys":["ctq","voc","champion","效益","成本","sipoc","章程","问题陈述","dpmo","ppm","oem","adas","域控"],"forbids":["应该采用","建议使用 minitab","上 minitab"]},"measure":{"label":"测量严谨","weight":20,"keys":["msa","操作定义","抽样","基线","cpk","grr","%r&r","spi","checksum","x-ray","profile","探针"],"forbids":[]},"stats":{"label":"统计有效","weight":25,"keys":["显著","α","p值","假设","doe","效应量","anova","回归","卡方","缺陷矩阵","pareto"],"forbids":[]},"improve":{"label":"改进与控制","weight":35,"keys":["fmea","pfmea","控制计划","pilot","对策","8d","spc","p图","反应计划","u12","空洞","追溯"],"forbids":[]},"mbb":{"label":"MBB 表达","weight":15,"keys":["champion","阶段门","复制","故事板","bb","mbb","教练","评审","工艺段"],"forbids":[]}},"mcq":[{"q":"ADAS 控制计划须单独一行？","options":[{"t":"离线烧录 100% Checksum、SPI SPC、X-Ray SL/MP、FCT p 图、装配扭矩","correct":true,"v":"a"},{"t":"只写目检","correct":false,"v":"b"},{"t":"与车身合并一行","correct":false,"v":"c"},{"t":"只写 FCT","correct":false,"v":"d"}],"explain":{"source":"author","focus":"Control · SPC/CP · Q1","rationale":"正解：离线烧录 100% Checksum、SPI SPC、X-Ray SL/MP、FCT p 图、装配扭矩。答题时写出工站号/Profile#/Program_ID 中至少一项。","distractors":{"b":"ADAS DCU-A：FCT-05 + Eth 环回，离线烧录 SOC+eMMC。","c":"车身 DCU-B：独立 FCT-04，CAN/LIN 与 ADAS Eth 分表。","d":"ADAS DCU-A：FCT-05 + Eth 环回，离线烧录 SOC+eMMC。"},"anchor":"教研精编 · 模块 10 B+ / C2 Lab"},"type":"single","correctValue":"a"},{"q":"p 图 LCL 为负时？","options":[{"t":"改 Cpk","correct":false,"v":"a"},{"t":"忽略 LCL","correct":false,"v":"b"},{"t":"停 FCT","correct":false,"v":"c"},{"t":"改图或用精确二项限；FCT/错版率常用","correct":true,"v":"d"}],"explain":{"source":"author","focus":"Control · SPC/CP · Q2","rationale":"正解：改图或用精确二项限；FCT/错版率常用。答题时写出工站号/Profile#/Program_ID 中至少一项。","distractors":{"b":"「忽略 LCL」与模块 10 Control · SPC/CP 证据要求冲突。","c":"「改 Cpk」与模块 10 Control · SPC/CP 证据要求冲突。","d":"「停 FCT」与模块 10 Control · SPC/CP 证据要求冲突。"},"anchor":"教研精编 · 模块 10 B+ / C2 Lab"},"type":"single","correctValue":"d"},{"q":"控制图特殊原因先查？","options":[{"t":"直接结案","correct":false,"v":"a"},{"t":"测量系统（SPI/探针）再庆祝发现","correct":true,"v":"b"},{"t":"立即换人","correct":false,"v":"c"},{"t":"删点","correct":false,"v":"d"}],"explain":{"source":"author","focus":"Control · SPC/CP · Q3","rationale":"正解：测量系统（SPI/探针）再庆祝发现。答题时写出工站号/Profile#/Program_ID 中至少一项。","distractors":{"b":"「立即换人」与模块 10 Control · SPC/CP 证据要求冲突。","c":"「直接结案」与模块 10 Control · SPC/CP 证据要求冲突。","d":"「删点」与模块 10 Control · SPC/CP 证据要求冲突。"},"anchor":"教研精编 · 模块 10 B+ / C2 Lab"},"type":"single","correctValue":"b"},{"q":"反应计划须含追溯？","options":[{"t":"烧录批次、Profile#、X-Ray 阶段、PCB_ID","correct":true,"v":"a"},{"t":"只写停线","correct":false,"v":"b"},{"t":"不需要","correct":false,"v":"c"},{"t":"只追溯 HU","correct":false,"v":"d"}],"explain":{"source":"auto","focus":"考点（模块 10 · Control · 控制计划与 SPC）— 现场判断","rationale":"烧录批次、Profile#、X-Ray 阶段、PCB_ID。须能在离线烧录/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。","distractors":{"b":"「只写停线」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。","c":"「不需要」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。","d":"勿合并产品/工站数据，违反分层原则。"},"anchor":"对照本节 B+ 工艺表、F 作业 Rubric 与 G 题干关键词。"},"type":"single","correctValue":"a"},{"q":"【纠错】控制图可代替 MSA？","options":[{"t":"否；MS 须先稳定","correct":true,"v":"a"},{"t":"是；万能","correct":false,"v":"b"},{"t":"否；不要控制图","correct":false,"v":"c"},{"t":"是；只对 BGA","correct":false,"v":"d"}],"explain":{"source":"author","focus":"Control · SPC/CP · 纠错辨析","rationale":"立场：否；MS 须先稳定。题干已植入常见误区，须用工艺段证据反驳。","distractors":{"b":"「是；万能」与模块 10 Control · SPC/CP 证据要求冲突。","c":"「是；只对 BGA」与模块 10 Control · SPC/CP 证据要求冲突。","d":"「否；不要控制图」与模块 10 Control · SPC/CP 证据要求冲突。"},"anchor":"教研精编 · 模块 10 B+ / C2 Lab"},"type":"single","correctValue":"a"},{"type":"multi","bloom":"apply","products":["DCU-C"],"scenario":"【情景】座舱 DCU-C 控制计划未写 X-Ray SL→MP 切换条件，仅用控制图代替 MSA。","q":"控制阶段缺陷有？（多选）","options":[{"t":"用控制图代替 MSA","correct":true,"v":"a"},{"t":"FCT 探针 MSA 合格记录","correct":false,"v":"b"},{"t":"未定义 X-Ray 切换反应计划","correct":true,"v":"c"},{"t":"I-MR 阶段分隔改进前后","correct":false,"v":"d"}],"correctValues":["a","c"],"explain":{"source":"auto","focus":"考点（模块 10 · Control · 控制计划与 SPC）— 现场判断","rationale":"用控制图代替 MSA。须能在离线烧录/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。","distractors":{"c":"「FCT 探针 MSA 合格记录」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。","d":"「I-MR 阶段分隔改进前后」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。"},"anchor":"对照本节 B+ 工艺表、F 作业 Rubric 与 G 题干关键词。"}}]}</script>
   <script src="../js/homework-grader-core.js"></script>
   <script src="../js/interactive-learning-core.js"></script>
   <script src="../js/homework-grader.js" defer></script>

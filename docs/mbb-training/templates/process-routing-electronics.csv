@@ -1,6 +1,6 @@
 产品,硬件Rev,离线烧录时机,离线烧录对象,SMT含BGA,手插波峰,AOI,X-Ray安全投产,X-Ray量产后抽样,FCT台编号,ICT,装配EOL,软件追溯字段,备注
-组合仪表IC,IC-R1.2,SMT前,MCU预烧录,是(少量BGA),是,是,关键BGA全检,首件+每班抽2片,FCT-IC-01,是,仪表总成扭矩,Boot_V1.x,离线在SMT前完成
+组合仪表IC,IC-R1.2,SMT前,MCU预烧录,是(少量BGA),是,是,关键BGA全检,首件+每班抽2片,FCT-IC-01,是,仪表总成扭矩,Boot_V1.x,离线烧录在SMT前完成
 中控HU,HU-R2.0,SMT前,eMMC+主控镜像,是(DDR等BGA),少量,是,安全投产BGA全检,按CSR:AQL抽检,FCT-HU-02,是,显示贴合,FCT+贴合AOI,与域控不同FCT程序
-座舱域控,DCU-C-R3.1,SMT前,MCU+Switch+eMMC,是,少量,是,关键BGA全检,首件+2h抽1片,FCT-DCU-C-03,是,域控盒体,HW_Rev+Boot+镜像号,SMT前离线
+座舱域控,DCU-C-R3.1,SMT前,MCU+Switch+eMMC,是,少量,是,关键BGA全检,首件+2h抽1片,FCT-DCU-C-03,是,域控盒体,HW_Rev+Boot+镜像号,SMT前离线烧录
 车身域控,DCU-B-R1.0,SMT前,MCU预烧录,是,是(继电器座),是,关键BGA全检,首件+每日抽5片,FCT-DCU-B-04,是,线束接口装配,CAN矩阵版本,独立FCT台#4仅车身域控
-ADAS域控,DCU-A-R2.2,SMT前,SOC+eMMC离线,是(大BGA U12等),视BOM,是,安全投产100%全检,量产后:批首件+5%或NG加严,FCT-DCU-A-05,是,上盖扭矩EMC,SOC_FW+eMMC_IMG,独立FCT台#5仅ADAS
+ADAS域控,DCU-A-R2.2,SMT前,SOC+eMMC离线烧录,是(大BGA U12等),视BOM,是,安全投产100%全检,量产后:批首件+5%或NG加严,FCT-DCU-A-05,是,上盖扭矩EMC,SOC_FW+eMMC_IMG,独立FCT台#5仅ADAS

@@ -95,11 +95,11 @@
       </header>
 
       <article class="card pro automotive" id="sec-auto">
-      <h2><span class="section-num">◎</span>汽车电子 EMS（五产品·离线/SMT/手插/装配）</h2>
+      <h2><span class="section-num">◎</span>汽车电子 EMS（五产品·离线烧录/SMT/手插/装配）</h2>
       <p><span class="tag auto">汽车制造</span> <strong>IATF：</strong>4.3 相关方；7.1.5 监视测量覆盖烧录器、炉温、扭矩枪</p>
       <p><strong>AIAG：</strong>CSR：追溯、ECN、软件版本、BGA 验收</p>
       <p style="margin-top:0.75rem">EMS 厂 5 类产品并行；贵司已锁定：①离线烧录均在 SMT 前 ②BGA X-Ray 安全投产全检、量产抽检 ③车身域控独立 FCT 台。详见 reference/site-config.html。</p>
-      <p><strong>汽车交付补充：</strong>五类产品工艺路由表（离线/SMT/手插/装配）</p>
+      <p><strong>汽车交付补充：</strong>五类产品工艺路由表（离线烧录/SMT/手插/装配）</p>
       <h3 style="margin-top:1rem;color:var(--bb-gold)">审核检查清单</h3>
       <ul class="obj-list"><li>process-routing-electronics.csv 是否标注「SMT前」与 FCT 台号？</li><li>X-Ray 控制计划是否区分 Safe Launch 全检 vs 量产抽检切换条件？</li><li>车身域控 FCT 数据是否仅来自 FCT-DCU-B-04？</li><li>离线烧录版本门禁是否独立于人检？</li></ul>
       <div class="aiag-criteria">
@@ -128,10 +128,10 @@
 
       <article class="card pro automotive-deep" id="sec-b2">
     <h2><span class="section-num">B+</span>本课与生产线对齐 · 五类产品 × 四段工艺（贵司）</h2>
-    <div class="process-pipeline" aria-label="工艺主线"><span class="step accent">离线@SMT前</span><span class="arrow">→</span><span class="step">SMT·SPI</span><span class="arrow">→</span><span class="step">回流·AOI</span><span class="arrow">→</span><span class="step">X-Ray</span><span class="arrow">→</span><span class="step">手插/波峰</span><span class="arrow">→</span><span class="step">ICT</span><span class="arrow">→</span><span class="step">FCT</span><span class="arrow">→</span><span class="step">装配/EOL</span></div>
-    <ul class="obj-list"><li>离线@SMT前：ADAS 烧 SOC+eMMC 镜像；车身烧 MCU+CAN 矩阵 Boot</li><li>SMT：SPI 体积 → 贴片 → 回流 Profile# → AOI 空洞%</li><li>X-Ray：Safe Launch 100% 全检；量产后 CSR 抽检（Analyze 须标切换日）</li><li>手插：车身域控继电器座浮高是独立 PFMEA 行</li><li>FCT：DCU-B 用 FCT-04；DCU-A 用 FCT-05；程序与数据隔离</li></ul>
+    <div class="process-pipeline" aria-label="工艺主线"><span class="step accent">离线烧录@SMT前</span><span class="arrow">→</span><span class="step">SMT·SPI</span><span class="arrow">→</span><span class="step">回流·AOI</span><span class="arrow">→</span><span class="step">X-Ray</span><span class="arrow">→</span><span class="step">手插/波峰</span><span class="arrow">→</span><span class="step">ICT</span><span class="arrow">→</span><span class="step">FCT</span><span class="arrow">→</span><span class="step">装配/EOL</span></div>
+    <ul class="obj-list"><li>离线烧录@SMT前：ADAS 烧 SOC+eMMC 镜像；车身烧 MCU+CAN 矩阵 Boot</li><li>SMT：SPI 体积 → 贴片 → 回流 Profile# → AOI 空洞%</li><li>X-Ray：Safe Launch 100% 全检；量产后 CSR 抽检（Analyze 须标切换日）</li><li>手插：车身域控继电器座浮高是独立 PFMEA 行</li><li>FCT：DCU-B 用 FCT-04；DCU-A 用 FCT-05；程序与数据隔离</li></ul>
     <div class="table-wrap product-matrix-full" style="margin-top:1rem">
-    <table><thead><tr><th>产品</th><th>离线@SMT前</th><th>SMT·BGA</th><th>手插/波峰</th><th>FCT 工站</th></tr></thead><tbody><tr><td>组合仪表 IC</td><td>MCU 预烧</td><td>少量 BGA · SPI</td><td>接插件扭矩</td><td>FCT-IC-01</td></tr><tr><td>中控 HU</td><td>eMMC+主控镜像</td><td>DDR BGA · SPI</td><td>显示贴合</td><td>FCT-HU-02</td></tr><tr><td>座舱域控 DCU-C</td><td>MCU+Switch+eMMC</td><td>关键 BGA U12</td><td>域控盒体</td><td>FCT-DCU-C-03</td></tr><tr><td>车身域控 DCU-B</td><td>MCU+CAN Boot</td><td>功率+BGA</td><td>继电器浮高</td><td>FCT-DCU-B-04 独立</td></tr><tr><td>ADAS 域控 DCU-A</td><td>SOC+eMMC Checksum</td><td>大 BGA U12 · Profile#</td><td>—</td><td>FCT-DCU-A-05 Eth/CAN</td></tr></tbody></table>
+    <table><thead><tr><th>产品</th><th>离线烧录@SMT前</th><th>SMT·BGA</th><th>手插/波峰</th><th>FCT 工站</th></tr></thead><tbody><tr><td>组合仪表 IC</td><td>MCU 预烧</td><td>少量 BGA · SPI</td><td>接插件扭矩</td><td>FCT-IC-01</td></tr><tr><td>中控 HU</td><td>eMMC+主控镜像</td><td>DDR BGA · SPI</td><td>显示贴合</td><td>FCT-HU-02</td></tr><tr><td>座舱域控 DCU-C</td><td>MCU+Switch+eMMC</td><td>关键 BGA U12</td><td>域控盒体</td><td>FCT-DCU-C-03</td></tr><tr><td>车身域控 DCU-B</td><td>MCU+CAN Boot</td><td>功率+BGA</td><td>继电器浮高</td><td>FCT-DCU-B-04 独立</td></tr><tr><td>ADAS 域控 DCU-A</td><td>SOC+eMMC Checksum</td><td>大 BGA U12 · Profile#</td><td>—</td><td>FCT-DCU-A-05 Eth/CAN</td></tr></tbody></table>
     <p style="font-size:0.85rem;color:var(--muted);margin-top:0.5rem">全产品共用：SL 100% 全检 → MP 抽检（Analyze 须标切换日）</p>
   </div>
     <p class="exam-align-hint">▼ <strong>G 客观题</strong>与 <strong>F 作业</strong>仅考核本节要点（车身 FCT-04 / ADAS BGA·FCT-05）</p>
@@ -156,14 +156,14 @@
       · <a href="../tools/tutorials.html#excel-deploy">完整教程 →</a></p>
     <p class="c2-lab-meta"><strong>数据</strong> <a href="../templates/process-routing-electronics.csv" download>process-routing-electronics.csv</a> · <strong>列定义</strong> 工艺段、产品、关键控制、工站号</p>
     <h3 class="c2-lab-h3">跟做步骤（菜单路径）</h3>
-    <ol class="c2-lab-steps"><li><strong>1.</strong> <code>打开 reference/site-config.html → 完成问卷 → 导出 JSON 摘要</code></li><li><strong>2.</strong> <code>Excel：打开 templates/process-routing-electronics.csv，筛选 ADAS/车身行</code></li><li><strong>3.</strong> <code>Miro：五泳道 SIPOC（供料→离线→SMT→FCT→OEM），标注 FCT-04/05</code></li></ol>
+    <ol class="c2-lab-steps"><li><strong>1.</strong> <code>打开 reference/site-config.html → 完成问卷 → 导出 JSON 摘要</code></li><li><strong>2.</strong> <code>Excel：打开 templates/process-routing-electronics.csv，筛选 ADAS/车身行</code></li><li><strong>3.</strong> <code>Miro：五泳道 SIPOC（供料→离线烧录→SMT→FCT→OEM），标注 FCT-04/05</code></li></ol>
     <p class="c2-lab-read"><strong>输出解读</strong> 核对三条现场规则与 routing 表、问卷摘要一致。</p>
     <h3 class="c2-lab-h3">课堂练习</h3>
-    <p>在 routing 表用高亮标出 SMT前离线 / X-Ray SL·MP / 车身独立 FCT。</p>
+    <p>在 routing 表用高亮标出 SMT前离线烧录 / X-Ray SL·MP / 车身独立 FCT。</p>
     <h3 class="c2-lab-h3" style="color:var(--bb-gold)">F 节建议截图交付</h3>
     <ul class="obj-list c2-lab-deliver"><li>site-config 摘要截图</li><li>routing 表标注截图</li><li>SIPOC 导出 PNG</li></ul>
     <h3 class="c2-lab-h3" style="color:var(--bb-gold)">MBB 审计点</h3>
-    <ul class="obj-list"><li>五产品 FCT 程序不得混批</li><li>离线必须在 SMT 前</li></ul>
+    <ul class="obj-list"><li>五产品 FCT 程序不得混批</li><li>离线烧录必须在 SMT 前</li></ul>
   </div>
         
       </article>
@@ -178,14 +178,14 @@
       <article class="card pro" id="sec-e">
         <h2><span class="section-num">E</span>课堂练习（先作答再对答案）</h2>
         <ul class="obj-list"><li class="exercise-item">
-        <strong>E1.</strong> 在 process-routing 表标出：贵司三条现场规则（SMT前离线 / X-Ray SL·MP / 车身独立 FCT）
+        <strong>E1.</strong> 在 process-routing 表标出：贵司三条现场规则（SMT前离线烧录 / X-Ray SL·MP / 车身独立 FCT）
         <details class="exercise-answer-ref">
           <summary>参考答案</summary>
-          <p class="ex-ans-body"><strong>要点：</strong>routing 表标注：① 离线@SMT前 + Checksum；② X-Ray SL 100% / MP 抽检 + 切换日；③ 车身 FCT-DCU-B-04 与 ADAS FCT-05 分线。</p>
+          <p class="ex-ans-body"><strong>要点：</strong>routing 表标注：① 离线烧录@SMT前 + Checksum；② X-Ray SL 100% / MP 抽检 + 切换日；③ 车身 FCT-DCU-B-04 与 ADAS FCT-05 分线。</p>
           <p class="ex-ans-explain">三条规则须与 site-config 问卷及 B+ 表一致，不可写「加强管理」。</p>
         </details>
       </li><li class="exercise-item">
-        <strong>E2.</strong> 用 SIPOC 画 ADAS 域控：供应商料 → 离线 → SMT → FCT → OEM
+        <strong>E2.</strong> 用 SIPOC 画 ADAS 域控：供应商料 → 离线烧录 → SMT → FCT → OEM
         <details class="exercise-answer-ref">
           <summary>参考答案</summary>
           <p class="ex-ans-body"><strong>要点：</strong>SIPOC：供料 → 离线烧录 → SMT(SPI/AOI) → X-Ray → FCT-05 → OEM；范围止于 EMS 出厂测试。</p>
@@ -222,7 +222,7 @@
         <p class="c2-module-check"><label><input type="checkbox" id="c2-done-cb" data-day="1" /> 本模块 C2 Lab 跟做截图已交付（计入结业 15%）</label></p>
         <div class="hw-submit-panel" id="hw-submit-panel">
     <label for="hw-text" class="hw-label">粘贴或输入课后作业（须体现汽车电子现场）</label>
-    <p class="hw-hint"><strong>评分要点：</strong>须含：五产品、四工艺段、FCT 工站号、X-Ray SL/MP 切换；并完成 site-config 问卷。建议字数 ≥ 150，含模块关键词（如 工艺段、离线、smt、bga、fct、dcu…）。未达字数时文本分按比例封顶。</p>
+    <p class="hw-hint"><strong>评分要点：</strong>须含：五产品、四工艺段、FCT 工站号、X-Ray SL/MP 切换；并完成 site-config 问卷。建议字数 ≥ 150，含模块关键词（如 工艺段、离线烧录、smt、bga、fct、dcu…）。未达字数时文本分按比例封顶。</p>
     <textarea id="hw-text" class="hw-textarea" rows="8" placeholder="例：ADAS 域控 / 车身域控 / 离线烧录@SMT前 / BGA U12 / X-Ray SL全检 / FCT-DCU-B-04 …"></textarea>
     <div class="form-actions hw-actions">
       <button type="button" class="btn btn-primary" id="hw-submit-btn">提交作业并自动评分</button>
@@ -237,7 +237,7 @@
       <article class="card pro quiz" id="sec-g">
         <h2><span class="section-num">G</span>客观自测（自动判分 · 含纠错题）</h2>
         <div class="gradable-quiz" id="gradable-quiz" data-day="1">
-    <p class="gq-intro">以下题目<strong>只考本模块 B+ 节与 ◎ 汽车电子专题</strong>所讲要点（离线/SMT·BGA/手插/装配/域控 FCT），请先学完再答。占综合分 <strong>45%</strong>（含 Q6 情景多选）。选项顺序已打乱，请勿猜测字母规律。</p>
+    <p class="gq-intro">以下题目<strong>只考本模块 B+ 节与 ◎ 汽车电子专题</strong>所讲要点（离线烧录/SMT·BGA/手插/装配/域控 FCT），请先学完再答。占综合分 <strong>45%</strong>（含 Q6 情景多选）。选项顺序已打乱，请勿猜测字母规律。</p>
     <div class="gq-block" data-correct="b" data-qindex="1" data-qtype="single">
         <p class="gq-title"><span class="gq-num">Q1</span>  贵司 ADAS/车身域控「离线烧录」应在何时完成？</p>
         
@@ -253,15 +253,15 @@
       </div><div class="gq-block" data-correct="d" data-qindex="4" data-qtype="single">
         <p class="gq-title"><span class="gq-num">Q4</span>  MBB 在 ADAS SCAR 项目中的首要职责？</p>
         
-        <ul class="gq-opts"><li class="opt"><input type="radio" name="mcq-d1-q4" id="mcq-d1-q4-a" value="a" data-label="只审 FCT 不加查离线/SMT" /><label for="mcq-d1-q4-a">只审 FCT 不加查离线/SMT</label></li><li class="opt"><input type="radio" name="mcq-d1-q4" id="mcq-d1-q4-b" value="b" data-label="合并五类产品数据求总良率" /><label for="mcq-d1-q4-b">合并五类产品数据求总良率</label></li><li class="opt"><input type="radio" name="mcq-d1-q4" id="mcq-d1-q4-c" value="c" data-label="代替 BB 操作 Minitab 并签署控制计划" /><label for="mcq-d1-q4-c">代替 BB 操作 Minitab 并签署控制计划</label></li><li class="opt"><input type="radio" name="mcq-d1-q4" id="mcq-d1-q4-d" value="d" data-label="教练 BB、阶段门评审、跨工艺段证据链，不代替做分析" /><label for="mcq-d1-q4-d">教练 BB、阶段门评审、跨工艺段证据链，不代替做分析</label></li></ul>
+        <ul class="gq-opts"><li class="opt"><input type="radio" name="mcq-d1-q4" id="mcq-d1-q4-a" value="a" data-label="只审 FCT 不加查离线烧录/SMT" /><label for="mcq-d1-q4-a">只审 FCT 不加查离线烧录/SMT</label></li><li class="opt"><input type="radio" name="mcq-d1-q4" id="mcq-d1-q4-b" value="b" data-label="合并五类产品数据求总良率" /><label for="mcq-d1-q4-b">合并五类产品数据求总良率</label></li><li class="opt"><input type="radio" name="mcq-d1-q4" id="mcq-d1-q4-c" value="c" data-label="代替 BB 操作 Minitab 并签署控制计划" /><label for="mcq-d1-q4-c">代替 BB 操作 Minitab 并签署控制计划</label></li><li class="opt"><input type="radio" name="mcq-d1-q4" id="mcq-d1-q4-d" value="d" data-label="教练 BB、阶段门评审、跨工艺段证据链，不代替做分析" /><label for="mcq-d1-q4-d">教练 BB、阶段门评审、跨工艺段证据链，不代替做分析</label></li></ul>
       </div><div class="gq-block" data-correct="b" data-qindex="5" data-qtype="single">
         <p class="gq-title"><span class="gq-num">Q5</span>  【纠错】SPI Cpk=1.9 能否证明 ADAS Eth FCT 一定合格？</p>
         
-        <ul class="gq-opts"><li class="opt"><input type="radio" name="mcq-d1-q5" id="mcq-d1-q5-a" value="a" data-label="能；Cpk&gt;1.33 即客户满意" /><label for="mcq-d1-q5-a">能；Cpk&gt;1.33 即客户满意</label></li><li class="opt"><input type="radio" name="mcq-d1-q5" id="mcq-d1-q5-b" value="b" data-label="否；须 CTQ 对齐、MSA 合格，且 FCT 用 p 图/缺陷矩阵链到离线/BGA" /><label for="mcq-d1-q5-b">否；须 CTQ 对齐、MSA 合格，且 FCT 用 p 图/缺陷矩阵链到离线/BGA</label></li><li class="opt"><input type="radio" name="mcq-d1-q5" id="mcq-d1-q5-c" value="c" data-label="能；SPI 只管焊膏，与软件版本无关" /><label for="mcq-d1-q5-c">能；SPI 只管焊膏，与软件版本无关</label></li><li class="opt"><input type="radio" name="mcq-d1-q5" id="mcq-d1-q5-d" value="d" data-label="能；忽略 X-Ray 阶段" /><label for="mcq-d1-q5-d">能；忽略 X-Ray 阶段</label></li></ul>
+        <ul class="gq-opts"><li class="opt"><input type="radio" name="mcq-d1-q5" id="mcq-d1-q5-a" value="a" data-label="能；Cpk&gt;1.33 即客户满意" /><label for="mcq-d1-q5-a">能；Cpk&gt;1.33 即客户满意</label></li><li class="opt"><input type="radio" name="mcq-d1-q5" id="mcq-d1-q5-b" value="b" data-label="否；须 CTQ 对齐、MSA 合格，且 FCT 用 p 图/缺陷矩阵链到离线烧录/BGA" /><label for="mcq-d1-q5-b">否；须 CTQ 对齐、MSA 合格，且 FCT 用 p 图/缺陷矩阵链到离线烧录/BGA</label></li><li class="opt"><input type="radio" name="mcq-d1-q5" id="mcq-d1-q5-c" value="c" data-label="能；SPI 只管焊膏，与软件版本无关" /><label for="mcq-d1-q5-c">能；SPI 只管焊膏，与软件版本无关</label></li><li class="opt"><input type="radio" name="mcq-d1-q5" id="mcq-d1-q5-d" value="d" data-label="能；忽略 X-Ray 阶段" /><label for="mcq-d1-q5-d">能；忽略 X-Ray 阶段</label></li></ul>
       </div><div class="gq-block" data-correct-multi="c,d" data-qindex="6" data-qtype="multi">
         <p class="gq-title"><span class="gq-num">Q6</span> <span class="gq-type-badge multi">多选</span> 下列哪些做法违反本课 B+ 与 MBB 原则？（多选，须全对才得分）</p>
         <p class="gq-scenario">【情景】质量部拟将 ADAS FCT-05 与车身 FCT-04 批次合并算总良率，并仅用 SPI Cpk 对外汇报 ADAS SCAR 进展。</p>
-        <ul class="gq-opts"><li class="opt"><input type="checkbox" name="mcq-d1-q6[]" id="mcq-d1-q6-a" value="a" data-label="离线 Checksum 100% 在 SMT 前完成" /><label for="mcq-d1-q6-a">离线 Checksum 100% 在 SMT 前完成</label></li><li class="opt"><input type="checkbox" name="mcq-d1-q6[]" id="mcq-d1-q6-b" value="b" data-label="按 Program_ID 分层比较 FCT 通过率" /><label for="mcq-d1-q6-b">按 Program_ID 分层比较 FCT 通过率</label></li><li class="opt"><input type="checkbox" name="mcq-d1-q6[]" id="mcq-d1-q6-c" value="c" data-label="仅用 SPI Cpk 代表 Eth FCT 改善" /><label for="mcq-d1-q6-c">仅用 SPI Cpk 代表 Eth FCT 改善</label></li><li class="opt"><input type="checkbox" name="mcq-d1-q6[]" id="mcq-d1-q6-d" value="d" data-label="合并 ADAS+车身 FCT 数据做总良率" /><label for="mcq-d1-q6-d">合并 ADAS+车身 FCT 数据做总良率</label></li></ul>
+        <ul class="gq-opts"><li class="opt"><input type="checkbox" name="mcq-d1-q6[]" id="mcq-d1-q6-a" value="a" data-label="离线烧录 Checksum 100% 在 SMT 前完成" /><label for="mcq-d1-q6-a">离线烧录 Checksum 100% 在 SMT 前完成</label></li><li class="opt"><input type="checkbox" name="mcq-d1-q6[]" id="mcq-d1-q6-b" value="b" data-label="按 Program_ID 分层比较 FCT 通过率" /><label for="mcq-d1-q6-b">按 Program_ID 分层比较 FCT 通过率</label></li><li class="opt"><input type="checkbox" name="mcq-d1-q6[]" id="mcq-d1-q6-c" value="c" data-label="仅用 SPI Cpk 代表 Eth FCT 改善" /><label for="mcq-d1-q6-c">仅用 SPI Cpk 代表 Eth FCT 改善</label></li><li class="opt"><input type="checkbox" name="mcq-d1-q6[]" id="mcq-d1-q6-d" value="d" data-label="合并 ADAS+车身 FCT 数据做总良率" /><label for="mcq-d1-q6-d">合并 ADAS+车身 FCT 数据做总良率</label></li></ul>
       </div>
   </div>
   <details class="quiz-answers-ref" id="quiz-answers-ref"><summary>题库解析（提交后将自动展开）</summary><div class="gq-ref-wrap"><div class="gq-ref-item" data-qindex="1">
@@ -270,7 +270,7 @@
     <p class="gq-ref-ans"><span style="color:var(--accent)">✓ 全部在 SMT 贴片之前，Checksum 100% 比对</span></p>
     <div class="gq-explain-block pass">
     <span class="gq-explain-source author">精编解析</span>
-    <p class="gq-explain-focus"><strong>考点</strong> 离线必须在 SMT 前 — Checksum 门禁</p>
+    <p class="gq-explain-focus"><strong>考点</strong> 离线烧录必须在 SMT 前 — Checksum 门禁</p>
     <p class="gq-explain-rationale"><strong>正解（B）</strong> ADAS/车身 SOC·MCU 镜像须在贴片前烧录并 100% 比对；回流后补烧无法拦截错版，且污染追溯链。</p>
     
     <p class="gq-explain-distractor-title"><strong>误选简析</strong></p>
@@ -310,20 +310,20 @@
     <div class="gq-explain-block pass">
     <span class="gq-explain-source auto">规则解析</span>
     <p class="gq-explain-focus"><strong>考点</strong> 考点（模块 01 · 战略部署 · 五产品×四工艺段）— 现场判断</p>
-    <p class="gq-explain-rationale"><strong>正解（D）</strong> 教练 BB、阶段门评审、跨工艺段证据链，不代替做分析。须能在离线/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。</p>
+    <p class="gq-explain-rationale"><strong>正解（D）</strong> 教练 BB、阶段门评审、跨工艺段证据链，不代替做分析。须能在离线烧录/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。</p>
     
     <p class="gq-explain-distractor-title"><strong>误选简析</strong></p>
-    <ul class="gq-explain-distractor-list obj-list"><li><strong>A</strong> 只审 FCT 不加查离线/SMT<br><span class="gq-explain-dim">见题干干扰项设计。</span></li><li><strong>B</strong> 合并五类产品数据求总良率<br><span class="gq-explain-dim">MBB 教练不代劳分析。</span></li><li><strong>C</strong> 代替 BB 操作 Minitab 并签署控制计划<br><span class="gq-explain-dim">「只审 FCT 不加查离线/SMT」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。</span></li></ul>
+    <ul class="gq-explain-distractor-list obj-list"><li><strong>A</strong> 只审 FCT 不加查离线烧录/SMT<br><span class="gq-explain-dim">见题干干扰项设计。</span></li><li><strong>B</strong> 合并五类产品数据求总良率<br><span class="gq-explain-dim">MBB 教练不代劳分析。</span></li><li><strong>C</strong> 代替 BB 操作 Minitab 并签署控制计划<br><span class="gq-explain-dim">「只审 FCT 不加查离线烧录/SMT」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。</span></li></ul>
     <p class="gq-explain-anchor">对照本节 B+ 工艺表、F 作业 Rubric 与 G 题干关键词。</p>
   </div>
   </div><div class="gq-ref-item" data-qindex="5">
     <h4 class="gq-ref-q">Q5 【纠错】SPI Cpk=1.9 能否证明 ADAS Eth FCT 一定合格？</h4>
     
-    <p class="gq-ref-ans"><span style="color:var(--accent)">✓ 否；须 CTQ 对齐、MSA 合格，且 FCT 用 p 图/缺陷矩阵链到离线/BGA</span></p>
+    <p class="gq-ref-ans"><span style="color:var(--accent)">✓ 否；须 CTQ 对齐、MSA 合格，且 FCT 用 p 图/缺陷矩阵链到离线烧录/BGA</span></p>
     <div class="gq-explain-block pass">
     <span class="gq-explain-source author">精编解析</span>
     <p class="gq-explain-focus"><strong>考点</strong> 纠错 — Cpk 不能代表 FCT 客户体验</p>
-    <p class="gq-explain-rationale"><strong>正解（B）</strong> SPI Cpk 只说明焊膏体积能力；Eth FCT 为属性 CTQ，须独立 MSA + p 图 + 缺陷矩阵链到离线/BGA。</p>
+    <p class="gq-explain-rationale"><strong>正解（B）</strong> SPI Cpk 只说明焊膏体积能力；Eth FCT 为属性 CTQ，须独立 MSA + p 图 + 缺陷矩阵链到离线烧录/BGA。</p>
     
     <p class="gq-explain-distractor-title"><strong>误选简析</strong></p>
     <ul class="gq-explain-distractor-list obj-list"><li><strong>A</strong> 能；Cpk&gt;1.33 即客户满意<br><span class="gq-explain-dim">见题干干扰项设计。</span></li><li><strong>C</strong> 能；SPI 只管焊膏，与软件版本无关<br><span class="gq-explain-dim">SPI 与软件版本、探针无关是错误因果。</span></li><li><strong>D</strong> 能；忽略 X-Ray 阶段<br><span class="gq-explain-dim">X-Ray 阶段必须纳入 Analyze 分层。</span></li></ul>
@@ -336,10 +336,10 @@
     <div class="gq-explain-block pass">
     <span class="gq-explain-source auto">规则解析</span>
     <p class="gq-explain-focus"><strong>考点</strong> 考点（模块 01 · 战略部署 · 五产品×四工艺段）— 现场判断</p>
-    <p class="gq-explain-rationale"><strong>正解（多选）（C+D）</strong> 合并 ADAS+车身 FCT 数据做总良率。须能在离线/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。</p>
+    <p class="gq-explain-rationale"><strong>正解（多选）（C+D）</strong> 合并 ADAS+车身 FCT 数据做总良率。须能在离线烧录/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。</p>
     
     <p class="gq-explain-distractor-title"><strong>误选简析</strong></p>
-    <ul class="gq-explain-distractor-list obj-list"><li><strong>A</strong> 离线 Checksum 100% 在 SMT 前完成<br><span class="gq-explain-dim">见题干干扰项设计。</span></li><li><strong>B</strong> 按 Program_ID 分层比较 FCT 通过率<br><span class="gq-explain-dim">见题干干扰项设计。</span></li></ul>
+    <ul class="gq-explain-distractor-list obj-list"><li><strong>A</strong> 离线烧录 Checksum 100% 在 SMT 前完成<br><span class="gq-explain-dim">见题干干扰项设计。</span></li><li><strong>B</strong> 按 Program_ID 分层比较 FCT 通过率<br><span class="gq-explain-dim">见题干干扰项设计。</span></li></ul>
     <p class="gq-explain-anchor">对照本节 B+ 工艺表、F 作业 Rubric 与 G 题干关键词。</p>
   </div>
   </div></div></details>
@@ -394,7 +394,7 @@
     <a href="javascript:window.print()">打印本模块（浅色版式）</a>
     <span class="print-footer-line">— 机密文件 · 仅供内部培训 —</span>
   </footer>
-  <script type="application/json" id="hw-rubric-data">{"day":1,"minChars":150,"passScore":70,"mcqWeight":45,"textWeight":55,"dayKeywords":["工艺段","离线","smt","bga","fct","dcu","域控","sipoc","routing","装配","手插"],"evidenceFields":["工站","fct-","profile","program_id","checksum","x-ray","工艺段","离线","sipoc","分段","截图"],"dimensions":{"business":{"label":"商业对齐","weight":22,"keys":["ctq","voc","champion","效益","成本","sipoc","章程","问题陈述","dpmo","ppm","oem","adas","域控","routing","工艺段","五产品","成熟度"],"forbids":["应该采用","建议使用 minitab","上 minitab"]},"measure":{"label":"测量严谨","weight":20,"keys":["msa","操作定义","抽样","基线","cpk","grr","%r&r","spi","checksum","x-ray","profile","探针"],"forbids":[]},"stats":{"label":"统计有效","weight":25,"keys":["显著","α","p值","假设","doe","效应量","anova","回归","卡方","缺陷矩阵","pareto"],"forbids":[]},"improve":{"label":"改进与控制","weight":25,"keys":["fmea","pfmea","控制计划","pilot","对策","8d","spc","p图","反应计划","u12","空洞"],"forbids":[]},"mbb":{"label":"MBB 表达","weight":18,"keys":["champion","阶段门","复制","故事板","bb","mbb","教练","评审","工艺段","战略","部署"],"forbids":[]}},"mcq":[{"q":"贵司 ADAS/车身域控「离线烧录」应在何时完成？","options":[{"t":"仅 FCT 失败后再返工烧录","correct":false,"v":"a"},{"t":"全部在 SMT 贴片之前，Checksum 100% 比对","correct":true,"v":"b"},{"t":"回流焊后对成品板补烧 SOC","correct":false,"v":"c"},{"t":"与中控 HU 共用同一条烧录程序不核对版本","correct":false,"v":"d"}],"explain":{"focus":"离线必须在 SMT 前 — Checksum 门禁","rationale":"ADAS/车身 SOC·MCU 镜像须在贴片前烧录并 100% 比对；回流后补烧无法拦截错版，且污染追溯链。","distractors":{"b":"回流后烧录属返工流程，不能作为预防控制。","c":"FCT 后烧录为失效模式，成本与风险最高。","d":"HU 与域控程序隔离是另一条线，不能替代版本核对。"},"anchor":"B+ 表 · site-config q1 · routing「SMT前」","source":"author"},"type":"single","correctValue":"b"},{"q":"分析「车身域控 CAN 间歇」时，FCT 数据应取自哪一工站？","options":[{"t":"仅看 SMT AOI，不看 FCT","correct":false,"v":"a"},{"t":"OEM 整车路试数据库","correct":false,"v":"b"},{"t":"任意域控柔性线合并统计","correct":false,"v":"c"},{"t":"FCT-DCU-B-04，且不得混入 ADAS FCT-05 批次","correct":true,"v":"d"}],"explain":{"source":"author","focus":"战略 · 五产品×四工艺 · Q2","rationale":"正解：FCT-DCU-B-04，且不得混入 ADAS FCT-05 批次。答题时写出工站号/Profile#/Program_ID 中至少一项。","distractors":{"b":"车身 DCU-B：独立 FCT-04，CAN/LIN 与 ADAS Eth 分表。","c":"车身 DCU-B：独立 FCT-04，CAN/LIN 与 ADAS Eth 分表。","d":"车身 DCU-B：独立 FCT-04，CAN/LIN 与 ADAS Eth 分表。"},"anchor":"教研精编 · 模块 01 B+ / C2 Lab"},"type":"single","correctValue":"d"},{"q":"BGA 空洞率属于哪类数据？应优先用什么图？","options":[{"t":"仅记录不需控制图","correct":false,"v":"a"},{"t":"连续/计量型 — SPI、AOI 空洞% 用 I-MR 或 Cpk（MSA 先合格）","correct":true,"v":"b"},{"t":"属性型 — 直接对空洞% 做 Cpk 无需 MSA","correct":false,"v":"c"},{"t":"与 FCT 一次通过率相同，合并做 p 图","correct":false,"v":"d"}],"explain":{"source":"author","focus":"战略 · 五产品×四工艺 · Q3","rationale":"正解：连续/计量型 — SPI、AOI 空洞% 用 I-MR 或 Cpk（MSA 先合格）。答题时写出工站号/Profile#/Program_ID 中至少一项。","distractors":{"b":"阶段门与 MSA 须文档化，不可口头通过。","c":"五产品/工站须分层，MBB 评审一票否决合并统计。","d":"「仅记录不需控制图」与模块 01 战略 · 五产品×四工艺 证据要求冲突。"},"anchor":"教研精编 · 模块 01 B+ / C2 Lab"},"type":"single","correctValue":"b"},{"q":"MBB 在 ADAS SCAR 项目中的首要职责？","options":[{"t":"只审 FCT 不加查离线/SMT","correct":false,"v":"a"},{"t":"合并五类产品数据求总良率","correct":false,"v":"b"},{"t":"代替 BB 操作 Minitab 并签署控制计划","correct":false,"v":"c"},{"t":"教练 BB、阶段门评审、跨工艺段证据链，不代替做分析","correct":true,"v":"d"}],"explain":{"source":"auto","focus":"考点（模块 01 · 战略部署 · 五产品×四工艺段）— 现场判断","rationale":"教练 BB、阶段门评审、跨工艺段证据链，不代替做分析。须能在离线/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。","distractors":{"b":"MBB 教练不代劳分析。","c":"「只审 FCT 不加查离线/SMT」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。","d":"勿合并产品/工站数据，违反分层原则。"},"anchor":"对照本节 B+ 工艺表、F 作业 Rubric 与 G 题干关键词。"},"type":"single","correctValue":"d"},{"q":"【纠错】SPI Cpk=1.9 能否证明 ADAS Eth FCT 一定合格？","options":[{"t":"能；Cpk>1.33 即客户满意","correct":false,"v":"a"},{"t":"否；须 CTQ 对齐、MSA 合格，且 FCT 用 p 图/缺陷矩阵链到离线/BGA","correct":true,"v":"b"},{"t":"能；SPI 只管焊膏，与软件版本无关","correct":false,"v":"c"},{"t":"能；忽略 X-Ray 阶段","correct":false,"v":"d"}],"explain":{"focus":"纠错 — Cpk 不能代表 FCT 客户体验","rationale":"SPI Cpk 只说明焊膏体积能力；Eth FCT 为属性 CTQ，须独立 MSA + p 图 + 缺陷矩阵链到离线/BGA。","distractors":{"b":"1.33 是能力参考，非客户满意度充分条件。","c":"SPI 与软件版本、探针无关是错误因果。","d":"X-Ray 阶段必须纳入 Analyze 分层。"},"anchor":"模块01 G Q5 · IATF 测量系统","source":"author"},"type":"single","correctValue":"b"},{"type":"multi","bloom":"analyze","products":["DCU-A","DCU-B"],"scenario":"【情景】质量部拟将 ADAS FCT-05 与车身 FCT-04 批次合并算总良率，并仅用 SPI Cpk 对外汇报 ADAS SCAR 进展。","q":"下列哪些做法违反本课 B+ 与 MBB 原则？（多选，须全对才得分）","options":[{"t":"离线 Checksum 100% 在 SMT 前完成","correct":false,"v":"a"},{"t":"按 Program_ID 分层比较 FCT 通过率","correct":false,"v":"b"},{"t":"仅用 SPI Cpk 代表 Eth FCT 改善","correct":true,"v":"c"},{"t":"合并 ADAS+车身 FCT 数据做总良率","correct":true,"v":"d"}],"correctValues":["c","d"],"explain":{"source":"auto","focus":"考点（模块 01 · 战略部署 · 五产品×四工艺段）— 现场判断","rationale":"合并 ADAS+车身 FCT 数据做总良率。须能在离线/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。","distractors":{"c":"「按 Program_ID 分层比较 FCT 通过率」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。","d":"「离线 Checksum 100% 在 SMT 前完成」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。"},"anchor":"对照本节 B+ 工艺表、F 作业 Rubric 与 G 题干关键词。"}}]}</script>
+  <script type="application/json" id="hw-rubric-data">{"day":1,"minChars":150,"passScore":70,"mcqWeight":45,"textWeight":55,"dayKeywords":["工艺段","离线烧录","smt","bga","fct","dcu","域控","sipoc","routing","装配","手插"],"evidenceFields":["工站","fct-","profile","program_id","checksum","x-ray","工艺段","离线烧录","sipoc","分段","截图"],"dimensions":{"business":{"label":"商业对齐","weight":22,"keys":["ctq","voc","champion","效益","成本","sipoc","章程","问题陈述","dpmo","ppm","oem","adas","域控","routing","工艺段","五产品","成熟度"],"forbids":["应该采用","建议使用 minitab","上 minitab"]},"measure":{"label":"测量严谨","weight":20,"keys":["msa","操作定义","抽样","基线","cpk","grr","%r&r","spi","checksum","x-ray","profile","探针"],"forbids":[]},"stats":{"label":"统计有效","weight":25,"keys":["显著","α","p值","假设","doe","效应量","anova","回归","卡方","缺陷矩阵","pareto"],"forbids":[]},"improve":{"label":"改进与控制","weight":25,"keys":["fmea","pfmea","控制计划","pilot","对策","8d","spc","p图","反应计划","u12","空洞"],"forbids":[]},"mbb":{"label":"MBB 表达","weight":18,"keys":["champion","阶段门","复制","故事板","bb","mbb","教练","评审","工艺段","战略","部署"],"forbids":[]}},"mcq":[{"q":"贵司 ADAS/车身域控「离线烧录」应在何时完成？","options":[{"t":"仅 FCT 失败后再返工烧录","correct":false,"v":"a"},{"t":"全部在 SMT 贴片之前，Checksum 100% 比对","correct":true,"v":"b"},{"t":"回流焊后对成品板补烧 SOC","correct":false,"v":"c"},{"t":"与中控 HU 共用同一条烧录程序不核对版本","correct":false,"v":"d"}],"explain":{"focus":"离线烧录必须在 SMT 前 — Checksum 门禁","rationale":"ADAS/车身 SOC·MCU 镜像须在贴片前烧录并 100% 比对；回流后补烧无法拦截错版，且污染追溯链。","distractors":{"b":"回流后烧录属返工流程，不能作为预防控制。","c":"FCT 后烧录为失效模式，成本与风险最高。","d":"HU 与域控程序隔离是另一条线，不能替代版本核对。"},"anchor":"B+ 表 · site-config q1 · routing「SMT前」","source":"author"},"type":"single","correctValue":"b"},{"q":"分析「车身域控 CAN 间歇」时，FCT 数据应取自哪一工站？","options":[{"t":"仅看 SMT AOI，不看 FCT","correct":false,"v":"a"},{"t":"OEM 整车路试数据库","correct":false,"v":"b"},{"t":"任意域控柔性线合并统计","correct":false,"v":"c"},{"t":"FCT-DCU-B-04，且不得混入 ADAS FCT-05 批次","correct":true,"v":"d"}],"explain":{"source":"author","focus":"战略 · 五产品×四工艺 · Q2","rationale":"正解：FCT-DCU-B-04，且不得混入 ADAS FCT-05 批次。答题时写出工站号/Profile#/Program_ID 中至少一项。","distractors":{"b":"车身 DCU-B：独立 FCT-04，CAN/LIN 与 ADAS Eth 分表。","c":"车身 DCU-B：独立 FCT-04，CAN/LIN 与 ADAS Eth 分表。","d":"车身 DCU-B：独立 FCT-04，CAN/LIN 与 ADAS Eth 分表。"},"anchor":"教研精编 · 模块 01 B+ / C2 Lab"},"type":"single","correctValue":"d"},{"q":"BGA 空洞率属于哪类数据？应优先用什么图？","options":[{"t":"仅记录不需控制图","correct":false,"v":"a"},{"t":"连续/计量型 — SPI、AOI 空洞% 用 I-MR 或 Cpk（MSA 先合格）","correct":true,"v":"b"},{"t":"属性型 — 直接对空洞% 做 Cpk 无需 MSA","correct":false,"v":"c"},{"t":"与 FCT 一次通过率相同，合并做 p 图","correct":false,"v":"d"}],"explain":{"source":"author","focus":"战略 · 五产品×四工艺 · Q3","rationale":"正解：连续/计量型 — SPI、AOI 空洞% 用 I-MR 或 Cpk（MSA 先合格）。答题时写出工站号/Profile#/Program_ID 中至少一项。","distractors":{"b":"阶段门与 MSA 须文档化，不可口头通过。","c":"五产品/工站须分层，MBB 评审一票否决合并统计。","d":"「仅记录不需控制图」与模块 01 战略 · 五产品×四工艺 证据要求冲突。"},"anchor":"教研精编 · 模块 01 B+ / C2 Lab"},"type":"single","correctValue":"b"},{"q":"MBB 在 ADAS SCAR 项目中的首要职责？","options":[{"t":"只审 FCT 不加查离线烧录/SMT","correct":false,"v":"a"},{"t":"合并五类产品数据求总良率","correct":false,"v":"b"},{"t":"代替 BB 操作 Minitab 并签署控制计划","correct":false,"v":"c"},{"t":"教练 BB、阶段门评审、跨工艺段证据链，不代替做分析","correct":true,"v":"d"}],"explain":{"source":"auto","focus":"考点（模块 01 · 战略部署 · 五产品×四工艺段）— 现场判断","rationale":"教练 BB、阶段门评审、跨工艺段证据链，不代替做分析。须能在离线烧录/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。","distractors":{"b":"MBB 教练不代劳分析。","c":"「只审 FCT 不加查离线烧录/SMT」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。","d":"勿合并产品/工站数据，违反分层原则。"},"anchor":"对照本节 B+ 工艺表、F 作业 Rubric 与 G 题干关键词。"},"type":"single","correctValue":"d"},{"q":"【纠错】SPI Cpk=1.9 能否证明 ADAS Eth FCT 一定合格？","options":[{"t":"能；Cpk>1.33 即客户满意","correct":false,"v":"a"},{"t":"否；须 CTQ 对齐、MSA 合格，且 FCT 用 p 图/缺陷矩阵链到离线烧录/BGA","correct":true,"v":"b"},{"t":"能；SPI 只管焊膏，与软件版本无关","correct":false,"v":"c"},{"t":"能；忽略 X-Ray 阶段","correct":false,"v":"d"}],"explain":{"focus":"纠错 — Cpk 不能代表 FCT 客户体验","rationale":"SPI Cpk 只说明焊膏体积能力；Eth FCT 为属性 CTQ，须独立 MSA + p 图 + 缺陷矩阵链到离线烧录/BGA。","distractors":{"b":"1.33 是能力参考，非客户满意度充分条件。","c":"SPI 与软件版本、探针无关是错误因果。","d":"X-Ray 阶段必须纳入 Analyze 分层。"},"anchor":"模块01 G Q5 · IATF 测量系统","source":"author"},"type":"single","correctValue":"b"},{"type":"multi","bloom":"analyze","products":["DCU-A","DCU-B"],"scenario":"【情景】质量部拟将 ADAS FCT-05 与车身 FCT-04 批次合并算总良率，并仅用 SPI Cpk 对外汇报 ADAS SCAR 进展。","q":"下列哪些做法违反本课 B+ 与 MBB 原则？（多选，须全对才得分）","options":[{"t":"离线烧录 Checksum 100% 在 SMT 前完成","correct":false,"v":"a"},{"t":"按 Program_ID 分层比较 FCT 通过率","correct":false,"v":"b"},{"t":"仅用 SPI Cpk 代表 Eth FCT 改善","correct":true,"v":"c"},{"t":"合并 ADAS+车身 FCT 数据做总良率","correct":true,"v":"d"}],"correctValues":["c","d"],"explain":{"source":"auto","focus":"考点（模块 01 · 战略部署 · 五产品×四工艺段）— 现场判断","rationale":"合并 ADAS+车身 FCT 数据做总良率。须能在离线烧录/SMT/X-Ray/手插/FCT 分段举证，并与当日 CTQ 对齐。","distractors":{"c":"「按 Program_ID 分层比较 FCT 通过率」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。","d":"「离线烧录 Checksum 100% 在 SMT 前完成」与本课 B+ 工艺证据链或 DMAIC 阶段要求不一致。"},"anchor":"对照本节 B+ 工艺表、F 作业 Rubric 与 G 题干关键词。"}}]}</script>
   <script src="../js/homework-grader-core.js"></script>
   <script src="../js/interactive-learning-core.js"></script>
   <script src="../js/homework-grader.js" defer></script>
