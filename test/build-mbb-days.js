@@ -18,8 +18,11 @@ const { DAY_ENRICHMENT, renderDeepDiveHtml } = require("./automotive-day-enrichm
 const { renderTopbarBrand, renderPrintHeader, renderThemeSwitcher } = require("./brand-html");
 const { renderC2Lab, getC2LabForDay } = require("./c2-lab-specs");
 const { renderSelfAssessmentSection } = require("./render-self-assessment");
-const { renderFactoryScenarioHtml } = require("./render-factory-scenario");
-const { renderFactoryHubCards } = require("./render-factory-scenario");
+const {
+  renderFactoryScenarioHtml,
+  renderFactoryHubCards,
+  renderFactoryTopicCards,
+} = require("./render-factory-scenario");
 
 const PACKAGE_VERSION = "3.0.0-beta.1";
 
@@ -819,7 +822,11 @@ const hubHtml = `<!DOCTYPE html>
       <p style="color:var(--muted);max-width:720px">
         每条场景 = <strong>产线故事</strong> + <strong>六西格玛解析</strong> + <strong>30 秒致用</strong>，点击进入对应模块。
       </p>
+      <h2 class="fs-hub-section-title">14 模块主线场景</h2>
       <div class="fs-hub-grid">${renderFactoryHubCards(esc)}</div>
+      <h2 class="fs-hub-section-title">专题加深（P0 / P1）</h2>
+      <p style="font-size:0.88rem;color:var(--muted)">ICT · 手插 · AOI Kappa · ECN · ASIL · 8D 对齐</p>
+      <div class="fs-hub-grid">${renderFactoryTopicCards(esc)}</div>
     </div>
   </div>
   <footer class="footer"><a href="../index.html">返回课程总览</a></footer>

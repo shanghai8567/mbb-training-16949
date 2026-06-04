@@ -158,6 +158,9 @@ for (let i = 1; i <= 14; i++) {
   if (html.includes("sec-factory") && html.includes("factory-scenario"))
     ok(fn + " factory floor scenario section");
   else bad(fn + " missing factory scenario section");
+  if (html.includes("fs-deep") && html.includes("标准锚点"))
+    ok(fn + " factory P0/P1 sigmaDeep block");
+  else bad(fn + " missing factory P0/P1 block");
   if (i === 1 && html.includes("product-matrix-full")) ok(fn + " B+ full product matrix");
   if (html.includes('meta name="mbb-package-version"')) ok(fn + " package version meta");
   else bad(fn + " missing package version meta");
@@ -194,6 +197,10 @@ const indexHtml = fs.readFileSync(path.join(ROOT, "index.html"), "utf8");
 if (indexHtml.includes("eval-levels") && indexHtml.includes("L1") && indexHtml.includes("L3"))
   ok("index three-level evaluation banner");
 else bad("index missing L1/L2/L3 banner");
+const factoryHub = fs.readFileSync(path.join(ROOT, "reference/factory-floor-lab.html"), "utf8");
+if (factoryHub.includes("专题加深") && factoryHub.includes("ict-fct"))
+  ok("factory-floor-lab topic supplements");
+else bad("factory-floor-lab missing P1 topics");
 
 const { countPresetAnswersForDay } = require("./exercise-answers");
 for (let i = 1; i <= 14; i++) {

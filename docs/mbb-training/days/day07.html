@@ -143,7 +143,8 @@
       <span class="tag auto">Analyze 门 · 整合 · 故事板</span>
       <span class="tag gold">阶段门会议室 · 投影 ADAS SCAR 故事板</span>
     </p>
-    <div class="fs-product-row"><span class="fs-product-tag">ADAS DCU-A</span><span class="fs-product-tag">车身 DCU-B</span></div>
+    <p class="fs-anchor"><strong>标准锚点</strong> DMAIC 阶段门 · OEM SCAR 证据要求</p>
+    <div class="fs-product-row"><span class="fs-product-tag">ADAS DCU-A</span><span class="fs-product-tag">车身域控 DCU-B</span></div>
 
     <div class="fs-tabs" role="tablist" aria-label="场景学习模式">
       <button type="button" class="fs-tab is-active" data-fs-panel="scene" role="tab" aria-selected="true">① 现场故事</button>
@@ -153,21 +154,27 @@
 
     <div class="fs-panel is-active" id="fs-panel-scene" role="tabpanel">
       <h3 class="fs-story-title">Analyze 门评审：PPT 很美，证据链断了</h3>
-      <p class="fs-scene">BB 汇报 40 页 PPT，唯独缺 DCU-B 对照组与 X-Ray 切换日标注。OEM 接口人问：「车身 CAN 间歇怎么证明不是 ADAS 炉温实验的副作用？」MBB 敲桌：**「阶段门看证据链，不看动画。」**</p>
-      <div class="fs-dialogue"><div class="fs-dialogue-line"><span class="fs-who">OEM</span><span class="fs-line">车身线的回归证据在哪？</span></div><div class="fs-dialogue-line"><span class="fs-who">MBB</span><span class="fs-line">打回，补 FCT-04 对照与 X-Ray 切换日。</span></div></div>
+      <p class="fs-scene">BB 汇报 40 页 PPT，缺 DCU-B 对照组、缺 X-Ray SL→MP 切换日。OEM 问：「车身 CAN 间歇怎么证明不是 ADAS 炉温实验副作用？」MBB 敲桌：**「门看证据链，不看动画。」**</p>
+      <div class="fs-dialogue"><div class="fs-dialogue-line"><span class="fs-who">OEM</span><span class="fs-line">车身线的回归证据在哪？</span></div><div class="fs-dialogue-line"><span class="fs-who">MBB</span><span class="fs-line">打回：补 FCT-04 对照 + X-Ray 切换日 + MSA 摘要一页。</span></div></div>
     </div>
 
     <div class="fs-panel" id="fs-panel-sigma" role="tabpanel" hidden>
-      <p class="fs-sigma">DMAIC **阶段门** 是 **整合 Analyze**：D+M+A 摘要、分产品对照、MSA 状态、未解风险。MBB 打回理由必须可执行：「补 FCT-04 回归」「标 SL→MP 日期」。</p>
-      <div class="fs-tools"><span class="fs-tool-tag">阶段门 checklist</span><span class="fs-tool-tag">故事板</span><span class="fs-tool-tag">D+M+A 一页纸</span></div>
-      <div class="fs-pitfall"><strong>典型踩坑</strong> — 口头汇报无分层数据 —— No-Go。</div>
+      <p class="fs-sigma">阶段门整合 D+M+A：**一页纸**含问题基线、MSA 状态、关键检验/DOE 结论（含效应量）、未关闭风险。打回理由可执行。</p>
+      <details class="fs-deep" open>
+      <summary>专业加深（P0 / P1）</summary>
+      <ul class="obj-list fs-deep-list"><li>**P0 · 门证据清单**：MSA 合格 · 分层数据 · 效应量 · 对照产品线 · 无对策混入问题陈述。</li><li>**P1 · SL→MP**：故事板必须标 **切换日** 与 X-Ray 策略变化对空洞数据的影响。</li><li>**P1 · 回归证明**：ADAS 实验期间车身 FCT-04 须 **同期监控** 证明无回归。</li></ul>
+    </details>
+      <div class="fs-prep"><strong>分析/评审前检查</strong><ul class="obj-list "><li>D+M+A 一页纸齐全</li><li>车身对照数据附上</li></ul></div>
+      <div class="fs-tools"><span class="fs-tool-tag">阶段门 checklist</span><span class="fs-tool-tag">故事板</span><span class="fs-tool-tag">D+M+A 摘要</span></div>
+      <div class="fs-pitfall"><strong>典型踩坑</strong> — 口头汇报；无 X-Ray 切换标注。</div>
     </div>
 
     <div class="fs-panel" id="fs-panel-apply" role="tabpanel" hidden>
       <div class="fs-apply-box">
         <strong>现在就做</strong>
-        <p>写 3 条「若你是 MBB，本门会通过/打回」理由。</p>
+        <p>写 3 条通过/打回理由（含效应量、分层、对照）。</p>
       </div>
+      <p class="fs-quiz-link"><a href="#sec-g">G 节 — Analyze 门缺什么</a></p>
       <p class="fs-fun"><span class="fs-fun-ico">💡</span> 门评审像安检：**液体可以带，逻辑不能漏。**</p>
       <p style="margin-top:0.75rem;font-size:0.88rem;color:var(--muted)">完成致用行动后，前往 <a href="#sec-e">E 课堂练习</a> 或 <a href="#sec-f">F 作业提交</a> 巩固。</p>
     </div>

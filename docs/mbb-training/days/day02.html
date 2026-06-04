@@ -143,6 +143,7 @@
       <span class="tag auto">Define · Charter · CTQ 树</span>
       <span class="tag gold">会议室 · FCT-DCU-A-05 数据投影</span>
     </p>
+    <p class="fs-anchor"><strong>标准锚点</strong> IATF 16949 顾客导向 · 8D 与 DMAIC 可并行</p>
     <div class="fs-product-row"><span class="fs-product-tag">ADAS 域控 DCU-A</span></div>
 
     <div class="fs-tabs" role="tablist" aria-label="场景学习模式">
@@ -154,20 +155,26 @@
     <div class="fs-panel is-active" id="fs-panel-scene" role="tabpanel">
       <h3 class="fs-story-title">OEM 邮件：Eth 丢包不是「加强检验」能解决的</h3>
       <p class="fs-scene">客户质量工程师发来 SCAR：「高速 Eth 丢包上升」。产线经理提议「FCT 加严全检」。MBB 把邮件投屏：问题陈述里写着「降低不良」——没有基线%、没有批次窗、没有工站号。</p>
-      <div class="fs-dialogue"><div class="fs-dialogue-line"><span class="fs-who">产线经理</span><span class="fs-line">加 2 台 FCT 重测不就行了？</span></div><div class="fs-dialogue-line"><span class="fs-who">MBB</span><span class="fs-line">重测是掩盖，不是 Define；先写清 Eth 一次通过率从多少到多少。</span></div><div class="fs-dialogue-line"><span class="fs-who">BB 学员</span><span class="fs-line">那离线烧录 Checksum 要进 Charter 吗？</span></div><div class="fs-dialogue-line"><span class="fs-who">MBB</span><span class="fs-line">必须进——软件版本是 CTQ，不是附件。</span></div></div>
+      <div class="fs-dialogue"><div class="fs-dialogue-line"><span class="fs-who">产线经理</span><span class="fs-line">加 2 台 FCT 重测不就行了？</span></div><div class="fs-dialogue-line"><span class="fs-who">MBB</span><span class="fs-line">重测是掩盖，不是 Define；先写清 Eth 一次通过率从多少到多少。</span></div><div class="fs-dialogue-line"><span class="fs-who">BB 学员</span><span class="fs-line">客户要 8D，我们还做 DMAIC 吗？</span></div><div class="fs-dialogue-line"><span class="fs-who">MBB</span><span class="fs-line">8D D1–D2 对齐 Charter；D3+ 用 DMAIC 证据，勿两套故事打架。</span></div></div>
     </div>
 
     <div class="fs-panel" id="fs-panel-sigma" role="tabpanel" hidden>
       <p class="fs-sigma">**Define** 的核心是 **可测量问题陈述 + 范围边界**。汽车电子 SCAR 要写明四段工艺（离线烧录/SMT/手插/装配/FCT），排除整车路试。CTQ 树把 VOC「感知可靠」拆到 Eth%、Checksum、Profile#——后面 Measure/Analyze 才有合法数据表。</p>
-      <div class="fs-tools"><span class="fs-tool-tag">项目章程</span><span class="fs-tool-tag">CTQ 树</span><span class="fs-tool-tag">SIPOC 边界</span></div>
+      <details class="fs-deep" open>
+      <summary>专业加深（P0 / P1）</summary>
+      <ul class="obj-list fs-deep-list"><li>**P0 · 8D ↔ DMAIC**：8D 的 D2 描述问题 ≈ DMAIC Define；根因验证走 Analyze；对策与防再发 ≈ Improve+Control。MBB 职责是 **不让 8D 团队用对策冒充问题陈述**。</li><li>**P0 · ROI 模板**：年化效益 ≈ Δ不良率 × 年产量 × 单板毛利 + 减少报废 × 成本 + 减少停线 h × 小时贡献毛利（须 Champion 签字假设）。</li><li>**P1 · PPAP 意识**：Charter 范围外的软件版本变更若未走 ECN，后续 Control 全部失效（模块 10 展开）。</li></ul>
+    </details>
+      <div class="fs-prep"><strong>分析/评审前检查</strong><ul class="obj-list "><li>问题陈述无对策动词</li><li>范围含四段工艺</li><li>CTQ 含 Program_ID/Checksum</li></ul></div>
+      <div class="fs-tools"><span class="fs-tool-tag">项目章程</span><span class="fs-tool-tag">CTQ 树</span><span class="fs-tool-tag">SIPOC 边界</span><span class="fs-tool-tag">8D 对齐表</span></div>
       <div class="fs-pitfall"><strong>典型踩坑</strong> — 用对策当问题（「加强烧录管理」）— 阶段门应 No-Go。</div>
     </div>
 
     <div class="fs-panel" id="fs-panel-apply" role="tabpanel" hidden>
       <div class="fs-apply-box">
         <strong>现在就做</strong>
-        <p>用 1 句话重写问题陈述：含指标、时间窗、FCT-05、不含对策。</p>
+        <p>用 1 句话重写问题陈述：含指标、时间窗、FCT-05、不含对策；旁注对应 8D 哪一步。</p>
       </div>
+      <p class="fs-quiz-link"><a href="#sec-g">G 节 — 「降低不良」是否合格问题陈述</a></p>
       <p class="fs-fun"><span class="fs-fun-ico">💡</span> Champion 最爱听：**「从 99.2% 到 97.1%，20 批，FCT-05。」**</p>
       <p style="margin-top:0.75rem;font-size:0.88rem;color:var(--muted)">完成致用行动后，前往 <a href="#sec-e">E 课堂练习</a> 或 <a href="#sec-f">F 作业提交</a> 巩固。</p>
     </div>

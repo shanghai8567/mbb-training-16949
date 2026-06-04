@@ -156,6 +156,66 @@
   margin-right: 0.25rem;
 }
 
+.fs-anchor {
+  font-size: 0.82rem;
+  color: var(--muted, #8fa3c4);
+  margin: 0 0 0.75rem;
+  padding: 0.45rem 0.65rem;
+  border-radius: 6px;
+  background: rgba(120, 160, 220, 0.08);
+  border-left: 3px solid var(--violet, #8b7cf6);
+}
+
+.fs-deep {
+  margin: 1rem 0;
+  padding: 0.65rem 0.85rem;
+  border-radius: 8px;
+  background: rgba(139, 124, 246, 0.08);
+  border: 1px solid rgba(139, 124, 246, 0.25);
+}
+
+.fs-deep summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--violet, #8b7cf6);
+  font-size: 0.88rem;
+}
+
+.fs-deep-list li {
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.fs-prep {
+  margin: 0.85rem 0;
+  padding: 0.55rem 0.75rem;
+  border-radius: 8px;
+  background: rgba(0, 229, 184, 0.06);
+  font-size: 0.85rem;
+}
+
+.fs-prep strong {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--accent, #00e5b8);
+}
+
+.fs-quiz-link {
+  font-size: 0.88rem;
+  margin: 0.5rem 0;
+}
+
+.fs-topic-card ul {
+  color: var(--muted, #8fa3c4);
+  pointer-events: none;
+}
+
+.fs-hub-section-title {
+  margin: 1.5rem 0 0.5rem;
+  font-size: 1rem;
+  color: var(--bb-gold, var(--gold));
+}
+
 /* 场景总览 hub */
 .fs-hub-grid {
   display: grid;

@@ -143,6 +143,7 @@
       <span class="tag auto">Measure · MSA · Gage R&amp;R</span>
       <span class="tag gold">MSA 室 · SPI 测厚仪 · ADAS 钢网库</span>
     </p>
+    <p class="fs-anchor"><strong>标准锚点</strong> AIAG MSA-4（计量 GRR）· AIAG MSA-4 属性一致性/Kappa</p>
     <div class="fs-product-row"><span class="fs-product-tag">ADAS DCU-A</span><span class="fs-product-tag">座舱 DCU-C</span></div>
 
     <div class="fs-tabs" role="tablist" aria-label="场景学习模式">
@@ -153,22 +154,28 @@
 
     <div class="fs-panel is-active" id="fs-panel-scene" role="tabpanel">
       <h3 class="fs-story-title">GRR=28% 的 SPI，还能开控制限吗？</h3>
-      <p class="fs-scene">三台 SPI 比对，%GRR=28%。工艺想「先上线，以后再改善」。MBB 翻开 AIAG MSA-4 判据：&gt;30% 不可接受，10–30% 边缘。「边缘不是通行证，是改进项目。」</p>
-      <div class="fs-dialogue"><div class="fs-dialogue-line"><span class="fs-who">工艺工程师</span><span class="fs-line">28% 差不多能用吧？</span></div><div class="fs-dialogue-line"><span class="fs-who">MBB</span><span class="fs-line">边缘区要立项改进，不是口头放行。</span></div></div>
+      <p class="fs-scene">三台 SPI 比对，%GRR=28%。工艺想「先上线，以后再改善」。MBB 翻开 AIAG MSA-4 判据：&gt;30% 不可接受，10–30% 边缘。「边缘不是通行证，是改进项目。」隔壁 AOI 工位，目检员甲丙对同一 BGA 空洞判不一致——Kappa 仅 0.55。</p>
+      <div class="fs-dialogue"><div class="fs-dialogue-line"><span class="fs-who">工艺工程师</span><span class="fs-line">28% 差不多能用吧？</span></div><div class="fs-dialogue-line"><span class="fs-who">MBB</span><span class="fs-line">边缘区要立项改进，不是口头放行。</span></div><div class="fs-dialogue-line"><span class="fs-who">AOI 主管</span><span class="fs-line">目检靠老师傅，还要做 MSA 吗？</span></div><div class="fs-dialogue-line"><span class="fs-who">MBB</span><span class="fs-line">要——属性量测用 Kappa/一致性，和 SPI 的 GRR 不是一张表。</span></div></div>
     </div>
 
     <div class="fs-panel" id="fs-panel-sigma" role="tabpanel" hidden>
-      <p class="fs-sigma">**MSA 是 Measure 阶段的门禁**：%GRR、ndc、偏倚要进报告。汽车电子常见陷阱：座舱与 ADAS 共用测点却不评审；SL 全检期数据混入 MP 抽检期。MBB 签字的条件是：**测量系统合格 + 分层数据**。</p>
-      <div class="fs-tools"><span class="fs-tool-tag">Gage R&amp;R</span><span class="fs-tool-tag">ndc</span><span class="fs-tool-tag">分层（SL/MP）</span></div>
-      <div class="fs-pitfall"><strong>典型踩坑</strong> — MSA 不合格仍报 Cpk 达标对外汇报。</div>
+      <p class="fs-sigma">**MSA 是 Measure 阶段的门禁**：计量 CTQ 用 %GRR、ndc、偏倚；**属性判定**（AOI 过/不过、FCT Pass/Fail 人工复判）用 **Kappa/一致性**。汽车电子陷阱：座舱与 ADAS 共用测点却不评审；SL 全检期数据混入 MP 抽检期。</p>
+      <details class="fs-deep" open>
+      <summary>专业加深（P0 / P1）</summary>
+      <ul class="obj-list fs-deep-list"><li>**P0 · 计量 MSA**：%GRR=28% → 边缘，须 **改进量具/夹具/方法** 后再建 SPC 控制限；ndc&lt;5 时区分能力不可靠。</li><li>**P0 · 属性 MSA**：AOI 误判会同时伤害 Analyze（假根因）与 Control（假报警）；Kappa≥0.75 方可接受（行业惯例，以 CSR 为准）。</li><li>**P1 · SL/MP 分层**：X-Ray Safe Launch 100% 与量产抽检数据 **禁止混算 GRR/Cpk**。</li></ul>
+    </details>
+      <div class="fs-prep"><strong>分析/评审前检查</strong><ul class="obj-list "><li>GRR 报告含 ndc</li><li>属性站有 Kappa 或一致性</li><li>数据按产品/阶段分层</li></ul></div>
+      <div class="fs-tools"><span class="fs-tool-tag">Gage R&amp;R</span><span class="fs-tool-tag">Kappa/一致性</span><span class="fs-tool-tag">ndc</span><span class="fs-tool-tag">分层（SL/MP）</span></div>
+      <div class="fs-pitfall"><strong>典型踩坑</strong> — MSA 不合格仍报 Cpk 达标；AOI 目检不做一致性评估。</div>
     </div>
 
     <div class="fs-panel" id="fs-panel-apply" role="tabpanel" hidden>
       <div class="fs-apply-box">
         <strong>现在就做</strong>
-        <p>写下：若 GRR=28%，你建议「可用/改进/停用」哪一项及 1 条理由。</p>
+        <p>填表：SPI（GRR=?）+ AOI（Kappa=?）各写 Accept/Marginal/Reject 及一条改进。</p>
       </div>
-      <p class="fs-fun"><span class="fs-fun-ico">💡</span> GRR 像秤：**不准的秤，越称越冤。**</p>
+      <p class="fs-quiz-link"><a href="#sec-g">G 节 — %GRR 28% 能否放行</a></p>
+      <p class="fs-fun"><span class="fs-fun-ico">💡</span> 计量像秤，目检像裁判：**秤不准别称重，裁判不一别判罚。**</p>
       <p style="margin-top:0.75rem;font-size:0.88rem;color:var(--muted)">完成致用行动后，前往 <a href="#sec-e">E 课堂练习</a> 或 <a href="#sec-f">F 作业提交</a> 巩固。</p>
     </div>
   </article>

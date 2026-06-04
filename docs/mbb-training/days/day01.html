@@ -146,6 +146,7 @@
       <span class="tag auto">战略 · σ 语言 · 工艺段地图</span>
       <span class="tag gold">离线烧录区 · 烧录器 #7 · SMT 入口门禁</span>
     </p>
+    <p class="fs-anchor"><strong>标准锚点</strong> ISO 13053-1 量化方法 · 组织级 σ 目标沟通</p>
     <div class="fs-product-row"><span class="fs-product-tag">ADAS 域控 DCU-A</span><span class="fs-product-tag">车身域控 DCU-B</span></div>
 
     <div class="fs-tabs" role="tablist" aria-label="场景学习模式">
@@ -162,6 +163,11 @@
 
     <div class="fs-panel" id="fs-panel-sigma" role="tabpanel" hidden>
       <p class="fs-sigma">六西格玛在这里不是「喊口号降不良」，而是 **用 σ/DPMO 统一语言**，把 **离线烧录 → SMT → X-Ray → FCT** 拆成可度量 CTQ。MBB 的价值是画清「产品×工艺段」地图：错版是 **Define 前就该关掉的门**；SPI Cpk 再漂亮，也替代不了 Eth FCT 的 p 图。</p>
+      <details class="fs-deep" open>
+      <summary>专业加深（P0 / P1）</summary>
+      <ul class="obj-list fs-deep-list"><li>**P0 · 1.5σ 惯例**：对客户报「6σ」或 Cpk 时，须说明是否采用行业 1.5σ 偏移假设、数据是否来自 Safe Launch 全检期——避免审计追问「短期数据代表长期吗」。</li><li>**P0 · ROI 语言**：Champion 要听硬钱——错版拦截价值 ≈ 避免报废片数×单板成本 + 避免停线分钟×分钟产值（见模块 02 公式）。</li><li>**P1 · 工艺段**：离线烧录门是 **成本最低的错误发现点**；越往后发现，DPMO 惩罚越大。</li></ul>
+    </details>
+      <div class="fs-prep"><strong>分析/评审前检查</strong><ul class="obj-list "><li>五产品 FCT 工站号已标注</li><li>routing 表与 site-config 一致</li></ul></div>
       <div class="fs-tools"><span class="fs-tool-tag">SIPOC（范围）</span><span class="fs-tool-tag">DPMO/ppm（战略沟通）</span><span class="fs-tool-tag">五产品 routing 表</span></div>
       <div class="fs-pitfall"><strong>典型踩坑</strong> — 把五类产品 FCT 良率合并汇报 —— Champion 会听到「假繁荣」。</div>
     </div>
@@ -171,6 +177,7 @@
         <strong>现在就做</strong>
         <p>打开 routing 表：用 3 种颜色标 ADAS/车身/HU 的 FCT 工站号；向同事用 1 句话解释「为何离线烧录必须在 SMT 前」。</p>
       </div>
+      <p class="fs-quiz-link"><a href="#sec-g">回到本节 G 节 — 验证「合并良率」与「Checksum 门禁」题</a></p>
       <p class="fs-fun"><span class="fs-fun-ico">💡</span> 记住口诀：**「烧录不对，后面全废；分段统计，MBB 不背锅。」**</p>
       <p style="margin-top:0.75rem;font-size:0.88rem;color:var(--muted)">完成致用行动后，前往 <a href="#sec-e">E 课堂练习</a> 或 <a href="#sec-f">F 作业提交</a> 巩固。</p>
     </div>

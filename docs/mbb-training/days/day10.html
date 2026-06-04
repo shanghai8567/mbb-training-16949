@@ -143,6 +143,7 @@
       <span class="tag auto">Control · SPC · 控制计划</span>
       <span class="tag gold">产线尾端 · 控制计划电子看板 · FCT-05</span>
     </p>
+    <p class="fs-anchor"><strong>标准锚点</strong> AIAG-VDA 控制计划 · PPAP 变更联动</p>
     <div class="fs-product-row"><span class="fs-product-tag">五产品全矩阵</span></div>
 
     <div class="fs-tabs" role="tablist" aria-label="场景学习模式">
@@ -153,22 +154,28 @@
 
     <div class="fs-panel is-active" id="fs-panel-scene" role="tabpanel">
       <h3 class="fs-story-title">控制计划墙上：Checksum 100% 不是「写在纸上」</h3>
-      <p class="fs-scene">审核员抽检控制计划：ADAS 行写「离线烧录 Checksum 100%」，现场却是抽检 10%。MBB 带着班长重做：**反应计划** 要写停线码、追溯字段、谁有权放行。</p>
-      <div class="fs-dialogue"><div class="fs-dialogue-line"><span class="fs-who">班长</span><span class="fs-line">100% 太慢，我们抽检 10%。</span></div><div class="fs-dialogue-line"><span class="fs-who">MBB</span><span class="fs-line">计划写 100% 就要 100%——反应计划写停线码。</span></div></div>
+      <p class="fs-scene">审核员抽检：ADAS 行写「离线烧录 Checksum 100%」，现场抽检 10%。更糟的是——昨晚 ECN 改了 SOC_FW，烧录程序仍跑旧版，**p 图还没报警，错版已出厂**。MBB 带着班长重做：**反应计划 + ECN 门禁**。</p>
+      <div class="fs-dialogue"><div class="fs-dialogue-line"><span class="fs-who">班长</span><span class="fs-line">100% 太慢，我们抽检 10%。</span></div><div class="fs-dialogue-line"><span class="fs-who">MBB</span><span class="fs-line">计划写 100% 就要 100%；ECN 未同步=隐形错版。</span></div></div>
     </div>
 
     <div class="fs-panel" id="fs-panel-sigma" role="tabpanel" hidden>
-      <p class="fs-sigma">**Control** 把 Improve 成果固化：I-MR/p 图选对、**Western Electric 规则**培训、**反应计划**可执行。追溯字段：Program_ID、烧录批次、X-Ray 阶段、PCB_ID。</p>
-      <div class="fs-tools"><span class="fs-tool-tag">控制计划</span><span class="fs-tool-tag">p 图/I-MR</span><span class="fs-tool-tag">反应计划</span></div>
-      <div class="fs-pitfall"><strong>典型踩坑</strong> — 控制图代替 MSA；计划与现场不一致。</div>
+      <p class="fs-sigma">**Control** 固化 Improve：SPC 图型正确、Western Electric 培训、**反应计划**可执行。追溯：Program_ID、烧录批次、X-Ray 阶段、PCB_ID。</p>
+      <details class="fs-deep" open>
+      <summary>专业加深（P0 / P1）</summary>
+      <ul class="obj-list fs-deep-list"><li>**P1 · ECN/PPAP**：任何 Program_ID 变更须触发 **烧录程序校验 + 首件 Checksum + FCT 首批加严**；否则控制计划空文。</li><li>**P0 · 反应计划**：越界→停线码→谁放行→追溯字段，四要素缺一不可。</li><li>**P1 · ICT→FCT**：控制计划写清 ICT 不良趋势与 FCT p 图联动规则。</li></ul>
+    </details>
+      <div class="fs-prep"><strong>分析/评审前检查</strong><ul class="obj-list "><li>计划=现场</li><li>ECN 24h 内烧录同步</li><li>反应计划含停线码</li></ul></div>
+      <div class="fs-tools"><span class="fs-tool-tag">控制计划</span><span class="fs-tool-tag">p 图/I-MR</span><span class="fs-tool-tag">ECN 门禁</span><span class="fs-tool-tag">反应计划</span></div>
+      <div class="fs-pitfall"><strong>典型踩坑</strong> — 控制图代替 MSA；ECN 未更新程序。</div>
     </div>
 
     <div class="fs-panel" id="fs-panel-apply" role="tabpanel" hidden>
       <div class="fs-apply-box">
         <strong>现在就做</strong>
-        <p>写 1 条反应计划：当 Eth p 图越界时，第一步做什么。</p>
+        <p>写 1 条 Eth p 图越界反应计划 + 1 条 ECN 触发的烧录校验步骤。</p>
       </div>
-      <p class="fs-fun"><span class="fs-fun-ico">💡</span> 控制计划是 **刹车系统**，不是 **备忘录**。</p>
+      <p class="fs-quiz-link"><a href="#sec-g">G 节 — ADAS 控制计划要素</a></p>
+      <p class="fs-fun"><span class="fs-fun-ico">💡</span> 控制计划是 **刹车系统**，ECN 是 **红绿灯**。</p>
       <p style="margin-top:0.75rem;font-size:0.88rem;color:var(--muted)">完成致用行动后，前往 <a href="#sec-e">E 课堂练习</a> 或 <a href="#sec-f">F 作业提交</a> 巩固。</p>
     </div>
   </article>

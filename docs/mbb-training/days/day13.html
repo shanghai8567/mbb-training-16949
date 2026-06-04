@@ -143,6 +143,7 @@
       <span class="tag auto">MBB 辅导 · GROW · Rubric</span>
       <span class="tag gold">MBB 办公室 · GROW 对话 · 双屏 FCT 数据</span>
     </p>
+    <p class="fs-anchor"><strong>标准锚点</strong> 辅导 Rubric · 统计报告评审</p>
     <div class="fs-product-row"><span class="fs-product-tag">车身 DCU-B</span><span class="fs-product-tag">ADAS DCU-A</span></div>
 
     <div class="fs-tabs" role="tablist" aria-label="场景学习模式">
@@ -153,21 +154,27 @@
 
     <div class="fs-panel is-active" id="fs-panel-scene" role="tabpanel">
       <h3 class="fs-story-title">辅导椅上的 BB：「我帮你跑 Minitab 吧」</h3>
-      <p class="fs-scene">BB 说：「车身 CAN 间歇，我帮你把 Minitab 跑完。」MBB 推开键盘：**「你讲，我问；FCT-04 数据你自己拉。我只评审证据链。」** 五分钟后 BB 发现自己混了 FCT-05 批次。</p>
-      <div class="fs-dialogue"><div class="fs-dialogue-line"><span class="fs-who">BB</span><span class="fs-line">张工你帮我跑一下回归？</span></div><div class="fs-dialogue-line"><span class="fs-who">MBB</span><span class="fs-line">先说 FCT-04 的 Program_ID 分层——我不代劳。</span></div></div>
+      <p class="fs-scene">BB 汇报：「p=0.02，显著！」MBB 问：**「效应量？MSA？FCT-04 还是 05？」** BB 愣住。MBB 推开键盘：**「我不代跑；你缺的是证据链，不是软件。」**</p>
+      <div class="fs-dialogue"><div class="fs-dialogue-line"><span class="fs-who">BB</span><span class="fs-line">张工你帮我跑一下回归？</span></div><div class="fs-dialogue-line"><span class="fs-who">MBB</span><span class="fs-line">先说 FCT-04 分层——报告里要有比例差或 OR。</span></div></div>
     </div>
 
     <div class="fs-panel" id="fs-panel-sigma" role="tabpanel" hidden>
-      <p class="fs-sigma">**MBB 辅导** 用 GROW + **项目 Rubric**：不代做分析，给 **可执行反馈**（「补离线烧录/SMT 分层」）。评审口语：混杂、无 MSA、无效应量 —— 对应 Rubric 1–5 分。</p>
-      <div class="fs-tools"><span class="fs-tool-tag">GROW</span><span class="fs-tool-tag">BB 项目 Rubric</span><span class="fs-tool-tag">可执行反馈句</span></div>
-      <div class="fs-pitfall"><strong>典型踩坑</strong> — MBB 代做统计并签署控制计划。</div>
+      <p class="fs-sigma">**MBB 辅导** 用 GROW + Rubric：反馈必须可执行。口语红线：只报 p、无 MSA、混杂工站、无效应量 → ≤3 分。</p>
+      <details class="fs-deep" open>
+      <summary>专业加深（P0 / P1）</summary>
+      <ul class="obj-list fs-deep-list"><li>**P0 · 效应量**：辅导提问清单第一项：「差多少？CI？年化影响？」</li><li>**P0 · MSA**：无 GRR/Kappa 摘要不得进入 Analyze 门。</li><li>**P1 · 分层**：车身/ADAS/HU 数据不得单表合并。</li></ul>
+    </details>
+      <div class="fs-prep"><strong>分析/评审前检查</strong><ul class="obj-list "><li>BB 报告含效应量</li><li>工站号已核对</li></ul></div>
+      <div class="fs-tools"><span class="fs-tool-tag">GROW</span><span class="fs-tool-tag">Rubric</span><span class="fs-tool-tag">评审清单</span></div>
+      <div class="fs-pitfall"><strong>典型踩坑</strong> — MBB 代做统计并签字。</div>
     </div>
 
     <div class="fs-panel" id="fs-panel-apply" role="tabpanel" hidden>
       <div class="fs-apply-box">
         <strong>现在就做</strong>
-        <p>写 1 句 GROW 的 R（Reality）提问，逼 BB 说工站号。</p>
+        <p>写 1 句 GROW 提问 + 1 条 Rubric 扣分理由（对应效应量/MSA/分层）。</p>
       </div>
+      <p class="fs-quiz-link"><a href="#sec-g">F 节 Rubric 示例</a></p>
       <p class="fs-fun"><span class="fs-fun-ico">💡</span> 好教练像后视镜：**你不替开车，但让你看见盲区。**</p>
       <p style="margin-top:0.75rem;font-size:0.88rem;color:var(--muted)">完成致用行动后，前往 <a href="#sec-e">E 课堂练习</a> 或 <a href="#sec-f">F 作业提交</a> 巩固。</p>
     </div>

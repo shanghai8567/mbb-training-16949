@@ -143,6 +143,7 @@
       <span class="tag auto">Improve · DOE · 交互</span>
       <span class="tag gold">NPI 试产线 · 回流炉 #3 · Minitab 工作站</span>
     </p>
+    <p class="fs-anchor"><strong>标准锚点</strong> ISO 13053-2 实验设计 · 确认运行</p>
     <div class="fs-product-row"><span class="fs-product-tag">ADAS DCU-A</span></div>
 
     <div class="fs-tabs" role="tablist" aria-label="场景学习模式">
@@ -153,21 +154,27 @@
 
     <div class="fs-panel is-active" id="fs-panel-scene" role="tabpanel">
       <h3 class="fs-story-title">2³ DOE：Profile# 与空洞的「对话」</h3>
-      <p class="fs-scene">因子：峰值温度、驻留时间、钢网开口。主效应图显示开口×温度交互显著。工艺兴奋：「最高点量产！」MBB 拦住：**「试验区外外推 = 赌博。」**</p>
-      <div class="fs-dialogue"><div class="fs-dialogue-line"><span class="fs-who">工艺</span><span class="fs-line">Minitab 说这一点最好，明天就改产！</span></div><div class="fs-dialogue-line"><span class="fs-who">MBB</span><span class="fs-line">先确认运行 3 批，再谈扩产。</span></div></div>
+      <p class="fs-scene">因子：峰值温度、驻留时间、钢网开口。主效应图显示开口×温度交互显著。工艺兴奋：「最高点量产！」MBB 拦住：**「试验区外外推 = 赌博。」** 并问：「每因子水平 replication≥2 了吗？功率够吗？」</p>
+      <div class="fs-dialogue"><div class="fs-dialogue-line"><span class="fs-who">工艺</span><span class="fs-line">Minitab 说这一点最好，明天就改产！</span></div><div class="fs-dialogue-line"><span class="fs-who">MBB</span><span class="fs-line">先确认运行 3 批；DOE 显著≠长期稳健。</span></div></div>
     </div>
 
     <div class="fs-panel" id="fs-panel-sigma" role="tabpanel" hidden>
-      <p class="fs-sigma">**DOE** 回答「哪些因子显著、有无交互、稳健区在哪」。Improve 要 **Pilot + 确认运行** 而非一次试产就扩产。汽车电子要把 Profile#、钢网编号写进实验日志，便于复制。</p>
-      <div class="fs-tools"><span class="fs-tool-tag">2^k 因子设计</span><span class="fs-tool-tag">主效应/交互图</span><span class="fs-tool-tag">确认运行</span></div>
-      <div class="fs-pitfall"><strong>典型踩坑</strong> — 优化器给出试验区外最优点直接量产。</div>
+      <p class="fs-sigma">**DOE** 回答因子显著性、交互与稳健区。Improve 须 **Pilot + 确认运行**；实验日志写 Profile#、钢网 ID、炉次。</p>
+      <details class="fs-deep" open>
+      <summary>专业加深（P0 / P1）</summary>
+      <ul class="obj-list fs-deep-list"><li>**P0 · 样本量**：2³ 全因子至少每格 2–3 次重复；功率分析避免「实验做完才发现检不出」。</li><li>**P0 · 随机化**：运行顺序随机/block，防炉温漂移混淆主效应。</li><li>**P1 · 噪声因子（可选）**：湿度/焊膏批次作噪声因子可找稳健区（模块 09 RSM 延伸）。</li></ul>
+    </details>
+      <div class="fs-prep"><strong>分析/评审前检查</strong><ul class="obj-list "><li>随机顺序已记录</li><li>响应为计量空洞% 且 MSA 合格</li></ul></div>
+      <div class="fs-tools"><span class="fs-tool-tag">2^k 因子设计</span><span class="fs-tool-tag">主效应/交互</span><span class="fs-tool-tag">确认运行</span><span class="fs-tool-tag">功率分析</span></div>
+      <div class="fs-pitfall"><strong>典型踩坑</strong> — 试验区外最优点直接量产；无确认运行。</div>
     </div>
 
     <div class="fs-panel" id="fs-panel-apply" role="tabpanel" hidden>
       <div class="fs-apply-box">
         <strong>现在就做</strong>
-        <p>列出 2 个因子 + 1 个你关心的响应（如空洞%）。</p>
+        <p>列出 2 因子 + 响应 + 每组合最少运行次数。</p>
       </div>
+      <p class="fs-quiz-link"><a href="#sec-g">G 节 — 无 DOE 直接改炉温</a></p>
       <p class="fs-fun"><span class="fs-fun-ico">💡</span> DOE 像菜谱：**单改盐不行，盐和火一起才香。**</p>
       <p style="margin-top:0.75rem;font-size:0.88rem;color:var(--muted)">完成致用行动后，前往 <a href="#sec-e">E 课堂练习</a> 或 <a href="#sec-f">F 作业提交</a> 巩固。</p>
     </div>

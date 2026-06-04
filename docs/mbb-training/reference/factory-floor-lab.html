@@ -34,6 +34,7 @@
       <p style="color:var(--muted);max-width:720px">
         每条场景 = <strong>产线故事</strong> + <strong>六西格玛解析</strong> + <strong>30 秒致用</strong>，点击进入对应模块。
       </p>
+      <h2 class="fs-hub-section-title">14 模块主线场景</h2>
       <div class="fs-hub-grid"><a class="fs-hub-card" href="../days/day01.html#sec-factory">
         <span class="fs-hub-day">模块 1</span>
         <strong>夜班铃声：错版 SOC 还没贴片就被拦下</strong>
@@ -64,8 +65,8 @@
         <span class="fs-hub-station">阶段门会议室 · 投影 ADAS SCAR 故事板</span>
       </a><a class="fs-hub-card" href="../days/day08.html#sec-factory">
         <span class="fs-hub-day">模块 8</span>
-        <strong>PFMEA 里的 U12：空洞 RPN 与探测度</strong>
-        <span class="fs-hub-station">PFMEA 墙贴 · SMT·X-Ray 联合工段</span>
+        <strong>手插浮高抢 RPN：车身 DCU-B 的独立战场</strong>
+        <span class="fs-hub-station">手插/波峰工位 · DCU-B 继电器座 · PFMEA 墙</span>
       </a><a class="fs-hub-card" href="../days/day09.html#sec-factory">
         <span class="fs-hub-day">模块 9</span>
         <strong>RSM 稳健区：不是「最陡的坡」而是「平台」</strong>
@@ -91,6 +92,39 @@
         <strong>毕业答辩：15 分钟讲完四段工艺证据链</strong>
         <span class="fs-hub-station">OEM 远程评审 · ADAS SCAR Capstone</span>
       </a></div>
+      <h2 class="fs-hub-section-title">专题加深（P0 / P1）</h2>
+      <p style="font-size:0.88rem;color:var(--muted)">ICT · 手插 · AOI Kappa · ECN · ASIL · 8D 对齐</p>
+      <div class="fs-hub-grid"><a class="fs-hub-card fs-topic-card" href="../days/day03.html#sec-factory">
+      <span class="fs-hub-day">专题 · ict-fct</span>
+      <strong>ICT 漏检：短路逃到 FCT 的「背锅侠」</strong>
+      <span class="fs-hub-station">ICT 工站 → FCT-05</span>
+      <ul class="obj-list" style="margin-top:0.5rem;font-size:0.8rem"><li>ICT 检出短路失败时，FCT 不良会虚高——Analyze 须分层「ICT 已检出/漏检」。</li><li>控制计划：ICT 不良率趋势与 FCT p 图联动反应。</li></ul>
+    </a><a class="fs-hub-card fs-topic-card" href="../days/day08.html#sec-factory">
+      <span class="fs-hub-day">专题 · hand-insert</span>
+      <strong>车身手插：继电器浮高与 ADAS 空洞不是一回事</strong>
+      <span class="fs-hub-station">手插/波峰 · DCU-B</span>
+      <ul class="obj-list" style="margin-top:0.5rem;font-size:0.8rem"><li>PFMEA 必须独立行；探测度写到防呆治具或通止规。</li><li>FCT-04 CAN 间歇优先查手插，而非抄 ADAS 炉温对策。</li></ul>
+    </a><a class="fs-hub-card fs-topic-card" href="../days/day04.html#sec-factory">
+      <span class="fs-hub-day">专题 · aoi-kappa</span>
+      <strong>AOI 目检 Kappa：和 SPI 的 GRR 两张表</strong>
+      <span class="fs-hub-station">SMT 后 AOI</span>
+      <ul class="obj-list" style="margin-top:0.5rem;font-size:0.8rem"><li>计量 SPI 用 %GRR；属性 AOI 用 Kappa/一致性。</li><li>Kappa&amp;lt;0.6 时 Analyze 基于 AOI 的分层不可靠。</li></ul>
+    </a><a class="fs-hub-card fs-topic-card" href="../days/day10.html#sec-factory">
+      <span class="fs-hub-day">专题 · ecn-program</span>
+      <strong>ECN 到了，烧录程序还在跑旧版</strong>
+      <span class="fs-hub-station">离线烧录 · 工程变更</span>
+      <ul class="obj-list" style="margin-top:0.5rem;font-size:0.8rem"><li>Program_ID 变更未同步 → 隐性错版；须 ECN→烧录校验→首件 Checksum→FCT 首批加严。</li><li>PPAP 提交数据包须含程序版本追溯。</li></ul>
+    </a><a class="fs-hub-card fs-topic-card" href="../days/day11.html#sec-factory">
+      <span class="fs-hub-day">专题 · asil-boundary</span>
+      <strong>ASIL 边界：EMS 出厂测什么、不签什么</strong>
+      <span class="fs-hub-station">DFSS / Capstone</span>
+      <ul class="obj-list" style="margin-top:0.5rem;font-size:0.8rem"><li>EMS：Eth 环回、Checksum、FCT 场景覆盖等出厂可测 CTQ。</li><li>OEM：整车感知时延、ASIL 分解——勿写入 EMS 唯一责任。</li></ul>
+    </a><a class="fs-hub-card fs-topic-card" href="../days/day02.html#sec-factory">
+      <span class="fs-hub-day">专题 · 8d-dmaic</span>
+      <strong>SCAR 来了：8D 与 DMAIC 怎么不打架</strong>
+      <span class="fs-hub-station">OEM 质量会议</span>
+      <ul class="obj-list" style="margin-top:0.5rem;font-size:0.8rem"><li>8D D2≈Define；根因验证走 Analyze；对策防再发≈Improve+Control。</li><li>一套数据、一套版本追溯，两套表格同步更新。</li></ul>
+    </a></div>
     </div>
   </div>
   <footer class="footer"><a href="../index.html">返回课程总览</a></footer>

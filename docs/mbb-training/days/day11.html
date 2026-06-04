@@ -143,6 +143,7 @@
       <span class="tag auto">DFSS · QFD · DMADV</span>
       <span class="tag gold">DFSS 研讨室 · 质量屋白板</span>
     </p>
+    <p class="fs-anchor"><strong>标准锚点</strong> ISO 13053-2 设计 · 功能安全边界（ASIL）</p>
     <div class="fs-product-row"><span class="fs-product-tag">ADAS DCU-A</span><span class="fs-product-tag">座舱 DCU-C</span></div>
 
     <div class="fs-tabs" role="tablist" aria-label="场景学习模式">
@@ -153,22 +154,28 @@
 
     <div class="fs-panel is-active" id="fs-panel-scene" role="tabpanel">
       <h3 class="fs-story-title">QFD 屋顶：OEM 要时延，EMS 改什么焊盘？</h3>
-      <p class="fs-scene">OEM VOC：「感知时延 &lt; 80ms」。团队争论加散热还是加算力。MBB 引导 QFD：**「先关联到 SOC BGA、镜像大小、FCT 场景库——DFSS 不是堆功能。」**</p>
-      <div class="fs-dialogue"><div class="fs-dialogue-line"><span class="fs-who">结构工程师</span><span class="fs-line">加散热鳍片够不够？</span></div><div class="fs-dialogue-line"><span class="fs-who">MBB</span><span class="fs-line">先问：时延 CTQ 落在镜像、算力还是 FCT 场景？</span></div></div>
+      <p class="fs-scene">OEM VOC：「感知时延 &lt; 80ms」。团队争论加散热还是加算力。功能安全同事提醒：**「Eth 时延 CTQ 的 ASIL 等级由 OEM 定，EMS 不能自行降级验证项。」** MBB 引导 QFD 把需求落到可设计项。</p>
+      <div class="fs-dialogue"><div class="fs-dialogue-line"><span class="fs-who">结构工程师</span><span class="fs-line">加散热鳍片够不够？</span></div><div class="fs-dialogue-line"><span class="fs-who">MBB</span><span class="fs-line">先问：时延 CTQ 落在镜像、算力还是 FCT 场景？</span></div><div class="fs-dialogue-line"><span class="fs-who">功能安全</span><span class="fs-line">EMS 签署范围止于出厂测试边界，不含整车 ASIL 分解。</span></div></div>
     </div>
 
     <div class="fs-panel" id="fs-panel-sigma" role="tabpanel" hidden>
-      <p class="fs-sigma">**DFSS/DMADV** 把 VOC 翻译成 **可设计 CTQ**（镜像、焊盘、散热、烧录容量）。Verify 不能跳过 **离线烧录镜像** 与 **FCT 场景覆盖**。</p>
-      <div class="fs-tools"><span class="fs-tool-tag">QFD</span><span class="fs-tool-tag">DMADV</span><span class="fs-tool-tag">Pugh 概念选择</span></div>
-      <div class="fs-pitfall"><strong>典型踩坑</strong> — DFSS 跳过离线烧录设计；QFD 一人打分。</div>
+      <p class="fs-sigma">**DFSS** 把 VOC 译成可设计 CTQ。Verify 含离线烧录镜像与 FCT 场景覆盖。**ASIL 边界**须在 Charter/QFD 注明：哪些由 OEM、哪些由 EMS 承担。</p>
+      <details class="fs-deep" open>
+      <summary>专业加深（P0 / P1）</summary>
+      <ul class="obj-list fs-deep-list"><li>**P1 · ASIL 边界**：EMS 可负责 **出厂可测 CTQ**（Eth 环回、Checksum）；**整车感知时延/ASIL 分解** 需 OEM 接口，勿写进 EMS PFMEA 当唯一责任。</li><li>**P0 · QFD 纪律**：多人评分、关联强度需证据（仿真/试验），非一人拍脑袋。</li></ul>
+    </details>
+      <div class="fs-prep"><strong>分析/评审前检查</strong><ul class="obj-list "><li>ASIL/责任边界已标注</li><li>HOW 可测可验证</li></ul></div>
+      <div class="fs-tools"><span class="fs-tool-tag">QFD</span><span class="fs-tool-tag">DMADV</span><span class="fs-tool-tag">ASIL 边界表</span></div>
+      <div class="fs-pitfall"><strong>典型踩坑</strong> — DFSS 跳过离线烧录；EMS 越权承诺 ASIL。</div>
     </div>
 
     <div class="fs-panel" id="fs-panel-apply" role="tabpanel" hidden>
       <div class="fs-apply-box">
         <strong>现在就做</strong>
-        <p>写 1 条 VOC→CTQ 链条（动词+可测）。</p>
+        <p>写 1 条 VOC→CTQ→设计项，并标「OEM/EMS 责任」。</p>
       </div>
-      <p class="fs-fun"><span class="fs-fun-ico">💡</span> 质量屋像翻译官：**客户话 → 工程话。**</p>
+      <p class="fs-quiz-link"><a href="#sec-g">G 节 — DFSS 跳过烧录设计</a></p>
+      <p class="fs-fun"><span class="fs-fun-ico">💡</span> 质量屋像翻译官：**客户话 → 工程话 → 谁签字。**</p>
       <p style="margin-top:0.75rem;font-size:0.88rem;color:var(--muted)">完成致用行动后，前往 <a href="#sec-e">E 课堂练习</a> 或 <a href="#sec-f">F 作业提交</a> 巩固。</p>
     </div>
   </article>

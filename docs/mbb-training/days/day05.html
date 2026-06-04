@@ -143,6 +143,7 @@
       <span class="tag auto">Analyze · 假设检验 · 缺陷矩阵</span>
       <span class="tag gold">Analyze 战情室 · X-Ray SL 全检区</span>
     </p>
+    <p class="fs-anchor"><strong>标准锚点</strong> ISO 13053-1 分析阶段 · 假设检验前提</p>
     <div class="fs-product-row"><span class="fs-product-tag">ADAS DCU-A</span></div>
 
     <div class="fs-tabs" role="tablist" aria-label="场景学习模式">
@@ -153,21 +154,27 @@
 
     <div class="fs-panel is-active" id="fs-panel-scene" role="tabpanel">
       <h3 class="fs-story-title">Eth 失败：是错版批次，还是炉温 Profile？</h3>
-      <p class="fs-scene">Pareto 显示 Eth_FAIL 占 62%。BB 想「炉温调高试试」。MBB 拉出列联表：Checksum_FAIL 与 Eth_FAIL 在错版批次高度相关；炉温只在 SL 切换后次要。</p>
-      <div class="fs-dialogue"><div class="fs-dialogue-line"><span class="fs-who">BB</span><span class="fs-line">我把炉温 +5℃ 试产？</span></div><div class="fs-dialogue-line"><span class="fs-who">MBB</span><span class="fs-line">先证明不是错版批次——列联表比直觉靠谱。</span></div></div>
+      <p class="fs-scene">Pareto 显示 Eth_FAIL 占 62%。BB 想「炉温调高试试」。MBB 拉出列联表：错版批次 Eth 不良 8.2%，正常批次 0.4%；卡方 p=0.003。但 Champion 说：「8.2% 才差 7.8 个点，值得停线吗？」</p>
+      <div class="fs-dialogue"><div class="fs-dialogue-line"><span class="fs-who">BB</span><span class="fs-line">我把炉温 +5℃ 试产？</span></div><div class="fs-dialogue-line"><span class="fs-who">MBB</span><span class="fs-line">先证明不是错版——列联表 + 效应量，别只甩 p 值。</span></div><div class="fs-dialogue-line"><span class="fs-who">Champion</span><span class="fs-line">统计显著就行了吧？</span></div><div class="fs-dialogue-line"><span class="fs-who">MBB</span><span class="fs-line">还要算比例差/OR 与 95% CI；若年化百万片，0.3% 也值钱。</span></div></div>
     </div>
 
     <div class="fs-panel" id="fs-panel-sigma" role="tabpanel" hidden>
-      <p class="fs-sigma">**Analyze** 用 **缺陷-过程矩阵** 链到离线烧录/SMT/X-Ray/FCT。假设检验前检查前提；**统计显著≠业务显著** 要讲清效应量。汽车电子切忌：混入 HU 的 FCT-03 数据讲 ADAS 故事。</p>
-      <div class="fs-tools"><span class="fs-tool-tag">Pareto</span><span class="fs-tool-tag">列联表/卡方</span><span class="fs-tool-tag">5Why + 可验证根因</span></div>
-      <div class="fs-pitfall"><strong>典型踩坑</strong> — 观察性相关直接改量产 Profile，无 DOE 确认。</div>
+      <p class="fs-sigma">**Analyze** 用缺陷矩阵链到四段工艺。报告须含：**前提**（独立批次？期望频数？）、**p 值**、**效应量**（比例差/OR）、**业务翻译**。切忌 HU FCT-03 混入 ADAS 故事。</p>
+      <details class="fs-deep" open>
+      <summary>专业加深（P0 / P1）</summary>
+      <ul class="obj-list fs-deep-list"><li>**P0 · 效应量**：p&amp;lt;0.05 只说明「有证据」；Champion 看 **差多少** —— 例：错版批次 Eth 不良率差 7.8% + 95% CI。</li><li>**P0 · 前提**：列联表期望频数&amp;lt;5 时考虑 Fisher 精确检验；批次非独立则夸大显著性。</li><li>**P1 · SL→MP X-Ray**：Analyze 必须标注 **X-Ray 切换日**；切换前后空洞 Pareto 不可合并。</li></ul>
+    </details>
+      <div class="fs-prep"><strong>分析/评审前检查</strong><ul class="obj-list "><li>H0/H1 与检验匹配</li><li>报告有效应量或比例差</li><li>X-Ray 阶段已分层</li></ul></div>
+      <div class="fs-tools"><span class="fs-tool-tag">Pareto</span><span class="fs-tool-tag">列联表/卡方</span><span class="fs-tool-tag">效应量/OR</span><span class="fs-tool-tag">5Why</span></div>
+      <div class="fs-pitfall"><strong>典型踩坑</strong> — 只报 p 值；观察性相关直接改 Profile 无 DOE。</div>
     </div>
 
     <div class="fs-panel" id="fs-panel-apply" role="tabpanel" hidden>
       <div class="fs-apply-box">
         <strong>现在就做</strong>
-        <p>画 3×3 缺陷矩阵草图：行=失效模式，列=四段工艺。</p>
+        <p>画 3×3 缺陷矩阵；写 1 句「统计结论 + 业务结论 + 建议下一工具（DOE/8D）」。</p>
       </div>
+      <p class="fs-quiz-link"><a href="#sec-g">G 节情景 — 合并 ADAS+车身良率</a></p>
       <p class="fs-fun"><span class="fs-fun-ico">💡</span> MBB 口头禅：**「先分层，再回归；先版本，再炉温。」**</p>
       <p style="margin-top:0.75rem;font-size:0.88rem;color:var(--muted)">完成致用行动后，前往 <a href="#sec-e">E 课堂练习</a> 或 <a href="#sec-f">F 作业提交</a> 巩固。</p>
     </div>
