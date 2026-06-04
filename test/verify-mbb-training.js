@@ -1,9 +1,12 @@
 /**
- * MBB 培训包验收脚本 — 对齐 PROMPT-MBB-TUTOR.md v2.1
+ * MBB 培训包验收脚本 — 对齐 PROMPT-MBB-TUTOR.md v3.0
  * 运行: node test/verify-mbb-training.js
  */
 const fs = require("fs");
 const path = require("path");
+const manifest = require("./mbb-package-manifest");
+if (fs.existsSync(path.join(__dirname, "mbb-package-manifest.js"))) ok("mbb-package-manifest.js");
+else bad("missing mbb-package-manifest.js");
 
 const ROOT = path.join(__dirname, "../docs/mbb-training");
 let pass = 0;
@@ -205,6 +208,30 @@ if (
 )
   ok("factory-floor-lab topic supplements");
 else bad("factory-floor-lab missing P1/P2 topics");
+
+const versionMd = fs.readFileSync(path.join(ROOT, "VERSION.md"), "utf8");
+if (versionMd.includes(manifest.packageVersion) && versionMd.includes(manifest.promptVersion))
+  ok("VERSION.md matches manifest");
+else bad("VERSION.md version drift");
+
+const gradReport = fs.readFileSync(path.join(ROOT, "reference/graduation-report.html"), "utf8");
+if (
+  gradReport.includes(`content="${manifest.packageVersion}"`) &&
+  gradReport.includes('meta[name="mbb-package-version"]')
+)
+  ok("graduation-report version from meta");
+else bad("graduation-report version");
+
+if (!gradReport.includes("beta.1") && !indexHtml.includes("beta.1"))
+  ok("no stale beta.1 in index/graduation");
+else bad("stale beta.1 version string");
+
+const day01Html = fs.readFileSync(path.join(ROOT, "days/day01.html"), "utf8");
+if (day01Html.includes(`content="${manifest.packageVersion}"`))
+  ok("day01 meta matches manifest");
+else bad("day01 meta version mismatch");
+if (prompt.includes("工厂实景")) ok("prompt factory scenario guide");
+else bad("prompt missing factory guide");
 
 const { countPresetAnswersForDay } = require("./exercise-answers");
 for (let i = 1; i <= 14; i++) {

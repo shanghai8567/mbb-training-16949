@@ -22,4 +22,4 @@
 **L1 报告**：`reference/graduation-report.html`
 
 **工厂实景源**：`test/factory-scenarios.js` → `test/render-factory-scenario.js`  
-版本：`3.0.0-beta.2` · 工厂实景 `1.2.0` · 生成源：`test/build-mbb-days.js`
+版本：`3.0.0` · 工厂实景 `1.2.0` · 生成源：`test/build-mbb-days.js`

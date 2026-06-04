@@ -16,6 +16,7 @@ const scripts = [
   "c2-checklist.test.js",
   "interactive-learning.test.js",
   "factory-scenarios.test.js",
+  "version-consistency.test.js",
 ];
 
 let fail = 0;

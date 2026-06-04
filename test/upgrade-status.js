@@ -9,7 +9,7 @@ const TODO_PATH = path.join(__dirname, "../docs/mbb-training/UPGRADE-TODO.md");
 const text = fs.readFileSync(TODO_PATH, "utf8");
 
 const rows = [
-  ...text.matchAll(/\|\s*(S0-\d+|D\d-\d+|M\d|P3-\d+|F\d-\d+)\s*\|(?:[^|\n]*\|){2,4}\s*(⬜|🔄|✅)\s*\|/g),
+  ...text.matchAll(/\|\s*(S0-\d+|D\d-\d+|M\d|P3-\d+|F\d-\d+|P4-\d+)\s*\|(?:[^|\n]*\|){2,4}\s*(⬜|🔄|✅)\s*\|/g),
 ];
 let done = 0;
 let wip = 0;

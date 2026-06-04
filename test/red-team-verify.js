@@ -8,6 +8,7 @@ const { prepareMcqForDay } = require("./homework-rubrics");
 const { countAuthorCoverage } = require("./mcq-author-notes");
 
 const ROOT = path.join(__dirname, "../docs/mbb-training");
+const manifest = require("./mbb-package-manifest");
 let pass = 0;
 let fail = 0;
 
@@ -128,7 +129,13 @@ if (fs.existsSync(path.join(ROOT, "data/README.md"))) ok(21, "data readme");
 else bad(21, "data readme");
 
 // 22
-if (dayHtml(1).includes('meta name="mbb-package-version"')) ok(22, "version meta");
+if (
+  dayHtml(1).includes(`content="${manifest.packageVersion}"`) &&
+  fs.readFileSync(path.join(ROOT, "reference/graduation-report.html"), "utf8").includes(
+    'meta[name="mbb-package-version"]'
+  )
+)
+  ok(22, "version meta unified");
 else bad(22, "version meta");
 
 // 23

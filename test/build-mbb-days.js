@@ -24,7 +24,7 @@ const {
   renderFactoryTopicCards,
 } = require("./render-factory-scenario");
 
-const PACKAGE_VERSION = "3.0.0-beta.2";
+const { packageVersion: PACKAGE_VERSION } = require("./mbb-package-manifest");
 
 const THEME_HEAD = `  <script src="../js/theme-init.js"></script>
   <link rel="stylesheet" href="../css/theme.css" />`;
@@ -838,3 +838,4 @@ fs.writeFileSync(
   "utf8"
 );
 console.log("factory-floor-lab.html OK");
+require("./sync-reference-versions");

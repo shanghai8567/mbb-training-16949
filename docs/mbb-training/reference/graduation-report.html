@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+  <meta name="mbb-package-version" content="3.0.0" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>L1 结业报告 — 六西格玛黑带</title>
@@ -81,8 +82,14 @@
             "<td>模块 " + n + "</td><td>" + fg + "</td><td>" + (hp != null ? hp + "%" : "—") + "</td><td>" + c2ok + "</td><td>" + (pass ? "达标" : "待完成") + "</td>";
           body.appendChild(tr);
         }
+        const pv =
+          document.querySelector('meta[name="mbb-package-version"]')?.content || "3.0.0";
         document.getElementById("report-meta").textContent =
-          "生成时间：" + new Date().toLocaleString() + " · 包版本 3.0.0-beta.1";
+          "生成时间：" +
+          new Date().toLocaleString() +
+          " · 包版本 " +
+          pv +
+          " · 工厂实景 1.2.0";
         if (window.MBBLearningDashboard) {
           const d = MBBLearningDashboard.computeL1Composite();
           document.getElementById("report-summary").innerHTML =
