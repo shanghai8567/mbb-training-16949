@@ -5,8 +5,6 @@
 const fs = require("fs");
 const path = require("path");
 const manifest = require("./mbb-package-manifest");
-if (fs.existsSync(path.join(__dirname, "mbb-package-manifest.js"))) ok("mbb-package-manifest.js");
-else bad("missing mbb-package-manifest.js");
 
 const ROOT = path.join(__dirname, "../docs/mbb-training");
 let pass = 0;
@@ -20,6 +18,9 @@ function bad(msg) {
   fail++;
   console.log("FAIL:", msg);
 }
+
+if (fs.existsSync(path.join(__dirname, "mbb-package-manifest.js"))) ok("mbb-package-manifest.js");
+else bad("missing mbb-package-manifest.js");
 
 const required = [
   "index.html",
