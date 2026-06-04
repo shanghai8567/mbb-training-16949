@@ -158,6 +158,8 @@ for (let i = 1; i <= 14; i++) {
   if (html.includes("FCT-DCU") || html.includes("离线烧录") || html.includes("BGA"))
     ok(fn + " automotive production terms");
   else bad(fn + " missing automotive terms in day");
+  if (/离线(?!烧录)/.test(html)) bad(fn + " uses abbreviated 离线 (require 离线烧录)");
+  else ok(fn + " offline burn terminology");
 }
 
 const prompt = fs.readFileSync(path.join(ROOT, "PROMPT-MBB-TUTOR.md"), "utf8");
