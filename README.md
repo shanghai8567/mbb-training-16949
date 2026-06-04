@@ -1,5 +1,15 @@
 # mbb-training-16949
 
+[![version](https://img.shields.io/badge/version-3.0.0--beta.1-0078d4?style=flat-square)](docs/mbb-training/VERSION.md)
+[![modules](https://img.shields.io/badge/modules-14-2ea043?style=flat-square)](docs/mbb-training/index.html)
+[![upgrade](https://img.shields.io/badge/七维度升级-50%2F50-1f883d?style=flat-square)](docs/mbb-training/UPGRADE-TODO.md)
+[![mcq](https://img.shields.io/badge/考题库-v2.2.0-8250df?style=flat-square)](docs/mbb-training/VERSION.md)
+[![stack](https://img.shields.io/badge/stack-HTML%20·%20CSS%20·%20JS-e34c26?style=flat-square)](#仓库结构)
+[![node](https://img.shields.io/badge/node-≥18-339933?style=flat-square&logo=node.js&logoColor=white)](#构建与验收)
+[![context](https://img.shields.io/badge/场景-汽车电子%20EMS%20·%20IATF%2016949-c0392b?style=flat-square)](docs/mbb-training/reference/automotive-iatf.html)
+[![tests](https://img.shields.io/badge/验收-run--mbb--suite-success?style=flat-square)](#构建与验收)
+[![repo](https://img.shields.io/badge/GitHub-shanghai8567%2Fmbb--training--16949-181717?style=flat-square&logo=github)](https://github.com/shanghai8567/mbb-training-16949)
+
 汽车电子 EMS 场景下的 **六西格玛黑带（MBB）14 模块培训包**：HTML 课件、课后作业自动评分、C2 Lab 跟做清单、三级评价（L1/L2/L3）与结业报告导出。
 
 **当前版本**：`3.0.0-beta.1`（教材） · 考题库 `2.2.0` · 七维度升级 **50/50 完成**
