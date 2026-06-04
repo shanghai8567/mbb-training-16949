@@ -9,6 +9,7 @@
 [![domain](https://img.shields.io/badge/domain-automotive_EMS_·_IATF_16949-c0392b?style=flat-square)](docs/mbb-training/reference/automotive-iatf.html)
 [![qa](https://img.shields.io/badge/QA-run--mbb--suite-success?style=flat-square)](#开发与质量门禁)
 [![repository](https://img.shields.io/badge/repository-public-181717?style=flat-square&logo=github)](https://github.com/shanghai8567/mbb-training-16949)
+[![license](https://img.shields.io/badge/license-MIT-yellow?style=flat-square)](LICENSE)
 
 **企业级离线培训资产包**：面向汽车电子 EMS 的 Master Black Belt（MBB）预备营，覆盖 14 个教学模块、可审计的三级评价路径、统计软件跟做 Lab，以及可本地部署的 HTML 课件与自动评分引擎。
 
@@ -35,7 +36,8 @@
 - [开发与质量门禁](#开发与质量门禁)
 - [版本矩阵](#版本矩阵)
 - [文档索引](#文档索引)
-- [知识产权与使用限制](#知识产权与使用限制)
+- [许可证](#许可证)
+- [使用说明与合规](#使用说明与合规)
 
 ---
 
@@ -205,6 +207,7 @@ node test/run-mbb-suite.js
 
 ```
 16949/
+├── LICENSE                   # MIT
 ├── README.md                 # 本文件
 ├── docs/mbb-training/        # 培训包交付物
 │   ├── index.html            # 课程门户
@@ -218,11 +221,23 @@ node test/run-mbb-suite.js
 
 ---
 
-## 知识产权与使用限制
+## 许可证
 
-- 本仓库内容为 **企业内部培训资产**；对外分发、改版或商业化前须经过知识产权与合规评审。  
+本项目采用 **[MIT License](LICENSE)** 发布。
+
+```
+Copyright (c) 2026 shanghai8567
+```
+
+您可以自由使用、修改与再分发本仓库代码与文档，但须在衍生作品中保留版权声明与 MIT 许可全文。详见根目录 [`LICENSE`](LICENSE) 文件。
+
+## 使用说明与合规
+
+以下内容 **不限制** MIT 许可下的代码使用权，但属于教学内容合规建议：
+
 - 引用 ASQ Body of Knowledge、IATF/ISO 条文时须保持可追溯，**禁止虚构标准原文**。  
-- 练习答案、Rubric 关键词与考题解析仅供教学使用，**不得**作为官方认证题库泄露。  
+- 完成 L1 自动评价 **不等于** MBB 资质认证（见 [认证边界](docs/mbb-training/reference/mbb-certification-boundary.html)）。  
+- 练习答案与考题解析仅供教学参考，**请勿**冒充官方认证题库对外发布。  
 
 ---
 
@@ -230,6 +245,7 @@ node test/run-mbb-suite.js
 
 | 项 | 值 |
 |----|-----|
+| **许可证** | MIT — [`LICENSE`](LICENSE) |
 | **远程仓库** | https://github.com/shanghai8567/mbb-training-16949 |
 | **默认分支** | `main` / `master`（内容已同步） |
 | **备份标签示例** | `backup/2026-06-04-1530` |
